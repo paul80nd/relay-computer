@@ -1,0 +1,229 @@
+<svg:g transform="translate(-240,0)">
+    <svg:title>Display B</svg:title>
+    <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+        <svg:g>
+            <svg:rect x="240" y="0" width="237" height="169" fill="gray" />
+            <svg:rect x="240" y="0" width="237" height="169" stroke="black" class="cardOutline" />
+
+            <svg:g *ngFor="let i of [7,6,5,4,3,2,1,0]">
+                <svg:rect [attr.x]="459-(9*i)" y="9.99998" width="8" height="17" class="indGreen" [class.on]="card.instruction.bit(i)" />
+                <svg:rect [attr.x]="459-(9*i)" y="9.99998" width="8" height="17" class="indOutline" />
+                <svg:text [attr.transform]="'translate(' + (460.6967-(9*i)) +' 12.906828)'" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">{{i}}</svg:tspan>
+                </svg:text>
+            </svg:g>
+
+
+            <!--
+                <svg:rect x="268" y="115.99998" width="35" height="17" class="indRed" />
+                <svg:rect x="268" y="115.99998" width="35" height="17" class="indOutline" />
+                <svg:rect x="268.88062" y="116.79813" width="33.120203" height="15.21739" class="indRed" />
+                <svg:text transform="translate(268.88062 119.406825)" fill="black">
+                    <svg:tspan class="d-text8" x="6.630414" y="8">HAL</svg:tspan>
+                    <svg:tspan class="d-text8" x="21.60307" y="8">T</svg:tspan>
+                </svg:text>
+                <svg:rect x="250" y="115.99998" width="17" height="17" class="indYellow" />
+                <svg:rect x="250" y="115.99998" width="17" height="17" class="indOutline" />
+                <svg:rect x="250.86242" y="116.79813" width="15.21739" height="15.21739" class="indYellow" />
+                <svg:text transform="translate(250.86242 120.79813)" fill="black">
+                    <svg:tspan class="d-text7" x=".80010144" y="6">CLK</svg:tspan>
+                </svg:text>
+                -->
+
+            <svg:g display-b-condition [value]="card.condition" transform="translate(250 141.99998)"></svg:g>
+
+            <!--
+                <svg:rect x="450" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="450" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="450.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(451.6967 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
+                </svg:text>
+                <svg:rect x="459" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="459" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="459.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(460.6967 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
+                </svg:text>
+                <svg:rect x="432" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="432" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="432.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(433.6967 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">3</svg:tspan>
+                </svg:text>
+                <svg:rect x="441" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="441" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="441.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(442.6967 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">2</svg:tspan>
+                </svg:text>
+                <svg:rect x="414" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="414" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="414.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(415.6967 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">5</svg:tspan>
+                </svg:text>
+                <svg:rect x="423" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="423" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="423.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(424.6967 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">4</svg:tspan>
+                </svg:text>
+                <svg:rect x="396" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="396" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="396.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(397.6967 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">7</svg:tspan>
+                </svg:text>
+                <svg:rect x="405" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="405" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="405.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(406.6967 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">6</svg:tspan>
+                </svg:text>
+                <svg:rect x="378" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="378" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="378.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(379.69671 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">9</svg:tspan>
+                </svg:text>
+                <svg:rect x="387" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="387" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="387.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(388.6967 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">8</svg:tspan>
+                </svg:text>
+                <svg:rect x="360" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="360" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="360.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(361.69671 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">b</svg:tspan>
+                </svg:text>
+                <svg:rect x="369" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="369" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="369.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(370.69671 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">a</svg:tspan>
+                </svg:text>
+                <svg:rect x="342" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="342" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="342.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(343.69671 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">d</svg:tspan>
+                </svg:text>
+                <svg:rect x="351" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="351" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="351.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(352.69671 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">c</svg:tspan>
+                </svg:text>
+                <svg:rect x="324" y="115.99998" width="8" height="17" class="indRed" />
+                <svg:rect x="324" y="115.99998" width="8" height="17" class="indOutline" />
+                <svg:rect x="324.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(325.69671 118.906825)" fill="black">
+                    <svg:tspan class="d-text9" x=".8911172" y="9">f</svg:tspan>
+                </svg:text>
+                <svg:rect x="333" y="115.999974" width="8" height="17" class="indRed" />
+                <svg:rect x="333" y="115.999974" width="8" height="17" class="indOutline" />
+                <svg:rect x="333.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
+                <svg:text transform="translate(334.69671 118.90682)" fill="black">
+                    <svg:tspan class="d-text9" x="0" y="9">e</svg:tspan>
+                </svg:text>
+                -->
+            <svg:rect x="450" y="53.99998" width="8" height="17" class="indGreen" />
+            <svg:rect x="450" y="53.99998" width="8" height="17" class="indOutline" />
+            <svg:rect x="450.6967" y="54.798133" width="6.2827227" height="15.21739" class="indGreen" />
+            <svg:text transform="translate(451.6967 56.90683)" fill="black">
+                <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
+            </svg:text>
+            <svg:rect x="459" y="53.999977" width="8" height="17" class="indGreen" />
+            <svg:rect x="459" y="53.999977" width="8" height="17" class="indOutline" />
+            <svg:rect x="459.6967" y="54.79813" width="6.2827227" height="15.21739" class="indGreen" />
+            <svg:text transform="translate(460.6967 56.906825)" fill="black">
+                <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
+            </svg:text>
+
+            <svg:rect x="432" y="53.99998" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(clLine)" />
+            <svg:rect x="432" y="53.99998" width="8" height="17" class="indOutline" />
+            <svg:text transform="translate(433.6967 55.406828)" fill="black">
+                <svg:tspan class="d-text6" x="0" y="6">C</svg:tspan>
+                <svg:tspan class="d-text6" x=".4729043" y="13">L</svg:tspan>
+            </svg:text>
+
+            <svg:rect x="441" y="53.999977" width="8" height="17" class="indGreen" />
+            <svg:rect x="441" y="53.999977" width="8" height="17" class="indOutline" />
+            <svg:rect x="441.6967" y="54.79813" width="6.2827227" height="15.21739" class="indGreen" />
+            <svg:text transform="translate(442.6967 56.906825)" fill="black">
+                <svg:tspan class="d-text9" x="0" y="9">2</svg:tspan>
+            </svg:text>
+
+            <svg:g alu-op-llb [value]="card.alu" [description]="'INC'" [color]="'Yellow'" [bitTarget]="incLine" transform="translate(450 71.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'OR'" [color]="'Yellow'" [bitTarget]="orrLine" transform="translate(450 80.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'NOT'" [color]="'Yellow'" [bitTarget]="notLine" transform="translate(450 89.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'NOP'" [color]="'Yellow'" [bitTarget]="-1" transform="translate(450 98.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'ADD'" [color]="'Yellow'" [bitTarget]="addLine" transform="translate(432 71.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'AND'" [color]="'Yellow'" [bitTarget]="andLine" transform="translate(432 80.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'XOR'" [color]="'Yellow'" [bitTarget]="xorLine" transform="translate(432 89.999977)"></svg:g>
+            <svg:g alu-op-llb [value]="card.alu" [description]="'SHL'" [color]="'Yellow'" [bitTarget]="shlLine" transform="translate(432 98.999977)"></svg:g>
+
+            <!--
+
+
+                <svg:rect x="432" y="27.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="432" y="27.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="433.77557" y="28.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(433.77557 28.456141)" fill="black">
+                    <svg:tspan class="d-text6" x="6.0497263" y="6">SET</svg:tspan>
+                    <svg:tspan class="d-text6" x="17.276289" y="6">AB</svg:tspan>
+                </svg:text>
+                <svg:rect x="432" y="36.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="432" y="36.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="433.77557" y="37.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(433.77557 37.45614)" fill="black">
+                    <svg:tspan class="d-text6" x="5.4945505" y="6">MOV16</svg:tspan>
+                </svg:text>
+                <svg:rect x="396" y="27.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="396" y="27.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="397.77557" y="28.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(397.77557 28.456141)" fill="black">
+                    <svg:tspan class="d-text6" x="6.8846873" y="6">GOT</svg:tspan>
+                    <svg:tspan class="d-text6" x="19.778242" y="6">O</svg:tspan>
+                </svg:text>
+                <svg:rect x="396" y="36.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="396" y="36.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="397.77557" y="37.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(397.77557 37.45614)" fill="black">
+                    <svg:tspan class="d-text6" x="7.1630076" y="6">MOV8</svg:tspan>
+                </svg:text>
+                <svg:rect x="360" y="27.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="360" y="27.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="361.77557" y="28.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(361.77557 28.456141)" fill="black">
+                    <svg:tspan class="d-text6" x="5.3832224" y="6">ST</svg:tspan>
+                    <svg:tspan class="d-text6" x="12.944746" y="6">ORE</svg:tspan>
+                </svg:text>
+                <svg:rect x="360" y="36.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="360" y="36.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="361.77557" y="37.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(361.77557 37.45614)" fill="black">
+                    <svg:tspan class="d-text6" x="6.4965037" y="6">INCXY</svg:tspan>
+                </svg:text>
+                <svg:rect x="360" y="9.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="360" y="9.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="361.77557" y="10.3755785" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(361.77557 10.456141)" fill="black">
+                    <svg:tspan class="d-text6" x="7.495527" y="6">LOAD</svg:tspan>
+                </svg:text>
+                <svg:rect x="360" y="18.999977" width="35" height="8" class="indYellow" />
+                <svg:rect x="360" y="18.999977" width="35" height="8" class="indOutline" />
+                <svg:rect x="361.77557" y="19.375578" width="31.329921" height="7.161125" class="indYellow" />
+                <svg:text transform="translate(361.77557 19.456141)" fill="black">
+                    <svg:tspan class="d-text6" x="8.1649607" y="6">MISC</svg:tspan>
+                </svg:text>
+                -->
+
+            <svg:g byte-llb [value]="card.data" transform="translate(324,141.99998)"></svg:g>
+
+        </svg:g>
+    </svg:g>
+</svg:g>

@@ -1,0 +1,34 @@
+- Add Decoder card
+- Wire to instruction register output
+- Wire to DisplayB decoded inst display
+
+- Add Sequencer card
+- Wire to CLK switch in DisplayA
+- Wire to CLK ind in DisplayB
+
+- Add Control card
+- Wire to sequencer
+
+- Wire ctrl to MOV8 control lines
+
+- Wire ctrl to SETAB control lines
+- Add I2B functionality (on Instruction Register)
+- Add I2B buttons and wire up
+
+- Wire to ALU control lines (inc ALUCu decoder)
+
+- Add fake clock behind Stop/Start switch (run 1 whole instruction then auto stop)
+
+- Publish (Should now be up to date with real computer)
+
+- Add Memory Card + display showing contents of memory
+- Add PC
+- Add Inc
+- Update control to work through memory
+- Add way of uploading opcodes in to memory (written in binary)
+- Add way of uploading ops (MOV B,A) to memory 
+- Add way of writing assembly (with intellisense) that compiles in to memory
+
+- TYPESCRIPT 2
+- Implement readonly properties rather than get functions
+- Private ctor of bitvalue
