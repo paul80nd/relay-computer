@@ -11,7 +11,7 @@
         "noImplicitAny": true,
         "outDir": "../dist/",
         "rootDir": ".",
-        "sourceMap": true,
+        "sourceMap": false,
         "target": "es5",
         "inlineSources": true,
         "pretty": true,

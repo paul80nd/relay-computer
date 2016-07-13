@@ -1,9 +1,11 @@
 import { IBusFactory } from "./bus";
 import {
     IControlXBus, IControlYBus, IControlZBus,
-    IDataControlBus, IDataInstructionBus,
+    IDataControlBus, IDataInstructionBus, IControlInstructionBus,
     IDisplayA1Bus, IDisplayA2Bus,
-    IDisplayB1Bus, IDisplayB2Bus, IRegisterBCBus,
+    IDisplayB1Bus, IDisplayB2Bus,
+    IOperationBus,
+    IRegisterBCBus,
 } from "./bus";
 
 /** A Bus Group represents a collection of busses typically used against a certain card type (i.e. Z group)  */
@@ -14,6 +16,12 @@ export interface IBusGroup { }
 export interface IAuxControlBusGroup extends IBusGroup {
     readonly controlYBus: IControlYBus;
     readonly dataControlBus: IDataControlBus;
+}
+
+/** Represents the collection of busses that make up the W Card group connectors */
+export interface ICardWBusGroup extends IBusGroup {
+    readonly controlInstructionBus: IControlInstructionBus;
+    readonly operationBus: IOperationBus;
 }
 
 /** Represents the collection of busses that make up the X Card group connectors */
@@ -64,6 +72,7 @@ export interface IBusGroupSet {
     readonly controlSwitches: IControlSwitchesBusGroup;
     readonly displayA: IDisplayABusGroup;
     readonly displayB: IDisplayBBusGroup;
+    readonly w: ICardWBusGroup;
     readonly x: ICardXBusGroup;
     readonly z: ICardZBusGroup;
 }
@@ -86,6 +95,7 @@ export class BusGroupFactory implements IBusGroupFactory {
         };
         let displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
         let displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2 };
+        let w = { controlInstructionBus: b.controlInstruction, operationBus: b.operation };
         let x = { controlXBus: b.controlX, dataInstructionBus: b.dataInstruction };
         let z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
 
@@ -95,6 +105,7 @@ export class BusGroupFactory implements IBusGroupFactory {
             controlSwitches,
             displayA,
             displayB,
+            w,
             x,
             z,
         };

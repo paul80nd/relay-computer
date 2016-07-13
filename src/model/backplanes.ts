@@ -1,15 +1,23 @@
 import { IAluArithmeticCard } from "./cards/alu_arithmetic.card";
 import { IAluControlCard } from "./cards/alu_control.card";
 import { IAluLogicCard } from "./cards/alu_logic.card";
+import { IDecoderCard } from "./cards/decoder.card";
 import { IRegisterADCard } from "./cards/register_ad.card";
 import { IRegisterBCCard } from "./cards/register_bc.card";
 import { IRegisterICard } from "./cards/register_i.card";
-import { ICardXBusGroup, ICardZBusGroup } from "./bus/bus_groups";
+import { ICardWBusGroup, ICardXBusGroup, ICardZBusGroup } from "./bus/bus_groups";
 import { ICardFactory } from "./cards";
 
 export interface IBackplaneFactory {
+    createWBackplane(): IWBackplane;
     createXBackplane(): IXBackplane;
     createZBackplane(): IZBackplane;
+}
+
+export interface IWBackplane {
+    readonly decoder: IDecoderCard;
+
+    connect(busGroup: ICardWBusGroup): void;
 }
 
 export interface IXBackplane {
@@ -28,9 +36,15 @@ export interface IZBackplane {
     connect(busGroup: ICardZBusGroup): void;
 }
 
-export class BackplaneFactory {
+export class BackplaneFactory implements IBackplaneFactory {
 
     constructor(private cardFactory: ICardFactory) { }
+
+    public createWBackplane(): IWBackplane {
+        return new WBackplane(
+            this.cardFactory.createDecoder()
+        );
+    }
 
     public createXBackplane(): IXBackplane {
         return new XBackplane(
@@ -45,6 +59,17 @@ export class BackplaneFactory {
             this.cardFactory.createAluLogic(),
             this.cardFactory.createRegisterAD(),
             this.cardFactory.createRegisterBC());
+    }
+
+}
+
+class WBackplane implements IWBackplane {
+
+    constructor(
+        public decoder: IDecoderCard) { }
+
+    public connect(busGroup: ICardWBusGroup) {
+        this.decoder.connect(busGroup);
     }
 
 }

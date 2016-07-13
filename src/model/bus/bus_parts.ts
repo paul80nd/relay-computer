@@ -30,6 +30,8 @@ export interface IDataBusPart extends IBusPart { }
 export interface IDataSwitchGateBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the instruction bus value */
 export interface IInstructionBusPart extends IBusPart { }
+/** Bus part for the 9 lines that carry the operation bus value */
+export interface IOperationBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the register ABCD load and select lines */
 export interface IRegisterABCDBusPart extends IBusPart { }
 
@@ -44,6 +46,7 @@ export interface IBusPartFactory {
     getForData(): IDataBusPart;
     getForDataSwitchGate(): IDataSwitchGateBusPart;
     getForInstruction(): IInstructionBusPart;
+    getForOperation(): IOperationBusPart;
     getForRegisterABCD(): IRegisterABCDBusPart;
 }
 
@@ -55,6 +58,7 @@ export class BusPartFactory implements IBusPartFactory {
     public getForData(): IDataBusPart { return new BusPart(); }
     public getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
     public getForInstruction(): IInstructionBusPart { return new BusPart(); }
+    public getForOperation(): IOperationBusPart { return new BusPart(); }
     public getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
 }
 

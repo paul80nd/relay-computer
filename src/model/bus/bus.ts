@@ -2,12 +2,16 @@ import { IBusPartFactory } from "./bus_parts";
 import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
-    IInstructionBusPart, IRegisterABCDBusPart,
+    IInstructionBusPart, IOperationBusPart, IRegisterABCDBusPart,
 } from "./bus_parts";
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
 export interface IBus { }
 
+/** Represents the Control and Instruction bus ribbon cable (C/I) */
+export interface IControlInstructionBus extends IBus {
+    readonly instructionPart: IInstructionBusPart;
+}
 
 /** Repesents the X Control bus ribbon cable */
 export interface IControlXBus extends IBus {
@@ -64,6 +68,11 @@ export interface IDisplayB2Bus extends IBus {
     readonly instructionPart: IInstructionBusPart;
 }
 
+/** Represents the Operation bus cable (OP) */
+export interface IOperationBus extends IBus {
+    readonly operationPart: IOperationBusPart;
+}
+
 /** Repesents the Register B and C bus ribbon cable (B/C) */
 export interface IRegisterBCBus extends IBus {
     readonly registerBPart: IDataBusPart;
@@ -81,16 +90,18 @@ export interface IBusFactory {
 
 /** Collection of the Busses */
 export interface IBusSet {
+    readonly controlInstruction: IControlInstructionBus;
     readonly dataControl: IDataControlBus;
     readonly dataInstruction: IDataInstructionBus;
     readonly controlX: IControlXBus;
     readonly controlY: IControlYBus;
     readonly controlZ: IControlZBus;
-    readonly registerBC: IRegisterBCBus;
     readonly displayA1: IDisplayA1Bus;
     readonly displayA2: IDisplayA2Bus;
     readonly displayB1: IDisplayB1Bus;
     readonly displayB2: IDisplayB2Bus;
+    readonly registerBC: IRegisterBCBus;
+    readonly operation: IOperationBus;
 }
 
 
@@ -101,16 +112,18 @@ export class BusFactory implements IBusFactory {
     public createBusses(): IBusSet {
 
         // Build shared bus parts
+        let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
         let aluOperationPart = this.busPartFactory.getForAluOperation();
+        let auxRegisterPart = this.busPartFactory.getForAuxRegister();
         let conditionPart = this.busPartFactory.getForCondition();
         let dataPart = this.busPartFactory.getForData();
         let instructionPart = this.busPartFactory.getForInstruction();
+        let operationPart = this.busPartFactory.getForOperation();
         let regABCDPart = this.busPartFactory.getForRegisterABCD();
-        let auxRegisterPart = this.busPartFactory.getForAuxRegister();
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
-        let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
 
         // Build ribbon cables
+        let ctrlInstr = { instructionPart };
         let dataCtrl: IDataControlBus = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstr: IDataInstructionBus = { dataPart, instructionPart };
         let ctrlX = { auxRegisterPart };
@@ -124,9 +137,11 @@ export class BusFactory implements IBusFactory {
         let dispA2: IDisplayA2Bus = { a2bPart: sdsPart, a2cPart: aluOperationPart };
         let dispB1: IDisplayB1Bus = { aluOperationPart, aluFuncClPart: aluFunctionClPart, conditionPart, dataPart };
         let dispB2 = { instructionPart };
+        let op = { operationPart };
 
         // Bundle up
         return {
+            controlInstruction: ctrlInstr,
             controlX: ctrlX,
             controlY: ctrlY,
             controlZ: ctrlZ,
@@ -136,6 +151,7 @@ export class BusFactory implements IBusFactory {
             displayA2: dispA2,
             displayB1: dispB1,
             displayB2: dispB2,
+            operation: op,
             registerBC: regBC,
         };
     }

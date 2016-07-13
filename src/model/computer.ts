@@ -6,13 +6,15 @@ import { BusFactory } from "./bus/bus";
 import { BusPartFactory } from "./bus/bus_parts";
 import { BusGroupFactory } from "./bus/bus_groups";
 import { CardFactory } from "./cards";
-import { BackplaneFactory, IXBackplane, IZBackplane } from "./backplanes";
+import { BackplaneFactory,
+    IWBackplane, IXBackplane, IZBackplane } from "./backplanes";
 
 export interface IComputer {
     controlSwitchesCard: IControlSwitchesCard;
     displayACard: IDisplayACard;
     displayBCard: IDisplayBCard;
     auxControlCard: IAuxControlCard;
+    wBackplane: IWBackplane;
     xBackplane: IXBackplane;
     zBackplane: IZBackplane;
 }
@@ -23,6 +25,7 @@ export class Computer implements IComputer {
     public displayACard: IDisplayACard;
     public displayBCard: IDisplayBCard;
     public auxControlCard: IAuxControlCard;
+    public wBackplane: IWBackplane;
     public xBackplane: IXBackplane;
     public zBackplane: IZBackplane;
 
@@ -51,6 +54,10 @@ export class Computer implements IComputer {
         let auxControlBusGroup = cables.auxControl;
         this.auxControlCard = cards.getAuxControl();
         this.auxControlCard.connect(controlSwitchesBusGroup, auxControlBusGroup);
+
+        let wBusGroup = cables.w;
+        this.wBackplane = backplaneFactory.createWBackplane();
+        this.wBackplane.connect(wBusGroup);
 
         let xBusGroup = cables.x;
         this.xBackplane = backplaneFactory.createXBackplane();

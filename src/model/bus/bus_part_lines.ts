@@ -38,6 +38,15 @@ export enum DataSwitchGateLines {
     SDS
 }
 
+export enum OperationLines {
+    /** SET-AB */
+    ISET,
+    /** MOVE-8 */
+    IMV8,
+    /** ALU */
+    IALU
+}
+
 export enum RegABCDLines {
     /** Register Load A */
     RLA,
