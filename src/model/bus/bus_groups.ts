@@ -3,7 +3,7 @@ import {
     IControlXBus, IControlYBus, IControlZBus,
     IDataControlBus, IDataInstructionBus, IControlInstructionBus,
     IDisplayA1Bus, IDisplayA2Bus,
-    IDisplayB1Bus, IDisplayB2Bus,
+    IDisplayB1Bus, IDisplayB2Bus, IDisplayB3Bus,
     IOperationBus,
     IRegisterBCBus,
 } from "./bus";
@@ -54,6 +54,7 @@ export interface IDisplayABusGroup extends IBusGroup {
 export interface IDisplayBBusGroup extends IBusGroup {
     readonly b1Bus: IDisplayB1Bus;
     readonly b2Bus: IDisplayB2Bus;
+    readonly b3Bus: IDisplayB3Bus;
 }
 
 
@@ -94,7 +95,7 @@ export class BusGroupFactory implements IBusGroupFactory {
             hackA2Bus: b.displayA2,
         };
         let displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
-        let displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2 };
+        let displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };
         let w = { controlInstructionBus: b.controlInstruction, operationBus: b.operation };
         let x = { controlXBus: b.controlX, dataInstructionBus: b.dataInstruction };
         let z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };

@@ -31,7 +31,7 @@ html {
 .btnYellow, .btnGreen, .btnRed,
 .ledYellow, .ledGreen, .ledRed,
 .indYellow, .indGreen, .indRed {
-    fill: lightgrey;
+    fill: #bbb;
 }
 .btnYellow.on, .indYellow.on, .ledYellow.on {
     fill: yellow;

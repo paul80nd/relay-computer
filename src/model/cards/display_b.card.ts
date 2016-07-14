@@ -1,7 +1,10 @@
 import { BitValue } from "../bit_value";
 import { IDisplayBBusGroup } from "../bus/bus_groups";
-import { IAluFunctionClBusPart, IAluOperationBusPart,
-    IConditionBusPart, IDataBusPart, IInstructionBusPart } from "../bus/bus_parts";
+import {
+    IAluFunctionClBusPart, IAluOperationBusPart,
+    IConditionBusPart, IDataBusPart, IInstructionBusPart,
+    IOperationBusPart,
+} from "../bus/bus_parts";
 
 export interface IDisplayBCard {
 
@@ -18,12 +21,14 @@ export class DisplayBCard implements IDisplayBCard {
     public condition: BitValue;
     public data: BitValue;
     public instruction: BitValue;
+    public operation: BitValue;
 
     private aluOpPart: IAluOperationBusPart;
     private aluFuncClPart: IAluFunctionClBusPart;
     private condPart: IConditionBusPart;
     private dataPart: IDataBusPart;
     private instrPart: IInstructionBusPart;
+    private operationPart: IOperationBusPart;
 
     public connect(busGroup: IDisplayBBusGroup) {
 
@@ -41,6 +46,9 @@ export class DisplayBCard implements IDisplayBCard {
 
         this.instrPart = busGroup.b2Bus.instructionPart;
         this.instrPart.subscribe(() => this.instruction = this.instrPart.getValue());
+
+        this.operationPart = busGroup.b3Bus.operationPart;
+        this.operationPart.subscribe(() => this.operation = this.operationPart.getValue());
     }
 
 }

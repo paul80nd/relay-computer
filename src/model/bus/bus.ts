@@ -68,6 +68,11 @@ export interface IDisplayB2Bus extends IBus {
     readonly instructionPart: IInstructionBusPart;
 }
 
+/** Represents the Display B3 bus ribbon cable */
+export interface IDisplayB3Bus extends IBus {
+    readonly operationPart: IOperationBusPart;
+}
+
 /** Represents the Operation bus cable (OP) */
 export interface IOperationBus extends IBus {
     readonly operationPart: IOperationBusPart;
@@ -100,6 +105,7 @@ export interface IBusSet {
     readonly displayA2: IDisplayA2Bus;
     readonly displayB1: IDisplayB1Bus;
     readonly displayB2: IDisplayB2Bus;
+    readonly displayB3: IDisplayB3Bus;
     readonly registerBC: IRegisterBCBus;
     readonly operation: IOperationBus;
 }
@@ -137,6 +143,7 @@ export class BusFactory implements IBusFactory {
         let dispA2: IDisplayA2Bus = { a2bPart: sdsPart, a2cPart: aluOperationPart };
         let dispB1: IDisplayB1Bus = { aluOperationPart, aluFuncClPart: aluFunctionClPart, conditionPart, dataPart };
         let dispB2 = { instructionPart };
+        let dispB3 = { operationPart };
         let op = { operationPart };
 
         // Bundle up
@@ -151,6 +158,7 @@ export class BusFactory implements IBusFactory {
             displayA2: dispA2,
             displayB1: dispB1,
             displayB2: dispB2,
+            displayB3: dispB3,
             operation: op,
             registerBC: regBC,
         };

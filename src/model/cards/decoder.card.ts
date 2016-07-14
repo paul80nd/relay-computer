@@ -1,4 +1,4 @@
-// import { Value } from "../value";
+import { Value } from "../value";
 import { BitValue } from "../bit_value";
 import { ICardWBusGroup } from "../bus/bus_groups";
 import { IInstructionBusPart } from "../bus/bus_parts";
@@ -17,11 +17,11 @@ export class DecoderCard implements IDecoderCard {
 
     private instrPart: IInstructionBusPart;
 
-//    private valueOut: Value;
+    private operationOut: Value;
 
     constructor() {
         this.operation = BitValue.Zero;
-//        this.valueOut = new Value();
+        this.operationOut = new Value();
     }
 
     public connect(busGroup: ICardWBusGroup) {
@@ -29,7 +29,7 @@ export class DecoderCard implements IDecoderCard {
         this.instrPart = busGroup.controlInstructionBus.instructionPart;
         this.instrPart.subscribe(this.update);
         // Outputs
-//        busGroup.dataControlBus.dataPart.connect(this.valueOut);
+        busGroup.operationBus.operationPart.connect(this.operationOut);
     }
 
     private update = () => {
@@ -51,6 +51,7 @@ export class DecoderCard implements IDecoderCard {
             }
 
             if (!this.operation.isEqualTo(oper)) { this.operation = oper; }
+            if (!this.operationOut.getValue().isEqualTo(oper)) { this.operationOut.setValue(oper); }
         }
     }
 }

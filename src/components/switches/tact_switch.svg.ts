@@ -1,7 +1,7 @@
 export const svgTemplate = `
     <!-- Origin is at top left of switch -->
     <svg:g class="clickable" (click)="flipBit()">
-        <svg:rect x="0" y="0" width="22" height="22" fill="#ccc" />
+        <svg:rect x="0" y="0" width="22" height="22" fill="#bbb" />
         <svg:rect x="0" y="0" width="22" height="22" class="btnOutline" />
         <svg:rect x="2" y="2" width="18" height="18" [ngClass]="'btn'+color" 
             [class.on]="value.getValue().bit(bitTarget) || (valueIn && valueIn.bit(bitTarget))" />
