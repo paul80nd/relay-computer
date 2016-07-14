@@ -1,9 +1,3 @@
-- Wire decoder to DisplayB decoded inst display
-
-- Convert Computer ctor into class factory with readonly interface members
-- Harmonise naming in bus_groups factory so can use values directly rather than renaming
-- Tidy up naming in bus factory
-
 - Add Sequencer card
 - Wire to CLK switch in DisplayA
 - Wire to CLK ind in DisplayB

@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { IComputer, Computer } from "../model/computer";
+import { IComputer, IComputerFactory, ComputerFactory } from "../model/computer";
 
 import { CardBayWComponent } from "./card_bay_w.component";
 import { CardBayXComponent } from "./card_bay_x.component";
@@ -23,7 +23,8 @@ export class AppComponent {
     public computer: IComputer;
 
     public ngOnInit() {
-        this.computer = new Computer();
+        let factory: IComputerFactory = new ComputerFactory();
+        this.computer = factory.createComputer();
     }
 
 }

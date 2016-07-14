@@ -58,7 +58,7 @@ export interface IDisplayA2Bus extends IBus {
 /** Represents the Display B1 bus ribbon cable */
 export interface IDisplayB1Bus extends IBus {
     readonly aluOperationPart: IAluOperationBusPart;
-    readonly aluFuncClPart: IAluFunctionClBusPart;
+    readonly aluFunctionClPart: IAluFunctionClBusPart;
     readonly conditionPart: IConditionBusPart;
     readonly dataPart: IDataBusPart;
 }
@@ -129,38 +129,38 @@ export class BusFactory implements IBusFactory {
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
-        let ctrlInstr = { instructionPart };
-        let dataCtrl: IDataControlBus = { aluFunctionClPart, conditionPart, dataPart };
-        let dataInstr: IDataInstructionBus = { dataPart, instructionPart };
-        let ctrlX = { auxRegisterPart };
-        let ctrlY = { sdsPart };
-        let ctrlZ: IControlZBus = { regABCDPart, aluOperationPart };
-        let regBC: IRegisterBCBus = {
+        let controlInstruction = { instructionPart };
+        let dataControl = { aluFunctionClPart, conditionPart, dataPart };
+        let dataInstruction = { dataPart, instructionPart };
+        let controlX = { auxRegisterPart };
+        let controlY = { sdsPart };
+        let controlZ = { regABCDPart, aluOperationPart };
+        let registerBC = {
             registerBPart: this.busPartFactory.getForData(),
             registerCPart: this.busPartFactory.getForData(),
         };
-        let dispA1: IDisplayA1Bus = { a1aPart: regABCDPart, a1cAuxRegPart: auxRegisterPart, a1cClPart: aluFunctionClPart };
-        let dispA2: IDisplayA2Bus = { a2bPart: sdsPart, a2cPart: aluOperationPart };
-        let dispB1: IDisplayB1Bus = { aluOperationPart, aluFuncClPart: aluFunctionClPart, conditionPart, dataPart };
-        let dispB2 = { instructionPart };
-        let dispB3 = { operationPart };
-        let op = { operationPart };
+        let displayA1 = { a1aPart: regABCDPart, a1cAuxRegPart: auxRegisterPart, a1cClPart: aluFunctionClPart };
+        let displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
+        let displayB1 = { aluOperationPart, aluFunctionClPart, conditionPart, dataPart };
+        let displayB2 = { instructionPart };
+        let displayB3 = { operationPart };
+        let operation = { operationPart };
 
         // Bundle up
         return {
-            controlInstruction: ctrlInstr,
-            controlX: ctrlX,
-            controlY: ctrlY,
-            controlZ: ctrlZ,
-            dataControl: dataCtrl,
-            dataInstruction: dataInstr,
-            displayA1: dispA1,
-            displayA2: dispA2,
-            displayB1: dispB1,
-            displayB2: dispB2,
-            displayB3: dispB3,
-            operation: op,
-            registerBC: regBC,
+            controlInstruction,
+            controlX,
+            controlY,
+            controlZ,
+            dataControl,
+            dataInstruction,
+            displayA1,
+            displayA2,
+            displayB1,
+            displayB2,
+            displayB3,
+            operation,
+            registerBC,
         };
     }
 

@@ -19,17 +19,13 @@ export interface IComputer {
     zBackplane: IZBackplane;
 }
 
-export class Computer implements IComputer {
+export interface IComputerFactory {
+    createComputer(): IComputer;
+}
 
-    public controlSwitchesCard: IControlSwitchesCard;
-    public displayACard: IDisplayACard;
-    public displayBCard: IDisplayBCard;
-    public auxControlCard: IAuxControlCard;
-    public wBackplane: IWBackplane;
-    public xBackplane: IXBackplane;
-    public zBackplane: IZBackplane;
+export class ComputerFactory implements IComputerFactory {
 
-    constructor() {
+    public createComputer(): IComputer {
 
         let busFactory = new BusFactory(new BusPartFactory());
         let busGroupFactory = new BusGroupFactory(busFactory);
@@ -40,32 +36,42 @@ export class Computer implements IComputer {
         let cards = cardFactory.createCards();
 
         let controlSwitchesBusGroup = cables.controlSwitches;
-        this.controlSwitchesCard = cards.getControlSwitches();
-        this.controlSwitchesCard.connect(controlSwitchesBusGroup);
+        let controlSwitchesCard = cards.getControlSwitches();
+        controlSwitchesCard.connect(controlSwitchesBusGroup);
 
         let displayABusGroup = cables.displayA;
-        this.displayACard = cards.getDisplayA();
-        this.displayACard.connect(displayABusGroup);
+        let displayACard = cards.getDisplayA();
+        displayACard.connect(displayABusGroup);
 
         let displayBBusGroup = cables.displayB;
-        this.displayBCard = cards.getDisplayB();
-        this.displayBCard.connect(displayBBusGroup);
+        let displayBCard = cards.getDisplayB();
+        displayBCard.connect(displayBBusGroup);
 
         let auxControlBusGroup = cables.auxControl;
-        this.auxControlCard = cards.getAuxControl();
-        this.auxControlCard.connect(controlSwitchesBusGroup, auxControlBusGroup);
+        let auxControlCard = cards.getAuxControl();
+        auxControlCard.connect(controlSwitchesBusGroup, auxControlBusGroup);
 
         let wBusGroup = cables.w;
-        this.wBackplane = backplaneFactory.createWBackplane();
-        this.wBackplane.connect(wBusGroup);
+        let wBackplane = backplaneFactory.createWBackplane();
+        wBackplane.connect(wBusGroup);
 
         let xBusGroup = cables.x;
-        this.xBackplane = backplaneFactory.createXBackplane();
-        this.xBackplane.connect(xBusGroup);
+        let xBackplane = backplaneFactory.createXBackplane();
+        xBackplane.connect(xBusGroup);
 
         let zBusGroup = cables.z;
-        this.zBackplane = backplaneFactory.createZBackplane();
-        this.zBackplane.connect(zBusGroup);
+        let zBackplane = backplaneFactory.createZBackplane();
+        zBackplane.connect(zBusGroup);
+
+        return {
+            controlSwitchesCard,
+            displayACard,
+            displayBCard,
+            auxControlCard,
+            wBackplane,
+            xBackplane,
+            zBackplane,
+        };
     }
 
 }

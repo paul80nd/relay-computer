@@ -41,7 +41,7 @@ export class DisplayBCard implements IDisplayBCard {
         this.dataPart = busGroup.b1Bus.dataPart;
         this.dataPart.subscribe(() => this.data = this.dataPart.getValue());
 
-        this.aluFuncClPart = busGroup.b1Bus.aluFuncClPart;
+        this.aluFuncClPart = busGroup.b1Bus.aluFunctionClPart;
         this.aluFuncClPart.subscribe(() => this.aluFuncCl = this.aluFuncClPart.getValue());
 
         this.instrPart = busGroup.b2Bus.instructionPart;
