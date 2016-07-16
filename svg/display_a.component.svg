@@ -4,7 +4,7 @@
         <svg:rect x="0" y="0" width="237" height="169" fill="gray" />
         <svg:rect x="0" y="0" width="237" height="169" stroke="black" class="cardOutline" />
 
-        <svg:g display-a-a1a [value]="card.a1a" transform="translate(9.999992,9.999977)"></svg:g>
+        <svg:g display-a-a1a [value]="card.a1a" [valueIn]="card.a1aIn" transform="translate(9.999992,9.999977)"></svg:g>
         <!--
                 <svg:rect x="204.99999" y="9.999977" width="22" height="22" fill="#bbb" />
                 <svg:rect x="204.99999" y="9.999977" width="22" height="22" class="btnOutline" />

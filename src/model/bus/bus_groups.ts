@@ -4,7 +4,7 @@ import {
     IDataControlBus, IDataInstructionBus, IControlInstructionBus,
     IDisplayA1Bus, IDisplayA2Bus,
     IDisplayB1Bus, IDisplayB2Bus, IDisplayB3Bus,
-    IOperationBus,
+    IOperationBus, IPulseBus,
     IRegisterBCBus,
 } from "./bus";
 
@@ -22,7 +22,9 @@ export interface IAuxControlBusGroup extends IBusGroup {
 export interface ICardWBusGroup extends IBusGroup {
     readonly controlInstructionBus: IControlInstructionBus;
     readonly controlXBus: IControlXBus;
+    readonly controlZBus: IControlZBus;
     readonly operationBus: IOperationBus;
+    readonly pulseBus: IPulseBus;
 }
 
 /** Represents the collection of busses that make up the X Card group connectors */
@@ -102,7 +104,9 @@ export class BusGroupFactory implements IBusGroupFactory {
         let w = {
             controlInstructionBus: b.controlInstruction,
             controlXBus: b.controlX,
-            operationBus: b.operation };
+            controlZBus: b.controlZ,
+            operationBus: b.operation,
+            pulseBus: b.pulse };
         let x = { controlXBus: b.controlX, dataInstructionBus: b.dataInstruction };
         let z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
 

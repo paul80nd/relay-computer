@@ -1,5 +1,6 @@
 export const svgTemplate = `
     <!-- Origin at bay top left -720,-275 -->
+    <svg:title>Sequencer Card B</svg:title>
 
     <svg:rect x="730" y="307" width="96" height="5" fill="white" />
     <svg:g *ngFor="let i of [0,1,2,3,4,5,6,7,8]">

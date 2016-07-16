@@ -1,4 +1,5 @@
 import { IAuxControlCard, AuxControlCard } from "./cards/aux_control.card";
+import { IControlCard, ControlCard } from "./cards/control.card";
 import { IControlSwitchesCard, ControlSwitchesCard } from "./cards/control_switches.card";
 import { IDecoderCard, DecoderCard } from "./cards/decoder.card";
 import { IDisplayACard, DisplayACard } from "./cards/display_a.card";
@@ -16,6 +17,7 @@ export interface ICardFactory {
     createAluControl(): IAluControlCard;
     createAluLogic(): IAluLogicCard;
     createCards(): ICards;
+    createControl(): IControlCard;
     createDecoder(): IDecoderCard;
     createRegisterAD(): IRegisterADCard;
     createRegisterBC(): IRegisterBCCard;
@@ -56,6 +58,7 @@ export class CardFactory implements ICardFactory {
     public createAluArithmetic(): IAluArithmeticCard { return new AluArithmeticCard; }
     public createAluControl(): IAluControlCard { return new AluControlCard; }
     public createAluLogic(): IAluLogicCard { return new AluLogicCard; }
+    public createControl(): IControlCard { return new ControlCard; }
     public createDecoder(): IDecoderCard { return new DecoderCard; }
     public createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
     public createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }

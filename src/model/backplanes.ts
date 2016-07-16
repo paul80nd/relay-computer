@@ -1,6 +1,7 @@
 import { IAluArithmeticCard } from "./cards/alu_arithmetic.card";
 import { IAluControlCard } from "./cards/alu_control.card";
 import { IAluLogicCard } from "./cards/alu_logic.card";
+import { IControlCard } from "./cards/control.card";
 import { IDecoderCard } from "./cards/decoder.card";
 import { IRegisterADCard } from "./cards/register_ad.card";
 import { IRegisterBCCard } from "./cards/register_bc.card";
@@ -16,6 +17,7 @@ export interface IBackplaneFactory {
 }
 
 export interface IWBackplane {
+    readonly control: IControlCard;
     readonly decoder: IDecoderCard;
     readonly sequencer: ISequencerCard;
 
@@ -44,6 +46,7 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     public createWBackplane(): IWBackplane {
         return new WBackplane(
+            this.cardFactory.createControl(),
             this.cardFactory.createDecoder(),
             this.cardFactory.createSequencer()
         );
@@ -69,10 +72,12 @@ export class BackplaneFactory implements IBackplaneFactory {
 class WBackplane implements IWBackplane {
 
     constructor(
+        public control: IControlCard,
         public decoder: IDecoderCard,
         public sequencer: ISequencerCard) { }
 
     public connect(busGroup: ICardWBusGroup) {
+        this.control.connect(busGroup);
         this.decoder.connect(busGroup);
         this.sequencer.connect(busGroup);
     }

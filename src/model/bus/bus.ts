@@ -3,8 +3,8 @@ import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
-    IInstructionBusPart, IOperationBusPart, IRegisterABCDBusPart,
-    IResetBusPart,
+    IInstructionBusPart, IOperationBusPart, IPulseBusPart,
+    IRegisterABCDBusPart, IResetBusPart,
 } from "./bus_parts";
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
@@ -84,6 +84,11 @@ export interface IOperationBus extends IBus {
     readonly operationPart: IOperationBusPart;
 }
 
+/** Represents the Pulse bus cable */
+export interface IPulseBus extends IBus {
+    readonly pulsePart: IPulseBusPart;
+}
+
 /** Repesents the Register B and C bus ribbon cable (B/C) */
 export interface IRegisterBCBus extends IBus {
     readonly registerBPart: IDataBusPart;
@@ -114,6 +119,7 @@ export interface IBusSet {
     readonly displayB3: IDisplayB3Bus;
     readonly registerBC: IRegisterBCBus;
     readonly operation: IOperationBus;
+    readonly pulse: IPulseBus;
 }
 
 
@@ -132,6 +138,7 @@ export class BusFactory implements IBusFactory {
         let dataPart = this.busPartFactory.getForData();
         let instructionPart = this.busPartFactory.getForInstruction();
         let operationPart = this.busPartFactory.getForOperation();
+        let pulsePart = this.busPartFactory.getForPulse();
         let regABCDPart = this.busPartFactory.getForRegisterABCD();
         let resetPart = this.busPartFactory.getForReset();
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
@@ -158,6 +165,7 @@ export class BusFactory implements IBusFactory {
         let displayB2 = { instructionPart };
         let displayB3 = { operationPart };
         let operation = { operationPart };
+        let pulse = { pulsePart };
 
         // Bundle up
         return {
@@ -174,6 +182,7 @@ export class BusFactory implements IBusFactory {
             displayB3,
             operation,
             registerBC,
+            pulse,
         };
     }
 

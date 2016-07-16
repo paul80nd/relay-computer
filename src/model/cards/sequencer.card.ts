@@ -1,3 +1,4 @@
+import { Value } from "../value";
 import { BitValue } from "../bit_value";
 import { ICardWBusGroup } from "../bus/bus_groups";
 import { IClockBusPart, IResetBusPart } from "../bus/bus_parts";
@@ -17,12 +18,15 @@ export class SequencerCard implements ISequencerCard {
 
     private lastClock: boolean;
 
+    private pulseOut: Value;
+
     private resetPart: IResetBusPart;
     private clockPart: IClockBusPart;
 
     constructor() {
         this.fsm = BitValue.Zero;
         this.pulse = BitValue.Zero;
+        this.pulseOut = new Value();
     }
 
     public connect(busGroup: ICardWBusGroup) {
@@ -31,6 +35,8 @@ export class SequencerCard implements ISequencerCard {
         this.resetPart.subscribe(this.reset);
         this.clockPart = busGroup.controlXBus.clockPart;
         this.clockPart.subscribe(this.clock);
+        // Outputs
+        busGroup.pulseBus.pulsePart.connect(this.pulseOut);
     }
 
     private reset = () => {
@@ -68,6 +74,9 @@ export class SequencerCard implements ISequencerCard {
         if (fsm.bit(4) || fsm.bit(5) || fsm.bit(6)) { pulse = pulse.flipBit(PulseLines.E); }
 
         this.pulse = pulse;
+
+        if (!this.pulseOut.getValue().isEqualTo(pulse)) { this.pulseOut.setValue(pulse); }
+
     }
 
 

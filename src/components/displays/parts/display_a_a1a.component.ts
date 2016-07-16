@@ -25,4 +25,7 @@ export class DisplayAA1AComponent {
   @Input()
   public value: BitValue;
 
+  @Input()
+  public valueIn: BitValue;
+
 }

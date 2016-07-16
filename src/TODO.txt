@@ -1,6 +1,6 @@
-- Add Control card
-- Wire to sequencer
-- Wire ctrl to MOV8 control lines
+- Update controller/sequencer svgs to origin top left of card
+
+- Hook up ABT8 to sequencer
 
 - Wire ctrl to SETAB control lines
 - Add I2B functionality (on Instruction Register)
@@ -8,7 +8,7 @@
 
 - Wire to ALU control lines (inc ALUCu decoder)
 
-- Add fake clock behind Stop/Start switch (run 1 whole instruction then auto stop)
+- Add fake clock behind Stop/Start switch
 
 - Publish (Should now be up to date with real computer)
 
