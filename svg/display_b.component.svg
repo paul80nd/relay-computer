@@ -37,7 +37,7 @@
             <svg:rect x="396" y="27.999977" width="35" height="8" class="indYellow" />
             <svg:rect x="396" y="27.999977" width="35" height="8" class="indOutline" />
             <svg:text transform="translate(397.77557 28.2)" fill="black">
-            <!--    <svg:tspan class="d-text6" x="6.8846873" y="6">GOTO</svg:tspan>-->
+                <!--    <svg:tspan class="d-text6" x="6.8846873" y="6">GOTO</svg:tspan>-->
             </svg:text>
             <svg:rect x="396" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card.operation.bit(mv8Line)" />
             <svg:rect x="396" y="36.999977" width="35" height="8" class="indOutline" />
@@ -52,9 +52,9 @@
             <svg:rect x="432" y="36.999977" width="35" height="8" class="indYellow" />
             <svg:rect x="432" y="36.999977" width="35" height="8" class="indOutline" />
             <svg:text transform="translate(433.77557 37.2)" fill="black">
-            <!--    <svg:tspan class="d-text6" x="5.4945505" y="6">MOV16</svg:tspan>-->
+                <!--    <svg:tspan class="d-text6" x="5.4945505" y="6">MOV16</svg:tspan>-->
             </svg:text>
-                
+
 
             <!--
                 <svg:rect x="268" y="115.99998" width="35" height="17" class="indRed" />
@@ -64,13 +64,13 @@
                     <svg:tspan class="d-text8" x="6.630414" y="8">HAL</svg:tspan>
                     <svg:tspan class="d-text8" x="21.60307" y="8">T</svg:tspan>
                 </svg:text>
-                <svg:rect x="250" y="115.99998" width="17" height="17" class="indYellow" />
-                <svg:rect x="250" y="115.99998" width="17" height="17" class="indOutline" />
-                <svg:rect x="250.86242" y="116.79813" width="15.21739" height="15.21739" class="indYellow" />
-                <svg:text transform="translate(250.86242 120.79813)" fill="black">
-                    <svg:tspan class="d-text7" x=".80010144" y="6">CLK</svg:tspan>
-                </svg:text>
                 -->
+
+            <svg:rect x="250" y="115.99998" width="17" height="17" class="indYellow" [class.on]="card.clock.bit(clkLine)" />
+            <svg:rect x="250" y="115.99998" width="17" height="17" class="indOutline" />
+            <svg:text transform="translate(250.86242 120.79813)" fill="black">
+                <svg:tspan class="d-text7" x=".80010144" y="6">CLK</svg:tspan>
+            </svg:text>
 
             <svg:g display-b-condition [value]="card.condition" transform="translate(250 141.99998)"></svg:g>
 

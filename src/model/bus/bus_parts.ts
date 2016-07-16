@@ -22,6 +22,8 @@ export interface IAluFunctionClBusPart extends IBusPart { }
 export interface IAluOperationBusPart extends IBusPart { }
 /** Bus part for the 5 lines that carry the auxilary register load and select lines */
 export interface IAuxRegisterBusPart extends IBusPart { }
+/** Bus part for the 1 line that carries the CLK signal */
+export interface IClockBusPart extends IBusPart { }
 /** Bus part for the 4 lines that carry the condition register outputs */
 export interface IConditionBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the data bus value */
@@ -34,6 +36,8 @@ export interface IInstructionBusPart extends IBusPart { }
 export interface IOperationBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the register ABCD load and select lines */
 export interface IRegisterABCDBusPart extends IBusPart { }
+/** Bus part for the 1 line that carries the RES signal */
+export interface IResetBusPart extends IBusPart { }
 
 /**
  * Factory providing Bus Part instances
@@ -42,24 +46,28 @@ export interface IBusPartFactory {
     getForAluFunctionCl(): IAluFunctionClBusPart;
     getForAluOperation(): IAluOperationBusPart;
     getForAuxRegister(): IAuxRegisterBusPart;
+    getForClock(): IClockBusPart;
     getForCondition(): IConditionBusPart;
     getForData(): IDataBusPart;
     getForDataSwitchGate(): IDataSwitchGateBusPart;
     getForInstruction(): IInstructionBusPart;
     getForOperation(): IOperationBusPart;
     getForRegisterABCD(): IRegisterABCDBusPart;
+    getForReset(): IResetBusPart;
 }
 
 export class BusPartFactory implements IBusPartFactory {
     public getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
     public getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
     public getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }
+    public getForClock(): IClockBusPart { return new BusPart(); }
     public getForCondition(): IConditionBusPart { return new BusPart(); }
     public getForData(): IDataBusPart { return new BusPart(); }
     public getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
     public getForInstruction(): IInstructionBusPart { return new BusPart(); }
     public getForOperation(): IOperationBusPart { return new BusPart(); }
     public getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
+    public getForReset(): IResetBusPart { return new BusPart(); }
 }
 
 class BusPart extends Observable implements IBusPart {

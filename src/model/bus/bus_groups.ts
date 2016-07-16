@@ -21,6 +21,7 @@ export interface IAuxControlBusGroup extends IBusGroup {
 /** Represents the collection of busses that make up the W Card group connectors */
 export interface ICardWBusGroup extends IBusGroup {
     readonly controlInstructionBus: IControlInstructionBus;
+    readonly controlXBus: IControlXBus;
     readonly operationBus: IOperationBus;
 }
 
@@ -39,6 +40,7 @@ export interface ICardZBusGroup extends IBusGroup {
 
 /** Represents the collection of busses that make up the Control Switches group connectors */
 export interface IControlSwitchesBusGroup extends IBusGroup {
+    readonly controlXBus: IControlXBus;
     readonly dataControlBus: IDataControlBus;
     readonly hackA1Bus: IDisplayA1Bus;
     readonly hackA2Bus: IDisplayA2Bus;
@@ -90,13 +92,17 @@ export class BusGroupFactory implements IBusGroupFactory {
         // Wrap cables in to bus groups
         let auxControl = { controlYBus: b.controlY, dataControlBus: b.dataControl };
         let controlSwitches = {
+            controlXBus: b.controlX,
             dataControlBus: this.busFactory.createBusForControlSwitches(),
             hackA1Bus: b.displayA1,
             hackA2Bus: b.displayA2,
         };
         let displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
         let displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };
-        let w = { controlInstructionBus: b.controlInstruction, operationBus: b.operation };
+        let w = {
+            controlInstructionBus: b.controlInstruction,
+            controlXBus: b.controlX,
+            operationBus: b.operation };
         let x = { controlXBus: b.controlX, dataInstructionBus: b.dataInstruction };
         let z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
 

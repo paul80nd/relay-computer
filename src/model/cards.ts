@@ -9,6 +9,7 @@ import { IRegisterICard, RegisterICard } from "./cards/register_i.card";
 import { IAluLogicCard, AluLogicCard } from "./cards/alu_logic.card";
 import { IAluArithmeticCard, AluArithmeticCard } from "./cards/alu_arithmetic.card";
 import { IAluControlCard, AluControlCard } from "./cards/alu_control.card";
+import { ISequencerCard, SequencerCard } from "./cards/sequencer.card";
 
 export interface ICardFactory {
     createAluArithmetic(): IAluArithmeticCard;
@@ -19,6 +20,7 @@ export interface ICardFactory {
     createRegisterAD(): IRegisterADCard;
     createRegisterBC(): IRegisterBCCard;
     createRegisterI(): IRegisterICard;
+    createSequencer(): ISequencerCard;
 }
 
 export interface ICards {
@@ -58,5 +60,6 @@ export class CardFactory implements ICardFactory {
     public createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
     public createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
     public createRegisterI(): IRegisterICard { return new RegisterICard; }
+    public createSequencer(): ISequencerCard { return new SequencerCard; }
 
 }

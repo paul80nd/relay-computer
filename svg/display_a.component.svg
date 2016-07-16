@@ -72,7 +72,8 @@
                     <svg:tspan class="d-text7" x="7.25" y="14">J</svg:tspan>
                 </svg:text>
                 -->
-        <svg:g tact-switch [value]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'" [bitTarget]="linLine" transform="translate(9.999992 61.999977)"></svg:g>
+        <svg:g tact-switch [value]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'"
+            [bitTarget]="linLine" transform="translate(9.999992 61.999977)"></svg:g>
         <svg:g tact-switch [value]="card.a1cCl" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
         <!-->
         <svg:rect x="55.999992" y="61.999977" width="22" height="22" fill="#bbb" />
@@ -157,7 +158,8 @@
         </svg:text>
         -->
 
-        <svg:g tact-switch [value]="card.a2b" [valueIn]="card.a2bIn" [description]="['sel','DS']" [color]="'Green'" [bitTarget]="sdsLine" transform="translate(181.99999,84.999977)"></svg:g>
+        <svg:g tact-switch [value]="card.a2b" [valueIn]="card.a2bIn" [description]="['sel','DS']" [color]="'Green'" [bitTarget]="sdsLine"
+            transform="translate(181.99999,84.999977)"></svg:g>
 
         <!--
                 <svg:rect x="204.99999" y="84.999977" width="22" height="22" fill="#bbb" />
@@ -168,13 +170,12 @@
                     <svg:tspan class="d-text7" x="4.525879" y="6">sel</svg:tspan>
                     <svg:tspan class="d-text7" x="4.3310547" y="14">AS</svg:tspan>
                 </svg:text>
-                <svg:rect x="9.999992" y="113.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="9.999992" y="113.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="11.999992" y="115.99998" width="18" height="18" class="btnRed" />
-                <svg:rect x="11.999992" y="115.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(11.999992 121.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="2.1914062" y="6">CLK</svg:tspan>
-                </svg:text>
+                -->
+
+        <svg:g tact-switch [value]="card.a1bClock" [valueIn]="card.a1bClockIn" [description]="['CLK']" [color]="'Red'" [bitTarget]="clkLine"
+            transform="translate(9.999992,113.99998)"></svg:g>
+        
+        <!--
                 <svg:rect x="9.999992" y="136.99998" width="22" height="22" fill="#bbb" />
                 <svg:rect x="9.999992" y="136.99998" width="22" height="22" class="btnOutline" />
                 <svg:rect x="11.999992" y="138.99998" width="18" height="18" class="btnGreen" />

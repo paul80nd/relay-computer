@@ -1,10 +1,5 @@
-- Add Sequencer card
-- Wire to CLK switch in DisplayA
-- Wire to CLK ind in DisplayB
-
 - Add Control card
 - Wire to sequencer
-
 - Wire ctrl to MOV8 control lines
 
 - Wire ctrl to SETAB control lines

@@ -1,8 +1,10 @@
 import { IBusPartFactory } from "./bus_parts";
 import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
+    IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
     IInstructionBusPart, IOperationBusPart, IRegisterABCDBusPart,
+    IResetBusPart,
 } from "./bus_parts";
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
@@ -16,6 +18,8 @@ export interface IControlInstructionBus extends IBus {
 /** Repesents the X Control bus ribbon cable */
 export interface IControlXBus extends IBus {
     readonly auxRegisterPart: IAuxRegisterBusPart;
+    readonly clockPart: IClockBusPart;
+    readonly resetPart: IResetBusPart;
 }
 
 /** Repesents the Y Control bus ribbon cable */
@@ -45,6 +49,7 @@ export interface IDataInstructionBus extends IBus {
 /** Represents the Display A1 bus ribbon cable */
 export interface IDisplayA1Bus extends IBus {
     readonly a1aPart: IRegisterABCDBusPart;
+    readonly a1bClockPart: IClockBusPart;
     readonly a1cAuxRegPart: IAuxRegisterBusPart;
     readonly a1cClPart: IAluFunctionClBusPart;
 }
@@ -59,6 +64,7 @@ export interface IDisplayA2Bus extends IBus {
 export interface IDisplayB1Bus extends IBus {
     readonly aluOperationPart: IAluOperationBusPart;
     readonly aluFunctionClPart: IAluFunctionClBusPart;
+    readonly clockPart: IClockBusPart;
     readonly conditionPart: IConditionBusPart;
     readonly dataPart: IDataBusPart;
 }
@@ -121,27 +127,34 @@ export class BusFactory implements IBusFactory {
         let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
         let aluOperationPart = this.busPartFactory.getForAluOperation();
         let auxRegisterPart = this.busPartFactory.getForAuxRegister();
+        let clockPart = this.busPartFactory.getForClock();
         let conditionPart = this.busPartFactory.getForCondition();
         let dataPart = this.busPartFactory.getForData();
         let instructionPart = this.busPartFactory.getForInstruction();
         let operationPart = this.busPartFactory.getForOperation();
         let regABCDPart = this.busPartFactory.getForRegisterABCD();
+        let resetPart = this.busPartFactory.getForReset();
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
         let controlInstruction = { instructionPart };
         let dataControl = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstruction = { dataPart, instructionPart };
-        let controlX = { auxRegisterPart };
+        let controlX = { auxRegisterPart, clockPart, resetPart };
         let controlY = { sdsPart };
         let controlZ = { regABCDPart, aluOperationPart };
         let registerBC = {
             registerBPart: this.busPartFactory.getForData(),
             registerCPart: this.busPartFactory.getForData(),
         };
-        let displayA1 = { a1aPart: regABCDPart, a1cAuxRegPart: auxRegisterPart, a1cClPart: aluFunctionClPart };
+        let displayA1 = {
+            a1aPart: regABCDPart,
+            a1bClockPart: clockPart,
+            a1cAuxRegPart: auxRegisterPart,
+            a1cClPart: aluFunctionClPart };
         let displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
-        let displayB1 = { aluOperationPart, aluFunctionClPart, conditionPart, dataPart };
+        let displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
+            conditionPart, dataPart };
         let displayB2 = { instructionPart };
         let displayB3 = { operationPart };
         let operation = { operationPart };

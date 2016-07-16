@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { IDisplayACard } from "../../model/cards/display_a.card";
-import { AluFunctionClLines, DataSwitchGateLines, RegAuxLines } from "../../model/bus/bus_part_lines";
+import { AluFunctionClLines, ClockLines,
+  DataSwitchGateLines, RegAuxLines } from "../../model/bus/bus_part_lines";
 
 import { TactileSwitchComponent } from "../switches/tact_switch.component";
 import { DisplayAA1AComponent } from "./parts/display_a_a1a.component";
@@ -18,6 +19,8 @@ export class DisplayAComponent {
   public linLine: number = RegAuxLines.LIN;
 
   public sdsLine: number = DataSwitchGateLines.SDS;
+
+  public clkLine: number = ClockLines.CLK;
 
   @Input()
   public card: IDisplayACard;

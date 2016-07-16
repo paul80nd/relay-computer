@@ -5,6 +5,7 @@ import { IDecoderCard } from "./cards/decoder.card";
 import { IRegisterADCard } from "./cards/register_ad.card";
 import { IRegisterBCCard } from "./cards/register_bc.card";
 import { IRegisterICard } from "./cards/register_i.card";
+import { ISequencerCard } from "./cards/sequencer.card";
 import { ICardWBusGroup, ICardXBusGroup, ICardZBusGroup } from "./bus/bus_groups";
 import { ICardFactory } from "./cards";
 
@@ -16,6 +17,7 @@ export interface IBackplaneFactory {
 
 export interface IWBackplane {
     readonly decoder: IDecoderCard;
+    readonly sequencer: ISequencerCard;
 
     connect(busGroup: ICardWBusGroup): void;
 }
@@ -42,7 +44,8 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     public createWBackplane(): IWBackplane {
         return new WBackplane(
-            this.cardFactory.createDecoder()
+            this.cardFactory.createDecoder(),
+            this.cardFactory.createSequencer()
         );
     }
 
@@ -66,10 +69,12 @@ export class BackplaneFactory implements IBackplaneFactory {
 class WBackplane implements IWBackplane {
 
     constructor(
-        public decoder: IDecoderCard) { }
+        public decoder: IDecoderCard,
+        public sequencer: ISequencerCard) { }
 
     public connect(busGroup: ICardWBusGroup) {
         this.decoder.connect(busGroup);
+        this.sequencer.connect(busGroup);
     }
 
 }

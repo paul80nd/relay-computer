@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { IDisplayBCard } from "../../model/cards/display_b.card";
 import { AluFunctionClLines, AluOperationLines,
-  OperationLines } from "../../model/bus/bus_part_lines";
+  ClockLines, OperationLines } from "../../model/bus/bus_part_lines";
 
 import { ByteLedLightBarComponent } from "./../leds/byte_llb.component";
 import { AluOperationLedLightBarComponent } from "./../leds/alu_op_llb.component";
@@ -29,6 +29,8 @@ export class DisplayBComponent {
 
   public setLine = OperationLines.ISET;
   public mv8Line = OperationLines.IMV8;
+
+  public clkLine = ClockLines.CLK;
 
   @Input()
   public card: IDisplayBCard;

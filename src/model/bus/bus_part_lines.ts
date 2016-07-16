@@ -22,6 +22,11 @@ export enum AluOperationLines {
     ICY
 }
 
+export enum ClockLines {
+    /** Clock */
+    CLK
+}
+
 export enum ConditionLines {
     /** Sign Condition */
     SN,
@@ -47,6 +52,14 @@ export enum OperationLines {
     IALU
 }
 
+export enum PulseLines {
+    A,
+    B,
+    C,
+    D,
+    E
+}
+
 export enum RegABCDLines {
     /** Register Load A */
     RLA,
@@ -69,4 +82,9 @@ export enum RegABCDLines {
 export enum RegAuxLines {
     /* Load Instruction Register */
     LIN
+}
+
+export enum ResetLines {
+    /** Reset (Sequencer) */
+    RES
 }
