@@ -1,7 +1,8 @@
 import { Value } from "../value";
 import { BitValue } from "../bit_value";
 import { IDisplayABusGroup } from "../bus/bus_groups";
-import { IAuxRegisterBusPart, IAluFunctionClBusPart, IClockBusPart,
+import { IAuxRegisterBusPart, IAluFunctionClBusPart,
+    IAluOperationBusPart, IClockBusPart,
     IDataSwitchGateBusPart, II2BBusPart, IRegisterABCDBusPart } from "../bus/bus_parts";
 
 export interface IDisplayACard {
@@ -24,6 +25,7 @@ export class DisplayACard implements IDisplayACard {
     private a1cAuxRegIn: BitValue;
     private a1cClIn: BitValue;
     private a2bIn: BitValue;
+    private a2cIn: BitValue;
 
     private a1aPart: IRegisterABCDBusPart;
     private a1bClockPart: IClockBusPart;
@@ -31,6 +33,7 @@ export class DisplayACard implements IDisplayACard {
     private a1cAuxRegPart: IAuxRegisterBusPart;
     private a1cClPart: IAluFunctionClBusPart;
     private a2bPart: IDataSwitchGateBusPart;
+    private a2cPart: IAluOperationBusPart;
 
     constructor() {
         this.a1a = new Value();
@@ -47,6 +50,7 @@ export class DisplayACard implements IDisplayACard {
         this.a1cAuxRegIn = BitValue.Zero;
         this.a1cClIn = BitValue.Zero;
         this.a2bIn = BitValue.Zero;
+        this.a2cIn = BitValue.Zero;
     }
 
     public connect(busGroup: IDisplayABusGroup) {
@@ -76,8 +80,9 @@ export class DisplayACard implements IDisplayACard {
         this.a1cClPart.subscribe(() => this.a1cClIn = this.a1cClPart.getValue());
         this.a1cClPart.connect(this.a1cCl);
 
-        // Outputs
-        busGroup.a2Bus.a2cPart.connect(this.a2c);
+        this.a2cPart = busGroup.a2Bus.a2cPart;
+        this.a2cPart.subscribe(() => this.a2cIn = this.a2cPart.getValue());
+        this.a2cPart.connect(this.a2c);
     }
 
 }

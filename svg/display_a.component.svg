@@ -177,7 +177,7 @@
         <svg:g tact-switch [value]="card.a1bI2b" [valueIn]="card.a1bI2bIn" [description]="['I2B']" [color]="'Green'" [bitTarget]="i2bLine"
             transform="translate(9.999992,136.99998)"></svg:g>
 
-        <svg:g display-a-a2c [value]="card.a2c" transform="translate(135.99999 113.99998)"></svg:g>
+        <svg:g display-a-a2c [value]="card.a2c" [valueIn]="card.a2cIn" transform="translate(135.99999 113.99998)"></svg:g>
 
         <!--
                 <svg:rect x="55.999992" y="113.99998" width="22" height="22" fill="#bbb" />
