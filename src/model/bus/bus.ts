@@ -1,5 +1,6 @@
 import { IBusPartFactory } from "./bus_parts";
 import {
+    IAbortBusPart,
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
@@ -81,6 +82,7 @@ export interface IDisplayB3Bus extends IBus {
 
 /** Represents the Operation bus cable (OP) */
 export interface IOperationBus extends IBus {
+    readonly abortPart: IAbortBusPart;
     readonly operationPart: IOperationBusPart;
 }
 
@@ -130,6 +132,7 @@ export class BusFactory implements IBusFactory {
     public createBusses(): IBusSet {
 
         // Build shared bus parts
+        let abortPart = this.busPartFactory.getForAbort();
         let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
         let aluOperationPart = this.busPartFactory.getForAluOperation();
         let auxRegisterPart = this.busPartFactory.getForAuxRegister();
@@ -164,7 +167,7 @@ export class BusFactory implements IBusFactory {
             conditionPart, dataPart };
         let displayB2 = { instructionPart };
         let displayB3 = { operationPart };
-        let operation = { operationPart };
+        let operation = { abortPart, operationPart };
         let pulse = { pulsePart };
 
         // Bundle up

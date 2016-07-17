@@ -20,7 +20,7 @@ export const svgTemplate = `
     </svg:g>
     -->    
 
-    <svg:circle cx="822" cy="289" r="4" class="ledYellow" />
+    <svg:circle cx="822" cy="289" r="4" class="ledYellow" [class.on]="card.abort.bit(at08Line)" />
     <svg:circle cx="822" cy="289" r="4" class="ledOutline" />
     <!--
     <svg:circle cx="844" cy="289" r="4" class="ledYellow" />

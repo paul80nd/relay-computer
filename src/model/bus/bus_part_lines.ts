@@ -1,3 +1,8 @@
+export enum AbortLines {
+    /** Abort 8 (8 cycle instruction) */
+    AT08
+}
+
 export enum AluFunctionClLines {
     /** Condition Load */
     CL

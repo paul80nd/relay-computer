@@ -6,6 +6,7 @@
         <svg:line x1="0" y1="40" x2="237" y2="40" class="cardOutline" />
         <svg:g card-sequencer-b [card]="backplane.sequencer" transform="translate(-720,-235)"></svg:g>
         <svg:line x1="0" y1="80" x2="237" y2="80" class="cardOutline" />
+        <svg:g card-control-a [card]="backplane.control" transform="translate(-720,-235)"></svg:g>
         <svg:line x1="0" y1="120" x2="237" y2="120" class="cardOutline" />
         <svg:g card-control-b [card]="backplane.control" transform="translate(-720,-235)"></svg:g>
         <svg:line x1="0" y1="160" x2="237" y2="160" class="cardOutline" />

@@ -16,6 +16,8 @@ export interface IBusPart extends IObservable {
     disconnect(provider: Value): void;
 }
 
+/** Bus part for the 4 lines that carry the Abort value */
+export interface IAbortBusPart extends IBusPart { }
 /** Bus part for the 1 line that carries the CL signal */
 export interface IAluFunctionClBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the ALU operations */
@@ -45,6 +47,7 @@ export interface IResetBusPart extends IBusPart { }
  * Factory providing Bus Part instances
  */
 export interface IBusPartFactory {
+    getForAbort(): IAbortBusPart;
     getForAluFunctionCl(): IAluFunctionClBusPart;
     getForAluOperation(): IAluOperationBusPart;
     getForAuxRegister(): IAuxRegisterBusPart;
@@ -60,6 +63,7 @@ export interface IBusPartFactory {
 }
 
 export class BusPartFactory implements IBusPartFactory {
+    public getForAbort(): IAbortBusPart { return new BusPart(); }
     public getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
     public getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
     public getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }

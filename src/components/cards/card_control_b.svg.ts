@@ -5,21 +5,21 @@ export const svgTemplate = `
     <svg:rect x="729" y="358" width="43" height="5" fill="white" />
     <svg:rect x="729" y="387" width="43" height="5" fill="white" />
  
-    <svg:circle cx="734" cy="369" r="4" class="ledYellow" />
+    <svg:circle cx="734" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldALine)" />
     <svg:circle cx="734" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="745" cy="369" r="4" class="ledYellow" />
+    <svg:circle cx="745" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldBLine)" />
     <svg:circle cx="745" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="756" cy="369" r="4" class="ledYellow" />
+    <svg:circle cx="756" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldCLine)" />
     <svg:circle cx="756" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="767" cy="369" r="4" class="ledYellow" />
+    <svg:circle cx="767" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldDLine)" />
     <svg:circle cx="767" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="734" cy="380" r="4" class="ledGreen" />
+    <svg:circle cx="734" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selALine)" />
     <svg:circle cx="734" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="745" cy="380" r="4" class="ledGreen" />
+    <svg:circle cx="745" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selBLine)" />
     <svg:circle cx="745" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="756" cy="380" r="4" class="ledGreen" />
+    <svg:circle cx="756" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selCLine)" />
     <svg:circle cx="756" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="767" cy="380" r="4" class="ledGreen" />
+    <svg:circle cx="767" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selDLine)" />
     <svg:circle cx="767" cy="380" r="4" class="ledOutline" />
     <svg:text transform="translate(729 358)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">RLA</svg:tspan>

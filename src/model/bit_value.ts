@@ -10,10 +10,6 @@ export class BitValue {
         return new BitValue(values.map(v => v.value).reduce((a, b) => a | b));
     }
 
-    constructor(value: number) {
-        this.value = value;
-    }
-
     public bit(position: number): boolean {
         let bit = Math.pow(2, position);
         return (this.value & bit) === bit;
@@ -66,6 +62,10 @@ export class BitValue {
     public cap(bits: number) {
         let mask = Math.pow(2, bits) - 1;
         return new BitValue(this.value & mask);
+    }
+
+    private constructor(value: number) {
+        this.value = value;
     }
 
 }

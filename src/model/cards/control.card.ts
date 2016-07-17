@@ -5,10 +5,12 @@ import {
     IInstructionBusPart, IOperationBusPart,
     IPulseBusPart,
 } from "../bus/bus_parts";
-import { OperationLines, PulseLines, RegABCDLines } from "../bus/bus_part_lines";
+import { AbortLines, OperationLines,
+    PulseLines, RegABCDLines } from "../bus/bus_part_lines";
 
 export interface IControlCard {
 
+    abort: BitValue;
     regABCD: BitValue;
 
     connect(dataBus: ICardWBusGroup): void;
@@ -16,8 +18,10 @@ export interface IControlCard {
 
 export class ControlCard implements IControlCard {
 
+    public abort: BitValue;
     public regABCD: BitValue;
 
+    private abortOut: Value;
     private regABCDOut: Value;
 
     private instructionPart: IInstructionBusPart;
@@ -25,6 +29,8 @@ export class ControlCard implements IControlCard {
     private operationPart: IOperationBusPart;
 
     constructor() {
+        this.abort = BitValue.Zero;
+        this.abortOut = new Value();
         this.regABCD = BitValue.Zero;
         this.regABCDOut = new Value();
     }
@@ -39,6 +45,7 @@ export class ControlCard implements IControlCard {
         this.instructionPart.subscribe(this.update);
         // Outputs
         busGroup.controlZBus.regABCDPart.connect(this.regABCDOut);
+        busGroup.operationBus.abortPart.connect(this.abortOut);
     }
 
     private update = () => {
@@ -56,6 +63,7 @@ export class ControlCard implements IControlCard {
             let pulse = this.pulsePart.getValue();
             let instr = this.instructionPart.getValue();
             let regABCD = BitValue.Zero;
+            let abort = BitValue.Zero;
 
             if (pulse.bit(PulseLines.C)) {
                 // REG-SEL
@@ -93,10 +101,15 @@ export class ControlCard implements IControlCard {
                         }
                     }
                 }
+                // ABT-8
+                abort = abort.flipBit(AbortLines.AT08);
             }
 
             if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
             if (!this.regABCDOut.getValue().isEqualTo(regABCD)) { this.regABCDOut.setValue(regABCD); }
+
+            if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
+            if (!this.abortOut.getValue().isEqualTo(abort)) { this.abortOut.setValue(abort); }
         }
     }
 

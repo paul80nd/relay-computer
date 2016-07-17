@@ -1,6 +1,3 @@
-- Update controller/sequencer svgs to origin top left of card
-
-- Hook up ABT8 to sequencer
 
 - Wire ctrl to SETAB control lines
 - Add I2B functionality (on Instruction Register)
@@ -9,6 +6,14 @@
 - Wire to ALU control lines (inc ALUCu decoder)
 
 - Add fake clock behind Stop/Start switch
+
+- Update controller/sequencer svgs to origin top left of card
+- Chnage getValue method on Value to readonly prop
+- Simplify cards using x and xOut where could use xOut for both.
+- See if can pass current value of buspart in change event to simplify most bindings
+- Move remaining svg files with their components
+- See if can use literal svg template rather than wrapping in ts file now
+- See if can use enums in svg for lines rather than variables in the component
 
 - Publish (Should now be up to date with real computer)
 
@@ -21,5 +26,4 @@
 - Add way of writing assembly (with intellisense) that compiles in to memory
 
 - TYPESCRIPT 2
-- Implement readonly properties rather than get functions
 - Private ctor of bitvalue
