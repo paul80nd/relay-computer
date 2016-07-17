@@ -7,11 +7,13 @@ import { CardSequencerBComponent } from "./cards/card_sequencer_b.component";
 
 import { IWBackplane } from "../model/backplanes";
 
+import { svgTemplate } from "./card_bay_w.svg";
+
 @Component({
     directives: [CardControlAComponent, CardControlBComponent,
         CardDecoderComponent, CardSequencerBComponent],
     selector: "[card-bay-w]",
-    templateUrl: "svg/card_bay_w.component.svg",
+    template: svgTemplate,
 })
 
 export class CardBayWComponent {

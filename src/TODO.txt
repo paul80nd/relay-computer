@@ -1,4 +1,3 @@
-- See if can pass current value of buspart in change event to simplify most bindings
 - Move remaining svg files with their components
 - See if can use literal svg template rather than wrapping in ts file now
 - See if can use enums in svg for lines rather than variables in the component

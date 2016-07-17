@@ -1,0 +1,18 @@
+export const svgTemplate = `
+    <!-- Origin at bay top left -->
+    <svg:title>Card Bay W</svg:title>
+    <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+        <svg:g>
+            <svg:rect x="0" y="0" width="237" height="200" fill="gray" />
+            <svg:rect x="0" y="0" width="237" height="200" class="cardOutline" />
+            <svg:line x1="0" y1="40" x2="237" y2="40" class="cardOutline" />
+            <svg:g card-sequencer-b [card]="backplane.sequencer" transform="translate(0,40)"></svg:g>
+            <svg:line x1="0" y1="80" x2="237" y2="80" class="cardOutline" />
+            <svg:g card-control-a [card]="backplane.control" transform="translate(0,80)"></svg:g>
+            <svg:line x1="0" y1="120" x2="237" y2="120" class="cardOutline" />
+            <svg:g card-control-b [card]="backplane.control" transform="translate(0,120)"></svg:g>
+            <svg:line x1="0" y1="160" x2="237" y2="160" class="cardOutline" />
+            <svg:g card-decoder [card]="backplane.decoder" transform="translate(0,160)"></svg:g>
+        </svg:g>
+    </svg:g>
+`;

@@ -4,10 +4,12 @@ import { IXBackplane } from "../model/backplanes";
 
 import { CardRegisterIComponent } from "./cards/card_register_i.component";
 
+import { svgTemplate } from "./card_bay_x.svg";
+
 @Component({
   directives: [CardRegisterIComponent],
   selector: "[card-bay-x]",
-  templateUrl: "svg/card_bay_x.component.svg",
+  template: svgTemplate,
 })
 
 export class CardBayXComponent {

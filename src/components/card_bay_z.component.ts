@@ -8,6 +8,8 @@ import { CardAluControlComponent } from "./cards/card_alu_ctrl.component";
 import { CardAluArithmeticComponent } from "./cards/card_alu_arith.component";
 import { CardAluLogicComponent } from "./cards/card_alu_logic.component";
 
+import { svgTemplate } from "./card_bay_z.svg";
+
 @Component({
     directives: [
         CardRegisterADComponent,
@@ -16,7 +18,7 @@ import { CardAluLogicComponent } from "./cards/card_alu_logic.component";
         CardAluArithmeticComponent,
         CardAluLogicComponent],
     selector: "[card-bay-z]",
-    templateUrl: "svg/card_bay_z.component.svg",
+    template: svgTemplate,
 })
 
 export class CardBayZComponent {
