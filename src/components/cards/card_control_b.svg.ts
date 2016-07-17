@@ -1,161 +1,161 @@
 export const svgTemplate = `
-    <!-- Origin at bay top left -720,-235 -->
+    <!-- Origin at bay top left -720,-355 -->
     <svg:title>Control Card B</svg:title>
 
-    <svg:rect x="729" y="358" width="176" height="5" fill="white" />
-    <svg:rect x="729" y="387" width="43" height="5" fill="white" />
+    <svg:rect x="9" y="3" width="176" height="5" fill="white" />
+    <svg:rect x="9" y="32" width="43" height="5" fill="white" />
  
-    <svg:circle cx="734" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldALine)" />
-    <svg:circle cx="734" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="745" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldBLine)" />
-    <svg:circle cx="745" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="756" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldCLine)" />
-    <svg:circle cx="756" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="767" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldDLine)" />
-    <svg:circle cx="767" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="734" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selALine)" />
-    <svg:circle cx="734" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="745" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selBLine)" />
-    <svg:circle cx="745" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="756" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selCLine)" />
-    <svg:circle cx="756" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="767" cy="380" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selDLine)" />
-    <svg:circle cx="767" cy="380" r="4" class="ledOutline" />
-    <svg:text transform="translate(729 358)" fill="black">
+    <svg:circle cx="14" cy="14" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldALine)" />
+    <svg:circle cx="14" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="25" cy="14" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldBLine)" />
+    <svg:circle cx="25" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="36" cy="14" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldCLine)" />
+    <svg:circle cx="36" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="47" cy="14" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldDLine)" />
+    <svg:circle cx="47" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="14" cy="25" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selALine)" />
+    <svg:circle cx="14" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="25" cy="25" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selBLine)" />
+    <svg:circle cx="25" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="36" cy="25" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selCLine)" />
+    <svg:circle cx="36" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="47" cy="25" r="4" class="ledGreen" [class.on]="card.regABCD.bit(selDLine)" />
+    <svg:circle cx="47" cy="25" r="4" class="ledOutline" />
+    <svg:text transform="translate(9 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">RLA</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(740 358)" fill="black">
+    <svg:text transform="translate(20 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">RLB</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(751 358)" fill="black">
+    <svg:text transform="translate(31 3)" fill="black">
         <svg:tspan class="d-text4" x=".99902344" y="4">RLC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(762 358)" fill="black">
+    <svg:text transform="translate(42 3)" fill="black">
         <svg:tspan class="d-text4" x=".99902344" y="4">RLD</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(729 387)" fill="black">
+    <svg:text transform="translate(9 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">RSA</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(740 387)" fill="black">
+    <svg:text transform="translate(20 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">RSB</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(751 387)" fill="black">
+    <svg:text transform="translate(31 32)" fill="black">
         <svg:tspan class="d-text4" x=".77734375" y="4">RSC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(762 387)" fill="black">
+    <svg:text transform="translate(42 32)" fill="black">
         <svg:tspan class="d-text4" x=".77734375" y="4">RSD</svg:tspan>
     </svg:text>
 
-    <svg:circle cx="899" cy="369" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(clLine)" />
-    <svg:circle cx="899" cy="369" r="4" class="ledOutline" />
-    <svg:text transform="translate(894 358)" fill="black">
+    <svg:circle cx="179" cy="14" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(clLine)" />
+    <svg:circle cx="179" cy="14" r="4" class="ledOutline" />
+    <svg:text transform="translate(174 3)" fill="black">
         <svg:tspan class="d-text4" x="2.4433594" y="4">CL</svg:tspan>
     </svg:text>
 
     <!--
-    <svg:circle cx="778" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="778" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="789" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="789" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="811" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="811" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="822" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="822" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="855" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="855" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="844" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="844" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="910" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="910" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="921" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="921" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="866" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="866" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="888" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="888" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="800" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="800" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="811" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="811" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="822" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="822" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="833" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="833" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="855" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="855" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="844" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="844" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="910" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="910" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="921" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="921" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="932" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="932" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="943" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="943" cy="380" r="4" class="ledOutline" />
-    <svg:circle cx="866" cy="380" r="4" class="ledGreen" />
-    <svg:circle cx="866" cy="380" r="4" class="ledOutline" />
-    <svg:text transform="translate(773 358)" fill="black">
+    <svg:circle cx="58" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="58" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="69" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="69" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="91" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="91" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="102" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="102" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="135" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="135" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="124" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="124" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="190" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="190" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="201" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="201" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="146" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="146" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="168" cy="14" r="4" class="ledYellow" />
+    <svg:circle cx="168" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="80" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="80" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="91" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="91" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="102" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="102" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="113" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="113" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="135" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="135" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="124" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="124" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="190" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="190" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="201" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="201" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="212" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="212" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="223" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="223" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="146" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="146" cy="25" r="4" class="ledOutline" />
+    <svg:text transform="translate(53 3)" fill="black">
         <svg:tspan class="d-text4" x="1.7753906" y="4">LJ1</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(784 358)" fill="black">
+    <svg:text transform="translate(64 3)" fill="black">
         <svg:tspan class="d-text4" x="1.7753906" y="4">LJ2</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(806 358)" fill="black">
+    <svg:text transform="translate(86 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LM1</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(817 358)" fill="black">
+    <svg:text transform="translate(97 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LM2</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(839 358)" fill="black">
+    <svg:text transform="translate(119 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LDX</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(850 358)" fill="black">
+    <svg:text transform="translate(130 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LDY</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(861 358)" fill="black">
+    <svg:text transform="translate(141 3)" fill="black">
         <svg:tspan class="d-text4" x="1.21972656" y="4">LXY</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(883 358)" fill="black">
+    <svg:text transform="translate(163 3)" fill="black">
         <svg:tspan class="d-text4" x="1.8876953" y="4">LIN</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(905 358)" fill="black">
+    <svg:text transform="translate(185 3)" fill="black">
         <svg:tspan class="d-text4" x="1.8876953" y="4">LIC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(916 358)" fill="black">
+    <svg:text transform="translate(196 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LPC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(795 387)" fill="black">
+    <svg:text transform="translate(175 32)" fill="black">
         <svg:tspan class="d-text4" x="1.33203125" y="4">SEJ</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(806 387)" fill="black">
+    <svg:text transform="translate(186 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">SM1</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(817 387)" fill="black">
+    <svg:text transform="translate(197 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">SM2</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(839 387)" fill="black">
+    <svg:text transform="translate(119 32)" fill="black">
         <svg:tspan class="d-text4" x=".9980469" y="4">SEX</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(850 387)" fill="black">
+    <svg:text transform="translate(130 32)" fill="black">
         <svg:tspan class="d-text4" x=".9980469" y="4">SEY</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(861 387)" fill="black">
+    <svg:text transform="translate(141 32)" fill="black">
         <svg:tspan class="d-text4" x=".9980469" y="4">SXY</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(905 387)" fill="black">
+    <svg:text transform="translate(185 32)" fill="black">
         <svg:tspan class="d-text4" x="1.6660156" y="4">SIC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(916 387)" fill="black">
+    <svg:text transform="translate(196 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">SPC</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(828 387)" fill="black">
+    <svg:text transform="translate(108 32)" fill="black">
         <svg:tspan class="d-text4" x=".66601562" y="4">SEM</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(927 387)" fill="black">
+    <svg:text transform="translate(207 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">SDS</svg:tspan>
     </svg:text>
-    <svg:text transform="translate(938 387)" fill="black">
+    <svg:text transform="translate(218 32)" fill="black">
         <svg:tspan class="d-text4" x=".9980469" y="4">SAS</svg:tspan>
     </svg:text>
     -->

@@ -40,7 +40,7 @@ html {
     fill: #80ff00;
 }
 .btnRed.on, .indRed.on, .ledRed.on {
-    fill: red;
+    fill: firebrick;
 }
 
 .d-text3, .d-text4, .d-text5, 
