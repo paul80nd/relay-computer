@@ -32,6 +32,8 @@ export interface IConditionBusPart extends IBusPart { }
 export interface IDataBusPart extends IBusPart { }
 /** Bus part for the 2 lines the gate the data switches to the data/address bus */
 export interface IDataSwitchGateBusPart extends IBusPart { }
+/** Bus part for the 1 line that carries the I2B signal */
+export interface II2BBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the instruction bus value */
 export interface IInstructionBusPart extends IBusPart { }
 /** Bus part for the 9 lines that carry the operation bus value */
@@ -55,6 +57,7 @@ export interface IBusPartFactory {
     getForCondition(): IConditionBusPart;
     getForData(): IDataBusPart;
     getForDataSwitchGate(): IDataSwitchGateBusPart;
+    getForI2B(): II2BBusPart;
     getForInstruction(): IInstructionBusPart;
     getForOperation(): IOperationBusPart;
     getForPulse(): IPulseBusPart;
@@ -71,6 +74,7 @@ export class BusPartFactory implements IBusPartFactory {
     public getForCondition(): IConditionBusPart { return new BusPart(); }
     public getForData(): IDataBusPart { return new BusPart(); }
     public getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
+    public getForI2B(): II2BBusPart { return new BusPart(); }
     public getForInstruction(): IInstructionBusPart { return new BusPart(); }
     public getForOperation(): IOperationBusPart { return new BusPart(); }
     public getForPulse(): IPulseBusPart { return new BusPart(); }

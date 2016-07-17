@@ -4,7 +4,7 @@ import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
-    IInstructionBusPart, IOperationBusPart, IPulseBusPart,
+    II2BBusPart, IInstructionBusPart, IOperationBusPart, IPulseBusPart,
     IRegisterABCDBusPart, IResetBusPart,
 } from "./bus_parts";
 
@@ -20,6 +20,7 @@ export interface IControlInstructionBus extends IBus {
 export interface IControlXBus extends IBus {
     readonly auxRegisterPart: IAuxRegisterBusPart;
     readonly clockPart: IClockBusPart;
+    readonly i2bPart: II2BBusPart;
     readonly resetPart: IResetBusPart;
 }
 
@@ -51,6 +52,7 @@ export interface IDataInstructionBus extends IBus {
 export interface IDisplayA1Bus extends IBus {
     readonly a1aPart: IRegisterABCDBusPart;
     readonly a1bClockPart: IClockBusPart;
+    readonly a1bI2bPart: II2BBusPart;
     readonly a1cAuxRegPart: IAuxRegisterBusPart;
     readonly a1cClPart: IAluFunctionClBusPart;
 }
@@ -139,6 +141,7 @@ export class BusFactory implements IBusFactory {
         let clockPart = this.busPartFactory.getForClock();
         let conditionPart = this.busPartFactory.getForCondition();
         let dataPart = this.busPartFactory.getForData();
+        let i2bPart = this.busPartFactory.getForI2B();
         let instructionPart = this.busPartFactory.getForInstruction();
         let operationPart = this.busPartFactory.getForOperation();
         let pulsePart = this.busPartFactory.getForPulse();
@@ -150,7 +153,7 @@ export class BusFactory implements IBusFactory {
         let controlInstruction = { instructionPart };
         let dataControl = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstruction = { dataPart, instructionPart };
-        let controlX = { auxRegisterPart, clockPart, resetPart };
+        let controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };
         let controlY = { sdsPart };
         let controlZ = { regABCDPart, aluOperationPart };
         let registerBC = {
@@ -160,6 +163,7 @@ export class BusFactory implements IBusFactory {
         let displayA1 = {
             a1aPart: regABCDPart,
             a1bClockPart: clockPart,
+            a1bI2bPart: i2bPart,
             a1cAuxRegPart: auxRegisterPart,
             a1cClPart: aluFunctionClPart };
         let displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };

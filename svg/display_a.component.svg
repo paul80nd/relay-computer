@@ -174,16 +174,8 @@
 
         <svg:g tact-switch [value]="card.a1bClock" [valueIn]="card.a1bClockIn" [description]="['CLK']" [color]="'Red'" [bitTarget]="clkLine"
             transform="translate(9.999992,113.99998)"></svg:g>
-        
-        <!--
-                <svg:rect x="9.999992" y="136.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="9.999992" y="136.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="11.999992" y="138.99998" width="18" height="18" class="btnGreen" />
-                <svg:rect x="11.999992" y="138.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(11.999992 144.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="3.746582" y="6">I2B</svg:tspan>
-                </svg:text>
-                -->
+        <svg:g tact-switch [value]="card.a1bI2b" [valueIn]="card.a1bI2bIn" [description]="['I2B']" [color]="'Green'" [bitTarget]="i2bLine"
+            transform="translate(9.999992,136.99998)"></svg:g>
 
         <svg:g display-a-a2c [value]="card.a2c" transform="translate(135.99999 113.99998)"></svg:g>
 

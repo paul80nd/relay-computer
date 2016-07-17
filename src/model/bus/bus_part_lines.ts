@@ -48,6 +48,11 @@ export enum DataSwitchGateLines {
     SDS
 }
 
+export enum I2BLines {
+    /** Immediate To Bus */
+    I2B
+}
+
 export enum OperationLines {
     /** SET-AB */
     ISET,

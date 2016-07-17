@@ -1,6 +1,4 @@
 
-- Wire ctrl to SETAB control lines
-- Add I2B functionality (on Instruction Register)
 - Add I2B buttons and wire up
 
 - Wire to ALU control lines (inc ALUCu decoder)
@@ -14,6 +12,8 @@
 - Move remaining svg files with their components
 - See if can use literal svg template rather than wrapping in ts file now
 - See if can use enums in svg for lines rather than variables in the component
+- Make Value ctor private
+- Add comments in all classes
 
 - Publish (Should now be up to date with real computer)
 
