@@ -7,7 +7,7 @@ import { Value } from "../value";
  * related signals or form a multi-bit value. Events are raised for
  * the bus part as a whole when any individial line changes.
  */
-export interface IBusPart extends IObservable {
+export interface IBusPart extends IObservable<BitValue> {
     /** Gets the current value on the bus part */
     getValue(): BitValue;
     /** Connects this bus part to a value provider */
@@ -82,7 +82,7 @@ export class BusPartFactory implements IBusPartFactory {
     public getForReset(): IResetBusPart { return new BusPart(); }
 }
 
-class BusPart extends Observable implements IBusPart {
+class BusPart extends Observable<BitValue> implements IBusPart {
 
     private value: BitValue;
     private connectedValues: Value[];
@@ -107,9 +107,25 @@ class BusPart extends Observable implements IBusPart {
         value.unsubscribe(this.update);
     }
 
-    private update = () => {
-        this.value = BitValue.combine(this.connectedValues.map(bv => bv.getValue()));
-        this.notifyObservers();
+    public subscribe(handler: { (e: BitValue): void }): void {
+        super.subscribe(handler);
+        this.update();
     }
+
+    public unsubscribe(handler: { (e: BitValue): void }): void {
+        super.unsubscribe(handler);
+        this.update();
+    }
+
+    private update = () => {
+        let newValue = BitValue.Zero;
+        if (this.connectedValues.length > 0) {
+            newValue = BitValue.combine(this.connectedValues.map(bv => bv.getValue()));
+        }
+
+        this.value = newValue;
+        this.notifyObservers(this.value);
+    }
+
 }
 

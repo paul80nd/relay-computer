@@ -1,5 +1,3 @@
-- Chnage getValue method on Value to readonly prop
-- Simplify cards using x and xOut where could use xOut for both.
 - See if can pass current value of buspart in change event to simplify most bindings
 - Move remaining svg files with their components
 - See if can use literal svg template rather than wrapping in ts file now
@@ -12,6 +10,9 @@
   on connect and pick up local value at subscribe rather than setting local value
   manually as doesn't account for values already on line. Careful though: some cards
   have diodes to stop this backfeed by design
+- Change getValue method on Value to readonly prop
+- Simplify cards using x and xOut where could use xOut for both.
+- Try and reduce chattyness of Observables
 
 - Minify and get ready for publish
 

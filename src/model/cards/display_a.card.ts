@@ -57,31 +57,31 @@ export class DisplayACard implements IDisplayACard {
         // Input/Outputs
 
         this.a1aPart = busGroup.a1Bus.a1aPart;
-        this.a1aPart.subscribe(() => this.a1aIn = this.a1aPart.getValue());
+        this.a1aPart.subscribe((v) => this.a1aIn = v);
         this.a1aPart.connect(this.a1a);
 
         this.a1bClockPart = busGroup.a1Bus.a1bClockPart;
-        this.a1bClockPart.subscribe(() => this.a1bClockIn = this.a1bClockPart.getValue());
+        this.a1bClockPart.subscribe((v) => this.a1bClockIn = v);
         this.a1bClockPart.connect(this.a1bClock);
 
         this.a1bI2bPart = busGroup.a1Bus.a1bI2bPart;
-        this.a1bI2bPart.subscribe(() => this.a1bI2bIn = this.a1bI2bPart.getValue());
+        this.a1bI2bPart.subscribe((v) => this.a1bI2bIn = v);
         this.a1bI2bPart.connect(this.a1bI2b);
 
         this.a1cAuxRegPart = busGroup.a1Bus.a1cAuxRegPart;
-        this.a1cAuxRegPart.subscribe(() => this.a1cAuxRegIn = this.a1cAuxRegPart.getValue());
+        this.a1cAuxRegPart.subscribe((v) => this.a1cAuxRegIn = v);
         this.a1cAuxRegPart.connect(this.a1cAuxReg);
 
         this.a2bPart = busGroup.a2Bus.a2bPart;
-        this.a2bPart.subscribe(() => this.a2bIn = this.a2bPart.getValue());
+        this.a2bPart.subscribe((v) => this.a2bIn = v);
         this.a2bPart.connect(this.a2b);
 
         this.a1cClPart = busGroup.a1Bus.a1cClPart;
-        this.a1cClPart.subscribe(() => this.a1cClIn = this.a1cClPart.getValue());
+        this.a1cClPart.subscribe((v) => this.a1cClIn = v);
         this.a1cClPart.connect(this.a1cCl);
 
         this.a2cPart = busGroup.a2Bus.a2cPart;
-        this.a2cPart.subscribe(() => this.a2cIn = this.a2cPart.getValue());
+        this.a2cPart.subscribe((v) => this.a2cIn = v);
         this.a2cPart.connect(this.a2c);
     }
 
