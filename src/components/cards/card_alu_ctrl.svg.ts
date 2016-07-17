@@ -1,12 +1,12 @@
 export const svgTemplate = `
     <!-- Origin at bay top left -->
     <svg:title>ALU Control Card</svg:title>
-    <svg:circle cx="36" cy="25" r="4" class="ledYellow" />
-    <svg:circle cx="36" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="25" cy="25" r="4" class="ledYellow" />
-    <svg:circle cx="25" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="14" cy="25" r="4" class="ledYellow" />
+    <svg:circle cx="14" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f2Line)" />
     <svg:circle cx="14" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="25" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f1Line)" />
+    <svg:circle cx="25" cy="25" r="4" class="ledOutline" />
+    <svg:circle cx="36" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f0Line)" />
+    <svg:circle cx="36" cy="25" r="4" class="ledOutline" />
     <svg:rect x="10" y="32" width="30" height="5" fill="white" />
     <svg:text transform="translate(10 32)" fill="black">
         <svg:tspan class="d-text4" x="10.553711" y="3.75">Func</svg:tspan>
@@ -25,7 +25,7 @@ export const svgTemplate = `
     <svg:circle cx="102" cy="25" r="4" class="ledOutline" />
     <svg:circle cx="113" cy="25" r="4" class="ledGreen" [class.on]="card.operation.getValue().bit(addLine)" />
     <svg:circle cx="113" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="124" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="124" cy="25" r="4" class="ledGreen" [class.on]="card.operation.getValue().bit(clrLine)" />
     <svg:circle cx="124" cy="25" r="4" class="ledOutline" />
     <svg:rect x="43" y="32" width="85" height="5" fill="white" />
     <svg:text transform="translate(43 32)" fill="black">

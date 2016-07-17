@@ -2,17 +2,18 @@ import { Value } from "../value";
 import { BitValue } from "../bit_value";
 import { ICardWBusGroup } from "../bus/bus_groups";
 import {
-    IInstructionBusPart, IOperationBusPart,
+    IAluFunctionClBusPart, IInstructionBusPart, IOperationBusPart,
     IPulseBusPart,
 } from "../bus/bus_parts";
 import {
-    AbortLines, I2BLines, OperationLines,
+    AbortLines, AluFunctionClLines, I2BLines, OperationLines,
     PulseLines, RegABCDLines,
 } from "../bus/bus_part_lines";
 
 export interface IControlCard {
 
     abort: BitValue;
+    aluFunc: BitValue;
     i2b: BitValue;
     regABCD: BitValue;
 
@@ -22,13 +23,16 @@ export interface IControlCard {
 export class ControlCard implements IControlCard {
 
     public abort: BitValue;
+    public aluFunc: BitValue;
     public i2b: BitValue;
     public regABCD: BitValue;
 
     private abortOut: Value;
+    private aluFuncOut: Value;
     private i2bOut: Value;
     private regABCDOut: Value;
 
+    private aluFuncClPart: IAluFunctionClBusPart;
     private instructionPart: IInstructionBusPart;
     private pulsePart: IPulseBusPart;
     private operationPart: IOperationBusPart;
@@ -36,6 +40,8 @@ export class ControlCard implements IControlCard {
     constructor() {
         this.abort = BitValue.Zero;
         this.abortOut = new Value();
+        this.aluFunc = BitValue.Zero;
+        this.aluFuncOut = new Value();
         this.i2b = BitValue.Zero;
         this.i2bOut = new Value();
         this.regABCD = BitValue.Zero;
@@ -50,10 +56,13 @@ export class ControlCard implements IControlCard {
         this.pulsePart.subscribe(this.update);
         this.instructionPart = busGroup.controlInstructionBus.instructionPart;
         this.instructionPart.subscribe(this.update);
+        this.aluFuncClPart = busGroup.controlInstructionBus.aluFunctionClPart;
+        this.aluFuncClPart.subscribe(this.update);
         // Outputs
         busGroup.controlZBus.regABCDPart.connect(this.regABCDOut);
         busGroup.operationBus.abortPart.connect(this.abortOut);
         busGroup.controlXBus.i2bPart.connect(this.i2bOut);
+        busGroup.controlInstructionBus.aluFunctionClPart.connect(this.aluFuncOut);
     }
 
     private update = () => {
@@ -64,12 +73,49 @@ export class ControlCard implements IControlCard {
                 this.updateMv8();
             } else if (operation.bit(OperationLines.ISET)) {
                 this.updateSet();
+            } else if (operation.bit(OperationLines.IALU)) {
+                this.updateAlu();
             }
         }
     }
 
+    private updateAlu() {
+        if (this.pulsePart && this.instructionPart) {
+            let pulse = this.pulsePart.getValue();
+            let instr = this.instructionPart.getValue();
+            let regABCD = BitValue.Zero;
+            let abort = BitValue.Zero;
+            let aluFunc = BitValue.Zero;
+
+            if (pulse.bit(PulseLines.D)) {
+                // REG-LD
+                if (instr.bit(3)) {
+                    regABCD = regABCD.flipBit(RegABCDLines.RLD);
+                } else {
+                    regABCD = regABCD.flipBit(RegABCDLines.RLA);
+                }
+                // COND-LD
+                aluFunc = aluFunc.flipBit(AluFunctionClLines.CL);
+            }
+            if (pulse.bit(PulseLines.E)) {
+                // ALU-FUNC
+                if (instr.bit(0)) { aluFunc = aluFunc.flipBit(AluFunctionClLines.F0); }
+                if (instr.bit(1)) { aluFunc = aluFunc.flipBit(AluFunctionClLines.F1); }
+                if (instr.bit(2)) { aluFunc = aluFunc.flipBit(AluFunctionClLines.F2); }
+            }
+
+            if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
+            if (!this.regABCDOut.getValue().isEqualTo(regABCD)) { this.regABCDOut.setValue(regABCD); }
+
+            if (!this.aluFunc.isEqualTo(aluFunc)) { this.aluFunc = aluFunc; }
+            if (!this.aluFuncOut.getValue().isEqualTo(aluFunc)) { this.aluFuncOut.setValue(aluFunc); }
+
+            if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
+            if (!this.abortOut.getValue().isEqualTo(abort)) { this.abortOut.setValue(abort); }
+        }
+    }
     private updateSet() {
-        if (this.pulsePart) {
+        if (this.pulsePart && this.instructionPart) {
             let pulse = this.pulsePart.getValue();
             let instr = this.instructionPart.getValue();
             let regABCD = BitValue.Zero;

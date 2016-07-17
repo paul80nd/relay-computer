@@ -1,8 +1,4 @@
 
-- Add I2B buttons and wire up
-
-- Wire to ALU control lines (inc ALUCu decoder)
-
 - Add fake clock behind Stop/Start switch
 
 - Update controller/sequencer svgs to origin top left of card
@@ -14,6 +10,17 @@
 - See if can use enums in svg for lines rather than variables in the component
 - Make Value ctor private
 - Add comments in all classes
+- Implement control card instructions as seperate classes - strat pat
+- Break displayA/B cards up in to sub cards
+- Check all cards that display input and output - should be able to set output 
+  on connect and pick up local value at subscribe rather than setting local value
+  manually as doesn't account for values already on line. Careful though: some cards
+  have diodes to stop this backfeed by design
+
+- Minify and get ready for publish
+
+- Add pane on right with instructions on how to use
+- Include architecture diagram (cut down) and instructions
 
 - Publish (Should now be up to date with real computer)
 

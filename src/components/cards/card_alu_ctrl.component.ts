@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { IAluControlCard } from "../../model/cards/alu_control.card";
-import { AluOperationLines, ConditionLines } from "../../model/bus/bus_part_lines";
+import { AluFunctionClLines, AluOperationLines,
+    ConditionLines } from "../../model/bus/bus_part_lines";
 
 import { svgTemplate } from "./card_alu_ctrl.svg";
 
@@ -22,6 +23,11 @@ export class CardAluControlComponent {
     public orrLine: number = AluOperationLines.ORR;
     public xorLine: number = AluOperationLines.XOR;
     public notLine: number = AluOperationLines.NOT;
+    public clrLine: number = AluOperationLines.CLR;
+
+    public f2Line = AluFunctionClLines.F2;
+    public f1Line = AluFunctionClLines.F1;
+    public f0Line = AluFunctionClLines.F0;
 
     @Input()
     public card: IAluControlCard;

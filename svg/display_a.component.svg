@@ -74,7 +74,7 @@
                 -->
         <svg:g tact-switch [value]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'"
             [bitTarget]="linLine" transform="translate(9.999992 61.999977)"></svg:g>
-        <svg:g tact-switch [value]="card.a1cCl" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
+        <svg:g tact-switch [value]="card.a1cCl" [valueIn]="card.a1cClIn" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
         <!-->
         <svg:rect x="55.999992" y="61.999977" width="22" height="22" fill="#bbb" />
         <svg:rect x="55.999992" y="61.999977" width="22" height="22" class="btnOutline" />

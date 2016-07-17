@@ -2,7 +2,7 @@ export const svgTemplate = `
     <!-- Origin at bay top left -720,-235 -->
     <svg:title>Control Card B</svg:title>
 
-    <svg:rect x="729" y="358" width="43" height="5" fill="white" />
+    <svg:rect x="729" y="358" width="176" height="5" fill="white" />
     <svg:rect x="729" y="387" width="43" height="5" fill="white" />
  
     <svg:circle cx="734" cy="369" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldALine)" />
@@ -46,6 +46,12 @@ export const svgTemplate = `
         <svg:tspan class="d-text4" x=".77734375" y="4">RSD</svg:tspan>
     </svg:text>
 
+    <svg:circle cx="899" cy="369" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(clLine)" />
+    <svg:circle cx="899" cy="369" r="4" class="ledOutline" />
+    <svg:text transform="translate(894 358)" fill="black">
+        <svg:tspan class="d-text4" x="2.4433594" y="4">CL</svg:tspan>
+    </svg:text>
+
     <!--
     <svg:circle cx="778" cy="369" r="4" class="ledYellow" />
     <svg:circle cx="778" cy="369" r="4" class="ledOutline" />
@@ -67,8 +73,6 @@ export const svgTemplate = `
     <svg:circle cx="866" cy="369" r="4" class="ledOutline" />
     <svg:circle cx="888" cy="369" r="4" class="ledYellow" />
     <svg:circle cx="888" cy="369" r="4" class="ledOutline" />
-    <svg:circle cx="899" cy="369" r="4" class="ledYellow" />
-    <svg:circle cx="899" cy="369" r="4" class="ledOutline" />
     <svg:circle cx="800" cy="380" r="4" class="ledGreen" />
     <svg:circle cx="800" cy="380" r="4" class="ledOutline" />
     <svg:circle cx="811" cy="380" r="4" class="ledGreen" />
@@ -114,9 +118,6 @@ export const svgTemplate = `
     </svg:text>
     <svg:text transform="translate(883 358)" fill="black">
         <svg:tspan class="d-text4" x="1.8876953" y="4">LIN</svg:tspan>
-    </svg:text>
-    <svg:text transform="translate(894 358)" fill="black">
-        <svg:tspan class="d-text4" x="2.4433594" y="4">CL</svg:tspan>
     </svg:text>
     <svg:text transform="translate(905 358)" fill="black">
         <svg:tspan class="d-text4" x="1.8876953" y="4">LIC</svg:tspan>

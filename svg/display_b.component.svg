@@ -172,18 +172,6 @@
                     <svg:tspan class="d-text9" x="0" y="9">e</svg:tspan>
                 </svg:text>
                 -->
-            <svg:rect x="450" y="53.99998" width="8" height="17" class="indGreen" />
-            <svg:rect x="450" y="53.99998" width="8" height="17" class="indOutline" />
-            <svg:rect x="450.6967" y="54.798133" width="6.2827227" height="15.21739" class="indGreen" />
-            <svg:text transform="translate(451.6967 56.90683)" fill="black">
-                <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
-            </svg:text>
-            <svg:rect x="459" y="53.999977" width="8" height="17" class="indGreen" />
-            <svg:rect x="459" y="53.999977" width="8" height="17" class="indOutline" />
-            <svg:rect x="459.6967" y="54.79813" width="6.2827227" height="15.21739" class="indGreen" />
-            <svg:text transform="translate(460.6967 56.906825)" fill="black">
-                <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
-            </svg:text>
 
             <svg:rect x="432" y="53.99998" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(clLine)" />
             <svg:rect x="432" y="53.99998" width="8" height="17" class="indOutline" />
@@ -191,12 +179,20 @@
                 <svg:tspan class="d-text6" x="0" y="6">C</svg:tspan>
                 <svg:tspan class="d-text6" x=".4729043" y="13">L</svg:tspan>
             </svg:text>
-
-            <svg:rect x="441" y="53.999977" width="8" height="17" class="indGreen" />
+            <svg:rect x="441" y="53.999977" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f2Line)" />
             <svg:rect x="441" y="53.999977" width="8" height="17" class="indOutline" />
-            <svg:rect x="441.6967" y="54.79813" width="6.2827227" height="15.21739" class="indGreen" />
             <svg:text transform="translate(442.6967 56.906825)" fill="black">
                 <svg:tspan class="d-text9" x="0" y="9">2</svg:tspan>
+            </svg:text>
+            <svg:rect x="450" y="53.99998" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f1Line)" />
+            <svg:rect x="450" y="53.99998" width="8" height="17" class="indOutline" />
+            <svg:text transform="translate(451.6967 56.90683)" fill="black">
+                <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
+            </svg:text>
+            <svg:rect x="459" y="53.999977" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f0Line)" />
+            <svg:rect x="459" y="53.999977" width="8" height="17" class="indOutline" />
+            <svg:text transform="translate(460.6967 56.906825)" fill="black">
+                <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
             </svg:text>
 
             <svg:g alu-op-llb [value]="card.alu" [description]="'INC'" [color]="'Yellow'" [bitTarget]="incLine" transform="translate(450 71.999977)"></svg:g>

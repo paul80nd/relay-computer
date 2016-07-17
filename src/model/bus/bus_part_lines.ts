@@ -5,7 +5,13 @@ export enum AbortLines {
 
 export enum AluFunctionClLines {
     /** Condition Load */
-    CL
+    CL,
+    /** Function bit 0 */
+    F0,
+    /** Function bit 1 */
+    F1,
+    /** Function bit 2 */
+    F2
 }
 
 export enum AluOperationLines {
@@ -24,7 +30,9 @@ export enum AluOperationLines {
     /** ALU Not */
     NOT,
     /** Internal Carry */
-    ICY
+    ICY,
+    /** ALU Clear (Implicit from no op) */
+    CLR
 }
 
 export enum ClockLines {

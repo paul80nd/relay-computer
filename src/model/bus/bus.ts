@@ -13,6 +13,7 @@ export interface IBus { }
 
 /** Represents the Control and Instruction bus ribbon cable (C/I) */
 export interface IControlInstructionBus extends IBus {
+    readonly aluFunctionClPart: IAluFunctionClBusPart;
     readonly instructionPart: IInstructionBusPart;
 }
 
@@ -150,7 +151,7 @@ export class BusFactory implements IBusFactory {
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
-        let controlInstruction = { instructionPart };
+        let controlInstruction = { aluFunctionClPart, instructionPart };
         let dataControl = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstruction = { dataPart, instructionPart };
         let controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };

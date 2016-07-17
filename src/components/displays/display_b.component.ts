@@ -26,6 +26,9 @@ export class DisplayBComponent {
   public notLine: number = AluOperationLines.NOT;
 
   public clLine: number = AluFunctionClLines.CL;
+  public f2Line: number = AluFunctionClLines.F2;
+  public f1Line: number = AluFunctionClLines.F1;
+  public f0Line: number = AluFunctionClLines.F0;
 
   public setLine = OperationLines.ISET;
   public mv8Line = OperationLines.IMV8;

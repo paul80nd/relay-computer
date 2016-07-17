@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { IControlCard } from "../../model/cards/control.card";
-import { RegABCDLines } from "../../model/bus/bus_part_lines";
+import { AluFunctionClLines, RegABCDLines } from "../../model/bus/bus_part_lines";
 import { svgTemplate } from "./card_control_b.svg";
 
 @Component({
@@ -18,6 +18,8 @@ export class CardControlBComponent {
     public selBLine: number = RegABCDLines.RSB;
     public selCLine: number = RegABCDLines.RSC;
     public selDLine: number = RegABCDLines.RSD;
+
+    public clLine: number = AluFunctionClLines.CL;
 
     @Input()
     public card: IControlCard;

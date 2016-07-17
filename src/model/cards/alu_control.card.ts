@@ -7,8 +7,10 @@ import { BitValue } from "../bit_value";
 export interface IAluControlCard {
 
     condition: Value;
+    func: BitValue;
     load: boolean;
     select: boolean;
+    operation: Value;
 
     connect(dataBus: ICardZBusGroup): void;
 }
@@ -16,6 +18,7 @@ export interface IAluControlCard {
 export class AluControlCard implements IAluControlCard {
 
     public condition: Value;
+    public func: BitValue;
     public load: boolean;
     public select: boolean;
     public operation: Value;
@@ -25,11 +28,14 @@ export class AluControlCard implements IAluControlCard {
     private dataPart: IDataBusPart;
 
     private conditionOut: Value;
+    private operationOut: Value;
 
     constructor() {
         this.condition = new Value();
+        this.func = BitValue.Zero;
         this.conditionOut = new Value();
         this.operation = new Value();
+        this.operationOut = new Value();
     }
 
     public connect(busGroup: ICardZBusGroup) {
@@ -43,6 +49,7 @@ export class AluControlCard implements IAluControlCard {
         this.clPart.subscribe(this.update);
         // Outputs
         busGroup.dataControlBus.conditionPart.connect(this.conditionOut);
+        busGroup.controlZBus.aluOperationPart.connect(this.operationOut);
     }
 
     private update = () => {
@@ -50,6 +57,42 @@ export class AluControlCard implements IAluControlCard {
 
             let value = this.dataPart.getValue();
             let ld = this.clPart.getValue().bit(AluFunctionClLines.CL);
+            let func = this.clPart.getValue();
+            let op = BitValue.Zero;
+
+            if (!this.func.isEqualTo(func)) {
+                this.func = func;
+                if (func.bit(AluFunctionClLines.F2)) {
+                    if (func.bit(AluFunctionClLines.F1)) {
+                        if (func.bit(AluFunctionClLines.F0)) {
+                            op = op.flipBit(AluOperationLines.SHL);
+                        } else {
+                            op = op.flipBit(AluOperationLines.NOT);
+                        }
+                    } else {
+                        if (func.bit(AluFunctionClLines.F0)) {
+                            op = op.flipBit(AluOperationLines.XOR);
+                        } else {
+                            op = op.flipBit(AluOperationLines.ORR);
+                        }
+                    }
+                } else {
+                    if (func.bit(AluFunctionClLines.F1)) {
+                        if (func.bit(AluFunctionClLines.F0)) {
+                            op = op.flipBit(AluOperationLines.AND);
+                        } else {
+                            op = op.flipBit(AluOperationLines.INC);
+                        }
+                    } else {
+                        if (func.bit(AluFunctionClLines.F0)) {
+                            op = op.flipBit(AluOperationLines.ADD);
+                        } else {
+                            op = op.flipBit(AluOperationLines.CLR);
+                        }
+                    }
+                }
+                if (!this.operationOut.getValue().isEqualTo(op)) { this.operationOut.setValue(op); }
+            }
 
             if (ld) {
                 // Loading -> Sets Register
