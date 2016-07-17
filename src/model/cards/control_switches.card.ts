@@ -54,6 +54,13 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
     public toggleRunStop(): void {
         this.run = !this.run;
+        if (this.run) {
+            setTimeout(this.clockRun, 500);
+        } else {
+            if (this.clockOut.getValue().bit(ClockLines.CLK)) {
+                this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK));
+            }
+        }
     }
 
     public toggleClock(): void {
@@ -82,5 +89,13 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         }
 
     }
+
+    private clockRun = () => {
+        if (this.run) {
+            this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK));
+            setTimeout(this.clockRun, 500);
+        }
+    }
+
 }
 
