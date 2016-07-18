@@ -1,4 +1,4 @@
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 import { BitValue } from "../bit_value";
 import { IAuxControlBusGroup, IControlSwitchesBusGroup } from "../bus/bus_groups";
 import { IDataBusPart, IDataSwitchGateBusPart } from "../bus/bus_parts";
@@ -9,12 +9,12 @@ export interface IAuxControlCard {
 
 export class AuxControlCard implements IAuxControlCard {
 
-    private data: Value;
+    private data: CardPart;
     private dataPart: IDataBusPart;
     private sds: IDataSwitchGateBusPart;
 
     constructor() {
-        this.data = new Value();
+        this.data = new CardPart();
     }
 
     public connect(busGroup1: IControlSwitchesBusGroup, busGroup2: IAuxControlBusGroup) {

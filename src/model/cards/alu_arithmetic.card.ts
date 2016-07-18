@@ -1,5 +1,5 @@
 import { BitValue } from "../bit_value";
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 import { ICardZBusGroup } from "../bus/bus_groups";
 import { IAluOperationBusPart, IDataBusPart } from "../bus/bus_parts";
 import { AluOperationLines } from "../bus/bus_part_lines";
@@ -23,13 +23,13 @@ export class AluArithmeticCard implements IAluArithmeticCard {
     private inputCPart: IDataBusPart;
     private aluOpPart: IAluOperationBusPart;
 
-    private valueOut: Value;
-    private aluOpOut: Value;
+    private valueOut: CardPart;
+    private aluOpOut: CardPart;
 
     constructor() {
         this.value = BitValue.Zero;
-        this.valueOut = new Value();
-        this.aluOpOut = new Value();
+        this.valueOut = new CardPart();
+        this.aluOpOut = new CardPart();
     }
 
     public connect(busGroup: ICardZBusGroup) {

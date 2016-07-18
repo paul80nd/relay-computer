@@ -1,10 +1,10 @@
 import { BitValue } from "../../bit_value";
-import { Value } from "../../value";
+import { CardPart } from "../card_part";
 import { IBusPart, IDataBusPart, IRegisterABCDBusPart } from "../../bus/bus_parts";
 
 export interface IRegisterCardPart {
 
-    value: Value;
+    value: CardPart;
     load: boolean;
     select: boolean;
 
@@ -17,7 +17,7 @@ export interface IRegisterCardPart {
 
 export class RegisterCardPart implements IRegisterCardPart {
 
-    public value: Value;
+    public value: CardPart;
     public load: boolean;
     public select: boolean;
 
@@ -26,14 +26,14 @@ export class RegisterCardPart implements IRegisterCardPart {
     private dataPart: IDataBusPart;
     private ctrlPart: IRegisterABCDBusPart;
 
-    private valueOut: Value;
+    private valueOut: CardPart;
 
     constructor(private loadLine: number, private selectLine: number = undefined) {
 
         this.isSelectable = (selectLine !== undefined);
 
-        this.value = new Value();
-        this.valueOut = new Value();
+        this.value = new CardPart();
+        this.valueOut = new CardPart();
     }
 
     public connect(dataPartIn: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart = undefined) {

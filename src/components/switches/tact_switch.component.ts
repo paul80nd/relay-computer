@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { Value } from "../../model/value";
+import { CardPart } from "../../model/cards/card_part";
 import { BitValue } from "../../model/bit_value";
 import { svgTemplate } from "./tact_switch.svg";
 
@@ -11,7 +11,7 @@ import { svgTemplate } from "./tact_switch.svg";
 export class TactileSwitchComponent  {
 
     @Input()
-    public value: Value;
+    public value: CardPart;
 
     @Input()
     public valueIn: BitValue;

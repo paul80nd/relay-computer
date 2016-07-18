@@ -1,4 +1,4 @@
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 import { IControlSwitchesBusGroup } from "../bus/bus_groups";
 import { DataSwitchGateLines, RegAuxLines, ResetLines } from "../bus/bus_part_lines";
 import { ClockLines } from "../bus/bus_part_lines";
@@ -15,18 +15,18 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     public reset: boolean;
     public run: boolean;
 
-    private clockOut: Value;
-    private data: Value;
-    private hackAuxReg: Value;
-    private hackA2b: Value;
-    private resetOut: Value;
+    private clockOut: CardPart;
+    private data: CardPart;
+    private hackAuxReg: CardPart;
+    private hackA2b: CardPart;
+    private resetOut: CardPart;
 
     constructor() {
-        this.clockOut = new Value();
-        this.data = new Value();
-        this.hackAuxReg = new Value();
-        this.hackA2b = new Value();
-        this.resetOut = new Value();
+        this.clockOut = new CardPart();
+        this.data = new CardPart();
+        this.hackAuxReg = new CardPart();
+        this.hackA2b = new CardPart();
+        this.resetOut = new CardPart();
     }
 
     public connect(busGroup: IControlSwitchesBusGroup) {

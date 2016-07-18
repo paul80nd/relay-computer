@@ -1,7 +1,12 @@
-import { BitValue } from "./bit_value";
-import { Observable } from "./observable";
+import { BitValue } from "../bit_value";
+import { Observable } from "../observable";
 
-export class Value extends Observable<BitValue> {
+/**
+ * A card part represents a number of related lines/wires which generate
+ * related signals or form a multi-bit value. Events are raised for
+ * the card part as a whole when any individial line changes.
+ */
+export class CardPart extends Observable<BitValue> {
 
     private _value: BitValue;
 

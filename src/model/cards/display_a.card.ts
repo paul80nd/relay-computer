@@ -1,4 +1,4 @@
-import { Value } from "../value";
+import { CardPart } from "./card_part";
 import { BitValue } from "../bit_value";
 import { IDisplayABusGroup } from "../bus/bus_groups";
 import { IAuxRegisterBusPart, IAluFunctionClBusPart,
@@ -11,13 +11,13 @@ export interface IDisplayACard {
 
 export class DisplayACard implements IDisplayACard {
 
-    private a1a: Value;
-    private a1bClock: Value;
-    private a1bI2b: Value;
-    private a1cAuxReg: Value;
-    private a1cCl: Value;
-    private a2b: Value;
-    private a2c: Value;
+    private a1a: CardPart;
+    private a1bClock: CardPart;
+    private a1bI2b: CardPart;
+    private a1cAuxReg: CardPart;
+    private a1cCl: CardPart;
+    private a2b: CardPart;
+    private a2c: CardPart;
 
     private a1aIn: BitValue;
     private a1bClockIn: BitValue;
@@ -36,13 +36,13 @@ export class DisplayACard implements IDisplayACard {
     private a2cPart: IAluOperationBusPart;
 
     constructor() {
-        this.a1a = new Value();
-        this.a1bClock = new Value();
-        this.a1bI2b = new Value();
-        this.a1cAuxReg = new Value();
-        this.a1cCl = new Value();
-        this.a2b = new Value();
-        this.a2c = new Value();
+        this.a1a = new CardPart();
+        this.a1bClock = new CardPart();
+        this.a1bI2b = new CardPart();
+        this.a1cAuxReg = new CardPart();
+        this.a1cCl = new CardPart();
+        this.a2b = new CardPart();
+        this.a2c = new CardPart();
 
         this.a1aIn = BitValue.Zero;
         this.a1bClockIn = BitValue.Zero;

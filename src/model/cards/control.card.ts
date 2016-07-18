@@ -1,4 +1,4 @@
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 import { BitValue } from "../bit_value";
 import { ICardWBusGroup } from "../bus/bus_groups";
 import {
@@ -27,10 +27,10 @@ export class ControlCard implements IControlCard {
     public i2b: BitValue;
     public regABCD: BitValue;
 
-    private abortOut: Value;
-    private aluFuncOut: Value;
-    private i2bOut: Value;
-    private regABCDOut: Value;
+    private abortOut: CardPart;
+    private aluFuncOut: CardPart;
+    private i2bOut: CardPart;
+    private regABCDOut: CardPart;
 
     private aluFuncClPart: IAluFunctionClBusPart;
     private instructionPart: IInstructionBusPart;
@@ -39,13 +39,13 @@ export class ControlCard implements IControlCard {
 
     constructor() {
         this.abort = BitValue.Zero;
-        this.abortOut = new Value();
+        this.abortOut = new CardPart();
         this.aluFunc = BitValue.Zero;
-        this.aluFuncOut = new Value();
+        this.aluFuncOut = new CardPart();
         this.i2b = BitValue.Zero;
-        this.i2bOut = new Value();
+        this.i2bOut = new CardPart();
         this.regABCD = BitValue.Zero;
-        this.regABCDOut = new Value();
+        this.regABCDOut = new CardPart();
     }
 
     public connect(busGroup: ICardWBusGroup) {

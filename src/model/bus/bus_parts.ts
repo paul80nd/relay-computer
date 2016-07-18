@@ -1,6 +1,6 @@
 import { BitValue } from "../bit_value";
 import { IObservable, Observable } from "../observable";
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 
 /**
  * A bus part represents a number of related lines/wires which carry
@@ -10,10 +10,10 @@ import { Value } from "../value";
 export interface IBusPart extends IObservable<BitValue> {
     /** Gets the current value on the bus part */
     readonly value: BitValue;
-    /** Connects this bus part to a value provider */
-    connect(provider: Value): void;
-    /** Disconnect this bus part from a value provider */
-    disconnect(provider: Value): void;
+    /** Connects this bus part to a card part value provider */
+    connect(provider: CardPart): void;
+    /** Disconnect this bus part from a card part value provider */
+    disconnect(provider: CardPart): void;
 }
 
 /** Bus part for the 4 lines that carry the Abort value */
@@ -85,26 +85,26 @@ export class BusPartFactory implements IBusPartFactory {
 class BusPart extends Observable<BitValue> implements IBusPart {
 
     private _value: BitValue;
-    private connectedValues: Value[];
+    private connectedParts: CardPart[];
 
     constructor() {
         super();
         this._value = BitValue.Zero;
-        this.connectedValues = [];
+        this.connectedParts = [];
     }
 
     public get value() {
         return this._value;
     }
 
-    public connect(value: Value) {
-        this.connectedValues.push(value);
-        value.subscribe(this.update);
+    public connect(part: CardPart) {
+        this.connectedParts.push(part);
+        part.subscribe(this.update);
     }
 
-    public disconnect(value: Value) {
-        this.connectedValues.splice(this.connectedValues.indexOf(value), 1);
-        value.unsubscribe(this.update);
+    public disconnect(part: CardPart) {
+        this.connectedParts.splice(this.connectedParts.indexOf(part), 1);
+        part.unsubscribe(this.update);
     }
 
     public subscribe(handler: { (e: BitValue): void }): void {
@@ -119,8 +119,8 @@ class BusPart extends Observable<BitValue> implements IBusPart {
 
     private update = () => {
         let newValue = BitValue.Zero;
-        if (this.connectedValues.length > 0) {
-            newValue = BitValue.combine(this.connectedValues.map(bv => bv.value));
+        if (this.connectedParts.length > 0) {
+            newValue = BitValue.combine(this.connectedParts.map(bv => bv.value));
         }
 
         this._value = newValue;

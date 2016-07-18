@@ -1,4 +1,4 @@
-import { Value } from "../value";
+import { CardPart } from "../../model/cards/card_part";
 import { BitValue } from "../bit_value";
 import { ICardXBusGroup } from "../bus/bus_groups";
 import { I2BLines, RegAuxLines } from "../bus/bus_part_lines";
@@ -17,7 +17,7 @@ export class RegisterICard implements IRegisterICard {
     public register: IRegisterCardPart;
 
     private i2b: boolean;
-    private dataOut: Value;
+    private dataOut: CardPart;
 
     private i2bPart: II2BBusPart;
     private instrPart: IInstructionBusPart;
@@ -25,7 +25,7 @@ export class RegisterICard implements IRegisterICard {
 
     constructor() {
         this.register = new RegisterCardPart(RegAuxLines.LIN);
-        this.dataOut = new Value();
+        this.dataOut = new CardPart();
     }
 
     public connect(busGroup: ICardXBusGroup) {
