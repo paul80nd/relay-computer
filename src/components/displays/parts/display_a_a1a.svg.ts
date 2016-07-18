@@ -1,19 +1,19 @@
 export const svgTemplate = `
     <!-- Origin at top left switch -->
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['ld','A']" [color]="'Yellow'" [bitTarget]="ldALine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','A']" [color]="'Yellow'" [bitTarget]="ldALine" 
         transform="translate(0,0)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['ld','B']" [color]="'Yellow'" [bitTarget]="ldBLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','B']" [color]="'Yellow'" [bitTarget]="ldBLine" 
         transform="translate(23,0)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['ld','C']" [color]="'Yellow'" [bitTarget]="ldCLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','C']" [color]="'Yellow'" [bitTarget]="ldCLine" 
         transform="translate(46,0)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['ld','D']" [color]="'Yellow'" [bitTarget]="ldDLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','D']" [color]="'Yellow'" [bitTarget]="ldDLine" 
         transform="translate(69,0)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['sel','A']" [color]="'Green'" [bitTarget]="selALine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','A']" [color]="'Green'" [bitTarget]="selALine" 
         transform="translate(0,23)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['sel','B']" [color]="'Green'" [bitTarget]="selBLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','B']" [color]="'Green'" [bitTarget]="selBLine" 
         transform="translate(23,23)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['sel','C']" [color]="'Green'" [bitTarget]="selCLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','C']" [color]="'Green'" [bitTarget]="selCLine" 
         transform="translate(46,23)"></svg:g>
-    <svg:g tact-switch [value]="value" [valueIn]="valueIn" [description]="['sel','D']" [color]="'Green'" [bitTarget]="selDLine" 
+    <svg:g tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','D']" [color]="'Green'" [bitTarget]="selDLine" 
         transform="translate(69,23)"></svg:g>  
 `;
