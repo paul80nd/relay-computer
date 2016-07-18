@@ -51,7 +51,7 @@ export class DecoderCard implements IDecoderCard {
             }
 
             if (!this.operation.isEqualTo(oper)) { this.operation = oper; }
-            if (!this.operationOut.getValue().isEqualTo(oper)) { this.operationOut.setValue(oper); }
+            if (!this.operationOut.value.isEqualTo(oper)) { this.operationOut.value = oper; }
         }
     }
 }

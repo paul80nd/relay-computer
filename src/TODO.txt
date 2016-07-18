@@ -1,9 +1,4 @@
-- Move remaining svg files with their components
-- See if can use literal svg template rather than wrapping in ts file now
-- See if can use enums in svg for lines rather than variables in the component
-- Make Value ctor private
-- Add comments in all classes
-- Implement control card instructions as seperate classes - strat pat
+- Try indexers for bit
 - Break displayA/B cards up in to sub cards
 - Check all cards that display input and output - should be able to set output 
   on connect and pick up local value at subscribe rather than setting local value
@@ -12,6 +7,8 @@
 - Change getValue method on Value to readonly prop
 - Simplify cards using x and xOut where could use xOut for both.
 - Try and reduce chattyness of Observables
+- Add comments in all classes
+- Push construction of factories to very top of app (or let DI do it)
 
 - Minify and get ready for publish
 

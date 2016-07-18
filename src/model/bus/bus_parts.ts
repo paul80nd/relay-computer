@@ -120,7 +120,7 @@ class BusPart extends Observable<BitValue> implements IBusPart {
     private update = () => {
         let newValue = BitValue.Zero;
         if (this.connectedValues.length > 0) {
-            newValue = BitValue.combine(this.connectedValues.map(bv => bv.getValue()));
+            newValue = BitValue.combine(this.connectedValues.map(bv => bv.value));
         }
 
         this.value = newValue;

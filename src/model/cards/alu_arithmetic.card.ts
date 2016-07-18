@@ -61,10 +61,10 @@ export class AluArithmeticCard implements IAluArithmeticCard {
             if (!this.carryIn === inc) { this.carryIn = inc; }
 
             let valueOut = (add || inc) ? value : BitValue.Zero;
-            if (!this.valueOut.getValue().isEqualTo(valueOut)) { this.valueOut.setValue(valueOut); }
+            if (!this.valueOut.value.isEqualTo(valueOut)) { this.valueOut.value = valueOut; }
 
-            if (!this.aluOpOut.getValue().bit(AluOperationLines.ICY) === carryOut) {
-                this.aluOpOut.setValue(this.aluOpOut.getValue().flipBit(AluOperationLines.ICY));
+            if (!this.aluOpOut.value.bit(AluOperationLines.ICY) === carryOut) {
+                this.aluOpOut.value = this.aluOpOut.value.flipBit(AluOperationLines.ICY);
             }
         }
     }

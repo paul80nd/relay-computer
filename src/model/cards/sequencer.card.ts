@@ -92,7 +92,7 @@ export class SequencerCard implements ISequencerCard {
 
         this.pulse = pulse;
 
-        if (!this.pulseOut.getValue().isEqualTo(pulse)) { this.pulseOut.setValue(pulse); }
+        if (!this.pulseOut.value.isEqualTo(pulse)) { this.pulseOut.value = pulse; }
 
     }
 

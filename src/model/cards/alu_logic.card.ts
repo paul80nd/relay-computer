@@ -74,7 +74,7 @@ export class AluLogicCard implements IAluLogicCard {
             if (alu.bit(AluOperationLines.ORR)) { valueOut = valueOut.or(orValue); };
             if (alu.bit(AluOperationLines.XOR)) { valueOut = valueOut.or(xorValue); };
             if (alu.bit(AluOperationLines.AND)) { valueOut = valueOut.or(andValue); };
-            if (!this.valueOut.getValue().isEqualTo(valueOut)) { this.valueOut.setValue(valueOut); }
+            if (!this.valueOut.value.isEqualTo(valueOut)) { this.valueOut.value = valueOut; }
         }
     }
 }

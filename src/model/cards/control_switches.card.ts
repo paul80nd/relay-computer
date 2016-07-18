@@ -39,17 +39,17 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     }
 
     public hackLoadInstOn(): void {
-        let sds = this.hackA2b.getValue().bit(DataSwitchGateLines.SDS);
-        let lin = this.hackAuxReg.getValue().bit(RegAuxLines.LIN);
-        if (!sds) { this.hackA2b.setValue(this.hackA2b.getValue().flipBit(DataSwitchGateLines.SDS)); }
-        if (!lin) { this.hackAuxReg.setValue(this.hackAuxReg.getValue().flipBit(RegAuxLines.LIN)); }
+        let sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
+        let lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
+        if (!sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
+        if (!lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
     }
 
     public hackLoadInstOff(): void {
-        let sds = this.hackA2b.getValue().bit(DataSwitchGateLines.SDS);
-        let lin = this.hackAuxReg.getValue().bit(RegAuxLines.LIN);
-        if (lin) { this.hackAuxReg.setValue(this.hackAuxReg.getValue().flipBit(RegAuxLines.LIN)); }
-        if (sds) { this.hackA2b.setValue(this.hackA2b.getValue().flipBit(DataSwitchGateLines.SDS)); }
+        let sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
+        let lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
+        if (lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
+        if (sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
     }
 
     public toggleRunStop(): void {
@@ -57,8 +57,8 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         if (this.run) {
             setTimeout(this.clockRun, 500);
         } else {
-            if (this.clockOut.getValue().bit(ClockLines.CLK)) {
-                this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK));
+            if (this.clockOut.value.bit(ClockLines.CLK)) {
+                this.clockOut.value =  this.clockOut.value.flipBit(ClockLines.CLK);
             }
         }
     }
@@ -66,11 +66,11 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     public toggleClock(): void {
         if (!this.clock) {
             this.clock = true;
-            if (!this.run) { this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK)); }
+            if (!this.run) { this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK); }
             setTimeout(() => {
                 this.clock = false;
-                if (this.clockOut.getValue().bit(ClockLines.CLK)) {
-                    this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK));
+                if (this.clockOut.value.bit(ClockLines.CLK)) {
+                    this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK);
                 }
             }, 500);
         }
@@ -79,11 +79,11 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     public toggleReset(): void {
         if (!this.reset) {
             this.reset = true;
-            if (!this.run) { this.resetOut.setValue(this.resetOut.getValue().flipBit(ResetLines.RES)); }
+            if (!this.run) { this.resetOut.value = this.resetOut.value.flipBit(ResetLines.RES); }
             setTimeout(() => {
                 this.reset = false;
-                if (this.resetOut.getValue().bit(ResetLines.RES)) {
-                    this.resetOut.setValue(this.resetOut.getValue().flipBit(ResetLines.RES));
+                if (this.resetOut.value.bit(ResetLines.RES)) {
+                    this.resetOut.value = this.resetOut.value.flipBit(ResetLines.RES);
                 }
             }, 500);
         }
@@ -92,7 +92,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
     private clockRun = () => {
         if (this.run) {
-            this.clockOut.setValue(this.clockOut.getValue().flipBit(ClockLines.CLK));
+            this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK);
             setTimeout(this.clockRun, 500);
         }
     }

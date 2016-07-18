@@ -61,25 +61,25 @@ export class RegisterCardPart implements IRegisterCardPart {
                 // Loading and Selecting -> Clears Register
                 if (!this.load) { this.load = true; }
                 if (!this.select) { this.select = true; }
-                if (!this.value.getValue().isZero()) { this.value.setValue(BitValue.Zero); }
-                if (!this.valueOut.getValue().isZero()) { this.valueOut.setValue(BitValue.Zero); }
+                if (!this.value.value.isZero()) { this.value.value = BitValue.Zero; }
+                if (!this.valueOut.value.isZero()) { this.valueOut.value = BitValue.Zero; }
             } else if (ld) {
                 // Loading -> Sets Register
                 if (!this.load) { this.load = true; }
                 if (!this.select) { this.select = true; }
-                if (!value.isEqualTo(this.value.getValue())) { this.value.setValue(value); }
-                if (!this.valueOut.getValue().isZero()) { this.valueOut.setValue(BitValue.Zero); }
+                if (!value.isEqualTo(this.value.value)) { this.value.value = value; }
+                if (!this.valueOut.value.isZero()) { this.valueOut.value = BitValue.Zero; }
             } else if (sel) {
                 // Selecting -> Gate Register
                 if (this.load) { this.load = false; }
                 if (!this.select) { this.select = true; }
-                if (!this.value.getValue().isEqualTo(this.valueOut.getValue())) {
-                    this.valueOut.setValue(this.value.getValue());
+                if (!this.value.value.isEqualTo(this.valueOut.value)) {
+                    this.valueOut.value = this.value.value;
                 }
             } else {
                 if (this.load) { this.load = false; }
                 if (this.select) { this.select = false; }
-                if (!this.valueOut.getValue().isZero()) { this.valueOut.setValue(BitValue.Zero); }
+                if (!this.valueOut.value.isZero()) { this.valueOut.value = BitValue.Zero; }
             }
         }
     }

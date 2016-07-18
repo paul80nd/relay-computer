@@ -32,8 +32,8 @@ export class AuxControlCard implements IAuxControlCard {
         // Gates the contents of the data switches to the data bus when SDS selected
         if (this.sds && this.dataPart) {
             let newValue = this.sds.getValue().bit(0) ? this.dataPart.getValue() : BitValue.Zero;
-            if (newValue !== this.data.getValue()) {
-                this.data.setValue(newValue);
+            if (newValue !== this.data.value) {
+                this.data.value = newValue;
             }
         }
     }

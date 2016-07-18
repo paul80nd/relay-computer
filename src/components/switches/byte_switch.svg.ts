@@ -31,11 +31,11 @@ export const svgTemplate = `
                 C 11.105243 190.60394 10.081684 192.43126 10.0046916 194.275 L 10 194.275 L 10 197 Z"
                     class="swtOutline" />
 
-                <g [style.display]="value.getValue().bit(i)?'inherit':'none'">
+                <g [style.display]="value.value.bit(i)?'inherit':'none'">
                     <ellipse cx="20.499936" cy="194.5" rx="9.0999594" ry="6.5000086" fill="#333" />
                     <ellipse cx="20.499936" cy="194.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>
-                <g [style.display]="value.getValue().bit(i)?'none':'inherit'">
+                <g [style.display]="value.value.bit(i)?'none':'inherit'">
                     <ellipse cx="20.499936" cy="208.5" rx="9.0999594" ry="6.5000086" fill="#333" />
                     <ellipse cx="20.499936" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>

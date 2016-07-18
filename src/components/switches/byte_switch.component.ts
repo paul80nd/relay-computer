@@ -13,7 +13,7 @@ export class ByteSwitchComponent  {
     public value: Value;
 
     public flipBit(position: number) {
-        this.value.setValue(this.value.getValue().flipBit(position));
+        this.value.value = this.value.value.flipBit(position);
     }
 
 }

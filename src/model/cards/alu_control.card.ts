@@ -91,7 +91,7 @@ export class AluControlCard implements IAluControlCard {
                         }
                     }
                 }
-                if (!this.operationOut.getValue().isEqualTo(op)) { this.operationOut.setValue(op); }
+                if (!this.operationOut.value.isEqualTo(op)) { this.operationOut.value = op; }
             }
 
             if (ld) {
@@ -109,8 +109,8 @@ export class AluControlCard implements IAluControlCard {
                 if (s) { valueOut = valueOut.flipBit(ConditionLines.SN); };
                 if (c) { valueOut = valueOut.flipBit(ConditionLines.CY); };
 
-                if (!valueOut.isEqualTo(this.condition.getValue())) { this.condition.setValue(valueOut); }
-                if (!this.conditionOut.getValue().isEqualTo(valueOut)) { this.conditionOut.setValue(valueOut); }
+                if (!valueOut.isEqualTo(this.condition.value)) { this.condition.value = valueOut; }
+                if (!this.conditionOut.value.isEqualTo(valueOut)) { this.conditionOut.value = valueOut; }
             } else {
                 if (this.load) { this.load = false; }
                 if (this.select) { this.select = false; }
@@ -122,7 +122,7 @@ export class AluControlCard implements IAluControlCard {
         if (this.aluOpPart) {
 
             let value = this.aluOpPart.getValue();
-            if (!value.isEqualTo(this.operation.getValue())) { this.operation.setValue(value); }
+            if (!value.isEqualTo(this.operation.value)) { this.operation.value = value; }
         }
     }
 }

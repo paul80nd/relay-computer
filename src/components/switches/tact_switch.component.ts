@@ -26,7 +26,7 @@ export class TactileSwitchComponent  {
     public bitTarget: number;
 
     public flipBit() {
-        this.value.setValue(this.value.getValue().flipBit(this.bitTarget));
+        this.value.value = this.value.value.flipBit(this.bitTarget);
     }
 
 }
