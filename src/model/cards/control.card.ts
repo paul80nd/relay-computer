@@ -105,13 +105,13 @@ export class ControlCard implements IControlCard {
             }
 
             if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
-            if (!this.regABCDOut.value.isEqualTo(regABCD)) { this.regABCDOut.value = regABCD; }
+            this.regABCDOut.value = regABCD;
 
             if (!this.aluFunc.isEqualTo(aluFunc)) { this.aluFunc = aluFunc; }
-            if (!this.aluFuncOut.value.isEqualTo(aluFunc)) { this.aluFuncOut.value = aluFunc; }
+            this.aluFuncOut.value = aluFunc;
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
-            if (!this.abortOut.value.isEqualTo(abort)) { this.abortOut.value = abort; }
+            this.abortOut.value = abort;
         }
     }
     private updateSet() {
@@ -138,13 +138,13 @@ export class ControlCard implements IControlCard {
             }
 
             if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
-            if (!this.regABCDOut.value.isEqualTo(regABCD)) { this.regABCDOut.value = regABCD; }
+            this.regABCDOut.value = regABCD;
 
             if (!this.i2b.isEqualTo(i2b)) { this.i2b = i2b; }
-            if (!this.i2bOut.value.isEqualTo(i2b)) { this.i2bOut.value = i2b; }
+            this.i2bOut.value = i2b;
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
-            if (!this.abortOut.value.isEqualTo(abort)) { this.abortOut.value = abort; }
+            this.abortOut.value = abort;
         }
     }
 
@@ -196,10 +196,10 @@ export class ControlCard implements IControlCard {
             }
 
             if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
-            if (!this.regABCDOut.value.isEqualTo(regABCD)) { this.regABCDOut.value = regABCD; }
+            this.regABCDOut.value = regABCD;
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
-            if (!this.abortOut.value.isEqualTo(abort)) { this.abortOut.value = abort; }
+            this.abortOut.value = abort;
         }
     }
 

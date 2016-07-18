@@ -1,4 +1,4 @@
-- Try indexers for bit
+- Rename value to part in TactSwitch & ByteSwitch
 - Break displayA/B cards up in to sub cards
 - Check all cards that display input and output - should be able to set output 
   on connect and pick up local value at subscribe rather than setting local value
@@ -8,6 +8,7 @@
 - Try and reduce chattyness of Observables
 - Add comments in all classes
 - Push construction of factories to very top of app (or let DI do it)
+- Compose some of the BitValue operations which are currently being done outside of class
 
 - Minify and get ready for publish
 

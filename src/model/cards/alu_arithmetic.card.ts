@@ -60,8 +60,7 @@ export class AluArithmeticCard implements IAluArithmeticCard {
             if (!this.carryOut === carryOut) { this.carryOut = carryOut; }
             if (!this.carryIn === inc) { this.carryIn = inc; }
 
-            let valueOut = (add || inc) ? value : BitValue.Zero;
-            if (!this.valueOut.value.isEqualTo(valueOut)) { this.valueOut.value = valueOut; }
+            this.valueOut.value = (add || inc) ? value : BitValue.Zero;
 
             if (!this.aluOpOut.value.bit(AluOperationLines.ICY) === carryOut) {
                 this.aluOpOut.value = this.aluOpOut.value.flipBit(AluOperationLines.ICY);

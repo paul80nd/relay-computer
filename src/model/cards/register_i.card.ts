@@ -55,7 +55,7 @@ export class RegisterICard implements IRegisterICard {
                         value = value.flipBit(7);
                     }
                 }
-                if (!this.dataOut.value.isEqualTo(value)) { this.dataOut.value = value; }
+                this.dataOut.value = value;
             }
         }
     }

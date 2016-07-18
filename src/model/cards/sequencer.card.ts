@@ -91,8 +91,7 @@ export class SequencerCard implements ISequencerCard {
         if (fsm.bit(4) || fsm.bit(5) || fsm.bit(6)) { pulse = pulse.flipBit(PulseLines.E); }
 
         this.pulse = pulse;
-
-        if (!this.pulseOut.value.isEqualTo(pulse)) { this.pulseOut.value = pulse; }
+        this.pulseOut.value = pulse;
 
     }
 
