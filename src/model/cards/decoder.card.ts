@@ -34,7 +34,7 @@ export class DecoderCard implements IDecoderCard {
 
     private update = () => {
         if (this.instrPart) {
-            let opCode = this.instrPart.getValue();
+            let opCode = this.instrPart.value;
             let oper = BitValue.Zero;
 
             if (opCode.bit(7) && !opCode.bit(6) && !opCode.bit(5) && !opCode.bit(4)) {

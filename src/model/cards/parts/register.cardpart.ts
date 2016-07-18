@@ -53,9 +53,9 @@ export class RegisterCardPart implements IRegisterCardPart {
     private update = () => {
         if (this.dataPart && this.ctrlPart) {
 
-            let value = this.dataPart.getValue();
-            let ld = this.ctrlPart.getValue().bit(this.loadLine);
-            let sel = this.selectLine ? this.ctrlPart.getValue().bit(this.selectLine) : false;
+            let value = this.dataPart.value;
+            let ld = this.ctrlPart.value.bit(this.loadLine);
+            let sel = this.selectLine ? this.ctrlPart.value.bit(this.selectLine) : false;
 
             if (ld && sel) {
                 // Loading and Selecting -> Clears Register

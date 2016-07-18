@@ -4,7 +4,6 @@
   on connect and pick up local value at subscribe rather than setting local value
   manually as doesn't account for values already on line. Careful though: some cards
   have diodes to stop this backfeed by design
-- Change getValue method on Value to readonly prop
 - Simplify cards using x and xOut where could use xOut for both.
 - Try and reduce chattyness of Observables
 - Add comments in all classes

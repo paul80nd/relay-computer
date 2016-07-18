@@ -55,9 +55,9 @@ export class AluControlCard implements IAluControlCard {
     private update = () => {
         if (this.clPart && this.dataPart && this.aluOpPart) {
 
-            let value = this.dataPart.getValue();
-            let ld = this.clPart.getValue().bit(AluFunctionClLines.CL);
-            let func = this.clPart.getValue();
+            let value = this.dataPart.value;
+            let ld = this.clPart.value.bit(AluFunctionClLines.CL);
+            let func = this.clPart.value;
             let op = BitValue.Zero;
 
             if (!this.func.isEqualTo(func)) {
@@ -101,7 +101,7 @@ export class AluControlCard implements IAluControlCard {
 
                 let z = value.isZero();
                 let s = value.bit(7);
-                let c = this.aluOpPart.getValue().bit(AluOperationLines.ICY);
+                let c = this.aluOpPart.value.bit(AluOperationLines.ICY);
 
                 let valueOut = BitValue.Zero;
                 if (z) { valueOut = valueOut.flipBit(ConditionLines.EZ); };
@@ -121,7 +121,7 @@ export class AluControlCard implements IAluControlCard {
     private updateOp = () => {
         if (this.aluOpPart) {
 
-            let value = this.aluOpPart.getValue();
+            let value = this.aluOpPart.value;
             if (!value.isEqualTo(this.operation.value)) { this.operation.value = value; }
         }
     }

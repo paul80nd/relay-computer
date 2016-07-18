@@ -42,12 +42,12 @@ export class RegisterICard implements IRegisterICard {
 
     private i2bHandler = () => {
         if (this.i2bPart && this.instrPart) {
-            let i2b = this.i2bPart.getValue().bit(I2BLines.I2B);
+            let i2b = this.i2bPart.value.bit(I2BLines.I2B);
             if (this.i2b !== i2b) {
                 this.i2b = i2b;
                 let value = BitValue.Zero;
                 if (i2b) {
-                    value = this.instrPart.getValue();
+                    value = this.instrPart.value;
                     value = value.cap(5);
                     if (value.bit(4)) {
                         value = value.flipBit(5);

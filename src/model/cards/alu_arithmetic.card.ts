@@ -47,10 +47,10 @@ export class AluArithmeticCard implements IAluArithmeticCard {
 
     private update = () => {
         if (this.inputBPart && this.inputCPart && this.aluOpPart) {
-            let b = this.inputBPart.getValue();
-            let c = this.inputCPart.getValue();
-            let add = this.aluOpPart.getValue().bit(AluOperationLines.ADD);
-            let inc = this.aluOpPart.getValue().bit(AluOperationLines.INC);
+            let b = this.inputBPart.value;
+            let c = this.inputCPart.value;
+            let add = this.aluOpPart.value.bit(AluOperationLines.ADD);
+            let inc = this.aluOpPart.value.bit(AluOperationLines.INC);
 
             let value = inc ? b.increment() : b.add(c);
             let carryOut = value.bit(8);

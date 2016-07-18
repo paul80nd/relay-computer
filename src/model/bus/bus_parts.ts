@@ -9,7 +9,7 @@ import { Value } from "../value";
  */
 export interface IBusPart extends IObservable<BitValue> {
     /** Gets the current value on the bus part */
-    getValue(): BitValue;
+    readonly value: BitValue;
     /** Connects this bus part to a value provider */
     connect(provider: Value): void;
     /** Disconnect this bus part from a value provider */
@@ -84,17 +84,17 @@ export class BusPartFactory implements IBusPartFactory {
 
 class BusPart extends Observable<BitValue> implements IBusPart {
 
-    private value: BitValue;
+    private _value: BitValue;
     private connectedValues: Value[];
 
     constructor() {
         super();
-        this.value = BitValue.Zero;
+        this._value = BitValue.Zero;
         this.connectedValues = [];
     }
 
-    public getValue() {
-        return this.value;
+    public get value() {
+        return this._value;
     }
 
     public connect(value: Value) {
@@ -123,8 +123,8 @@ class BusPart extends Observable<BitValue> implements IBusPart {
             newValue = BitValue.combine(this.connectedValues.map(bv => bv.value));
         }
 
-        this.value = newValue;
-        this.notifyObservers(this.value);
+        this._value = newValue;
+        this.notifyObservers(this._value);
     }
 
 }
