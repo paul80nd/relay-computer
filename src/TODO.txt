@@ -1,4 +1,9 @@
-- Rename value to part in TactSwitch & ByteSwitch
+- Add pane on right with instructions on how to use
+- Include architecture diagram (cut down) and instructions
+
+- Minify and get ready for publish
+- Publish (Should now be up to date with real computer)
+
 - Break displayA/B cards up in to sub cards
 - Check all cards that display input and output - should be able to set output 
   on connect and pick up local value at subscribe rather than setting local value
@@ -10,13 +15,6 @@
 - Push construction of factories to very top of app (or let DI do it)
 - Compose some of the BitValue operations which are currently being done outside of class
 
-- Minify and get ready for publish
-
-- Add pane on right with instructions on how to use
-- Include architecture diagram (cut down) and instructions
-
-- Publish (Should now be up to date with real computer)
-
 - Add Memory Card + display showing contents of memory
 - Add PC
 - Add Inc
@@ -24,6 +22,3 @@
 - Add way of uploading opcodes in to memory (written in binary)
 - Add way of uploading ops (MOV B,A) to memory 
 - Add way of writing assembly (with intellisense) that compiles in to memory
-
-- TYPESCRIPT 2
-- Private ctor of bitvalue
