@@ -4,7 +4,6 @@
         "declaration": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "mapRoot": "/",
         "module": "commonjs",
         "moduleResolution": "node",
         "noEmitOnError": false,
@@ -13,17 +12,11 @@
         "rootDir": ".",
         "sourceMap": false,
         "target": "es5",
-        "inlineSources": true,
         "pretty": true,
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,
         "noImplicitReturns": true,
         "noImplicitUseStrict": false,
         "noFallthroughCasesInSwitch": true
-    },
-    "exclude": [
-        "node_modules",
-        ".vscode",
-        "typings"
-    ]
+    }
 }

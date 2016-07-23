@@ -4,6 +4,8 @@
   "description": "Relay Computer Simulator",
   "license": "MIT",  
   "scripts": {
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p src",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "lite": "lite-server",
