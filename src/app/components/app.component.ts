@@ -9,12 +9,14 @@ import { DisplayAComponent} from "./displays/display_a.component";
 import { DisplayBComponent} from "./displays/display_b.component";
 import { ControlSwitchesComponent} from "./control_switches.component";
 import { ArchitectureDiagramComponent } from "./architecture_diagram.component";
+import { InstructionSetComponent } from "./instruction_set.component";
 
 @Component({
     directives: [
         CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent,
         DisplayAComponent, DisplayBComponent,
-        ControlSwitchesComponent, ArchitectureDiagramComponent],
+        ControlSwitchesComponent, ArchitectureDiagramComponent,
+        InstructionSetComponent],
     selector: "my-app",
     templateUrl: "computer.html",
 })
