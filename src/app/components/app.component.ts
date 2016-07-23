@@ -8,12 +8,13 @@ import { CardBayZComponent } from "./card_bay_z.component";
 import { DisplayAComponent} from "./displays/display_a.component";
 import { DisplayBComponent} from "./displays/display_b.component";
 import { ControlSwitchesComponent} from "./control_switches.component";
+import { ArchitectureDiagramComponent } from "./architecture_diagram.component";
 
 @Component({
     directives: [
         CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent,
         DisplayAComponent, DisplayBComponent,
-        ControlSwitchesComponent],
+        ControlSwitchesComponent, ArchitectureDiagramComponent],
     selector: "my-app",
     templateUrl: "computer.html",
 })
