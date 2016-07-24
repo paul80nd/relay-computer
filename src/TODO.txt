@@ -1,4 +1,3 @@
-- Take line styles out of architecture/instruction svg and put in css
 - Add pane on right with instructions on how to use
 - Publish (Should now be up to date with real computer)
 
