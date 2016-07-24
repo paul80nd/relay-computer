@@ -1,13 +1,35 @@
 <div id="computer">
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 800 638" width="100%">
-        <svg:g display-a [card]="computer.displayACard"></svg:g>
-        <svg:g display-b transform="translate(240,0)" [card]="computer.displayBCard"></svg:g>
-        <svg:g control-switches transform="translate(0,172)" [card]="computer.controlSwitchesCard"></svg:g>
-        <svg:g card-bay-w transform="translate(0,235)" [backplane]="computer.wBackplane"></svg:g>
-        <svg:g card-bay-x transform="translate(240,235)" [backplane]="computer.xBackplane"></svg:g>
-        <svg:g card-bay-y transform="translate(240,438)"></svg:g>
-        <svg:g card-bay-z transform="translate(0,438)" [backplane]="computer.zBackplane"></svg:g>
-        <svg:g architecture-diagram></svg:g>
-        <svg:g instruction-set transform="translate(720,0)"></svg:g>
-    </svg> 
+    <div class="row">
+        <div class="col-l">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 482 234" width="100%">
+                <svg:g display-a [card]="computer.displayACard"></svg:g>
+                <svg:g display-b transform="translate(240,0)" [card]="computer.displayBCard"></svg:g>
+                <svg:g control-switches transform="translate(0,172)" [card]="computer.controlSwitchesCard"></svg:g>
+            </svg>
+        </div>
+        <div class="col-r">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 322 234" width="100%">
+                <svg:g architecture-diagram transform="translate(-480,0)"></svg:g>
+                <svg:g instruction-set transform="translate(240,0)"></svg:g>
+            </svg>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-l">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 482 405" width="100%">
+                <svg:g card-bay-w transform="translate(0,0)" [backplane]="computer.wBackplane"></svg:g>
+                <svg:g card-bay-x transform="translate(240,0)" [backplane]="computer.xBackplane"></svg:g>
+                <svg:g card-bay-y transform="translate(240,203)"></svg:g>
+                <svg:g card-bay-z transform="translate(0,203)" [backplane]="computer.zBackplane"></svg:g>
+            </svg>
+        </div>
+        <div class="col-r">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 322 405" width="100%">
+                <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+                    <svg:rect x="0" y="0" width="320" height="403" fill="#eee" />
+                    <svg:rect x="0" y="0" width="320" height="403" stroke="black" class="cardOutline" />
+                </svg:g>
+            </svg>
+        </div>
+    </div>
 </div>

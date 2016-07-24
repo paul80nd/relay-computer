@@ -7,7 +7,21 @@ html {
 }
 
 body {
-    margin-bottom: 0px;
+    margin: 3px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.col-l {
+    width: 59.95024876%;
+    float: left;
+}
+.col-r {
+    width: 40.04975124%; 
+    float: left;
 }
 
 svg text {
