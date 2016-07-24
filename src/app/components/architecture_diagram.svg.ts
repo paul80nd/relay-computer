@@ -12,30 +12,42 @@ export const svgTemplate = `
             <svg:rect x="480" y="0" width="237" height="232" fill="gray" />
             <svg:rect x="480" y="0" width="237" height="232" stroke="black"
                 stroke-linecap="round" stroke-linejoin="round" stroke-width=".25" />
-            <svg:rect x="528.8" y="21.85" width="46" height="8" fill="#004080" />
-            <svg:rect x="528.8" y="21.85" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(536.8 22.35)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="0" y="6" >A</svg:tspan>
-            </svg:text>
-            <svg:rect x="528.8" y="31.652778" width="46" height="8" fill="#004080" />
-            <svg:rect x="528.8" y="31.652778" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(536.8 32.152778)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="0" y="6" >B</svg:tspan>
-            </svg:text>
-            <svg:rect x="528.8" y="41.455556" width="46" height="8" fill="#004080" />
-            <svg:rect x="528.8" y="41.455556" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(536.8 41.955556)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="0" y="6" >C</svg:tspan>
-            </svg:text>
-            <svg:rect x="528.8" y="51.258334" width="46" height="8" fill="#004080" />
-            <svg:rect x="528.8" y="51.258334" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(536.8 51.758334)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="0" y="6" >D</svg:tspan>
-            </svg:text>
+            <svg:g>
+                <svg:title>Register A</svg:title>
+                <svg:rect x="528.8" y="21.85" width="46" height="8" fill="#004080" />
+                <svg:rect x="528.8" y="21.85" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(536.8 22.35)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="0" y="6" >A</svg:tspan>
+                </svg:text>
+            </svg:g>
+            <svg:g>
+                <svg:title>Register B</svg:title>
+                <svg:rect x="528.8" y="31.652778" width="46" height="8" fill="#004080" />
+                <svg:rect x="528.8" y="31.652778" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(536.8 32.152778)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="0" y="6" >B</svg:tspan>
+                </svg:text>
+            </svg:g>
+            <svg:g>
+                <svg:title>Register C</svg:title>
+                <svg:rect x="528.8" y="41.455556" width="46" height="8" fill="#004080" />
+                <svg:rect x="528.8" y="41.455556" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(536.8 41.955556)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="0" y="6" >C</svg:tspan>
+                </svg:text>
+            </svg:g>
+            <svg:g>
+                <svg:title>Register D</svg:title>
+                <svg:rect x="528.8" y="51.258334" width="46" height="8" fill="#004080" />
+                <svg:rect x="528.8" y="51.258334" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(536.8 51.758334)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="0" y="6" >D</svg:tspan>
+                </svg:text>
+            </svg:g>
             <!--
             <svg:rect x="528.8" y="61.061112" width="46" height="8" fill="#004080" />
             <svg:rect x="528.8" y="61.061112" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
@@ -86,12 +98,15 @@ export const svgTemplate = `
                 <svg:tspan class="d-text6" fill="white" x="0" y="6" >J</svg:tspan>
             </svg:text>
             -->
-            <svg:rect x="528.8" y="114.819447" width="46" height="8" fill="#008040" />
-            <svg:rect x="528.8" y="114.819447" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(533.8 115.31945)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="11.166504" y="6" >INST</svg:tspan>
-            </svg:text>
+            <svg:g>
+                <svg:title>Instruction Register</svg:title>
+                <svg:rect x="528.8" y="114.819447" width="46" height="8" fill="#008040" />
+                <svg:rect x="528.8" y="114.819447" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(533.8 115.31945)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="11.166504" y="6" >INST</svg:tspan>
+                </svg:text>
+            </svg:g>
             <!--
             <svg:rect x="528.8" y="124.622225" width="46" height="8" fill="#008040" />
             <svg:rect x="528.8" y="124.622225" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
@@ -186,15 +201,17 @@ export const svgTemplate = `
                 <svg:tspan font-family="Helvetica" font-size="7" font-weight="500" fill="white" x="16.360352" y="6" >Memory</svg:tspan>
             </svg:text>
             -->
-            <path d="M 616.325 23.35 L 632.675 23.375 L 641.825 33.8 L 641.825 47.775 L 632.925 58.375 L 616.325 58.35 Z"
-                fill="maroon" />
-            <path d="M 616.325 23.35 L 632.675 23.375 L 641.825 33.8 L 641.825 47.775 L 632.925 58.375 L 616.325 58.35 Z"
-                stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" />
-            <svg:text transform="translate(621.325 33.8625)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="1.9140625" y="6" >8-bit</svg:tspan>
-                <svg:tspan class="d-text6" fill="white" x="1.9140625" y="13"
-                    >ALU</svg:tspan>
-            </svg:text>
+            <svg:g>
+                <svg:title>ALU (Arithmetic Logic Unit)</svg:title>
+                <path d="M 616.325 23.35 L 632.675 23.375 L 641.825 33.8 L 641.825 47.775 L 632.925 58.375 L 616.325 58.35 Z"
+                    fill="maroon" />
+                <path d="M 616.325 23.35 L 632.675 23.375 L 641.825 33.8 L 641.825 47.775 L 632.925 58.375 L 616.325 58.35 Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" />
+                <svg:text transform="translate(621.325 33.8625)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="1.9140625" y="6">8-bit</svg:tspan>
+                    <svg:tspan class="d-text6" fill="white" x="1.9140625" y="13">ALU</svg:tspan>
+                </svg:text>
+            </svg:g>
             <!--
             <path d="M 528.8 188.68126 L 528.83282 175.53715 L 536.69947 168.18126 L 566.8285 168.18126 
                 L 574.8 176.21117 L 574.76715 188.68126 Z" fill="maroon" />
@@ -206,24 +223,33 @@ export const svgTemplate = `
                 <svg:tspan class="d-text6" fill="white" x=".16113281" y="13">Increment</svg:tspan>
             </svg:text>
             -->
-            <svg:rect x="662.52502" y="57.225" width="10.5" height="10.5" fill="#008040" />
-            <svg:rect x="662.52502" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(662.52502 58.975)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="3.4174805" y="6" >Z</svg:tspan>
-            </svg:text>
-            <svg:rect x="675.42502" y="57.225" width="10.5" height="10.5" fill="#008040" />
-            <svg:rect x="675.42502" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(675.42502 58.975)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="1.5834961" y="6" >Cy</svg:tspan>
-            </svg:text>
-            <svg:rect x="688.20002" y="57.225" width="10.5" height="10.5" fill="#008040" />
-            <svg:rect x="688.20002" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width=".5" />
-            <svg:text transform="translate(688.20002 58.975)" fill="white">
-                <svg:tspan class="d-text6" fill="white" x="3.2490234" y="6" >S</svg:tspan>
-            </svg:text>
+            <svg:g>
+                <svg:title>Zero Condition Register</svg:title>
+                <svg:rect x="662.52502" y="57.225" width="10.5" height="10.5" fill="#008040" />
+                <svg:rect x="662.52502" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(662.52502 58.975)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="3.4174805" y="6" >Z</svg:tspan>
+                </svg:text>
+            </svg:g>
+            <svg:g>
+                <svg:title>Carry Condition Register</svg:title>
+                <svg:rect x="675.42502" y="57.225" width="10.5" height="10.5" fill="#008040" />
+                <svg:rect x="675.42502" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(675.42502 58.975)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="1.5834961" y="6" >Cy</svg:tspan>
+                </svg:text>
+            </svg:g>
+            <svg:g>
+                <svg:title>Sign Condition Register</svg:title>
+                <svg:rect x="688.20002" y="57.225" width="10.5" height="10.5" fill="#008040" />
+                <svg:rect x="688.20002" y="57.225" width="10.5" height="10.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width=".5" />
+                <svg:text transform="translate(688.20002 58.975)" fill="white">
+                    <svg:tspan class="d-text6" fill="white" x="3.2490234" y="6" >S</svg:tspan>
+                </svg:text>
+            </svg:g>
             <svg:line x1="576.25" y1="45.644448" x2="611.675" y2="45.644448" marker-end="url(#FilledArrow_Marker)" stroke="white"
                 stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
             <svg:line x1="576.25" y1="36.069448" x2="611.675" y2="36.069448" marker-end="url(#FilledArrow_Marker)" stroke="white"

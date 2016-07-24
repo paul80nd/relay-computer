@@ -10,6 +10,17 @@ body {
     margin-bottom: 0px;
 }
 
+svg text {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
+}
+
+svg text::selection {
+    background: none;
+}
+
 /* Card Styling (SVG) */
 
 .cardOutline {

@@ -1,7 +1,5 @@
+- Take line styles out of architecture/instruction svg and put in css
 - Add pane on right with instructions on how to use
-- Include architecture diagram (cut down) and instructions
-
-- Minify and get ready for publish
 - Publish (Should now be up to date with real computer)
 
 - Break displayA/B cards up in to sub cards
