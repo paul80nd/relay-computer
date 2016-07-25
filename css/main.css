@@ -34,7 +34,7 @@ body {
 .instrBox:before {
     content: "";
     display: block;
-    padding-top: 125.5%;
+    padding-top: 125.69659443%;
 }
 .instrBoxContent {
     position: absolute;
@@ -113,6 +113,22 @@ svg text {
 
 svg text::selection {
     background: none;
+}
+
+.scaling-svg-container {
+  position: relative; 
+  height:0; 
+  width: 100%; 
+  padding: 0;
+  padding-bottom: 100%; 
+  /* over-ride this inline for aspect ratio other than square */
+}
+.scaling-svg {
+  position: absolute; 
+  height: 100%; 
+  width: 100%; 
+  left: 0; 
+  top:0;
 }
 
 /* Diagram Styling (SVG) */
