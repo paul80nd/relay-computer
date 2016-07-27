@@ -1,7 +1,9 @@
 import { Component, Input } from "@angular/core";
+
 import { ByteLedsComponent } from "./byte_leds.component";
-import { svgTemplate } from "./register_leds.svg";
 import { IRegisterCardPart } from "../../model/cards/parts/register.cardpart";
+
+import { svgTemplate } from "./register_leds.svg";
 
 @Component({
     directives: [ByteLedsComponent],

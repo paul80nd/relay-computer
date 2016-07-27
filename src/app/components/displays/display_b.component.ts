@@ -1,10 +1,10 @@
 import { Component, Input } from "@angular/core";
-import { IDisplayBCard } from "../../model/cards/display_b.card";
+
 import { AluFunctionClLines, AluOperationLines,
   ClockLines, OperationLines } from "../../model/bus/bus_part_lines";
-
-import { ByteLedLightBarComponent } from "./../leds/byte_llb.component";
+import { IDisplayBCard } from "../../model/cards/display_b.card";
 import { AluOperationLedLightBarComponent } from "./../leds/alu_op_llb.component";
+import { ByteLedLightBarComponent } from "./../leds/byte_llb.component";
 import { DisplayBConditionComponent } from "./parts/display_b_condition.component";
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { IControlSwitchesCard } from "../model/cards/control_switches.card";
 
+import { IControlSwitchesCard } from "../model/cards/control_switches.card";
 import { ByteSwitchComponent } from "./switches/byte_switch.component";
 
 @Component({

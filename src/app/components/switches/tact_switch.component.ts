@@ -1,6 +1,8 @@
 import { Component, Input } from "@angular/core";
-import { CardPart } from "../../model/cards/card_part";
+
 import { BitValue } from "../../model/bit_value";
+import { CardPart } from "../../model/cards/card_part";
+
 import { svgTemplate } from "./tact_switch.svg";
 
 @Component({

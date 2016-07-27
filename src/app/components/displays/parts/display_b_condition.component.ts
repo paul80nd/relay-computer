@@ -1,5 +1,6 @@
-import { BitValue } from "../../../model/bit_value";
 import { Component, Input } from "@angular/core";
+
+import { BitValue } from "../../../model/bit_value";
 import { ConditionLines } from "../../../model/bus/bus_part_lines";
 
 import { svgTemplate } from "./display_b_condition.svg";
