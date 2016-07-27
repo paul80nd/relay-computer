@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 import { IComputer, IComputerFactory, ComputerFactory } from "../model/computer";
 import { ArchitectureDiagramComponent } from "./architecture_diagram.component";
@@ -21,7 +21,7 @@ import { InstructionSetComponent } from "./instruction_set.component";
     templateUrl: "computer.html",
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
     public computer: IComputer;
 
