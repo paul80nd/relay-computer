@@ -7,7 +7,7 @@ import { ByteSwitchComponent } from "./switches/byte_switch.component";
   directives: [
     ByteSwitchComponent,
   ],
-  selector: "[control-switches]",
+  selector: "[rc-control-switches]",
   templateUrl: "svg/control_switches.component.svg",
 })
 

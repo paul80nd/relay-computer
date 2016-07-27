@@ -7,7 +7,7 @@ import { svgTemplate } from "./card_alu_logic.svg";
 
 @Component({
     directives: [ByteStackedLedsComponent],
-    selector: "[card-alu-logic]",
+    selector: "[rc-card-alu-logic]",
     template: svgTemplate,
 })
 

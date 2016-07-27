@@ -8,7 +8,7 @@ import { svgTemplate } from "./card_bay_x.svg";
 
 @Component({
   directives: [CardRegisterIComponent],
-  selector: "[card-bay-x]",
+  selector: "[rc-card-bay-x]",
   template: svgTemplate,
 })
 

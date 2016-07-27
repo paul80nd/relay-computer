@@ -5,7 +5,7 @@ import { IRegisterCardPart } from "../../model/cards/parts/register.cardpart";
 
 @Component({
     directives: [ByteLedsComponent],
-    selector: "[register-leds]",
+    selector: "[rc-register-leds]",
     template: svgTemplate,
 })
 

@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { svgTemplate } from "./architecture_diagram.svg";
 
 @Component({
-    selector: "[architecture-diagram]",
+    selector: "[rc-architecture-diagram]",
     template: svgTemplate,
 })
 

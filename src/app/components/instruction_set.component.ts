@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { svgTemplate } from "./instruction_set.svg";
 
 @Component({
-    selector: "[instruction-set]",
+    selector: "[rc-instruction-set]",
     template: svgTemplate,
 })
 

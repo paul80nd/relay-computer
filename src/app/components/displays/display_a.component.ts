@@ -10,7 +10,7 @@ import { DisplayAA2CComponent } from "./parts/display_a_a2c.component";
 @Component({
   directives: [DisplayAA1AComponent, DisplayAA2CComponent,
     TactileSwitchComponent],
-  selector: "[display-a]",
+  selector: "[rc-display-a]",
   templateUrl: "svg/display_a.component.svg",
 })
 export class DisplayAComponent {

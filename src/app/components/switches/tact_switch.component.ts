@@ -4,7 +4,7 @@ import { BitValue } from "../../model/bit_value";
 import { svgTemplate } from "./tact_switch.svg";
 
 @Component({
-    selector: "[tact-switch]",
+    selector: "[rc-tact-switch]",
     template: svgTemplate,
 })
 

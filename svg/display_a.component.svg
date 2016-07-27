@@ -4,7 +4,7 @@
         <svg:rect x="0" y="0" width="237" height="169" fill="gray" />
         <svg:rect x="0" y="0" width="237" height="169" stroke="black" class="cardOutline" />
 
-        <svg:g display-a-a1a [value]="card.a1a" [valueIn]="card.a1aIn" transform="translate(9.999992,9.999977)"></svg:g>
+        <svg:g rc-display-a-a1a [value]="card.a1a" [valueIn]="card.a1aIn" transform="translate(9.999992,9.999977)"></svg:g>
         <!--
                 <svg:rect x="204.99999" y="9.999977" width="22" height="22" fill="#bbb" />
                 <svg:rect x="204.99999" y="9.999977" width="22" height="22" class="btnOutline" />
@@ -72,9 +72,9 @@
                     <svg:tspan class="d-text7" x="7.25" y="14">J</svg:tspan>
                 </svg:text>
                 -->
-        <svg:g tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'"
+        <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'"
             [bitTarget]="linLine" transform="translate(9.999992 61.999977)"></svg:g>
-        <svg:g tact-switch [part]="card.a1cCl" [valueIn]="card.a1cClIn" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
+        <svg:g rc-tact-switch [part]="card.a1cCl" [valueIn]="card.a1cClIn" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
         <!-->
         <svg:rect x="55.999992" y="61.999977" width="22" height="22" fill="#bbb" />
         <svg:rect x="55.999992" y="61.999977" width="22" height="22" class="btnOutline" />
@@ -158,7 +158,7 @@
         </svg:text>
         -->
 
-        <svg:g tact-switch [part]="card.a2b" [valueIn]="card.a2bIn" [description]="['sel','DS']" [color]="'Green'" [bitTarget]="sdsLine"
+        <svg:g rc-tact-switch [part]="card.a2b" [valueIn]="card.a2bIn" [description]="['sel','DS']" [color]="'Green'" [bitTarget]="sdsLine"
             transform="translate(181.99999,84.999977)"></svg:g>
 
         <!--
@@ -172,12 +172,12 @@
                 </svg:text>
                 -->
 
-        <svg:g tact-switch [part]="card.a1bClock" [valueIn]="card.a1bClockIn" [description]="['CLK']" [color]="'Red'" [bitTarget]="clkLine"
+        <svg:g rc-tact-switch [part]="card.a1bClock" [valueIn]="card.a1bClockIn" [description]="['CLK']" [color]="'Red'" [bitTarget]="clkLine"
             transform="translate(9.999992,113.99998)"></svg:g>
-        <svg:g tact-switch [part]="card.a1bI2b" [valueIn]="card.a1bI2bIn" [description]="['I2B']" [color]="'Green'" [bitTarget]="i2bLine"
+        <svg:g rc-tact-switch [part]="card.a1bI2b" [valueIn]="card.a1bI2bIn" [description]="['I2B']" [color]="'Green'" [bitTarget]="i2bLine"
             transform="translate(9.999992,136.99998)"></svg:g>
 
-        <svg:g display-a-a2c [value]="card.a2c" [valueIn]="card.a2cIn" transform="translate(135.99999 113.99998)"></svg:g>
+        <svg:g rc-display-a-a2c [value]="card.a2c" [valueIn]="card.a2cIn" transform="translate(135.99999 113.99998)"></svg:g>
 
         <!--
                 <svg:rect x="55.999992" y="113.99998" width="22" height="22" fill="#bbb" />

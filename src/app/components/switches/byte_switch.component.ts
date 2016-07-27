@@ -3,7 +3,7 @@ import { CardPart } from "../../model/cards/card_part";
 import { svgTemplate } from "./byte_switch.svg";
 
 @Component({
-    selector: "[byte-switch]",
+    selector: "[rc-byte-switch]",
     template: svgTemplate,
 })
 

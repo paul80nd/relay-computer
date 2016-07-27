@@ -5,7 +5,7 @@ import { OperationLines } from "../../model/bus/bus_part_lines";
 import { svgTemplate } from "./card_decoder.svg";
 
 @Component({
-    selector: "[card-decoder]",
+    selector: "[rc-card-decoder]",
     template: svgTemplate,
 })
 

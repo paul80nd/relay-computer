@@ -4,7 +4,7 @@ import { AluFunctionClLines, RegABCDLines } from "../../model/bus/bus_part_lines
 import { svgTemplate } from "./card_control_b.svg";
 
 @Component({
-    selector: "[card-control-b]",
+    selector: "[rc-card-control-b]",
     template: svgTemplate,
 })
 

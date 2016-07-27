@@ -3,7 +3,7 @@ import { BitValue } from "../../model/bit_value";
 import { svgTemplate } from "./alu_op_llb.svg";
 
 @Component({
-    selector: "[alu-op-llb]",
+    selector: "[rc-alu-op-llb]",
     template: svgTemplate,
 })
 

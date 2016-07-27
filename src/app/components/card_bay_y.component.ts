@@ -3,7 +3,7 @@ import { Component } from "@angular/core";
 import { svgTemplate } from "./card_bay_y.svg";
 
 @Component({
-  selector: "[card-bay-y]",
+  selector: "[rc-card-bay-y]",
   template: svgTemplate,
 })
 

@@ -12,7 +12,7 @@ import { svgTemplate } from "./card_bay_w.svg";
 @Component({
     directives: [CardControlAComponent, CardControlBComponent,
         CardDecoderComponent, CardSequencerBComponent],
-    selector: "[card-bay-w]",
+    selector: "[rc-card-bay-w]",
     template: svgTemplate,
 })
 

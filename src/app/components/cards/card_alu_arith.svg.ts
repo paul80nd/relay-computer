@@ -7,7 +7,7 @@ export const svgTemplate = `
     <svg:text transform="translate(53 32)" fill="black">
         <svg:tspan class="d-text4" x=".33203125" y="4">COut</svg:tspan>
     </svg:text>
-    <svg:g byte-leds [value]="card.value" transform="translate(80,25)"></svg:g>
+    <svg:g rc-byte-leds [value]="card.value" transform="translate(80,25)"></svg:g>
     <svg:rect x="76" y="32" width="85" height="5" fill="white" />
     <svg:text transform="translate(76 32)" fill="black">
         <svg:tspan class="d-text4" x="34.606445" y="4">Add / Inc</svg:tspan>

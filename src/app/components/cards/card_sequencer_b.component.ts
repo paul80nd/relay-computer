@@ -4,7 +4,7 @@ import { AbortLines } from "../../model/bus/bus_part_lines";
 import { svgTemplate } from "./card_sequencer_b.svg";
 
 @Component({
-    selector: "[card-sequencer-b]",
+    selector: "[rc-card-sequencer-b]",
     template: svgTemplate,
 })
 

@@ -6,7 +6,7 @@ import { svgTemplate } from "./card_register_bc.svg";
 @Component({
     directives: [
         RegisterLedsComponent],
-    selector: "[card-register-bc]",
+    selector: "[rc-card-register-bc]",
     template: svgTemplate,
 })
 

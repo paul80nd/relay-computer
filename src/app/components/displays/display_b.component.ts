@@ -12,7 +12,7 @@ import { DisplayBConditionComponent } from "./parts/display_b_condition.componen
     ByteLedLightBarComponent,
     AluOperationLedLightBarComponent,
     DisplayBConditionComponent],
-  selector: "[display-b]",
+  selector: "[rc-display-b]",
   templateUrl: "svg/display_b.component.svg",
 })
 export class DisplayBComponent {

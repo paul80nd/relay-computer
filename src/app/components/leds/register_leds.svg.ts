@@ -18,7 +18,7 @@ export const svgTemplate = `
         </svg:text>
     </svg:g>
     
-    <svg:g byte-leds [value]="register.value.value" transform="translate(22,0)"></svg:g>
+    <svg:g rc-byte-leds [value]="register.value.value" transform="translate(22,0)"></svg:g>
     
     <svg:text transform="translate(18 7)" fill="black">
         <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{description}}</svg:tspan>

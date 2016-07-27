@@ -8,7 +8,7 @@ import { TactileSwitchComponent } from "../../switches/tact_switch.component";
 
 @Component({
   directives: [TactileSwitchComponent],
-  selector: "[display-a-a2c]",
+  selector: "[rc-display-a-a2c]",
   template: svgTemplate,
 })
 export class DisplayAA2CComponent {

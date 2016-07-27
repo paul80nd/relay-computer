@@ -3,7 +3,7 @@ import { BitValue } from "../../model/bit_value";
 import { svgTemplate } from "./byte_leds.svg";
 
 @Component({
-  selector: "[byte-leds]",
+  selector: "[rc-byte-leds]",
   template: svgTemplate,
 })
 

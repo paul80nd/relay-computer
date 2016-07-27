@@ -17,7 +17,7 @@ import { svgTemplate } from "./card_bay_z.svg";
         CardAluControlComponent,
         CardAluArithmeticComponent,
         CardAluLogicComponent],
-    selector: "[card-bay-z]",
+    selector: "[rc-card-bay-z]",
     template: svgTemplate,
 })
 

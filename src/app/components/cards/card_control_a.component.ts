@@ -5,7 +5,7 @@ import { AbortLines, I2BLines } from "../../model/bus/bus_part_lines";
 import { svgTemplate } from "./card_control_a.svg";
 
 @Component({
-    selector: "[card-control-a]",
+    selector: "[rc-card-control-a]",
     template: svgTemplate,
 })
 

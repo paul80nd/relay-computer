@@ -7,7 +7,7 @@ import { svgTemplate } from "./card_alu_arith.svg";
 
 @Component({
     directives: [ByteLedsComponent],
-    selector: "[card-alu-arith]",
+    selector: "[rc-card-alu-arith]",
     template: svgTemplate,
 })
 

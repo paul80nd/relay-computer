@@ -6,7 +6,7 @@ import { AluFunctionClLines, AluOperationLines,
 import { svgTemplate } from "./card_alu_ctrl.svg";
 
 @Component({
-    selector: "[card-alu-ctrl]",
+    selector: "[rc-card-alu-ctrl]",
     template: svgTemplate,
 })
 
