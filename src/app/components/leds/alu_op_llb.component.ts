@@ -11,16 +11,9 @@ import { svgTemplate } from "./alu_op_llb.svg";
 
 export class AluOperationLedLightBarComponent  {
 
-    @Input()
-    public value: BitValue;
-
-    @Input()
-    public description: string;
-
-    @Input()
-    public color: string;
-
-    @Input()
-    public bitTarget: number;
+    @Input() public value: BitValue;
+    @Input() public description: string;
+    @Input() public color: string;
+    @Input() public bitTarget: number;
 
 }

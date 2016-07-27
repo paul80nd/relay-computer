@@ -13,7 +13,6 @@ import { svgTemplate } from "./card_bay_x.svg";
 
 export class CardBayXComponent {
 
-  @Input()
-  public backplane: IXBackplane;
+  @Input() public backplane: IXBackplane;
 
 }

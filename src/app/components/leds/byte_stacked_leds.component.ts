@@ -11,7 +11,6 @@ import { svgTemplate } from "./byte_stacked_leds.svg";
 
 export class ByteStackedLedsComponent {
 
-  @Input()
-  public value: BitValue;
+  @Input() public value: BitValue;
 
 }

@@ -13,7 +13,6 @@ import { svgTemplate } from "./card_alu_logic.svg";
 
 export class CardAluLogicComponent {
 
-    @Input()
-    public card: IAluLogicCard;
+    @Input() public card: IAluLogicCard;
 
 }

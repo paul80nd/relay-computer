@@ -14,7 +14,6 @@ import { svgTemplate } from "./card_register_bc.svg";
 
 export class CardRegisterBCComponent {
 
-  @Input()
-  public card: IRegisterBCCard;
+  @Input() public card: IRegisterBCCard;
 
 }

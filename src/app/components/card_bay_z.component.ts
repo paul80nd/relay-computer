@@ -22,7 +22,6 @@ import { svgTemplate } from "./card_bay_z.svg";
 
 export class CardBayZComponent {
 
-    @Input()
-    public backplane: IZBackplane;
+    @Input() public backplane: IZBackplane;
 
 }

@@ -23,7 +23,6 @@ export class CardControlBComponent {
 
     public clLine: number = AluFunctionClLines.CL;
 
-    @Input()
-    public card: IControlCard;
+    @Input() public card: IControlCard;
 
 }

@@ -9,9 +9,8 @@ import { svgTemplate } from "./byte_llb.svg";
     template: svgTemplate,
 })
 
-export class ByteLedLightBarComponent  {
+export class ByteLedLightBarComponent {
 
-    @Input()
-    public value: BitValue;
+    @Input() public value: BitValue;
 
 }

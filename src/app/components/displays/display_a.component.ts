@@ -24,7 +24,6 @@ export class DisplayAComponent {
 
   public i2bLine: number = I2BLines.I2B;
 
-  @Input()
-  public card: IDisplayACard;
+  @Input() public card: IDisplayACard;
 
 }

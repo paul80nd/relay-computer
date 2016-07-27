@@ -22,10 +22,7 @@ export class DisplayAA1AComponent {
   public selCLine: number = RegABCDLines.RSC;
   public selDLine: number = RegABCDLines.RSD;
 
-  @Input()
-  public value: BitValue;
-
-  @Input()
-  public valueIn: BitValue;
+  @Input() public value: BitValue;
+  @Input() public valueIn: BitValue;
 
 }

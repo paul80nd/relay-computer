@@ -13,8 +13,7 @@ import { ByteSwitchComponent } from "./switches/byte_switch.component";
 
 export class ControlSwitchesComponent {
 
-  @Input()
-  public card: IControlSwitchesCard;
+  @Input() public card: IControlSwitchesCard;
 
   public deposit: boolean;
   public depositNext: boolean;

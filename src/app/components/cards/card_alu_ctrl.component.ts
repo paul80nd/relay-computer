@@ -30,6 +30,5 @@ export class CardAluControlComponent {
     public f1Line = AluFunctionClLines.F1;
     public f0Line = AluFunctionClLines.F0;
 
-    @Input()
-    public card: IAluControlCard;
+    @Input() public card: IAluControlCard;
 }

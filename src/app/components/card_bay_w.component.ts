@@ -17,7 +17,6 @@ import { svgTemplate } from "./card_bay_w.svg";
 
 export class CardBayWComponent {
 
-    @Input()
-    public backplane: IWBackplane;
+    @Input() public backplane: IWBackplane;
 
 }

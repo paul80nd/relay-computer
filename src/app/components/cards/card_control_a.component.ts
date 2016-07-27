@@ -16,7 +16,6 @@ export class CardControlAComponent {
 
     public i2bLine = I2BLines.I2B;
 
-    @Input()
-    public card: IControlCard;
+    @Input() public card: IControlCard;
 
 }

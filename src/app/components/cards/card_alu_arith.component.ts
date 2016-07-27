@@ -13,7 +13,6 @@ import { svgTemplate } from "./card_alu_arith.svg";
 
 export class CardAluArithmeticComponent {
 
-    @Input()
-    public card: IAluArithmeticCard;
+    @Input() public card: IAluArithmeticCard;
 
 }

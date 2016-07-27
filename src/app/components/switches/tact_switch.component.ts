@@ -12,20 +12,11 @@ import { svgTemplate } from "./tact_switch.svg";
 
 export class TactileSwitchComponent  {
 
-    @Input()
-    public part: CardPart;
-
-    @Input()
-    public valueIn: BitValue;
-
-    @Input()
-    public description: [string, string];
-
-    @Input()
-    public color: string;
-
-    @Input()
-    public bitTarget: number;
+    @Input() public part: CardPart;
+    @Input() public valueIn: BitValue;
+    @Input() public description: [string, string];
+    @Input() public color: string;
+    @Input() public bitTarget: number;
 
     public flipBit() {
         this.part.value = this.part.value.flipBit(this.bitTarget);

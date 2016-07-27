@@ -11,8 +11,7 @@ import { svgTemplate } from "./byte_switch.svg";
 
 export class ByteSwitchComponent  {
 
-    @Input()
-    public part: CardPart;
+    @Input() public part: CardPart;
 
     public flipBit(position: number) {
         this.part.value = this.part.value.flipBit(position);

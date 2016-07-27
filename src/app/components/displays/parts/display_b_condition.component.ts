@@ -15,7 +15,6 @@ export class DisplayBConditionComponent {
   public snLine = ConditionLines.SN;
   public ezLine = ConditionLines.EZ;
 
-  @Input()
-  public value: BitValue;
+  @Input() public value: BitValue;
 
 }

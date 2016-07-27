@@ -16,7 +16,6 @@ export class CardDecoderComponent {
     public setLine = OperationLines.ISET;
     public mv8Line = OperationLines.IMV8;
 
-    @Input()
-    public card: IDecoderCard;
+    @Input() public card: IDecoderCard;
 
 }

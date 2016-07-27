@@ -13,9 +13,6 @@ import { svgTemplate } from "./register_leds.svg";
 
 export class RegisterLedsComponent {
 
-    @Input()
-    public register: IRegisterCardPart;
-
-    @Input()
-    public description: string;
+    @Input() public register: IRegisterCardPart;
+    @Input() public description: string;
 }
