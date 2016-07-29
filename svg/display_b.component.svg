@@ -173,36 +173,7 @@
                 </svg:text>
                 -->
 
-            <svg:rect x="432" y="53.99998" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(clLine)" />
-            <svg:rect x="432" y="53.99998" width="8" height="17" class="indOutline" />
-            <svg:text transform="translate(433.6967 55.406828)" fill="black">
-                <svg:tspan class="d-text6" x="0" y="6">C</svg:tspan>
-                <svg:tspan class="d-text6" x=".4729043" y="13">L</svg:tspan>
-            </svg:text>
-            <svg:rect x="441" y="53.999977" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f2Line)" />
-            <svg:rect x="441" y="53.999977" width="8" height="17" class="indOutline" />
-            <svg:text transform="translate(442.6967 56.906825)" fill="black">
-                <svg:tspan class="d-text9" x="0" y="9">2</svg:tspan>
-            </svg:text>
-            <svg:rect x="450" y="53.99998" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f1Line)" />
-            <svg:rect x="450" y="53.99998" width="8" height="17" class="indOutline" />
-            <svg:text transform="translate(451.6967 56.90683)" fill="black">
-                <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
-            </svg:text>
-            <svg:rect x="459" y="53.999977" width="8" height="17" class="indGreen" [class.on]="card.aluFuncCl.bit(f0Line)" />
-            <svg:rect x="459" y="53.999977" width="8" height="17" class="indOutline" />
-            <svg:text transform="translate(460.6967 56.906825)" fill="black">
-                <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
-            </svg:text>
-
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'INC'" [color]="'Yellow'" [bitTarget]="incLine" transform="translate(450 71.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'OR'" [color]="'Yellow'" [bitTarget]="orrLine" transform="translate(450 80.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'NOT'" [color]="'Yellow'" [bitTarget]="notLine" transform="translate(450 89.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'NOP'" [color]="'Yellow'" [bitTarget]="-1" transform="translate(450 98.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'ADD'" [color]="'Yellow'" [bitTarget]="addLine" transform="translate(432 71.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'AND'" [color]="'Yellow'" [bitTarget]="andLine" transform="translate(432 80.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'XOR'" [color]="'Yellow'" [bitTarget]="xorLine" transform="translate(432 89.999977)"></svg:g>
-            <svg:g rc-alu-op-llb [value]="card.alu" [description]="'SHL'" [color]="'Yellow'" [bitTarget]="shlLine" transform="translate(432 98.999977)"></svg:g>
+            <svg:g rc-display-b-alu [alu]="card.alu" [aluFuncCl]="card.aluFuncCl" transform="translate(432 53.99998)"></svg:g>
 
             <svg:g rc-byte-llb [value]="card.data" transform="translate(324,141.99998)"></svg:g>
 
