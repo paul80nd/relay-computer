@@ -14,6 +14,6 @@ import { svgTemplate } from "./card_register_ad.svg";
 
 export class CardRegisterADComponent {
 
-  @Input() public card: IRegisterADCard;
+    @Input() public card: IRegisterADCard;
 
 }

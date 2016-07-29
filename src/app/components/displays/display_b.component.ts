@@ -7,21 +7,21 @@ import { DisplayBAluComponent } from "./parts/display_b_alu.component";
 import { DisplayBConditionComponent } from "./parts/display_b_condition.component";
 
 @Component({
-  directives: [
-    ByteLedLightBarComponent,
-    DisplayBAluComponent,
-    DisplayBConditionComponent],
-  selector: "[rc-display-b]",
-  templateUrl: "svg/display_b.component.svg",
+    directives: [
+        ByteLedLightBarComponent,
+        DisplayBAluComponent,
+        DisplayBConditionComponent],
+    selector: "[rc-display-b]",
+    templateUrl: "svg/display_b.component.svg",
 })
 export class DisplayBComponent {
 
-  public setLine = OperationLines.ISET;
-  public mv8Line = OperationLines.IMV8;
+    public setLine = OperationLines.ISET;
+    public mv8Line = OperationLines.IMV8;
 
-  public clkLine = ClockLines.CLK;
+    public clkLine = ClockLines.CLK;
 
-  @Input()
-  public card: IDisplayBCard;
+    @Input()
+    public card: IDisplayBCard;
 
 }

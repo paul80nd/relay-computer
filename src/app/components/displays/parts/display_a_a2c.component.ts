@@ -8,21 +8,21 @@ import { svgTemplate } from "./display_a_a2c.svg";
 
 
 @Component({
-  directives: [TactileSwitchComponent],
-  selector: "[rc-display-a-a2c]",
-  template: svgTemplate,
+    directives: [TactileSwitchComponent],
+    selector: "[rc-display-a-a2c]",
+    template: svgTemplate,
 })
 export class DisplayAA2CComponent {
 
-  public addLine: number = AluOperationLines.ADD;
-  public incLine: number = AluOperationLines.INC;
-  public shlLine: number = AluOperationLines.SHL;
-  public andLine: number = AluOperationLines.AND;
-  public orrLine: number = AluOperationLines.ORR;
-  public xorLine: number = AluOperationLines.XOR;
-  public notLine: number = AluOperationLines.NOT;
+    public addLine: number = AluOperationLines.ADD;
+    public incLine: number = AluOperationLines.INC;
+    public shlLine: number = AluOperationLines.SHL;
+    public andLine: number = AluOperationLines.AND;
+    public orrLine: number = AluOperationLines.ORR;
+    public xorLine: number = AluOperationLines.XOR;
+    public notLine: number = AluOperationLines.NOT;
 
-  @Input() public value: BitValue;
-  @Input() public valueIn: BitValue;
+    @Input() public value: BitValue;
+    @Input() public valueIn: BitValue;
 
 }

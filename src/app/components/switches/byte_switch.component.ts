@@ -9,7 +9,7 @@ import { svgTemplate } from "./byte_switch.svg";
     template: svgTemplate,
 })
 
-export class ByteSwitchComponent  {
+export class ByteSwitchComponent {
 
     @Input() public part: CardPart;
 

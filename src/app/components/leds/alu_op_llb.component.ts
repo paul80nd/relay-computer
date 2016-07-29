@@ -9,7 +9,7 @@ import { svgTemplate } from "./alu_op_llb.svg";
     template: svgTemplate,
 })
 
-export class AluOperationLedLightBarComponent  {
+export class AluOperationLedLightBarComponent {
 
     @Input() public value: BitValue;
     @Input() public description: string;

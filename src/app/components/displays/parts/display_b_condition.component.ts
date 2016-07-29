@@ -6,15 +6,15 @@ import { ConditionLines } from "../../../model/bus/bus_part_lines";
 import { svgTemplate } from "./display_b_condition.svg";
 
 @Component({
-  selector: "[rc-display-b-condition]",
-  template: svgTemplate,
+    selector: "[rc-display-b-condition]",
+    template: svgTemplate,
 })
 export class DisplayBConditionComponent {
 
-  public cyLine = ConditionLines.CY;
-  public snLine = ConditionLines.SN;
-  public ezLine = ConditionLines.EZ;
+    public cyLine = ConditionLines.CY;
+    public snLine = ConditionLines.SN;
+    public ezLine = ConditionLines.EZ;
 
-  @Input() public value: BitValue;
+    @Input() public value: BitValue;
 
 }
