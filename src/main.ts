@@ -1,6 +1,6 @@
 /// <reference path="../typings/globals/es6-shim/index.d.ts" />
 
-import { bootstrap }    from "@angular/platform-browser-dynamic";
-import { AppComponent } from "./app/components/app.component";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
+import { AppModule } from "./app/components/app.module";
 
-bootstrap(AppComponent);
+platformBrowserDynamic().bootstrapModule(AppModule);

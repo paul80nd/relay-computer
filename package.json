@@ -17,21 +17,20 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "2.0.0-rc.4",
-    "@angular/compiler": "2.0.0-rc.4",
-    "@angular/core": "2.0.0-rc.4",
-    "@angular/forms": "0.2.0",
-    "@angular/http": "2.0.0-rc.4",
-    "@angular/platform-browser": "2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
-    "@angular/router": "3.0.0-beta.1",
-    "@angular/router-deprecated": "2.0.0-rc.2",
-    "@angular/upgrade": "2.0.0-rc.4",
-    "reflect-metadata": "0.1.3",
-    "rxjs": "5.0.0-beta.6",
-    "systemjs": "0.19.31",
-    "core-js": "^2.4.0",
-    "zone.js": "0.6.12"
+    "@angular/common": "~2.1.0",
+    "@angular/compiler": "~2.1.0",
+    "@angular/core": "~2.1.0",
+    "@angular/forms": "~2.1.0",
+    "@angular/http": "~2.1.0",
+    "@angular/platform-browser": "~2.1.0",
+    "@angular/platform-browser-dynamic": "~2.1.0",
+    "@angular/router": "~3.1.0",
+    "@angular/upgrade": "~2.1.0",
+    "reflect-metadata": "^0.1.8",
+    "rxjs": "5.0.0-beta.12",
+    "systemjs": "0.19.39",
+    "core-js": "^2.4.1",
+    "zone.js": "^0.6.25"
   },
   "devDependencies": {
     "angular-cli": "1.0.0-beta.9",
@@ -40,7 +39,7 @@
     "protractor": "3.3.0",
     "ts-node": "0.5.5",
     "tslint": "3.11.0",
-    "typescript": "2.0.0",
-    "typings": "1.0.4"
+    "typescript": "^2.0.3",
+    "typings": "^1.0.4"
   }
 }
