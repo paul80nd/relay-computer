@@ -15,3 +15,5 @@
 - Add way of uploading opcodes in to memory (written in binary)
 - Add way of uploading ops (MOV B,A) to memory 
 - Add way of writing assembly (with intellisense) that compiles in to memory
+
+TODO on real relay computer:
