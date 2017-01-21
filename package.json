@@ -1,6 +1,6 @@
 {
   "name": "relay-computer",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Relay Computer Simulator",
   "license": "MIT",  
   "scripts": {
@@ -11,35 +11,30 @@
     "minify": "uglifyjs dist/bundle.js --screw-ie8 --compress --mangle --output dist/bundle.min.js",
     "lint": "tslint \"src/**/*.ts\"",
     "lite": "lite-server",
-    "postinstall": "npm run typings",
     "tsc": "tsc",
     "typings": "typings install"
   },
   "private": true,
   "dependencies": {
-    "@angular/common": "~2.1.0",
-    "@angular/compiler": "~2.1.0",
-    "@angular/core": "~2.1.0",
-    "@angular/forms": "~2.1.0",
-    "@angular/http": "~2.1.0",
-    "@angular/platform-browser": "~2.1.0",
-    "@angular/platform-browser-dynamic": "~2.1.0",
-    "@angular/router": "~3.1.0",
-    "@angular/upgrade": "~2.1.0",
-    "reflect-metadata": "^0.1.8",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "0.19.39",
+    "@angular/common": "~2.4.0",
+    "@angular/compiler": "~2.4.0",
+    "@angular/core": "~2.4.0",
+    "@angular/forms": "~2.4.0",
+    "@angular/http": "~2.4.0",
+    "@angular/platform-browser": "~2.4.0",
+    "@angular/platform-browser-dynamic": "~2.4.0",
+    "@angular/router": "~3.4.0",
+    "angular-in-memory-web-api": "~0.2.4",
+    "systemjs": "0.19.40",
     "core-js": "^2.4.1",
-    "zone.js": "^0.6.25"
+    "rxjs": "5.0.1",
+    "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "angular-cli": "1.0.0-beta.9",
-    "codelyzer": "0.0.20",
-    "ember-cli-inject-live-reload": "1.4.0",
-    "protractor": "3.3.0",
-    "ts-node": "0.5.5",
-    "tslint": "3.11.0",
-    "typescript": "^2.0.3",
-    "typings": "^1.0.4"
+    "lite-server": "^2.2.2",
+    "protractor": "~4.0.14",
+    "tslint": "^3.15.1",
+    "typescript": "~2.0.10",
+    "@types/node": "^6.0.46"
   }
 }
