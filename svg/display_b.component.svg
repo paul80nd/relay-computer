@@ -74,108 +74,10 @@
 
             <svg:g rc-display-b-condition [value]="card.condition" transform="translate(250 141.99998)"></svg:g>
 
-            <!--
-                <svg:rect x="450" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="450" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="450.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(451.6967 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">1</svg:tspan>
-                </svg:text>
-                <svg:rect x="459" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="459" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="459.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(460.6967 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">0</svg:tspan>
-                </svg:text>
-                <svg:rect x="432" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="432" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="432.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(433.6967 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">3</svg:tspan>
-                </svg:text>
-                <svg:rect x="441" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="441" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="441.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(442.6967 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">2</svg:tspan>
-                </svg:text>
-                <svg:rect x="414" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="414" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="414.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(415.6967 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">5</svg:tspan>
-                </svg:text>
-                <svg:rect x="423" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="423" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="423.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(424.6967 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">4</svg:tspan>
-                </svg:text>
-                <svg:rect x="396" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="396" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="396.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(397.6967 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">7</svg:tspan>
-                </svg:text>
-                <svg:rect x="405" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="405" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="405.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(406.6967 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">6</svg:tspan>
-                </svg:text>
-                <svg:rect x="378" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="378" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="378.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(379.69671 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">9</svg:tspan>
-                </svg:text>
-                <svg:rect x="387" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="387" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="387.6967" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(388.6967 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">8</svg:tspan>
-                </svg:text>
-                <svg:rect x="360" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="360" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="360.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(361.69671 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">b</svg:tspan>
-                </svg:text>
-                <svg:rect x="369" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="369" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="369.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(370.69671 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">a</svg:tspan>
-                </svg:text>
-                <svg:rect x="342" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="342" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="342.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(343.69671 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">d</svg:tspan>
-                </svg:text>
-                <svg:rect x="351" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="351" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="351.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(352.69671 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">c</svg:tspan>
-                </svg:text>
-                <svg:rect x="324" y="115.99998" width="8" height="17" class="indRed" />
-                <svg:rect x="324" y="115.99998" width="8" height="17" class="indOutline" />
-                <svg:rect x="324.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(325.69671 118.906825)" fill="black">
-                    <svg:tspan class="d-text9" x=".8911172" y="9">f</svg:tspan>
-                </svg:text>
-                <svg:rect x="333" y="115.999974" width="8" height="17" class="indRed" />
-                <svg:rect x="333" y="115.999974" width="8" height="17" class="indOutline" />
-                <svg:rect x="333.69671" y="116.79813" width="6.2827227" height="15.21739" class="indRed" />
-                <svg:text transform="translate(334.69671 118.90682)" fill="black">
-                    <svg:tspan class="d-text9" x="0" y="9">e</svg:tspan>
-                </svg:text>
-                -->
-
             <svg:g rc-display-b-alu [alu]="card.alu" [aluFuncCl]="card.aluFuncCl" transform="translate(432 53.99998)"></svg:g>
 
             <svg:g rc-byte-llb [value]="card.data" transform="translate(324,141.99998)"></svg:g>
+            <svg:g rc-dbl-byte-llb [value]="card.address" transform="translate(324,115.99998)"></svg:g>
 
         </svg:g>
     </svg:g>

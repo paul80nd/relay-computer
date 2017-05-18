@@ -53,7 +53,9 @@ export enum ConditionLines {
 
 export enum DataSwitchGateLines {
     /** Select Data Switches */
-    SDS
+    SDS,
+    /** Select Address Switches */
+    SAS
 }
 
 export enum I2BLines {

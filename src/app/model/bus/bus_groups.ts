@@ -15,6 +15,7 @@ export interface IBusGroup { }
 
 /** Represents the collection of busses that make up the Aux Control Card group connectors */
 export interface IAuxControlBusGroup extends IBusGroup {
+    readonly addressBus: IAddressBus;
     readonly controlYBus: IControlYBus;
     readonly dataControlBus: IDataControlBus;
 }
@@ -94,8 +95,9 @@ export class BusGroupFactory implements IBusGroupFactory {
         let b = this.busFactory.createBusses();
 
         // Wrap cables in to bus groups
-        let auxControl = { controlYBus: b.controlY, dataControlBus: b.dataControl };
+        let auxControl = { addressBus: b.address, controlYBus: b.controlY, dataControlBus: b.dataControl };
         let controlSwitches = {
+            addressBus: b.address,
             controlXBus: b.controlX,
             dataControlBus: this.busFactory.createBusForControlSwitches(),
             hackA1Bus: b.displayA1,

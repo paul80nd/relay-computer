@@ -80,6 +80,7 @@ export interface IDisplayB1Bus extends IBus {
 
 /** Represents the Display B2 bus ribbon cable */
 export interface IDisplayB2Bus extends IBus {
+    readonly addressPart: IAddressBusPart;
     readonly instructionPart: IInstructionBusPart;
 }
 
@@ -142,6 +143,7 @@ export class BusFactory implements IBusFactory {
 
         // Build shared bus parts
         let abortPart = this.busPartFactory.getForAbort();
+        let addressPart = this.busPartFactory.getForAddress();
         let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
         let aluOperationPart = this.busPartFactory.getForAluOperation();
         let auxRegisterPart = this.busPartFactory.getForAuxRegister();
@@ -157,7 +159,7 @@ export class BusFactory implements IBusFactory {
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
-        let address = { addressPart: this.busPartFactory.getForAddress() } 
+        let address = { addressPart: addressPart } 
         let controlInstruction = { aluFunctionClPart, instructionPart };
         let dataControl = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstruction = { dataPart, instructionPart };
@@ -177,7 +179,7 @@ export class BusFactory implements IBusFactory {
         let displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
         let displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
             conditionPart, dataPart };
-        let displayB2 = { instructionPart };
+        let displayB2 = { addressPart, instructionPart };
         let displayB3 = { operationPart };
         let operation = { abortPart, operationPart };
         let pulse = { pulsePart };

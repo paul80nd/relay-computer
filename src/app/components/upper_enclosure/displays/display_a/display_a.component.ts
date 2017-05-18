@@ -14,8 +14,11 @@ export class DisplayAComponent {
 
     public clLine: number = AluFunctionClLines.CL;
     public linLine: number = RegAuxLines.LIN;
+    public lpcLine: number = RegAuxLines.LPC;
+    public spcLine: number = RegAuxLines.SPC;
 
     public sdsLine: number = DataSwitchGateLines.SDS;
+    public sasLine: number = DataSwitchGateLines.SAS;
 
     public clkLine: number = ClockLines.CLK;
 
