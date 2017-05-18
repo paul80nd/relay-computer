@@ -7,6 +7,7 @@ export const svgTemplate = `
             <svg:rect x="0" y="0" width="237" height="200" class="cardOutline" />
             <svg:g rc-card-register-i [card]="backplane.registerI" transform="translate(0,0)"></svg:g>
             <svg:line x1="0" y1="40" x2="237" y2="40" class="cardOutline" />
+            <svg:g rc-card-register-pc [card]="backplane.registerPC" transform="translate(0,40)"></svg:g>
             <svg:line x1="0" y1="80" x2="237" y2="80" class="cardOutline" />
             <svg:line x1="0" y1="120" x2="237" y2="120" class="cardOutline" />
             <svg:line x1="0" y1="160" x2="237" y2="160" class="cardOutline" />

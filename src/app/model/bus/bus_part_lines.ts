@@ -99,7 +99,11 @@ export enum RegABCDLines {
 
 export enum RegAuxLines {
     /* Load Instruction Register */
-    LIN
+    LIN,
+    /* Load Program Counter */
+    LPC,
+    /* Select Program Counter */
+    SPC
 }
 
 export enum ResetLines {

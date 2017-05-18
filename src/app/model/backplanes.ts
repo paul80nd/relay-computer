@@ -6,6 +6,7 @@ import { IDecoderCard } from "./cards/decoder.card";
 import { IRegisterADCard } from "./cards/register_ad.card";
 import { IRegisterBCCard } from "./cards/register_bc.card";
 import { IRegisterICard } from "./cards/register_i.card";
+import { IRegisterPCCard } from "./cards/register_pc.card";
 import { ISequencerCard } from "./cards/sequencer.card";
 import { ICardWBusGroup, ICardXBusGroup, ICardZBusGroup } from "./bus/bus_groups";
 import { ICardFactory } from "./cards";
@@ -26,6 +27,7 @@ export interface IWBackplane {
 
 export interface IXBackplane {
     readonly registerI: IRegisterICard;
+    readonly registerPC: IRegisterPCCard;
 
     connect(busGroup: ICardXBusGroup): void;
 }
@@ -54,7 +56,8 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     public createXBackplane(): IXBackplane {
         return new XBackplane(
-            this.cardFactory.createRegisterI()
+            this.cardFactory.createRegisterI(),
+            this.cardFactory.createRegisterPC()
         );
     }
 
@@ -87,10 +90,12 @@ class WBackplane implements IWBackplane {
 class XBackplane implements IXBackplane {
 
     constructor(
-        public registerI: IRegisterICard) { }
+        public registerI: IRegisterICard,
+        public registerPC: IRegisterPCCard) { }
 
     public connect(busGroup: ICardXBusGroup) {
         this.registerI.connect(busGroup);
+        this.registerPC.connect(busGroup);
     }
 }
 

@@ -1,6 +1,6 @@
 import { IBusPartFactory } from "./bus_parts";
 import {
-    IAbortBusPart,
+    IAbortBusPart, IAddressBusPart,
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
@@ -10,6 +10,11 @@ import {
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
 export interface IBus { }
+
+/** Repesents the Address bus ribbon cable */
+export interface IAddressBus extends IBus {
+    readonly addressPart: IAddressBusPart;
+}
 
 /** Represents the Control and Instruction bus ribbon cable (C/I) */
 export interface IControlInstructionBus extends IBus {
@@ -111,6 +116,7 @@ export interface IBusFactory {
 
 /** Collection of the Busses */
 export interface IBusSet {
+    readonly address: IAddressBus;
     readonly controlInstruction: IControlInstructionBus;
     readonly dataControl: IDataControlBus;
     readonly dataInstruction: IDataInstructionBus;
@@ -151,6 +157,7 @@ export class BusFactory implements IBusFactory {
         let sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
+        let address = { addressPart: this.busPartFactory.getForAddress() } 
         let controlInstruction = { aluFunctionClPart, instructionPart };
         let dataControl = { aluFunctionClPart, conditionPart, dataPart };
         let dataInstruction = { dataPart, instructionPart };
@@ -177,6 +184,7 @@ export class BusFactory implements IBusFactory {
 
         // Bundle up
         return {
+            address,
             controlInstruction,
             controlX,
             controlY,
