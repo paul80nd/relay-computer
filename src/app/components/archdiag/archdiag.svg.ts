@@ -10,9 +10,7 @@ export const svgTemplate = `
     <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
         <svg:g>
             <svg:rect x="480" y="0" width="237" height="232" fill="gray" />
-            <svg:rect x="480" y="0" width="237" height="232" 
-            stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".25"
-            />
+            <svg:rect x="480" y="0" width="237" height="232" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".25" />
             <svg:g>
                 <svg:title>Register A</svg:title>
                 <svg:rect x="528.8" y="21.85" width="46" height="8" fill="#004080" />
@@ -104,27 +102,20 @@ export const svgTemplate = `
                 </svg:text>
             </svg:g>
             <!--
-                <svg:rect x="528.8" y="124.622225" width="46" height="8" fill="#008040" />
-                <svg:rect x="528.8" y="124.622225" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width=".5" />
-                <svg:rect x="528.8" y="132.697225" width="46" height="8" fill="#008040" />
-                <svg:rect x="528.8" y="132.697225" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width=".5" />
-                <svg:rect x="528.8" y="142.5" width="46" height="8" fill="#008040" />
-                <svg:rect x="528.8" y="142.5" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width=".5" />
-                <svg:rect x="528.8" y="150.575" width="46" height="8" fill="#008040" />
-                <svg:rect x="528.8" y="150.575" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width=".5" />
+            <svg:rect x="528.8" y="142.5" width="46" height="8" fill="#008040" />
+            <svg:rect x="528.8" y="142.5" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width=".5" />
+            <svg:rect x="528.8" y="150.575" width="46" height="8" fill="#008040" />
+            <svg:rect x="528.8" y="150.575" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width=".5" />
                 -->
             <svg:rect x="507.075" y="10.8999996" width="3" height="212.29999" fill="white" />
             <svg:rect x="507.075" y="10.8999996" width="3" height="212.29999" stroke="white" stroke-linecap="round" stroke-linejoin="round"
                 stroke-width=".5" />
-            <!--
-                <svg:rect x="593.34998" y="59.425" width="3" height="150" fill="white" />
-                <svg:rect x="593.34998" y="59.425" width="3" height="150" stroke="white" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width=".5" />
-                -->
+            
+            <svg:rect x="593.34998" y="59.425" width="3" height="150" fill="white" />
+            <svg:rect x="593.34998" y="59.425" width="3" height="150" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" />
+                
             <svg:line x1="511.45" y1="24.044449" x2="524.15" y2="24.044449" marker-end="url(#FilledArrow_Marker)" 
                 stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
             <svg:line x1="527.325" y1="26.994449" x2="514.625" y2="26.994449" marker-end="url(#FilledArrow_Marker)" 
@@ -174,10 +165,12 @@ export const svgTemplate = `
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
                 <svg:line x1="576.25" y1="104.994447" x2="588.95" y2="104.994447" marker-end="url(#FilledArrow_Marker)" stroke="white"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                <svg:line x1="576.25" y1="130.59445" x2="588.95" y2="130.59445" marker-end="url(#FilledArrow_Marker)" stroke="white"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-                <svg:line x1="592.125" y1="133.544446" x2="579.425" y2="133.544446" marker-end="url(#FilledArrow_Marker)" stroke="white"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
+            -->
+            <svg:line x1="576.25" y1="130.59445" x2="588.95" y2="130.59445" marker-end="url(#FilledArrow_Marker)" stroke="white"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
+            <svg:line x1="592.125" y1="133.544446" x2="579.425" y2="133.544446" marker-end="url(#FilledArrow_Marker)" stroke="white"
+                stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
+            <!--
                 <svg:line x1="576.25" y1="150.44445" x2="588.95" y2="150.44445" marker-end="url(#FilledArrow_Marker)" stroke="white"
                     stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
                 <svg:line x1="552.075" y1="166.89999" x2="552.075" y2="163.19999" marker-end="url(#FilledArrow_Marker)" stroke="white"
@@ -258,11 +251,20 @@ export const svgTemplate = `
                 stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
             <path d="M 643.05 37.244449 L 655.875 37.15 L 655.775 16.1 L 514.82498 16.191653" marker-end="url(#FilledArrow_Marker)" 
                 stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" />
-            <!--
+            
+            <svg:g>
+                <svg:title>Program Counter</svg:title>
+                <svg:rect x="528.8" y="124.622225" width="46" height="8" fill="#008040" />
+                <svg:rect x="528.8" y="124.622225" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" />
+                <svg:rect x="528.8" y="132.697225" width="46" height="8" fill="#008040" />
+                <svg:rect x="528.8" y="132.697225" width="46" height="8" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width=".5" />
                 <svg:rect x="546.3" y="128.8" width="11" height="7" fill="#008040" />
                 <svg:text transform="translate(547.3 128.8)" fill="white">
                     <svg:tspan class="d-text6" fill="white" x=".33251953" y="6">PC</svg:tspan>
                 </svg:text>        
+            </svg:g>
+
+            <!--
                 <svg:rect x="545.3" y="146.65" width="13" height="7" fill="#008040" />
                 <svg:text transform="translate(546.3 146.65)" fill="white">
                     <svg:tspan class="d-text6" fill="white" x=".3334961" y="6" >INC</svg:tspan>
@@ -273,10 +275,10 @@ export const svgTemplate = `
                 <svg:text transform="translate(637.25 210.75)" fill="white">
                     <svg:tspan class="d-text6" fill="white" x=".16308594" y="6">Data</svg:tspan>
                 </svg:text>
-                <svg:text transform="translate(598.35 153.4) rotate(-90)" fill="white">
-                    <svg:tspan class="d-text8" fill="white" x=".42382812" y="8">16-bit Address Bus</svg:tspan>
-                </svg:text>
                 -->
+            <svg:text transform="translate(598.35 153.4) rotate(-90)" fill="white">
+                <svg:tspan class="d-text8" fill="white" x=".42382812" y="8">16-bit Address Bus</svg:tspan>
+            </svg:text>
             <svg:text transform="translate(493.1 135.2) rotate(-90)" fill="white">
                 <svg:tspan class="d-text8" fill="white" x=".154296875" y="8">8-bit Data Bus</svg:tspan>
             </svg:text>
