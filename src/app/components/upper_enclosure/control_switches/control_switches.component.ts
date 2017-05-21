@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { IControlSwitchesCard } from "../../../model/cards/control_switches.card";
+import { IControlSwitchesCard } from '../../../model/cards/control_switches.card';
 
 @Component({
-    selector: "[rc-control-switches]",
-    templateUrl: "./control_switches.component.html",
+    selector: '[rc-control-switches]',
+    templateUrl: './control_switches.component.html',
 })
 export class ControlSwitchesComponent {
 

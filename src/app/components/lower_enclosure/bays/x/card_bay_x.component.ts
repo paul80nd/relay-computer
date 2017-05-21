@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { IXBackplane } from "../../../../model/backplanes";
+import { IXBackplane } from '../../../../model/backplanes';
 
 @Component({
-  selector: "[rc-card-bay-x]",
-  templateUrl: "card_bay_x.component.html",
+  selector: '[rc-card-bay-x]',
+  templateUrl: 'card_bay_x.component.html',
 })
 
 export class CardBayXComponent {

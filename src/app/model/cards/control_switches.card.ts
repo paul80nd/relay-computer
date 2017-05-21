@@ -1,7 +1,7 @@
-import { CardPart } from "../../model/cards/card_part";
-import { IControlSwitchesBusGroup } from "../bus/bus_groups";
-import { DataSwitchGateLines, RegAuxLines, ResetLines } from "../bus/bus_part_lines";
-import { ClockLines } from "../bus/bus_part_lines";
+import { CardPart } from '../../model/cards/card_part';
+import { IControlSwitchesBusGroup } from '../bus/bus_groups';
+import { DataSwitchGateLines, RegAuxLines, ResetLines } from '../bus/bus_part_lines';
+import { ClockLines } from '../bus/bus_part_lines';
 
 export interface IControlSwitchesCard {
 

@@ -1,17 +1,17 @@
-import { IAuxControlCard, AuxControlCard } from "./cards/aux_control.card";
-import { IControlCard, ControlCard } from "./cards/control.card";
-import { IControlSwitchesCard, ControlSwitchesCard } from "./cards/control_switches.card";
-import { IDecoderCard, DecoderCard } from "./cards/decoder.card";
-import { IDisplayACard, DisplayACard } from "./cards/display_a.card";
-import { IDisplayBCard, DisplayBCard } from "./cards/display_b.card";
-import { IRegisterADCard, RegisterADCard } from "./cards/register_ad.card";
-import { IRegisterBCCard, RegisterBCCard } from "./cards/register_bc.card";
-import { IRegisterICard, RegisterICard } from "./cards/register_i.card";
-import { IRegisterPCCard, RegisterPCCard } from "./cards/register_pc.card";
-import { IAluLogicCard, AluLogicCard } from "./cards/alu_logic.card";
-import { IAluArithmeticCard, AluArithmeticCard } from "./cards/alu_arithmetic.card";
-import { IAluControlCard, AluControlCard } from "./cards/alu_control.card";
-import { ISequencerCard, SequencerCard } from "./cards/sequencer.card";
+import { IAuxControlCard, AuxControlCard } from './cards/aux_control.card';
+import { IControlCard, ControlCard } from './cards/control.card';
+import { IControlSwitchesCard, ControlSwitchesCard } from './cards/control_switches.card';
+import { IDecoderCard, DecoderCard } from './cards/decoder.card';
+import { IDisplayACard, DisplayACard } from './cards/display_a.card';
+import { IDisplayBCard, DisplayBCard } from './cards/display_b.card';
+import { IRegisterADCard, RegisterADCard } from './cards/register_ad.card';
+import { IRegisterBCCard, RegisterBCCard } from './cards/register_bc.card';
+import { IRegisterICard, RegisterICard } from './cards/register_i.card';
+import { IRegisterPCCard, RegisterPCCard } from './cards/register_pc.card';
+import { IAluLogicCard, AluLogicCard } from './cards/alu_logic.card';
+import { IAluArithmeticCard, AluArithmeticCard } from './cards/alu_arithmetic.card';
+import { IAluControlCard, AluControlCard } from './cards/alu_control.card';
+import { ISequencerCard, SequencerCard } from './cards/sequencer.card';
 
 export interface ICardFactory {
     createAluArithmetic(): IAluArithmeticCard;

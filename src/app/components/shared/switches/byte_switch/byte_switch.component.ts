@@ -1,10 +1,10 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { CardPart } from "../../../../model/cards/card_part";
+import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
-    selector: "[rc-byte-switch]",
-    templateUrl: "byte_switch.component.html",
+    selector: '[rc-byte-switch]',
+    templateUrl: 'byte_switch.component.html',
 })
 
 export class ByteSwitchComponent {

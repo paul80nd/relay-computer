@@ -1,5 +1,5 @@
-import { BitValue } from "../bit_value";
-import { Observable } from "../observable";
+import { BitValue } from '../bit_value';
+import { Observable } from '../observable';
 
 /**
  * A card part represents a number of related lines/wires which generate

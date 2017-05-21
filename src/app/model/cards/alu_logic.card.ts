@@ -1,8 +1,8 @@
-import { CardPart } from "../../model/cards/card_part";
-import { BitValue } from "../bit_value";
-import { ICardZBusGroup } from "../bus/bus_groups";
-import { IAluOperationBusPart, IDataBusPart } from "../bus/bus_parts";
-import { AluOperationLines } from "../bus/bus_part_lines";
+import { CardPart } from '../../model/cards/card_part';
+import { BitValue } from '../bit_value';
+import { ICardZBusGroup } from '../bus/bus_groups';
+import { IAluOperationBusPart, IDataBusPart } from '../bus/bus_parts';
+import { AluOperationLines } from '../bus/bus_part_lines';
 
 export interface IAluLogicCard {
 

@@ -1,11 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { OperationLines } from "../../../../model/bus/bus_part_lines";
-import { IDecoderCard } from "../../../../model/cards/decoder.card";
+import { OperationLines } from '../../../../model/bus/bus_part_lines';
+import { IDecoderCard } from '../../../../model/cards/decoder.card';
 
 @Component({
-    selector: "[rc-card-decoder]",
-    templateUrl: "./card_decoder.component.html",
+    selector: '[rc-card-decoder]',
+    templateUrl: './card_decoder.component.html',
 })
 
 export class CardDecoderComponent {

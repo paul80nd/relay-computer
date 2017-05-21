@@ -1,14 +1,14 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 import {
     AluFunctionClLines, AluOperationLines,
     ConditionLines,
-} from "../../../../model/bus/bus_part_lines";
-import { IAluControlCard } from "../../../../model/cards/alu_control.card";
+} from '../../../../model/bus/bus_part_lines';
+import { IAluControlCard } from '../../../../model/cards/alu_control.card';
 
 @Component({
-    selector: "[rc-card-alu-ctrl]",
-    templateUrl: "./card_alu_ctrl.component.html",
+    selector: '[rc-card-alu-ctrl]',
+    templateUrl: './card_alu_ctrl.component.html',
 })
 
 export class CardAluControlComponent {

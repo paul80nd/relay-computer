@@ -1,14 +1,14 @@
-import { CardPart } from "../../model/cards/card_part";
-import { BitValue } from "../bit_value";
-import { ICardWBusGroup } from "../bus/bus_groups";
+import { CardPart } from '../../model/cards/card_part';
+import { BitValue } from '../bit_value';
+import { ICardWBusGroup } from '../bus/bus_groups';
 import {
     IAluFunctionClBusPart, IInstructionBusPart, IOperationBusPart,
     IPulseBusPart,
-} from "../bus/bus_parts";
+} from '../bus/bus_parts';
 import {
     AbortLines, AluFunctionClLines, I2BLines, OperationLines,
     PulseLines, RegABCDLines,
-} from "../bus/bus_part_lines";
+} from '../bus/bus_part_lines';
 
 export interface IControlCard {
 

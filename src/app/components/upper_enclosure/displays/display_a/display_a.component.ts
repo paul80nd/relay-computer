@@ -1,14 +1,14 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
 import {
     AluFunctionClLines, ClockLines,
     DataSwitchGateLines, I2BLines, RegAuxLines,
-} from "../../../../model/bus/bus_part_lines";
-import { IDisplayACard } from "../../../../model/cards/display_a.card";
+} from '../../../../model/bus/bus_part_lines';
+import { IDisplayACard } from '../../../../model/cards/display_a.card';
 
 @Component({
-    selector: "[rc-display-a]",
-    templateUrl: "./display_a.component.html",
+    selector: '[rc-display-a]',
+    templateUrl: './display_a.component.html',
 })
 export class DisplayAComponent {
 

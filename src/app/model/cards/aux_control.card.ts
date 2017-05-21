@@ -1,8 +1,8 @@
-import { CardPart } from "../../model/cards/card_part";
-import { BitValue } from "../bit_value";
-import { IAuxControlBusGroup, IControlSwitchesBusGroup } from "../bus/bus_groups";
-import { IAddressBusPart, IDataBusPart, IDataSwitchGateBusPart } from "../bus/bus_parts";
-import { DataSwitchGateLines } from "../bus/bus_part_lines";
+import { CardPart } from '../../model/cards/card_part';
+import { BitValue } from '../bit_value';
+import { IAuxControlBusGroup, IControlSwitchesBusGroup } from '../bus/bus_groups';
+import { IAddressBusPart, IDataBusPart, IDataSwitchGateBusPart } from '../bus/bus_parts';
+import { DataSwitchGateLines } from '../bus/bus_part_lines';
 
 export interface IAuxControlCard {
     connect(busGroup1: IControlSwitchesBusGroup, busGroup2: IAuxControlBusGroup): void;

@@ -1,4 +1,4 @@
-import { IBusPartFactory } from "./bus_parts";
+import { IBusPartFactory } from './bus_parts';
 import {
     IAbortBusPart, IAddressBusPart,
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
@@ -6,7 +6,7 @@ import {
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
     II2BBusPart, IInstructionBusPart, IOperationBusPart, IPulseBusPart,
     IRegisterABCDBusPart, IResetBusPart,
-} from "./bus_parts";
+} from './bus_parts';
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
 export interface IBus { }

@@ -1,11 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { AluFunctionClLines, RegABCDLines } from "../../../../model/bus/bus_part_lines";
-import { IControlCard } from "../../../../model/cards/control.card";
+import { AluFunctionClLines, RegABCDLines } from '../../../../model/bus/bus_part_lines';
+import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
-    selector: "[rc-card-control-b]",
-    templateUrl: "./card_control_b.component.html",
+    selector: '[rc-card-control-b]',
+    templateUrl: './card_control_b.component.html',
 })
 
 export class CardControlBComponent {

@@ -1,4 +1,4 @@
-import { IBusFactory } from "./bus";
+import { IBusFactory } from './bus';
 import {
     IAddressBus,
     IControlXBus, IControlYBus, IControlZBus,
@@ -7,7 +7,7 @@ import {
     IDisplayB1Bus, IDisplayB2Bus, IDisplayB3Bus,
     IOperationBus, IPulseBus,
     IRegisterBCBus,
-} from "./bus";
+} from './bus';
 
 /** A Bus Group represents a collection of busses typically used against a certain card type (i.e. Z group)  */
 export interface IBusGroup { }

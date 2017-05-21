@@ -5,11 +5,11 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
-import { ArchitectureDiagramModule } from "./components/archdiag/archdiag.module";
-import { CardBaysModule } from "./components/lower_enclosure/bays/card_bays.module";
-import { ControlSwitchesModule } from "./components/upper_enclosure/control_switches/control_switches.module";
-import { DisplaysModule } from "./components/upper_enclosure/displays/displays.module";
-import { InstructionSetModule } from "./components/instrset/instrset.module";
+import { ArchitectureDiagramModule } from './components/archdiag/archdiag.module';
+import { CardBaysModule } from './components/lower_enclosure/bays/card_bays.module';
+import { ControlSwitchesModule } from './components/upper_enclosure/control_switches/control_switches.module';
+import { DisplaysModule } from './components/upper_enclosure/displays/displays.module';
+import { InstructionSetModule } from './components/instrset/instrset.module';
 
 @NgModule({
   declarations: [

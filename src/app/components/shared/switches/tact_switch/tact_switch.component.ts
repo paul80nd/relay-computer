@@ -1,11 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { BitValue } from "../../../../model/bit_value";
-import { CardPart } from "../../../../model/cards/card_part";
+import { BitValue } from '../../../../model/bit_value';
+import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
-    selector: "[rc-tact-switch]",
-    templateUrl: "tact_switch.component.html",
+    selector: '[rc-tact-switch]',
+    templateUrl: 'tact_switch.component.html',
 })
 
 export class TactileSwitchComponent  {

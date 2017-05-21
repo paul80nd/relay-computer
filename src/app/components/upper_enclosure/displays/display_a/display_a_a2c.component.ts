@@ -1,11 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { BitValue } from "../../../../model/bit_value";
-import { AluOperationLines } from "../../../../model/bus/bus_part_lines";
+import { BitValue } from '../../../../model/bit_value';
+import { AluOperationLines } from '../../../../model/bus/bus_part_lines';
 
 @Component({
-    selector: "[rc-display-a-a2c]",
-    templateUrl: "display_a_a2c.component.html",
+    selector: '[rc-display-a-a2c]',
+    templateUrl: 'display_a_a2c.component.html',
 })
 export class DisplayAA2CComponent {
 

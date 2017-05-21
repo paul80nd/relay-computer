@@ -1,6 +1,6 @@
-import { ICardZBusGroup } from "../bus/bus_groups";
-import { RegABCDLines } from "../bus/bus_part_lines";
-import { IRegisterCardPart, RegisterCardPart } from "./parts/register.cardpart";
+import { ICardZBusGroup } from '../bus/bus_groups';
+import { RegABCDLines } from '../bus/bus_part_lines';
+import { IRegisterCardPart, RegisterCardPart } from './parts/register.cardpart';
 
 export interface IRegisterBCCard {
 

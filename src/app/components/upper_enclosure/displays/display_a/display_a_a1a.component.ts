@@ -1,11 +1,11 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { BitValue } from "../../../../model/bit_value";
-import { RegABCDLines } from "../../../../model/bus/bus_part_lines";
+import { BitValue } from '../../../../model/bit_value';
+import { RegABCDLines } from '../../../../model/bus/bus_part_lines';
 
 @Component({
-    selector: "[rc-display-a-a1a]",
-    templateUrl: "display_a_a1a.component.html",
+    selector: '[rc-display-a-a1a]',
+    templateUrl: 'display_a_a1a.component.html',
 })
 export class DisplayAA1AComponent {
 

@@ -1,8 +1,8 @@
-import { CardPart } from "../../model/cards/card_part";
-import { BitValue } from "../bit_value";
-import { ICardWBusGroup } from "../bus/bus_groups";
-import { IAbortBusPart, IClockBusPart, IResetBusPart } from "../bus/bus_parts";
-import { ClockLines, PulseLines, ResetLines } from "../bus/bus_part_lines";
+import { CardPart } from '../../model/cards/card_part';
+import { BitValue } from '../bit_value';
+import { ICardWBusGroup } from '../bus/bus_groups';
+import { IAbortBusPart, IClockBusPart, IResetBusPart } from '../bus/bus_parts';
+import { ClockLines, PulseLines, ResetLines } from '../bus/bus_part_lines';
 
 export interface ISequencerCard {
 

@@ -1,14 +1,14 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input } from '@angular/core';
 
-import { BitValue } from "../../../../model/bit_value";
+import { BitValue } from '../../../../model/bit_value';
 import {
     AluOperationLines,
     AluFunctionClLines,
-} from "../../../../model/bus/bus_part_lines";
+} from '../../../../model/bus/bus_part_lines';
 
 @Component({
-    selector: "[rc-display-b-alu]",
-    templateUrl: "display_b_alu.component.html",
+    selector: '[rc-display-b-alu]',
+    templateUrl: 'display_b_alu.component.html',
 })
 export class DisplayBAluComponent {
 
