@@ -1,12 +1,11 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-import { IComputer, IComputerFactory, ComputerFactory } from "../model/computer";
+import { IComputer, IComputerFactory, ComputerFactory } from "./model/computer";
 
 @Component({
-    selector: "my-app",
-    templateUrl: "computer.html",
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
-
 export class AppComponent implements OnInit {
 
     public computer: IComputer;

@@ -8,6 +8,7 @@ export interface ISequencerCard {
 
     abort: BitValue;
     fsm: BitValue;
+    pulse: BitValue;
 
     connect(dataBus: ICardWBusGroup): void;
 }

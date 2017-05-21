@@ -6,26 +6,43 @@ import { IAuxRegisterBusPart, IAluFunctionClBusPart,
     IDataSwitchGateBusPart, II2BBusPart, IRegisterABCDBusPart } from "../bus/bus_parts";
 
 export interface IDisplayACard {
+
+    a1a: CardPart;
+    a1bClock: CardPart;
+    a1bI2b: CardPart;
+    a1cAuxReg: CardPart;
+    a1cCl: CardPart;
+    a2b: CardPart;
+    a2c: CardPart;
+
+    a1aIn: BitValue;
+    a1bClockIn: BitValue;
+    a1bI2bIn: BitValue;
+    a1cAuxRegIn: BitValue;
+    a1cClIn: BitValue;
+    a2bIn: BitValue;
+    a2cIn: BitValue;
+
     connect(busGroup: IDisplayABusGroup): void;
 }
 
 export class DisplayACard implements IDisplayACard {
 
-    private a1a: CardPart;
-    private a1bClock: CardPart;
-    private a1bI2b: CardPart;
-    private a1cAuxReg: CardPart;
-    private a1cCl: CardPart;
-    private a2b: CardPart;
-    private a2c: CardPart;
+    public a1a: CardPart;
+    public a1bClock: CardPart;
+    public a1bI2b: CardPart;
+    public a1cAuxReg: CardPart;
+    public a1cCl: CardPart;
+    public a2b: CardPart;
+    public a2c: CardPart;
 
-    private a1aIn: BitValue;
-    private a1bClockIn: BitValue;
-    private a1bI2bIn: BitValue;
-    private a1cAuxRegIn: BitValue;
-    private a1cClIn: BitValue;
-    private a2bIn: BitValue;
-    private a2cIn: BitValue;
+    public a1aIn: BitValue;
+    public a1bClockIn: BitValue;
+    public a1bI2bIn: BitValue;
+    public a1cAuxRegIn: BitValue;
+    public a1cClIn: BitValue;
+    public a2bIn: BitValue;
+    public a2cIn: BitValue;
 
     private a1aPart: IRegisterABCDBusPart;
     private a1bClockPart: IClockBusPart;

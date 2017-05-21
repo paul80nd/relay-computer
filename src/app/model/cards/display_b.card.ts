@@ -3,7 +3,13 @@ import { IDisplayBBusGroup } from "../bus/bus_groups";
 
 export interface IDisplayBCard {
 
+    address: BitValue;
+    alu: BitValue;
+    aluFuncCl: BitValue;
+    clock: BitValue;
+    condition: BitValue;
     data: BitValue;
+    operation: BitValue;
 
     connect(dataBus: IDisplayBBusGroup): void;
 

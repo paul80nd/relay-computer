@@ -4,9 +4,19 @@ import { DataSwitchGateLines, RegAuxLines, ResetLines } from "../bus/bus_part_li
 import { ClockLines } from "../bus/bus_part_lines";
 
 export interface IControlSwitchesCard {
+
+    clock: boolean;
+    reset: boolean;
+    run: boolean;
+
+    data: CardPart;
+
     connect(busGroup: IControlSwitchesBusGroup): void;
     hackLoadInstOn(): void;
     hackLoadInstOff(): void;
+    toggleClock(): void;
+    toggleReset(): void;
+    toggleRunStop(): void;
 }
 
 export class ControlSwitchesCard implements IControlSwitchesCard {
@@ -16,7 +26,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     public run: boolean;
 
     private clockOut: CardPart;
-    private data: CardPart;
+    public data: CardPart;
     private hackAuxReg: CardPart;
     private hackA2b: CardPart;
     private resetOut: CardPart;

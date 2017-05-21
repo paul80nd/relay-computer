@@ -1,6 +1,6 @@
 export const svgTemplate = `
     <!-- Origin is at center of first (LD) led -->
-    <svg:title>Register {{registerName}}</svg:title>
+    <svg:title>Register {{description}}</svg:title>
 
     <svg:rect x="-4" y="7" width="218" height="5" fill="white" />
     

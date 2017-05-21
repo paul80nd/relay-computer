@@ -8,7 +8,7 @@ import { IDisplayACard } from "../../../../model/cards/display_a.card";
 
 @Component({
     selector: "[rc-display-a]",
-    templateUrl: "svg/display_a.component.svg",
+    templateUrl: "./display_a.component.html",
 })
 export class DisplayAComponent {
 
