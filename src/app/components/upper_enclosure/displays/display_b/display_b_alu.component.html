@@ -1,4 +1,4 @@
-export const svgTemplate = ` 
+<svg:g>
     <!-- Origin at top left CL led light bar -->
     <svg:rect x="0" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl.bit(clLine)" />
     <svg:rect x="0" y="0" width="8" height="17" class="indOutline" />
@@ -38,4 +38,4 @@ export const svgTemplate = `
         [bitTarget]="xorLine" transform="translate(0 36)"></svg:g>
     <svg:g rc-alu-op-llb [value]="alu" [description]="'SHL'" [color]="'Yellow'" 
         [bitTarget]="shlLine" transform="translate(0 45)"></svg:g>
-`;
+</svg:g>

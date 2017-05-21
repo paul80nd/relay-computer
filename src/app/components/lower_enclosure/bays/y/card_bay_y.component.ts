@@ -1,10 +1,8 @@
 import { Component } from "@angular/core";
 
-import { svgTemplate } from "./card_bay_y.svg";
-
 @Component({
     selector: "[rc-card-bay-y]",
-    template: svgTemplate,
+    templateUrl: "./card_bay_y.component.html",
 })
 
 export class CardBayYComponent { }

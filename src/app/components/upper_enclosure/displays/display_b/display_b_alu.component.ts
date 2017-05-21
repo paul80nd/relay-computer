@@ -6,11 +6,9 @@ import {
     AluFunctionClLines,
 } from "../../../../model/bus/bus_part_lines";
 
-import { svgTemplate } from "./display_b_alu.svg";
-
 @Component({
     selector: "[rc-display-b-alu]",
-    template: svgTemplate,
+    templateUrl: "display_b_alu.component.html",
 })
 export class DisplayBAluComponent {
 

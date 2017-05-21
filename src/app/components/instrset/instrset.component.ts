@@ -1,10 +1,8 @@
 import { Component } from "@angular/core";
 
-import { svgTemplate } from "./instrset.svg";
-
 @Component({
     selector: "[rc-instruction-set]",
-    template: svgTemplate,
+    templateUrl: "./instrset.component.html",
 })
 
 export class InstructionSetComponent {

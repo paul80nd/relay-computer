@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { BitValue } from "../../../../model/bit_value";
 
-import { svgTemplate } from "./dbl_byte_llb.svg";
-
 @Component({
     selector: "[rc-dbl-byte-llb]",
-    template: svgTemplate,
+    templateUrl: "dbl_byte_llb.component.html",
 })
 
 export class DoubleByteLedLightBarComponent {

@@ -1,0 +1,9 @@
+<!-- Origin is at top left of bit 15 led light bar -->
+<svg:g *ngFor="let v of ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']; let i=index">
+    <svg:title>Address Bus Display</svg:title>
+    <svg:rect [attr.x]="135-(9*i)" y="0" width="8" height="17" class="indRed" [class.on]="value.bit(i)" />
+    <svg:rect [attr.x]="135-(9*i)" y="0" width="8" height="17" class="indOutline" />
+    <svg:text [attr.transform]="'translate(' + (135 - (i * 9) + 0.69671) + ' 2.406845)'" fill="black">
+        <svg:tspan class="d-text9" x=".8911172" y="9">{{v}}</svg:tspan>
+    </svg:text>
+</svg:g>

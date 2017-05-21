@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { BitValue } from "../../../../model/bit_value";
 
-import { svgTemplate } from "./byte_leds.svg";
-
 @Component({
     selector: "[rc-byte-leds]",
-    template: svgTemplate,
+    templateUrl: "byte_leds.component.html",
 })
 
 export class ByteLedsComponent {

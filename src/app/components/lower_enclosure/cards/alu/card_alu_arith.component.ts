@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { IAluArithmeticCard } from "../../../../model/cards/alu_arithmetic.card";
 
-import { svgTemplate } from "./card_alu_arith.svg";
-
 @Component({
     selector: "[rc-card-alu-arith]",
-    template: svgTemplate,
+    templateUrl: "./card_alu_arith.component.html",
 })
 
 export class CardAluArithmeticComponent {

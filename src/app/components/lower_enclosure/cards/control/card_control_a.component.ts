@@ -3,11 +3,9 @@ import { Component, Input } from "@angular/core";
 import { AbortLines, I2BLines } from "../../../../model/bus/bus_part_lines";
 import { IControlCard } from "../../../../model/cards/control.card";
 
-import { svgTemplate } from "./card_control_a.svg";
-
 @Component({
     selector: "[rc-card-control-a]",
-    template: svgTemplate,
+    templateUrl: "./card_control_a.component.html",
 })
 
 export class CardControlAComponent {

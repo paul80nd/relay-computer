@@ -3,11 +3,9 @@ import { Component, Input } from "@angular/core";
 import { BitValue } from "../../../../model/bit_value";
 import { AluOperationLines } from "../../../../model/bus/bus_part_lines";
 
-import { svgTemplate } from "./display_a_a2c.svg";
-
 @Component({
     selector: "[rc-display-a-a2c]",
-    template: svgTemplate,
+    templateUrl: "display_a_a2c.component.html",
 })
 export class DisplayAA2CComponent {
 

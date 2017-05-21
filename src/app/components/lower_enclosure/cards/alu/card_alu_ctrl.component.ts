@@ -6,11 +6,9 @@ import {
 } from "../../../../model/bus/bus_part_lines";
 import { IAluControlCard } from "../../../../model/cards/alu_control.card";
 
-import { svgTemplate } from "./card_alu_ctrl.svg";
-
 @Component({
     selector: "[rc-card-alu-ctrl]",
-    template: svgTemplate,
+    templateUrl: "./card_alu_ctrl.component.html",
 })
 
 export class CardAluControlComponent {

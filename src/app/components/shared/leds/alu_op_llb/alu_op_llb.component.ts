@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { BitValue } from "../../../../model/bit_value";
 
-import { svgTemplate } from "./alu_op_llb.svg";
-
 @Component({
     selector: "[rc-alu-op-llb]",
-    template: svgTemplate,
+    templateUrl: "alu_op_llb.component.html",
 })
 
 export class AluOperationLedLightBarComponent {

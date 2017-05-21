@@ -3,11 +3,9 @@ import { Component, Input } from "@angular/core";
 import { BitValue } from "../../../../model/bit_value";
 import { CardPart } from "../../../../model/cards/card_part";
 
-import { svgTemplate } from "./tact_switch.svg";
-
 @Component({
     selector: "[rc-tact-switch]",
-    template: svgTemplate,
+    templateUrl: "tact_switch.component.html",
 })
 
 export class TactileSwitchComponent  {

@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { CardPart } from "../../../../model/cards/card_part";
 
-import { svgTemplate } from "./byte_switch.svg";
-
 @Component({
     selector: "[rc-byte-switch]",
-    template: svgTemplate,
+    templateUrl: "byte_switch.component.html",
 })
 
 export class ByteSwitchComponent {

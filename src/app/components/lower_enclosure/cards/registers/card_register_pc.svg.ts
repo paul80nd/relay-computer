@@ -1,4 +1,0 @@
-export const svgTemplate = `
-    <!-- Origin at bay top left -->
-    <svg:g rc-register-16-leds [register]="card.register" description="Program Counter" transform="translate(14,25)"></svg:g>
-`;

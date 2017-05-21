@@ -3,11 +3,9 @@ import { Component, Input } from "@angular/core";
 import { AluFunctionClLines, RegABCDLines } from "../../../../model/bus/bus_part_lines";
 import { IControlCard } from "../../../../model/cards/control.card";
 
-import { svgTemplate } from "./card_control_b.svg";
-
 @Component({
     selector: "[rc-card-control-b]",
-    template: svgTemplate,
+    templateUrl: "./card_control_b.component.html",
 })
 
 export class CardControlBComponent {

@@ -2,11 +2,9 @@ import { Component, Input } from "@angular/core";
 
 import { IRegisterPCCard } from "../../../../model/cards/register_pc.card";
 
-import { svgTemplate } from "./card_register_pc.svg";
-
 @Component({
     selector: "[rc-card-register-pc]",
-    template: svgTemplate,
+    templateUrl: "card_register_pc.component.html",
 })
 
 export class CardRegisterPCComponent {
