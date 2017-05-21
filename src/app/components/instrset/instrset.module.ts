@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import  { InstructionSetComponent } from './instrset.component';
+import { InstructionSetComponent } from './instrset.component';
 
 @NgModule({
   declarations: [ InstructionSetComponent ],

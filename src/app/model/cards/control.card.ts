@@ -67,7 +67,7 @@ export class ControlCard implements IControlCard {
 
     private update = () => {
         if (this.operationPart) {
-            let operation = this.operationPart.value;
+            const operation = this.operationPart.value;
 
             if (operation.bit(OperationLines.IMV8)) {
                 this.updateMv8();
@@ -81,10 +81,10 @@ export class ControlCard implements IControlCard {
 
     private updateAlu() {
         if (this.pulsePart && this.instructionPart) {
-            let pulse = this.pulsePart.value;
-            let instr = this.instructionPart.value;
+            const pulse = this.pulsePart.value;
+            const instr = this.instructionPart.value;
             let regABCD = BitValue.Zero;
-            let abort = BitValue.Zero;
+            const abort = BitValue.Zero;
             let aluFunc = BitValue.Zero;
 
             if (pulse.bit(PulseLines.D)) {
@@ -116,8 +116,8 @@ export class ControlCard implements IControlCard {
     }
     private updateSet() {
         if (this.pulsePart && this.instructionPart) {
-            let pulse = this.pulsePart.value;
-            let instr = this.instructionPart.value;
+            const pulse = this.pulsePart.value;
+            const instr = this.instructionPart.value;
             let regABCD = BitValue.Zero;
             let i2b = BitValue.Zero;
             let abort = BitValue.Zero;
@@ -150,8 +150,8 @@ export class ControlCard implements IControlCard {
 
     private updateMv8() {
         if (this.pulsePart && this.instructionPart) {
-            let pulse = this.pulsePart.value;
-            let instr = this.instructionPart.value;
+            const pulse = this.pulsePart.value;
+            const instr = this.instructionPart.value;
             let regABCD = BitValue.Zero;
             let abort = BitValue.Zero;
 

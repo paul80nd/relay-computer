@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IComputer, IComputerFactory, ComputerFactory } from "./model/computer";
+import { IComputer, IComputerFactory, ComputerFactory } from './model/computer';
 
 @Component({
   selector: 'app-root',

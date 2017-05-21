@@ -73,7 +73,7 @@ export interface IBusGroupFactory {
 }
 
 /**
- * Collection of the Bus Groups 
+ * Collection of the Bus Groups
  */
 export interface IBusGroupSet {
     readonly auxControl: IAuxControlBusGroup;
@@ -92,30 +92,30 @@ export class BusGroupFactory implements IBusGroupFactory {
     public createBusGroups(): IBusGroupSet {
 
         // Build busses
-        let b = this.busFactory.createBusses();
+        const b = this.busFactory.createBusses();
 
         // Wrap cables in to bus groups
-        let auxControl = { addressBus: b.address, controlYBus: b.controlY, dataControlBus: b.dataControl };
-        let controlSwitches = {
-            addressBus: b.address,
-            controlXBus: b.controlX,
-            dataControlBus: this.busFactory.createBusForControlSwitches(),
-            hackA1Bus: b.displayA1,
-            hackA2Bus: b.displayA2,
+        const auxControl = { addressBus: b.address, controlYBus: b.controlY, dataControlBus: b.dataControl };
+        const controlSwitches = {
+              addressBus: b.address,
+              controlXBus: b.controlX,
+              dataControlBus: this.busFactory.createBusForControlSwitches(),
+              hackA1Bus: b.displayA1,
+              hackA2Bus: b.displayA2,
         };
-        let displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
-        let displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };
-        let w = {
-            controlInstructionBus: b.controlInstruction,
-            controlXBus: b.controlX,
-            controlZBus: b.controlZ,
-            operationBus: b.operation,
-            pulseBus: b.pulse };
-        let x = { 
-            addressBus: b.address,
-            controlXBus: b.controlX, 
-            dataInstructionBus: b.dataInstruction };
-        let z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
+        const displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
+        const displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };
+        const w = {
+              controlInstructionBus: b.controlInstruction,
+              controlXBus: b.controlX,
+              controlZBus: b.controlZ,
+              operationBus: b.operation,
+              pulseBus: b.pulse };
+        const x = {
+              addressBus: b.address,
+              controlXBus: b.controlX,
+              dataInstructionBus: b.dataInstruction };
+        const z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
 
         // Package up
         return {

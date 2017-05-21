@@ -49,15 +49,15 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     }
 
     public hackLoadInstOn(): void {
-        let sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
-        let lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
+        const sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
+        const lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
         if (!sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
         if (!lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
     }
 
     public hackLoadInstOff(): void {
-        let sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
-        let lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
+        const sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
+        const lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
         if (lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
         if (sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
     }

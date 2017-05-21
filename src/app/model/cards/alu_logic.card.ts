@@ -52,14 +52,14 @@ export class AluLogicCard implements IAluLogicCard {
 
     private update = () => {
         if (this.inputBPart && this.inputCPart && this.aluOpPart) {
-            let b = this.inputBPart.value;
-            let c = this.inputCPart.value;
+            const b = this.inputBPart.value;
+            const c = this.inputCPart.value;
 
-            let notValue = b.not().cap(8);
-            let shlValue = b.shiftLeft(8);
-            let orValue = b.or(c);
-            let xorValue = b.xor(c);
-            let andValue = b.and(c);
+            const notValue = b.not().cap(8);
+            const shlValue = b.shiftLeft(8);
+            const orValue = b.or(c);
+            const xorValue = b.xor(c);
+            const andValue = b.and(c);
 
             if (!this.notValue.isEqualTo(notValue)) { this.notValue = notValue; }
             if (!this.shlValue.isEqualTo(shlValue)) { this.shlValue = shlValue; }
@@ -67,7 +67,7 @@ export class AluLogicCard implements IAluLogicCard {
             if (!this.xorValue.isEqualTo(xorValue)) { this.xorValue = xorValue; }
             if (!this.andValue.isEqualTo(andValue)) { this.andValue = andValue; }
 
-            let alu = this.aluOpPart.value;
+            const alu = this.aluOpPart.value;
             let valueOut = BitValue.Zero;
             if (alu.bit(AluOperationLines.NOT)) { valueOut = valueOut.or(notValue); };
             if (alu.bit(AluOperationLines.SHL)) { valueOut = valueOut.or(shlValue); };

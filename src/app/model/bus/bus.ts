@@ -142,47 +142,47 @@ export class BusFactory implements IBusFactory {
     public createBusses(): IBusSet {
 
         // Build shared bus parts
-        let abortPart = this.busPartFactory.getForAbort();
-        let addressPart = this.busPartFactory.getForAddress();
-        let aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
-        let aluOperationPart = this.busPartFactory.getForAluOperation();
-        let auxRegisterPart = this.busPartFactory.getForAuxRegister();
-        let clockPart = this.busPartFactory.getForClock();
-        let conditionPart = this.busPartFactory.getForCondition();
-        let dataPart = this.busPartFactory.getForData();
-        let i2bPart = this.busPartFactory.getForI2B();
-        let instructionPart = this.busPartFactory.getForInstruction();
-        let operationPart = this.busPartFactory.getForOperation();
-        let pulsePart = this.busPartFactory.getForPulse();
-        let regABCDPart = this.busPartFactory.getForRegisterABCD();
-        let resetPart = this.busPartFactory.getForReset();
-        let sdsPart = this.busPartFactory.getForDataSwitchGate();
+        const abortPart = this.busPartFactory.getForAbort();
+        const addressPart = this.busPartFactory.getForAddress();
+        const aluFunctionClPart = this.busPartFactory.getForAluFunctionCl();
+        const aluOperationPart = this.busPartFactory.getForAluOperation();
+        const auxRegisterPart = this.busPartFactory.getForAuxRegister();
+        const clockPart = this.busPartFactory.getForClock();
+        const conditionPart = this.busPartFactory.getForCondition();
+        const dataPart = this.busPartFactory.getForData();
+        const i2bPart = this.busPartFactory.getForI2B();
+        const instructionPart = this.busPartFactory.getForInstruction();
+        const operationPart = this.busPartFactory.getForOperation();
+        const pulsePart = this.busPartFactory.getForPulse();
+        const regABCDPart = this.busPartFactory.getForRegisterABCD();
+        const resetPart = this.busPartFactory.getForReset();
+        const sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
-        let address = { addressPart: addressPart } 
-        let controlInstruction = { aluFunctionClPart, instructionPart };
-        let dataControl = { aluFunctionClPart, conditionPart, dataPart };
-        let dataInstruction = { dataPart, instructionPart };
-        let controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };
-        let controlY = { sdsPart };
-        let controlZ = { regABCDPart, aluOperationPart };
-        let registerBC = {
-            registerBPart: this.busPartFactory.getForData(),
-            registerCPart: this.busPartFactory.getForData(),
+        const address = { addressPart: addressPart };
+        const controlInstruction = { aluFunctionClPart, instructionPart };
+        const dataControl = { aluFunctionClPart, conditionPart, dataPart };
+        const dataInstruction = { dataPart, instructionPart };
+        const controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };
+        const controlY = { sdsPart };
+        const controlZ = { regABCDPart, aluOperationPart };
+        const registerBC = {
+              registerBPart: this.busPartFactory.getForData(),
+              registerCPart: this.busPartFactory.getForData(),
         };
-        let displayA1 = {
-            a1aPart: regABCDPart,
-            a1bClockPart: clockPart,
-            a1bI2bPart: i2bPart,
-            a1cAuxRegPart: auxRegisterPart,
-            a1cClPart: aluFunctionClPart };
-        let displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
-        let displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
-            conditionPart, dataPart };
-        let displayB2 = { addressPart, instructionPart };
-        let displayB3 = { operationPart };
-        let operation = { abortPart, operationPart };
-        let pulse = { pulsePart };
+        const displayA1 = {
+              a1aPart: regABCDPart,
+              a1bClockPart: clockPart,
+              a1bI2bPart: i2bPart,
+              a1cAuxRegPart: auxRegisterPart,
+              a1cClPart: aluFunctionClPart };
+        const displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
+        const displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
+              conditionPart, dataPart };
+        const displayB2 = { addressPart, instructionPart };
+        const displayB3 = { operationPart };
+        const operation = { abortPart, operationPart };
+        const pulse = { pulsePart };
 
         // Bundle up
         return {

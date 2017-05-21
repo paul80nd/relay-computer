@@ -21,8 +21,8 @@ export class RegisterADCard implements IRegisterADCard {
     }
 
     public connect(busGroup: ICardZBusGroup) {
-        let dataPart = busGroup.dataControlBus.dataPart;
-        let ctrlPart = busGroup.controlZBus.regABCDPart;
+        const dataPart = busGroup.dataControlBus.dataPart;
+        const ctrlPart = busGroup.controlZBus.regABCDPart;
         this.registerA.connect(dataPart, ctrlPart, dataPart);
         this.registerD.connect(dataPart, ctrlPart, dataPart);
     }

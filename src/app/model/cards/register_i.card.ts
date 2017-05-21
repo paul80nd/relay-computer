@@ -31,7 +31,7 @@ export class RegisterICard implements IRegisterICard {
     public connect(busGroup: ICardXBusGroup) {
         this.instrPart = busGroup.dataInstructionBus.instructionPart;
         this.dataPart = busGroup.dataInstructionBus.dataPart;
-        let ctrlPart = busGroup.controlXBus.auxRegisterPart;
+        const ctrlPart = busGroup.controlXBus.auxRegisterPart;
         this.register.connect(this.dataPart, ctrlPart);
         this.register.connectDirect(busGroup.dataInstructionBus.instructionPart);
 
@@ -42,7 +42,7 @@ export class RegisterICard implements IRegisterICard {
 
     private i2bHandler = () => {
         if (this.i2bPart && this.instrPart) {
-            let i2b = this.i2bPart.value.bit(I2BLines.I2B);
+            const i2b = this.i2bPart.value.bit(I2BLines.I2B);
             if (this.i2b !== i2b) {
                 this.i2b = i2b;
                 let value = BitValue.Zero;

@@ -27,40 +27,40 @@ export class ComputerFactory implements IComputerFactory {
 
     public createComputer(): IComputer {
 
-        let busFactory = new BusFactory(new BusPartFactory());
-        let busGroupFactory = new BusGroupFactory(busFactory);
-        let cardFactory = new CardFactory();
-        let backplaneFactory = new BackplaneFactory(cardFactory);
+        const busFactory = new BusFactory(new BusPartFactory());
+        const busGroupFactory = new BusGroupFactory(busFactory);
+        const cardFactory = new CardFactory();
+        const backplaneFactory = new BackplaneFactory(cardFactory);
 
-        let cables = busGroupFactory.createBusGroups();
-        let cards = cardFactory.createCards();
+        const cables = busGroupFactory.createBusGroups();
+        const cards = cardFactory.createCards();
 
-        let controlSwitchesBusGroup = cables.controlSwitches;
-        let controlSwitchesCard = cards.getControlSwitches();
+        const controlSwitchesBusGroup = cables.controlSwitches;
+        const controlSwitchesCard = cards.getControlSwitches();
         controlSwitchesCard.connect(controlSwitchesBusGroup);
 
-        let displayABusGroup = cables.displayA;
-        let displayACard = cards.getDisplayA();
+        const displayABusGroup = cables.displayA;
+        const displayACard = cards.getDisplayA();
         displayACard.connect(displayABusGroup);
 
-        let displayBBusGroup = cables.displayB;
-        let displayBCard = cards.getDisplayB();
+        const displayBBusGroup = cables.displayB;
+        const displayBCard = cards.getDisplayB();
         displayBCard.connect(displayBBusGroup);
 
-        let auxControlBusGroup = cables.auxControl;
-        let auxControlCard = cards.getAuxControl();
+        const auxControlBusGroup = cables.auxControl;
+        const auxControlCard = cards.getAuxControl();
         auxControlCard.connect(controlSwitchesBusGroup, auxControlBusGroup);
 
-        let wBusGroup = cables.w;
-        let wBackplane = backplaneFactory.createWBackplane();
+        const wBusGroup = cables.w;
+        const wBackplane = backplaneFactory.createWBackplane();
         wBackplane.connect(wBusGroup);
 
-        let xBusGroup = cables.x;
-        let xBackplane = backplaneFactory.createXBackplane();
+        const xBusGroup = cables.x;
+        const xBackplane = backplaneFactory.createXBackplane();
         xBackplane.connect(xBusGroup);
 
-        let zBusGroup = cables.z;
-        let zBackplane = backplaneFactory.createZBackplane();
+        const zBusGroup = cables.z;
+        const zBackplane = backplaneFactory.createZBackplane();
         zBackplane.connect(zBusGroup);
 
         return {

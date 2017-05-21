@@ -21,8 +21,8 @@ export class RegisterPCCard implements IRegisterPCCard {
     }
 
     public connect(busGroup: ICardXBusGroup) {
-        let addressPart = busGroup.addressBus.addressPart;
-        let ctrlPart = busGroup.controlXBus.auxRegisterPart;
+        const addressPart = busGroup.addressBus.addressPart;
+        const ctrlPart = busGroup.controlXBus.auxRegisterPart;
         this.register.connect(addressPart, ctrlPart, addressPart);
     }
 }

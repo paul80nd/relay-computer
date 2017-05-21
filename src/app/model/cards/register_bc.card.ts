@@ -21,8 +21,8 @@ export class RegisterBCCard implements IRegisterBCCard {
     }
 
     public connect(busGroup: ICardZBusGroup) {
-        let dataPart = busGroup.dataControlBus.dataPart;
-        let ctrlPart = busGroup.controlZBus.regABCDPart;
+        const dataPart = busGroup.dataControlBus.dataPart;
+        const ctrlPart = busGroup.controlZBus.regABCDPart;
         this.registerB.connect(dataPart, ctrlPart, dataPart);
         this.registerB.connectDirect(busGroup.registerBCBus.registerBPart);
         this.registerC.connect(dataPart, ctrlPart, dataPart);
