@@ -3,6 +3,7 @@ import { IAluControlCard } from './cards/alu_control.card';
 import { IAluLogicCard } from './cards/alu_logic.card';
 import { IControlCard } from './cards/control.card';
 import { IDecoderCard } from './cards/decoder.card';
+import { IIncrementerCard } from './cards/incrementer.card';
 import { IRegisterADCard } from './cards/register_ad.card';
 import { IRegisterBCCard } from './cards/register_bc.card';
 import { IRegisterICard } from './cards/register_i.card';
@@ -26,6 +27,7 @@ export interface IWBackplane {
 }
 
 export interface IXBackplane {
+    readonly incrementer: IIncrementerCard;
     readonly registerI: IRegisterICard;
     readonly registerPC: IRegisterPCCard;
 
@@ -56,6 +58,7 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     public createXBackplane(): IXBackplane {
         return new XBackplane(
+            this.cardFactory.createIncrementer(),
             this.cardFactory.createRegisterI(),
             this.cardFactory.createRegisterPC()
         );
@@ -90,10 +93,12 @@ class WBackplane implements IWBackplane {
 class XBackplane implements IXBackplane {
 
     constructor(
+        public incrementer: IIncrementerCard,
         public registerI: IRegisterICard,
         public registerPC: IRegisterPCCard) { }
 
     public connect(busGroup: ICardXBusGroup) {
+        this.incrementer.connect(busGroup);
         this.registerI.connect(busGroup);
         this.registerPC.connect(busGroup);
     }

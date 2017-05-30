@@ -8,6 +8,7 @@ import { CardAluControlComponent } from './alu/card_alu_ctrl.component';
 import { CardAluLogicComponent } from './alu/card_alu_logic.component';
 import { CardControlAComponent } from './control/card_control_a.component';
 import { CardControlBComponent } from './control/card_control_b.component';
+import { CardIncrementerBComponent } from './incrementer/card_incrementer_b.component';
 import { CardDecoderComponent } from './decoder/card_decoder.component';
 import { CardRegisterADComponent } from './registers/card_register_ad.component';
 import { CardRegisterBCComponent } from './registers/card_register_bc.component';
@@ -23,6 +24,7 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardControlAComponent,
         CardControlBComponent,
         CardDecoderComponent,
+        CardIncrementerBComponent,
         CardRegisterADComponent,
         CardRegisterBCComponent,
         CardRegisterIComponent,
@@ -36,6 +38,7 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardControlAComponent,
         CardControlBComponent,
         CardDecoderComponent,
+        CardIncrementerBComponent,
         CardRegisterADComponent,
         CardRegisterBCComponent,
         CardRegisterIComponent,

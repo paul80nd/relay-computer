@@ -4,6 +4,7 @@ import { IControlSwitchesCard, ControlSwitchesCard } from './cards/control_switc
 import { IDecoderCard, DecoderCard } from './cards/decoder.card';
 import { IDisplayACard, DisplayACard } from './cards/display_a.card';
 import { IDisplayBCard, DisplayBCard } from './cards/display_b.card';
+import { IIncrementerCard, IncrementerCard } from './cards/incrementer.card';
 import { IRegisterADCard, RegisterADCard } from './cards/register_ad.card';
 import { IRegisterBCCard, RegisterBCCard } from './cards/register_bc.card';
 import { IRegisterICard, RegisterICard } from './cards/register_i.card';
@@ -20,6 +21,7 @@ export interface ICardFactory {
     createCards(): ICards;
     createControl(): IControlCard;
     createDecoder(): IDecoderCard;
+    createIncrementer(): IIncrementerCard;
     createRegisterAD(): IRegisterADCard;
     createRegisterBC(): IRegisterBCCard;
     createRegisterI(): IRegisterICard;
@@ -62,6 +64,7 @@ export class CardFactory implements ICardFactory {
     public createAluLogic(): IAluLogicCard { return new AluLogicCard; }
     public createControl(): IControlCard { return new ControlCard; }
     public createDecoder(): IDecoderCard { return new DecoderCard; }
+    public createIncrementer(): IIncrementerCard { return new IncrementerCard; }
     public createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
     public createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
     public createRegisterI(): IRegisterICard { return new RegisterICard; }

@@ -74,17 +74,11 @@
                 -->
         <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','Inst']" [color]="'Yellow'" [bitTarget]="linLine" transform="translate(9.999992 61.999977)"></svg:g>
         <svg:g rc-tact-switch [part]="card.a1cCl" [valueIn]="card.a1cClIn" [description]="['ld','Cond']" [color]="'Yellow'" [bitTarget]="clLine" transform="translate(32.999992 61.999977)"></svg:g>
+        <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','INC']" [color]="'Yellow'" [bitTarget]="licLine" transform="translate(55.999992 61.999977)"></svg:g>
+        <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['sel','INC']" [color]="'Green'" [bitTarget]="sicLine" transform="translate(55.999992 84.999977)"></svg:g>
         <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['ld','PC']" [color]="'Yellow'" [bitTarget]="lpcLine" transform="translate(78.99999 61.999977)"></svg:g>
         <svg:g rc-tact-switch [part]="card.a1cAuxReg" [valueIn]="card.a1cAuxRegIn" [description]="['sel','PC']" [color]="'Green'" [bitTarget]="spcLine" transform="translate(78.99999 84.999977)"></svg:g>
         <!-->
-        <svg:rect x="55.999992" y="61.999977" width="22" height="22" fill="#bbb" />
-        <svg:rect x="55.999992" y="61.999977" width="22" height="22" class="btnOutline" />
-        <svg:rect x="57.999992" y="63.999977" width="18" height="18" class="btnYellow" />
-        <svg:rect x="57.999992" y="63.999977" width="18" height="18" class="btnOutline" />
-        <svg:text transform="translate(57.999992 65.999977)" fill="black">
-            <svg:tspan class="d-text7" x="6.275879" y="6">ld</svg:tspan>
-            <svg:tspan class="d-text7" x="2.9724121" y="14">INC</svg:tspan>
-        </svg:text>
         <svg:rect x="107.99999" y="61.999977" width="22" height="22" fill="#bbb" />
         <svg:rect x="107.99999" y="61.999977" width="22" height="22" class="btnOutline" />
         <svg:rect x="109.99999" y="63.999977" width="18" height="18" class="btnYellow" />
@@ -108,14 +102,6 @@
         <svg:text transform="translate(155.99999 65.999977)" fill="black">
             <svg:tspan class="d-text7" x="6.275879" y="6">ld</svg:tspan>
             <svg:tspan class="d-text7" x="4.3310547" y="14">XY</svg:tspan>
-        </svg:text>
-        <svg:rect x="55.999992" y="84.999977" width="22" height="22" fill="#bbb" />
-        <svg:rect x="55.999992" y="84.999977" width="22" height="22" class="btnOutline" />
-        <svg:rect x="57.999992" y="86.999977" width="18" height="18" class="btnGreen" />
-        <svg:rect x="57.999992" y="86.999977" width="18" height="18" class="btnOutline" />
-        <svg:text transform="translate(57.999992 88.999977)" fill="black">
-            <svg:tspan class="d-text7" x="4.525879" y="6">sel</svg:tspan>
-            <svg:tspan class="d-text7" x="2.9724121" y="14">INC</svg:tspan>
         </svg:text>
         <svg:rect x="107.99999" y="84.999977" width="22" height="22" fill="#bbb" />
         <svg:rect x="107.99999" y="84.999977" width="22" height="22" class="btnOutline" />

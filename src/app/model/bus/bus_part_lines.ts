@@ -100,10 +100,14 @@ export enum RegABCDLines {
 }
 
 export enum RegAuxLines {
+    /* Load Incrementer Register */
+    LIC,
     /* Load Instruction Register */
     LIN,
     /* Load Program Counter */
     LPC,
+    /* Select Incrementer Register */
+    SIC,
     /* Select Program Counter */
     SPC
 }

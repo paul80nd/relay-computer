@@ -13,8 +13,10 @@ import { IDisplayACard } from '../../../../model/cards/display_a.card';
 export class DisplayAComponent {
 
     public clLine: number = AluFunctionClLines.CL;
+    public licLine: number = RegAuxLines.LIC;
     public linLine: number = RegAuxLines.LIN;
     public lpcLine: number = RegAuxLines.LPC;
+    public sicLine: number = RegAuxLines.SIC;
     public spcLine: number = RegAuxLines.SPC;
 
     public sdsLine: number = DataSwitchGateLines.SDS;
