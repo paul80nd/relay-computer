@@ -12,6 +12,7 @@ export interface IRegisterCardPart {
 
     connect(dataPart: IDataBusPart, ctrlPart: IBusPart): void;
     connect(dataPart: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart): void;
+    connectCardPart(cardPart: CardPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart): void;
     connectDirect(registerConnect: IDataBusPart): void;
 }
 
@@ -24,6 +25,7 @@ export class RegisterCardPart implements IRegisterCardPart {
     public isSelectable: boolean;
 
     private dataPart: IDataBusPart;
+    private cardPart: CardPart;
     private ctrlPart: IRegisterABCDBusPart;
 
     private valueOut: CardPart;
@@ -45,15 +47,26 @@ export class RegisterCardPart implements IRegisterCardPart {
         // Outputs
         if (dataPartOut) { dataPartOut.connect(this.valueOut); }
     }
+    public connectCardPart(cardPart: CardPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart) {
+        // Inputs
+        this.cardPart = cardPart;
+        this.cardPart.subscribe(this.update);
+        this.ctrlPart = ctrlPart;
+        this.ctrlPart.subscribe(this.update);
+        // Outputs
+        if (dataPartOut) { dataPartOut.connect(this.valueOut); }
+    }
     public connectDirect(registerConnect: IDataBusPart) {
         // Outputs
         registerConnect.connect(this.value);
     }
 
     private update = () => {
-        if (this.dataPart && this.ctrlPart) {
 
-            const value = this.dataPart.value;
+        const value = this.dataPart ? this.dataPart.value : (this.cardPart ? this.cardPart.value : BitValue.Zero);
+
+        if (this.ctrlPart) {
+
             const ld = this.ctrlPart.value.bit(this.loadLine);
             const sel = this.selectLine ? this.ctrlPart.value.bit(this.selectLine) : false;
 
