@@ -63,6 +63,15 @@ export enum I2BLines {
     I2B
 }
 
+export enum MemoryLines {
+    /** Data Bus To Memory */
+    B2M,
+    /** Memory Read */
+    MER,
+    /** Memory Write */
+    MEW
+}
+
 export enum OperationLines {
     /** SET-AB */
     ISET,

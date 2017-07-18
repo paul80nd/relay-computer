@@ -38,6 +38,8 @@ export interface IDataSwitchGateBusPart extends IBusPart { }
 export interface II2BBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the instruction bus value */
 export interface IInstructionBusPart extends IBusPart { }
+/** Bus part for the 3 lines that carry the memory bus operation lines */
+export interface IMemoryBusPart extends IBusPart { }
 /** Bus part for the 9 lines that carry the operation bus value */
 export interface IOperationBusPart extends IBusPart { }
 /** Bus part for the 20 lines tht carry the pulse bus value */
@@ -62,6 +64,7 @@ export interface IBusPartFactory {
     getForDataSwitchGate(): IDataSwitchGateBusPart;
     getForI2B(): II2BBusPart;
     getForInstruction(): IInstructionBusPart;
+    getForMemory(): IMemoryBusPart;
     getForOperation(): IOperationBusPart;
     getForPulse(): IPulseBusPart;
     getForRegisterABCD(): IRegisterABCDBusPart;
@@ -80,6 +83,7 @@ export class BusPartFactory implements IBusPartFactory {
     public getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
     public getForI2B(): II2BBusPart { return new BusPart(); }
     public getForInstruction(): IInstructionBusPart { return new BusPart(); }
+    public getForMemory(): IMemoryBusPart { return new BusPart(); }
     public getForOperation(): IOperationBusPart { return new BusPart(); }
     public getForPulse(): IPulseBusPart { return new BusPart(); }
     public getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }

@@ -137,35 +137,8 @@
 
         <svg:g rc-display-a-a2c [value]="card.a2c" [valueIn]="card.a2cIn" transform="translate(135.99999 113.99998)"></svg:g>
 
-        <!--
-                <svg:rect x="55.999992" y="113.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="55.999992" y="113.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="57.999992" y="115.99998" width="18" height="18" class="btnRed" />
-                <svg:rect x="57.999992" y="115.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(57.999992 121.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="1.2224121" y="6">MEN</svg:tspan>
-                </svg:text>
-                <svg:rect x="78.99999" y="113.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="78.99999" y="113.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="80.99999" y="115.99998" width="18" height="18" class="btnYellow" />
-                <svg:rect x="80.99999" y="115.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(80.99999 121.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="2.7810059" y="6">MW</svg:tspan>
-                </svg:text>
-                <svg:rect x="55.999992" y="136.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="55.999992" y="136.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="57.999992" y="138.99998" width="18" height="18" class="btnYellow" />
-                <svg:rect x="57.999992" y="138.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(57.999992 144.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="1.8034668" y="6">B2M</svg:tspan>
-                </svg:text>
-                <svg:rect x="78.99999" y="136.99998" width="22" height="22" fill="#bbb" />
-                <svg:rect x="78.99999" y="136.99998" width="22" height="22" class="btnOutline" />
-                <svg:rect x="80.99999" y="138.99998" width="18" height="18" class="btnGreen" />
-                <svg:rect x="80.99999" y="138.99998" width="18" height="18" class="btnOutline" />
-                <svg:text transform="translate(80.99999 144.99998)" fill="black">
-                    <svg:tspan class="d-text7" x="3.5568848" y="6">MR</svg:tspan>
-                </svg:text>
-                -->
+        <svg:g rc-tact-switch [part]="card.a1bMemory" [valueIn]="card.a1bMemoryIn" [description]="['B2M']" [color]="'Yellow'" [bitTarget]="b2mLine" transform="translate(55.999992,113.99998)"></svg:g>
+        <svg:g rc-tact-switch [part]="card.a1bMemory" [valueIn]="card.a1bMemoryIn" [description]="['MW']" [color]="'Yellow'" [bitTarget]="mewLine" transform="translate(78.99999,113.99998)"></svg:g>
+        <svg:g rc-tact-switch [part]="card.a1bMemory" [valueIn]="card.a1bMemoryIn" [description]="['MR']" [color]="'Green'" [bitTarget]="merLine" transform="translate(78.99999,136.99998)"></svg:g>
     </svg:g>
 </svg:g>

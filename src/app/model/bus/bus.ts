@@ -4,7 +4,9 @@ import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
-    II2BBusPart, IInstructionBusPart, IOperationBusPart, IPulseBusPart,
+    II2BBusPart, IInstructionBusPart, 
+    IMemoryBusPart,
+    IOperationBusPart, IPulseBusPart,
     IRegisterABCDBusPart, IResetBusPart,
 } from './bus_parts';
 
@@ -59,6 +61,7 @@ export interface IDisplayA1Bus extends IBus {
     readonly a1aPart: IRegisterABCDBusPart;
     readonly a1bClockPart: IClockBusPart;
     readonly a1bI2bPart: II2BBusPart;
+    readonly a1bMemoryPart: IMemoryBusPart;
     readonly a1cAuxRegPart: IAuxRegisterBusPart;
     readonly a1cClPart: IAluFunctionClBusPart;
 }
@@ -152,6 +155,7 @@ export class BusFactory implements IBusFactory {
         const dataPart = this.busPartFactory.getForData();
         const i2bPart = this.busPartFactory.getForI2B();
         const instructionPart = this.busPartFactory.getForInstruction();
+        const memoryPart = this.busPartFactory.getForMemory();
         const operationPart = this.busPartFactory.getForOperation();
         const pulsePart = this.busPartFactory.getForPulse();
         const regABCDPart = this.busPartFactory.getForRegisterABCD();
@@ -174,6 +178,7 @@ export class BusFactory implements IBusFactory {
               a1aPart: regABCDPart,
               a1bClockPart: clockPart,
               a1bI2bPart: i2bPart,
+              a1bMemoryPart: memoryPart,
               a1cAuxRegPart: auxRegisterPart,
               a1cClPart: aluFunctionClPart };
         const displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
