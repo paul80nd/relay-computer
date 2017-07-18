@@ -34,6 +34,7 @@ export interface IControlXBus extends IBus {
 
 /** Repesents the Y Control bus ribbon cable */
 export interface IControlYBus extends IBus {
+    readonly memoryPart: IMemoryBusPart;
     readonly sdsPart: IDataSwitchGateBusPart;
 }
 
@@ -168,7 +169,7 @@ export class BusFactory implements IBusFactory {
         const dataControl = { aluFunctionClPart, conditionPart, dataPart };
         const dataInstruction = { dataPart, instructionPart };
         const controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };
-        const controlY = { sdsPart };
+        const controlY = { memoryPart, sdsPart };
         const controlZ = { regABCDPart, aluOperationPart };
         const registerBC = {
               registerBPart: this.busPartFactory.getForData(),

@@ -5,6 +5,7 @@ import { IDecoderCard, DecoderCard } from './cards/decoder.card';
 import { IDisplayACard, DisplayACard } from './cards/display_a.card';
 import { IDisplayBCard, DisplayBCard } from './cards/display_b.card';
 import { IIncrementerCard, IncrementerCard } from './cards/incrementer.card';
+import { IMemoryCard, MemoryCard } from './cards/memory.card';
 import { IRegisterADCard, RegisterADCard } from './cards/register_ad.card';
 import { IRegisterBCCard, RegisterBCCard } from './cards/register_bc.card';
 import { IRegisterICard, RegisterICard } from './cards/register_i.card';
@@ -22,6 +23,7 @@ export interface ICardFactory {
     createControl(): IControlCard;
     createDecoder(): IDecoderCard;
     createIncrementer(): IIncrementerCard;
+    createMemory(): IMemoryCard;
     createRegisterAD(): IRegisterADCard;
     createRegisterBC(): IRegisterBCCard;
     createRegisterI(): IRegisterICard;
@@ -65,6 +67,7 @@ export class CardFactory implements ICardFactory {
     public createControl(): IControlCard { return new ControlCard; }
     public createDecoder(): IDecoderCard { return new DecoderCard; }
     public createIncrementer(): IIncrementerCard { return new IncrementerCard; }
+    public createMemory(): IMemoryCard { return new MemoryCard; }
     public createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
     public createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
     public createRegisterI(): IRegisterICard { return new RegisterICard; }

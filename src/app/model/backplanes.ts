@@ -4,12 +4,13 @@ import { IAluLogicCard } from './cards/alu_logic.card';
 import { IControlCard } from './cards/control.card';
 import { IDecoderCard } from './cards/decoder.card';
 import { IIncrementerCard } from './cards/incrementer.card';
+import { IMemoryCard } from './cards/memory.card';
 import { IRegisterADCard } from './cards/register_ad.card';
 import { IRegisterBCCard } from './cards/register_bc.card';
 import { IRegisterICard } from './cards/register_i.card';
 import { IRegisterPCCard } from './cards/register_pc.card';
 import { ISequencerCard } from './cards/sequencer.card';
-import { ICardWBusGroup, ICardXBusGroup, ICardZBusGroup } from './bus/bus_groups';
+import { ICardWBusGroup, ICardXBusGroup, ICardYBusGroup, ICardZBusGroup } from './bus/bus_groups';
 import { ICardFactory } from './cards';
 
 export interface IBackplaneFactory {
@@ -32,6 +33,12 @@ export interface IXBackplane {
     readonly registerPC: IRegisterPCCard;
 
     connect(busGroup: ICardXBusGroup): void;
+}
+
+export interface IYBackplane {
+    readonly memory: IMemoryCard;
+
+    connect(busGroup: ICardYBusGroup): void;
 }
 
 export interface IZBackplane {
@@ -61,6 +68,12 @@ export class BackplaneFactory implements IBackplaneFactory {
             this.cardFactory.createIncrementer(),
             this.cardFactory.createRegisterI(),
             this.cardFactory.createRegisterPC()
+        );
+    }
+
+    public createYBackplane(): IYBackplane {
+        return new YBackplane(
+            this.cardFactory.createMemory()
         );
     }
 
@@ -102,6 +115,17 @@ class XBackplane implements IXBackplane {
         this.registerI.connect(busGroup);
         this.registerPC.connect(busGroup);
     }
+}
+
+class YBackplane implements IYBackplane {
+
+    constructor(
+        public memory: IMemoryCard) { }
+
+    public connect(busGroup: ICardYBusGroup) {
+        this.memory.connect(busGroup);
+    }
+
 }
 
 class ZBackplane implements IZBackplane {

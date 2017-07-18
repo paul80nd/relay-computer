@@ -7,7 +7,7 @@ import { BusPartFactory } from './bus/bus_parts';
 import { BusGroupFactory } from './bus/bus_groups';
 import { CardFactory } from './cards';
 import { BackplaneFactory,
-    IWBackplane, IXBackplane, IZBackplane } from './backplanes';
+    IWBackplane, IXBackplane, IYBackplane, IZBackplane } from './backplanes';
 
 export interface IComputer {
     controlSwitchesCard: IControlSwitchesCard;
@@ -16,6 +16,7 @@ export interface IComputer {
     auxControlCard: IAuxControlCard;
     wBackplane: IWBackplane;
     xBackplane: IXBackplane;
+    yBackplane: IYBackplane;
     zBackplane: IZBackplane;
 }
 
@@ -59,6 +60,10 @@ export class ComputerFactory implements IComputerFactory {
         const xBackplane = backplaneFactory.createXBackplane();
         xBackplane.connect(xBusGroup);
 
+        const yBusGroup = cables.y;
+        const yBackplane = backplaneFactory.createYBackplane();
+        yBackplane.connect(yBusGroup);
+
         const zBusGroup = cables.z;
         const zBackplane = backplaneFactory.createZBackplane();
         zBackplane.connect(zBusGroup);
@@ -70,6 +75,7 @@ export class ComputerFactory implements IComputerFactory {
             auxControlCard,
             wBackplane,
             xBackplane,
+            yBackplane,
             zBackplane,
         };
     }
