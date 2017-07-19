@@ -11,6 +11,8 @@ import { CardControlBComponent } from './control/card_control_b.component';
 import { CardIncrementerAComponent } from './incrementer/card_incrementer_a.component';
 import { CardIncrementerBComponent } from './incrementer/card_incrementer_b.component';
 import { CardDecoderComponent } from './decoder/card_decoder.component';
+import { CardMemoryAComponent } from './memory/card_memory_a.component';
+import { CardMemoryBComponent } from './memory/card_memory_b.component';
 import { CardRegisterADComponent } from './registers/card_register_ad.component';
 import { CardRegisterBCComponent } from './registers/card_register_bc.component';
 import { CardRegisterIComponent } from './registers/card_register_i.component';
@@ -27,6 +29,8 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardDecoderComponent,
         CardIncrementerAComponent,
         CardIncrementerBComponent,
+        CardMemoryAComponent,
+        CardMemoryBComponent,
         CardRegisterADComponent,
         CardRegisterBCComponent,
         CardRegisterIComponent,
@@ -42,6 +46,8 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardDecoderComponent,
         CardIncrementerAComponent,
         CardIncrementerBComponent,
+        CardMemoryAComponent,
+        CardMemoryBComponent,
         CardRegisterADComponent,
         CardRegisterBCComponent,
         CardRegisterIComponent,
