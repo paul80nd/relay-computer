@@ -64,6 +64,14 @@ export class BitValue {
         return new BitValue(this.value & mask);
     }
 
+    public toUnsignedNumber() {
+        return this.value;
+    }
+
+    public static fromUnsignedNumber(value: number): BitValue {
+        return new BitValue(value);
+    }
+
     private constructor(value: number) {
         this.value = value;
     }

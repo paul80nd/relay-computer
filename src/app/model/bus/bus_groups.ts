@@ -39,6 +39,7 @@ export interface ICardXBusGroup extends IBusGroup {
 /** Represents the collection of busses that make up the Y Card group connectors */
 export interface ICardYBusGroup extends IBusGroup {
     readonly addressBus: IAddressBus;
+    readonly dataControlBus: IDataControlBus;
     readonly controlYBus: IControlYBus;
 }
 
@@ -124,7 +125,8 @@ export class BusGroupFactory implements IBusGroupFactory {
               dataInstructionBus: b.dataInstruction };
         const y = {
               addressBus: b.address,
-              controlYBus: b.controlY };
+              controlYBus: b.controlY,
+              dataControlBus: b.dataControl };
         const z = { controlZBus: b.controlZ, dataControlBus: b.dataControl, registerBCBus: b.registerBC };
 
         // Package up
