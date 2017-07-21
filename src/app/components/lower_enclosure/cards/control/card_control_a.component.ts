@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { AbortLines, I2BLines } from '../../../../model/bus/bus_part_lines';
+import { AbortLines, I2BLines, MemoryLines } from '../../../../model/bus/bus_part_lines';
 import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
@@ -13,6 +13,8 @@ export class CardControlAComponent {
     public at08Line = AbortLines.AT08;
 
     public i2bLine = I2BLines.I2B;
+
+    public merLine = MemoryLines.MER;
 
     @Input() public card: IControlCard;
 

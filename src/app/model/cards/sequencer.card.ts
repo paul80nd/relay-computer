@@ -84,6 +84,10 @@ export class SequencerCard implements ISequencerCard {
         let pulse = BitValue.Zero;
         const fsm = this.fsm;
 
+        // P-A = S1 | S2
+        if (fsm.bit(1) || fsm.bit(2) || fsm.bit(3)) { pulse = pulse.flipBit(PulseLines.A); }
+        // P-B = S2'
+        if (fsm.bit(2)) { pulse = pulse.flipBit(PulseLines.B); }
         // P-C = S5
         if (fsm.bit(5) || fsm.bit(6)) { pulse = pulse.flipBit(PulseLines.C); }
         // P-D = S5'

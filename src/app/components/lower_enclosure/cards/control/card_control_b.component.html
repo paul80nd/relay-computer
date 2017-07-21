@@ -2,8 +2,8 @@
     <!-- Origin at bay top left -720,-355 -->
     <svg:title>Control Card B</svg:title>
 
-    <svg:rect x="9" y="3" width="176" height="5" fill="white" />
-    <svg:rect x="9" y="32" width="43" height="5" fill="white" />
+    <svg:rect x="9" y="3" width="198" height="5" fill="white" />
+    <svg:rect x="9" y="32" width="198" height="5" fill="white" />
  
     <svg:circle cx="14" cy="14" r="4" class="ledYellow" [class.on]="card.regABCD.bit(ldALine)" />
     <svg:circle cx="14" cy="14" r="4" class="ledOutline" />
@@ -65,14 +65,16 @@
     <svg:circle cx="135" cy="14" r="4" class="ledOutline" />
     <svg:circle cx="124" cy="14" r="4" class="ledYellow" />
     <svg:circle cx="124" cy="14" r="4" class="ledOutline" />
-    <svg:circle cx="190" cy="14" r="4" class="ledYellow" />
-    <svg:circle cx="190" cy="14" r="4" class="ledOutline" />
-    <svg:circle cx="201" cy="14" r="4" class="ledYellow" />
-    <svg:circle cx="201" cy="14" r="4" class="ledOutline" />
     <svg:circle cx="146" cy="14" r="4" class="ledYellow" />
     <svg:circle cx="146" cy="14" r="4" class="ledOutline" />
-    <svg:circle cx="168" cy="14" r="4" class="ledYellow" />
+    -->
+    <svg:circle cx="168" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(linLine)" />
     <svg:circle cx="168" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="190" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(licLine)" />
+    <svg:circle cx="190" cy="14" r="4" class="ledOutline" />
+    <svg:circle cx="201" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(lpcLine)" />
+    <svg:circle cx="201" cy="14" r="4" class="ledOutline" />
+    <!--
     <svg:circle cx="80" cy="25" r="4" class="ledGreen" />
     <svg:circle cx="80" cy="25" r="4" class="ledOutline" />
     <svg:circle cx="91" cy="25" r="4" class="ledGreen" />
@@ -85,10 +87,12 @@
     <svg:circle cx="135" cy="25" r="4" class="ledOutline" />
     <svg:circle cx="124" cy="25" r="4" class="ledGreen" />
     <svg:circle cx="124" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="190" cy="25" r="4" class="ledGreen" />
+    -->
+    <svg:circle cx="190" cy="25" r="4" class="ledGreen" [class.on]="card.auxReg.bit(sicLine)" />
     <svg:circle cx="190" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="201" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="201" cy="25" r="4" class="ledGreen" [class.on]="card.auxReg.bit(spcLine)" />
     <svg:circle cx="201" cy="25" r="4" class="ledOutline" />
+    <!--
     <svg:circle cx="212" cy="25" r="4" class="ledGreen" />
     <svg:circle cx="212" cy="25" r="4" class="ledOutline" />
     <svg:circle cx="223" cy="25" r="4" class="ledGreen" />
@@ -116,6 +120,7 @@
     <svg:text transform="translate(141 3)" fill="black">
         <svg:tspan class="d-text4" x="1.21972656" y="4">LXY</svg:tspan>
     </svg:text>
+    -->
     <svg:text transform="translate(163 3)" fill="black">
         <svg:tspan class="d-text4" x="1.8876953" y="4">LIN</svg:tspan>
     </svg:text>
@@ -125,6 +130,7 @@
     <svg:text transform="translate(196 3)" fill="black">
         <svg:tspan class="d-text4" x="1.109375" y="4">LPC</svg:tspan>
     </svg:text>
+    <!--
     <svg:text transform="translate(175 32)" fill="black">
         <svg:tspan class="d-text4" x="1.33203125" y="4">SEJ</svg:tspan>
     </svg:text>
@@ -143,12 +149,14 @@
     <svg:text transform="translate(141 32)" fill="black">
         <svg:tspan class="d-text4" x=".9980469" y="4">SXY</svg:tspan>
     </svg:text>
+    -->
     <svg:text transform="translate(185 32)" fill="black">
         <svg:tspan class="d-text4" x="1.6660156" y="4">SIC</svg:tspan>
     </svg:text>
     <svg:text transform="translate(196 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">SPC</svg:tspan>
     </svg:text>
+    <!--
     <svg:text transform="translate(108 32)" fill="black">
         <svg:tspan class="d-text4" x=".66601562" y="4">SEM</svg:tspan>
     </svg:text>

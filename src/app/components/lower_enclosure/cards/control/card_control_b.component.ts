@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { AluFunctionClLines, RegABCDLines } from '../../../../model/bus/bus_part_lines';
+import { AluFunctionClLines, RegABCDLines, RegAuxLines } from '../../../../model/bus/bus_part_lines';
 import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
@@ -20,6 +20,12 @@ export class CardControlBComponent {
     public selDLine: number = RegABCDLines.RSD;
 
     public clLine: number = AluFunctionClLines.CL;
+
+    public licLine: number = RegAuxLines.LIC;
+    public linLine: number = RegAuxLines.LIN;
+    public lpcLine: number = RegAuxLines.LPC;
+    public sicLine: number = RegAuxLines.SIC;
+    public spcLine: number = RegAuxLines.SPC;
 
     @Input() public card: IControlCard;
 

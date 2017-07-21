@@ -24,6 +24,7 @@ export interface IAuxControlBusGroup extends IBusGroup {
 export interface ICardWBusGroup extends IBusGroup {
     readonly controlInstructionBus: IControlInstructionBus;
     readonly controlXBus: IControlXBus;
+    readonly controlYBus: IControlYBus;
     readonly controlZBus: IControlZBus;
     readonly operationBus: IOperationBus;
     readonly pulseBus: IPulseBus;
@@ -116,6 +117,7 @@ export class BusGroupFactory implements IBusGroupFactory {
         const w = {
               controlInstructionBus: b.controlInstruction,
               controlXBus: b.controlX,
+              controlYBus: b.controlY,
               controlZBus: b.controlZ,
               operationBus: b.operation,
               pulseBus: b.pulse };

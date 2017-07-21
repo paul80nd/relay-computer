@@ -43,12 +43,10 @@
     </svg:text>
     -->
 
-    <!--
-    <svg:circle cx="168" cy="14" r="4" class="ledGreen" />
-    <svg:circle cx="168" cy="14" r="4" class="ledOutline" />
-    <svg:circle cx="168" cy="25" r="4" class="ledGreen" />
+    <svg:circle cx="168" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(0)" />
     <svg:circle cx="168" cy="25" r="4" class="ledOutline" />
-    -->
+    <svg:circle cx="168" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(1)" />
+    <svg:circle cx="168" cy="14" r="4" class="ledOutline" />
     <svg:circle cx="179" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(2)" />
     <svg:circle cx="179" cy="25" r="4" class="ledOutline" />
     <svg:circle cx="179" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(3)" />
@@ -69,16 +67,14 @@
     <svg:circle cx="223" cy="25" r="4" class="ledGreen" />
     <svg:circle cx="223" cy="25" r="4" class="ledOutline" />
     -->
-    <svg:rect x="175" y="3" width="8" height="5" fill="white" />
-    <svg:rect x="175" y="32" width="19" height="5" fill="white" />
-    <!--
+    <svg:rect x="164" y="3" width="19" height="5" fill="white" />
+    <svg:rect x="164" y="32" width="30" height="5" fill="white" />
     <svg:text transform="translate(164 32)" fill="black">
         <svg:tspan class="d-text4" x="2.6660156" y="4">A</svg:tspan>
     </svg:text>
     <svg:text transform="translate(164 3)" fill="black">
         <svg:tspan class="d-text4" x="2.6660156" y="4">B</svg:tspan>
     </svg:text>
-    -->
     <svg:text transform="translate(175 32)" fill="black">
         <svg:tspan class="d-text4" x="2.555664" y="4">C</svg:tspan>
     </svg:text>

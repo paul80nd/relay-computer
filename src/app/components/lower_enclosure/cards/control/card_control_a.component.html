@@ -34,8 +34,10 @@
     <!--
     <svg:circle cx="97" cy="25" r="4" class="ledYellow" />
     <svg:circle cx="97" cy="25" r="4" class="ledOutline" />
-    <svg:circle cx="108" cy="25" r="4" class="ledYellow" />
+    -->
+    <svg:circle cx="108" cy="25" r="4" class="ledYellow" [class.on]="card.memory.bit(merLine)" />
     <svg:circle cx="108" cy="25" r="4" class="ledOutline" />
+    <!--
     <svg:circle cx="119" cy="25" r="4" class="ledYellow" />
     <svg:circle cx="119" cy="25" r="4" class="ledOutline" />
     -->
@@ -46,9 +48,11 @@
     <svg:text transform="translate(92 32)" fill="black">
         <svg:tspan class="d-text4" x=".8876953" y="4">B2M</svg:tspan>
     </svg:text>
+    -->
     <svg:text transform="translate(103 32)" fill="black">
         <svg:tspan class="d-text4" x=".55566406" y="4">MER</svg:tspan>
     </svg:text>
+    <!--
     <svg:text transform="translate(114 32)" fill="black">
         <svg:tspan class="d-text4" x=".11230469" y="4">MEW</svg:tspan>
     </svg:text>
