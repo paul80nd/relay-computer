@@ -10,6 +10,14 @@ export class BitValue {
         return new BitValue(values.map(v => v.value).reduce((a, b) => a | b));
     }
 
+    public static fromUnsignedNumber(value: number): BitValue {
+        return new BitValue(value);
+    }
+
+    public toUnsignedNumber() {
+        return this.value;
+    }
+
     public bit(position: number): boolean {
         const bit = Math.pow(2, position);
         return (this.value & bit) === bit;
@@ -62,14 +70,6 @@ export class BitValue {
     public cap(bits: number) {
         const mask = Math.pow(2, bits) - 1;
         return new BitValue(this.value & mask);
-    }
-
-    public toUnsignedNumber() {
-        return this.value;
-    }
-
-    public static fromUnsignedNumber(value: number): BitValue {
-        return new BitValue(value);
     }
 
     private constructor(value: number) {

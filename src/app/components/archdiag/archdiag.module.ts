@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import  { ArchitectureDiagramComponent } from './archdiag.component';
+import { ArchitectureDiagramComponent } from './archdiag.component';
 
 @NgModule({
   declarations: [ ArchitectureDiagramComponent ],
