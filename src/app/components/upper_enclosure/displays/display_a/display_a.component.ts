@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import {
     AluFunctionClLines, ClockLines,
-    DataSwitchGateLines, I2BLines, 
+    DataSwitchGateLines, I2BLines,
     MemoryLines, RegAuxLines,
 } from '../../../../model/bus/bus_part_lines';
 import { IDisplayACard } from '../../../../model/cards/display_a.card';

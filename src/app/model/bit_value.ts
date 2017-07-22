@@ -11,7 +11,7 @@ export class BitValue {
     }
 
     public bit(position: number): boolean {
-        let bit = Math.pow(2, position);
+        const bit = Math.pow(2, position);
         return (this.value & bit) === bit;
     }
 
@@ -24,7 +24,7 @@ export class BitValue {
     }
 
     public flipBit(position: number): BitValue {
-        let bit = Math.pow(2, position);
+        const bit = Math.pow(2, position);
         return new BitValue(this.value ^ bit);
     }
 
@@ -60,7 +60,7 @@ export class BitValue {
     }
 
     public cap(bits: number) {
-        let mask = Math.pow(2, bits) - 1;
+        const mask = Math.pow(2, bits) - 1;
         return new BitValue(this.value & mask);
     }
 

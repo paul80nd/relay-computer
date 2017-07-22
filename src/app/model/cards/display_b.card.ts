@@ -26,7 +26,7 @@ export class DisplayBCard implements IDisplayBCard {
     public instruction: BitValue;
     public operation: BitValue;
 
-    public connect(busGroup: IDisplayBBusGroup) {    
+    public connect(busGroup: IDisplayBBusGroup) {
         busGroup.b1Bus.aluFunctionClPart.subscribe((v) => this.aluFuncCl = v);
         busGroup.b1Bus.aluOperationPart.subscribe((v) => this.alu = v);
         busGroup.b1Bus.clockPart.subscribe((v) => this.clock = v);

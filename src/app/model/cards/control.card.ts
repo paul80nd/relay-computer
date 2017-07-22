@@ -94,9 +94,9 @@ export class ControlCard implements IControlCard {
     }
 
     private updateInstFetchAndInc() {
-        if (this.pulsePart) {            
+        if (this.pulsePart) {
             const pulse = this.pulsePart.value;
-                
+
             let auxReg = BitValue.Zero;
             let memory = BitValue.Zero;
 
@@ -124,7 +124,7 @@ export class ControlCard implements IControlCard {
             if (!this.auxReg.isEqualTo(auxReg)) { this.auxReg = auxReg; }
             this.auxRegOut.value = auxReg;
             if (!this.memory.isEqualTo(memory)) { this.memory = memory; }
-            this.memoryOut.value = memory;            
+            this.memoryOut.value = memory;
         }
     }
 

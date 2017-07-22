@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
     public computer: IComputer;
 
     public ngOnInit() {
-        let factory: IComputerFactory = new ComputerFactory();
+        const factory: IComputerFactory = new ComputerFactory();
         this.computer = factory.createComputer();
     }
 

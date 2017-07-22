@@ -4,7 +4,7 @@ import {
     IAluFunctionClBusPart, IAluOperationBusPart, IAuxRegisterBusPart,
     IClockBusPart,
     IConditionBusPart, IDataBusPart, IDataSwitchGateBusPart,
-    II2BBusPart, IInstructionBusPart, 
+    II2BBusPart, IInstructionBusPart,
     IMemoryBusPart,
     IOperationBusPart, IPulseBusPart,
     IRegisterABCDBusPart, IResetBusPart,

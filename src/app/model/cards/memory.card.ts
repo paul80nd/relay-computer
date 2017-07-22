@@ -41,14 +41,14 @@ export class MemoryCard implements IMemoryCard {
         this.memoryCtrl = BitValue.Zero;
     }
 
-    public connect(busGroup: ICardYBusGroup) {   
+    public connect(busGroup: ICardYBusGroup) {
         this.addressPart = busGroup.addressBus.addressPart;
         this.addressPart.subscribe(this.update);
         this.dataPart = busGroup.dataControlBus.dataPart;
         this.dataPart.subscribe(this.update);
         this.memoryPart = busGroup.controlYBus.memoryPart;
-        this.memoryPart.subscribe(this.update);       
-        this.memoryEnabled.subscribe(this.update); 
+        this.memoryPart.subscribe(this.update);
+        this.memoryEnabled.subscribe(this.update);
         busGroup.dataControlBus.dataPart.connect(this.dataOut);
     }
 
@@ -58,11 +58,11 @@ export class MemoryCard implements IMemoryCard {
             // Memory Address permanently connected to Address Bus
             const addr = this.addressPart.value;
             if (!this.memoryAddress.isEqualTo(addr)) { this.memoryAddress = addr; }
-       
+
             if (this.memoryPart) {
                 const memoryCtrl = this.memoryPart.value;
                 this.memoryCtrl = memoryCtrl;
-            
+
                 if (this.dataPart && this.memoryPart) {
                     if (memoryCtrl.bit(MemoryLines.MER)) {
                         // Memory Read

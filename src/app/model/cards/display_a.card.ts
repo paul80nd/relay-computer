@@ -3,7 +3,7 @@ import { BitValue } from '../bit_value';
 import { IDisplayABusGroup } from '../bus/bus_groups';
 import { IAuxRegisterBusPart, IAluFunctionClBusPart,
     IAluOperationBusPart, IClockBusPart,
-    IDataSwitchGateBusPart, II2BBusPart, 
+    IDataSwitchGateBusPart, II2BBusPart,
     IMemoryBusPart, IRegisterABCDBusPart } from '../bus/bus_parts';
 
 export interface IDisplayACard {

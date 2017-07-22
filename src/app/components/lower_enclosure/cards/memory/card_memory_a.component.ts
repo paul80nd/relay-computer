@@ -4,7 +4,7 @@ import { MemoryLines } from '../../../../model/bus/bus_part_lines';
 import { IMemoryCard } from '../../../../model/cards/memory.card';
 
 @Component({
-    selector: "[rc-card-memory-a]",
+    selector: '[rc-card-memory-a]',
     templateUrl: 'card_memory_a.component.html',
 })
 
