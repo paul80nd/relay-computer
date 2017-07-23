@@ -14,6 +14,7 @@ export class ControlSwitchesComponent {
     public depositNext: boolean;
     public examine: boolean;
     public examineNext: boolean;
+    public loadAddr: boolean;
 
     public changeDeposit(up: boolean): void {
         if (!this.deposit && !this.depositNext) {
@@ -51,4 +52,13 @@ export class ControlSwitchesComponent {
         }
     }
 
+    public changeLoadAddr(): void {
+        if (!this.loadAddr) {
+            this.loadAddr = true;
+            this.card.loadAddr();
+            setTimeout(() => {
+                this.loadAddr = false;
+            }, 500);
+        }
+    }
 }

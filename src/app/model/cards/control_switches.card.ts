@@ -17,6 +17,7 @@ export interface IControlSwitchesCard {
     depositNext(): void;
     examine(): void;
     examineNext(): void;
+    loadAddr(): void;
     toggleClock(): void;
     toggleReset(): void;
     toggleRunStop(): void;
@@ -92,6 +93,12 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             this.startAuxClock();
         }
     }
+    public loadAddr(): void {
+        if (this.auxState == 0) {
+            this.auxInstr = AuxInstruction.LoadAddr;
+            this.startAuxClock();
+        }
+    }
 
     private startAuxClock(): void {
         this.auxState = 1;
@@ -119,6 +126,10 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
                     auxReg = auxReg.flipBit(RegAuxLines.SPC);
                     memory = memory.flipBit(MemoryLines.MER);
                 }
+                if (this.auxInstr == AuxInstruction.LoadAddr) {
+                    // Sel-AS
+                    sds = sds.flipBit(DataSwitchGateLines.SAS);
+                }
             }
 
             if (this.auxState == 1 || this.auxState == 2) {
@@ -134,6 +145,10 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
                 if (this.auxInstr == AuxInstruction.Examine || this.auxInstr == AuxInstruction.ExamineNext) {
                     // Ld-A
                     regABCD = regABCD.flipBit(RegABCDLines.RLA);
+                }
+                if (this.auxInstr == AuxInstruction.LoadAddr) {
+                    // Ld-PC
+                    auxReg = auxReg.flipBit(RegAuxLines.LPC);
                 }
             }
 
@@ -160,7 +175,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
             if (this.auxState == 4) {
                 // AUX-RESET (Short)
-                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.Examine) {
+                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.Examine || this.auxInstr == AuxInstruction.LoadAddr) {
                     this.auxState = 0;
                     return;     // Fall from method without setting callback timeout
                 }
