@@ -12,6 +12,8 @@ export class ControlSwitchesComponent {
 
     public deposit: boolean;
     public depositNext: boolean;
+    public examine: boolean;
+    public examineNext: boolean;
 
     public changeDeposit(up: boolean): void {
         if (!this.deposit && !this.depositNext) {
@@ -27,6 +29,24 @@ export class ControlSwitchesComponent {
             setTimeout(() => {
                 this.deposit = false;
                 this.depositNext = false;
+            }, 500);
+        }
+    }
+
+    public changeExamine(up: boolean): void {
+        if (!this.examine && !this.examineNext) {
+            if (up) {
+                this.examine = false;
+                this.examineNext = true;
+                this.card.examineNext();
+            } else {
+                this.examine = true;
+                this.examineNext = false;
+                this.card.examine();
+            }
+            setTimeout(() => {
+                this.examine = false;
+                this.examineNext = false;
             }, 500);
         }
     }
