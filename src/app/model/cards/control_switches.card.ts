@@ -1,6 +1,7 @@
+import { BitValue } from '../bit_value';
 import { CardPart } from '../../model/cards/card_part';
 import { IControlSwitchesBusGroup } from '../bus/bus_groups';
-import { DataSwitchGateLines, RegAuxLines, ResetLines } from '../bus/bus_part_lines';
+import { DataSwitchGateLines, MemoryLines, RegAuxLines, ResetLines } from '../bus/bus_part_lines';
 import { ClockLines } from '../bus/bus_part_lines';
 
 export interface IControlSwitchesCard {
@@ -12,11 +13,19 @@ export interface IControlSwitchesCard {
     data: CardPart;
 
     connect(busGroup: IControlSwitchesBusGroup): void;
-    hackLoadInstOn(): void;
-    hackLoadInstOff(): void;
+    deposit(): void;
+    depositNext(): void;
     toggleClock(): void;
     toggleReset(): void;
     toggleRunStop(): void;
+}
+
+enum AuxInstruction {
+    Deposit,
+    DepositNext,
+    Examine,
+    ExamineNext,
+    LoadAddr
 }
 
 export class ControlSwitchesCard implements IControlSwitchesCard {
@@ -25,41 +34,119 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     public reset: boolean;
     public run: boolean;
 
+    private auxInstr: AuxInstruction;
+    private auxRegOut: CardPart;
+    private auxState: number;
     private clockOut: CardPart;
     public data: CardPart;
-    private hackAuxReg: CardPart;
-    private hackA2b: CardPart;
+    private memoryOut: CardPart;
     private resetOut: CardPart;
+    private sdsOut: CardPart;
 
     constructor() {
+        this.auxState = 0;
+        this.auxRegOut = new CardPart();
         this.clockOut = new CardPart();
         this.data = new CardPart();
-        this.hackAuxReg = new CardPart();
-        this.hackA2b = new CardPart();
+        this.memoryOut = new CardPart();
         this.resetOut = new CardPart();
+        this.sdsOut = new CardPart();
     }
 
     public connect(busGroup: IControlSwitchesBusGroup) {
         // Outputs
         busGroup.controlXBus.clockPart.connect(this.clockOut);
         busGroup.controlXBus.resetPart.connect(this.resetOut);
+        busGroup.controlXBus.auxRegisterPart.connect(this.auxRegOut);
+        busGroup.controlYBus.sdsPart.connect(this.sdsOut);
+        busGroup.controlYBus.memoryPart.connect(this.memoryOut);
         busGroup.dataControlBus.dataPart.connect(this.data);
-        busGroup.hackA1Bus.a1cAuxRegPart.connect(this.hackAuxReg);
-        busGroup.hackA2Bus.a2bPart.connect(this.hackA2b);
     }
 
-    public hackLoadInstOn(): void {
-        const sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
-        const lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
-        if (!sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
-        if (!lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
+    public deposit(): void {
+        if (this.auxState == 0) {
+            this.auxInstr = AuxInstruction.Deposit;
+            this.startAuxClock();
+        }
     }
 
-    public hackLoadInstOff(): void {
-        const sds = this.hackA2b.value.bit(DataSwitchGateLines.SDS);
-        const lin = this.hackAuxReg.value.bit(RegAuxLines.LIN);
-        if (lin) { this.hackAuxReg.value = this.hackAuxReg.value.flipBit(RegAuxLines.LIN); }
-        if (sds) { this.hackA2b.value = this.hackA2b.value.flipBit(DataSwitchGateLines.SDS); }
+    public depositNext(): void {
+        if (this.auxState == 0) {
+            this.auxInstr = AuxInstruction.DepositNext;
+            this.startAuxClock();
+        }
+    }
+
+    private startAuxClock(): void {
+        this.auxState = 1;
+        setTimeout(this.auxClockRun, 333);
+    }
+
+    private auxClockRun = () => {
+        if (this.auxState > 0) {
+
+            let auxReg = BitValue.Zero;
+            let memory = BitValue.Zero;
+            let sds = BitValue.Zero;
+
+            if (this.auxState == 1 || this.auxState == 2 || this.auxState == 3) {
+                // PULSE A
+                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.DepositNext) { 
+                    // Sel-PC, Sel-DS and B2M                   
+                    auxReg = auxReg.flipBit(RegAuxLines.SPC);
+                    sds = sds.flipBit(DataSwitchGateLines.SDS);
+                    memory = memory.flipBit(MemoryLines.B2M);
+                }
+            }
+
+            if (this.auxState == 1 || this.auxState == 2) {
+                // PULSE B
+                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.DepositNext) {
+                    // Mem-WR
+                    memory = memory.flipBit(MemoryLines.MEW);
+                }
+                if (this.auxInstr == AuxInstruction.DepositNext) {
+                    // Ld-INC
+                    auxReg = auxReg.flipBit(RegAuxLines.LIC);
+                }
+            }
+
+            if (this.auxState == 5 || this.auxState == 6) {
+                // PULSE C
+                if (this.auxInstr == AuxInstruction.DepositNext) {
+                    // Sel-INC
+                    auxReg = auxReg.flipBit(RegAuxLines.SIC);
+                }
+            }
+
+            if (this.auxState == 5) {
+                // PULSE D
+                if (this.auxInstr == AuxInstruction.DepositNext) {
+                    // Ld-PC
+                    auxReg = auxReg.flipBit(RegAuxLines.LPC);
+                }
+            }
+            
+            if (!this.auxRegOut.value.isEqualTo(auxReg)) { this.auxRegOut.value = auxReg; }
+            if (!this.memoryOut.value.isEqualTo(memory)) { this.memoryOut.value = memory; }
+            if (!this.sdsOut.value.isEqualTo(sds)) { this.sdsOut.value = sds; }
+
+            if (this.auxState == 4) {
+                // AUX-RESET (Short)
+                if (this.auxInstr == AuxInstruction.Deposit) {
+                    this.auxState = 0;
+                    return;     // Fall from method without setting callback timeout
+                }
+            }
+            if (this.auxState == 7) {
+                // AUX-RESET (Long)
+                this.auxState = 0;
+                return;
+            }
+
+            this.auxState += 1;
+            setTimeout(this.auxClockRun, 333);
+        }
     }
 
     public toggleRunStop(): void {

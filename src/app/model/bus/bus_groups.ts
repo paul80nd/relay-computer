@@ -54,9 +54,8 @@ export interface ICardZBusGroup extends IBusGroup {
 /** Represents the collection of busses that make up the Control Switches group connectors */
 export interface IControlSwitchesBusGroup extends IBusGroup {
     readonly controlXBus: IControlXBus;
+    readonly controlYBus: IControlYBus;
     readonly dataControlBus: IDataControlBus;
-    readonly hackA1Bus: IDisplayA1Bus;
-    readonly hackA2Bus: IDisplayA2Bus;
 }
 
 /** Represents the collection of busses that make up the Display A group connectors */
@@ -108,9 +107,8 @@ export class BusGroupFactory implements IBusGroupFactory {
         const controlSwitches = {
               addressBus: b.address,
               controlXBus: b.controlX,
+              controlYBus: b.controlY,
               dataControlBus: this.busFactory.createBusForControlSwitches(),
-              hackA1Bus: b.displayA1,
-              hackA2Bus: b.displayA2,
         };
         const displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
         const displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };

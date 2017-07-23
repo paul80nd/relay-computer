@@ -18,13 +18,13 @@ export class ControlSwitchesComponent {
             if (up) {
                 this.deposit = false;
                 this.depositNext = true;
-                this.card.hackLoadInstOn();
+                this.card.depositNext();
             } else {
                 this.deposit = true;
                 this.depositNext = false;
+                this.card.deposit();
             }
             setTimeout(() => {
-                if (this.depositNext) { this.card.hackLoadInstOff(); }
                 this.deposit = false;
                 this.depositNext = false;
             }, 500);
