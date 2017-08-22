@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 
@@ -11,12 +12,16 @@ import { ControlSwitchesModule } from './components/upper_enclosure/control_swit
 import { DisplaysModule } from './components/upper_enclosure/displays/displays.module';
 import { InstructionSetModule } from './components/instrset/instrset.module';
 
+import { ClarityModule } from "clarity-angular";
+
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    ClarityModule.forRoot(),
     FormsModule,
     HttpModule,
     ArchitectureDiagramModule,
