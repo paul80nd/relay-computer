@@ -298,11 +298,14 @@
                                 </svg>
                             </div>
                         </clr-tab-content>
-
+                    </clr-tab>
+                    <clr-tab>
+                        <button clrTabLink><clr-icon shape="memory"></clr-icon></button>
+                        <clr-tab-content *clrIfActive>
+                            <rc-memory-list [card]="computer.yBackplane.memory"></rc-memory-list>
+                        </clr-tab-content>
                     </clr-tab>
                 </clr-tabs>
-
-
             </div>
         </div>
     </div>

@@ -11,6 +11,7 @@ import { CardBaysModule } from './components/lower_enclosure/bays/card_bays.modu
 import { ControlSwitchesModule } from './components/upper_enclosure/control_switches/control_switches.module';
 import { DisplaysModule } from './components/upper_enclosure/displays/displays.module';
 import { InstructionSetModule } from './components/instrset/instrset.module';
+import { MemoryListModule } from './components/memory_list/memory_list.module';
 
 import { ClarityModule } from "clarity-angular";
 
@@ -30,6 +31,7 @@ import { ClarityModule } from "clarity-angular";
     ControlSwitchesModule,
     DisplaysModule,
     InstructionSetModule,
+    MemoryListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
