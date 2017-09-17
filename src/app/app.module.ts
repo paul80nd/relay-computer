@@ -10,6 +10,7 @@ import { ArchitectureDiagramModule } from './components/archdiag/archdiag.module
 import { CardBaysModule } from './components/lower_enclosure/bays/card_bays.module';
 import { ControlSwitchesModule } from './components/upper_enclosure/control_switches/control_switches.module';
 import { DisplaysModule } from './components/upper_enclosure/displays/displays.module';
+import { DocumentationModule } from './components/docs/docs.module';
 import { InstructionSetModule } from './components/instrset/instrset.module';
 import { MemoryListModule } from './components/memory_list/memory_list.module';
 
@@ -30,6 +31,7 @@ import { ClarityModule } from "clarity-angular";
     CardBaysModule,
     ControlSwitchesModule,
     DisplaysModule,
+    DocumentationModule,
     InstructionSetModule,
     MemoryListModule,
   ],
