@@ -1,100 +1,96 @@
 <div>
     <h3>Relay Computer Simulator</h3>
-    <p>This is a simulation of my relay computer using angular and SVG. Mainly I'm using it to learn angular, javascript and
-        SVG but this also provides me a way of refining the next part of my relay computer without having to resort to lots
-        of nasty desoldering.</p>
+    <p>This is a simulation of my relay computer using angular and SVG. Mainly I'm using it to learn and practice those dev
+        frameworks but this also provides me a way of virtually refining the next part of my relay computer without having
+        to spend the time and expense of experimenting for real.</p>
     <p>More information on my relay computer can be found at my <a target="_blank" href="http://relaycomputer.blogspot.co.uk">blog</a>.</p>
     <p>If you would like to dive straight in and have a go on this simulator there is a tutorial section following the operating
         instructions below</p>
     <h5>Operating Instructions</h5>
-    <p>Most parts of the computer can be operated manually by using the switches in Display A (at the top right). Click a switch
+    <p>Most parts of the computer can be operated manually by using the switches in Display A (at the top left). Click a switch
         once to turn it on and again to turn it off. When that line is active the switch lights up.</p>
     <p>The primary switches are below Display A. Click a switch to turn it on (black circle is up) and again to turn it off
-        (black circle is down). The 'Dep Next' switch can be pushed up or down by clicking on the upper or lower half. The
-        remaining switches can be turned on by clicking anywhere within the switch. The 'Dep Next' and switches to the right
-        are all momentary and will reset to off after a short pause.</p>
-    <p>As with the real computer the 'Dep Next' switch has been temporarily wired up to load the value on the primary switches
-        in to the instruction register. There is also a 'fake' clock behind the 'Run' switch just as with the real computer.
-    </p>
+        (black circle is down). The 'Deposit' and 'Exam' switches can be pushed up or down by clicking on the upper or lower
+        half. The remaining switches can be turned on by clicking anywhere within the switch. The 'Dep Next' and switches
+        to the right are all momentary and will reset to off after a short pause.</p>
     <h5>Tutorial</h5>
     <p>Assuming the simulator is in its default state (refresh this page to re-default it if not) you can follow this tutorial
         to perform a simple arithmetic sequence of ((2 + 4 + 1) x 3) - 3. This will allow you to try out the three instruction
         classes currently supported by the computer</p>
-    <p>Firstly we'll load a value of 2 in to register B and a value of 4 in to register A using the SETAB instruction. We can
-        then copy the value from register A to register C using the MOV-8 instruction and finally, with the values in register
-        B and C, perform an ALU add operation.</p>
-    <ol>
-        <li>On the primary switches enter 01100010, that is, click switches 6, 5 and 1 so that they are up. This is the code
-            to load a value of 2 in to register B.
-        </li>
-        <li>Click the upper part of the 'DEP NEXT' switch. This will load the code into the instruction register. You can see
-            this value on Display A as well as the instruction register card. You can also see it has been decoded to a SETAB
-            class instruction.</li>
-        <li>To prime the sequencer click the 'RSET' swtich. The 'S00' light will now be lit in the sequencer card.
-        </li>
-        <li>You can now clock this instruction through by clicking the 'CLK' switch in Display A. Note each time the switch goes
-            on and off the sequencer moves through states. Keep pressing the switch on and off until the sequencer returns
-            to state 'S01'. The clock line should be off when you've finished.</li>
-        <li>As you were clocking the instruction through you should have seen the 'I2B'' and 'Ld B' lines light up in Display
-            A and the B register should now hold a value of 2 (second led in from the right - binary 00000010).</li>
-        <li>If you like you can try clocking the instruction through multiple times. The computer will just keep repeating the
-            same instruction. Ensure that you end with the CLK line off (this may mean ending on S00, S01 or S02).</li>
-        <li>Now change the value on the primary switches to 01000100, that is switch 5 off, switch 2 on, switch 1 off. This is
-            the code to load a value of 4 in to register A.</li>
-        <li>As before click the upper part of the 'DEP NEXT' switch to load the code in to the instruction register
-        </li>
-        <li>The sequencer is already primed so start clocking as before. When done you should now see a value of 4 (00000100)
-            in register A.</li>
-        <li>The value in register A now needs copying to register C so the ALU can get at it (see architecture diagram at the
-            top middle). The MOV-8 instruction for this is 00010000 - enter it on the primary switches.</li>
-        <li>Use 'DEP NEXT' to load the instruction register and then clock through as before. You should now see that the C register
-            has the same value as register A. Note that because the ALU is permantly wired to registers B and C you'll see
-            the ALU cards update as the register contents change.
-        </li>
-        <li>To add the numbers together load the instruction register with 10000001 which is the code for an ALU add.</li>
-        <li>Clock this instruction through and you should see that register A now contains the a result of 6 (00000110).</li>
-    </ol>
-    <p>As we now have a value of 6 in register A we can move to the next stage of our calculation where we want to add 1 to
-        get 7. We'll use an ALU increment for this.
+    <p>Here are the steps that make up the program using the three instruction classes ALU, MOVE8 and SETAB:</p>
+    <pre><code> SETAB B &lt;- 2       2 + 4 = 6
+ SETAB A &lt;- 4
+ MOVE8 C &lt;- A
+ ALU   A &lt;- ADD
+  
+ MOVE8 B &lt;- A       6 + 1 = 7
+ ALU   A &lt;- INC
+  
+ MOVE8 B &lt;- A       7 * 3 = 21
+ MOVE8 C &lt;- A
+ ALU   A &lt;- ADD
+ MOVE8 B &lt;- A
+ ALU   A &lt;- ADD
+  
+ SETAB B &lt;- 3       Negate 3
+ ALU   D &lt;- NOT
+ MOVE8 B &lt;- D
+ ALU   D &lt;- INC
+ MOVE8 B &lt;- A       21 - 3 = 18
+ MOVE8 C &lt;- D
+ ALU   A &lt;- ADD</code></pre>
+    <p>
+        Using the list of instructions each line of this program can be converted in to the binary opcode equivalent as follows:
     </p>
-    <ol>
-        <li>Load the MOV-8 instruction 00001000 which will copy register A in to B (so the ALU can get at it).
-        </li>
-        <li>This time you can clock the instruction through using the 'CLK STEP' switch to the right of 'DEP NEXT'. Each time
-            you click this it will clock on and then back off.
-        </li>
-        <li>You'll now see that register B has the same content as register A.</li>
-        <li>Load the ALU instruction 10000010 which will increment register B by 1 into register A
-        </li>
-        <li>Clock through the instruction as before using the 'CLK STEP' switch.</li>
-        <li>Register A will now contain the value 7 (00000111).</li>
-    </ol>
-    <p>We now need to multiply the 7 by 3. The ALU in this computer can't do multiplication but we can achieve the same by repeated
-        addition.</p>
-    <ol>
-        <li>Copy register A to B using the instruction 00001000 (load the instruction register and clock through).
-        </li>
-        <li>Copy register A to C using the instruciton 00010000</li>
-        <li>Add register B and C together in to register A using the instruction 10000001</li>
-        <li>Register A should now contain a value of 14 (00001110)</li>
-        <li>Copy register A to B again using the instruction 00001000</li>
-        <li>Repeat the add operation using instruction 10000001</li>
-        <li>Reigster A should now contain a value of 21 (00010101)</li>
-    </ol>
-    <p>The final stage is to take three away from the 21 we have so far. We could do this by loading -3 with the SETAB instruction
-        but to try out some more ALU features we're going to load 3 and then perform a two's complement to get the -3 instead.</p>
-    <ol>
-        <li>Load a value of 3 in to the B register with SETAB 01100011</li>
-        <li>Perform an ALU NOT in to register D with 10001110</li>
-        <li>Copy register D to register A with a MOV-8 00001011</li>
-        <li>Perform an ALU increment in to register D with 10001010. We now have a value of -3 in register D.
-        </li>
-        <li>Copy register A to register B with a MOV-8 00001000</li>
-        <li>Copy register D to register C with a MOV-8 00010011</li>
-        <li>Perform an ALU add in to register A with 10000001</li>
-    </ol>
-    <p>Register A now contains a value of 18 (00010010) as intended and the tutorial is complete. Using the instruction tables
-        at the top right of the screen you can operate the computer with instructions as you require in the same way you
-        did in the tutorial. Eventually the computer will accept multiple instructions to be loaded in to memory which it'll
-        then run though one at a time without any further manual intervention.</p>
+    <pre><code> 01100010       2 + 4 = 6
+ 01000100
+ 00010000
+ 10000001
+  
+ 00001000       6 + 1 = 7
+ 10000010
+  
+ 00001000       7 * 3 = 21
+ 00010000
+ 10000001
+ 00001000
+ 10000001
+  
+ 01100011       Negate 3
+ 10001110
+ 00001011
+ 10001010
+ 00001000       21 - 3 = 18
+ 00010011
+ 10000001
+ 
+ 00011000       Move A to D</code></pre>
+    <p>
+        I've added an additional instruction at the end of the program here to copy the result (of 18) to register D from register
+        A. This is needed as there currently isn't a way to tell the computer the program has ended and so it'll carry on
+        executing the instructions in memory. In the simulator each instruction will be all zeros (assuming the simulator
+        has been reset beforehand) and 00000000 is the opcode for MOVE8 from A to A which effectively clears the current
+        value in register A. By copying the value to D first it ensures the result isn't lost.
+    </p>
+    <p>
+        To load this program in to memory, line-by-line, set the black primary switches to match the opcode and then flick the 'DEP
+        NEXT' switch which will load the instrucion into memory and then advance the program counter. Just keep setting the
+        primary switches and flicking 'DEP NEXT' until all opcodes have been entered. Once the program is loaded you should
+        see the following values in the memory view:
+    </p>
+    <pre><code> 000  62 44 10 81 08 82 08 10
+      81 08 81 63 8E 0B 8A 08
+ 001  13 81 18 00 00 00 00 00
+      00 00 00 00 00 00 00 00</code></pre>
+    <p>
+        This is the hexadecimal representation of each 8-bit opcode loaded in to memory. To execute the program first set all the black
+        switches back to 0 and flick the 'LOAD ADDR' switch to reset the program counter back to the first position in memory.
+        To prime the sequencer flick the 'RSET' switch which sets the 'S00' light in the sequencer. You can now flick the RUN/STOP switch
+        to RUN and the program will begin executing.
+    </p>
+    <p>
+        Once the program keeps running the MOVE8 A &lt;- A instruction (00000000) you should see the result value of 18 (00010010) in register D.
+        If you stop the clock (flick RUN/STOP to STOP) and manually clock (with CLK) to a point where nothing is on the data bus you can select 
+        register D to see the value on the data bus.
+    </p>    
 </div>

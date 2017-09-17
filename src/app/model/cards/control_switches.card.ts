@@ -115,8 +115,8 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
             if (this.auxState == 1 || this.auxState == 2 || this.auxState == 3) {
                 // PULSE A
-                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.DepositNext) { 
-                    // Sel-PC, Sel-DS and B2M                   
+                if (this.auxInstr == AuxInstruction.Deposit || this.auxInstr == AuxInstruction.DepositNext) {
+                    // Sel-PC, Sel-DS and B2M
                     auxReg = auxReg.flipBit(RegAuxLines.SPC);
                     sds = sds.flipBit(DataSwitchGateLines.SDS);
                     memory = memory.flipBit(MemoryLines.B2M);
@@ -167,7 +167,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
                     auxReg = auxReg.flipBit(RegAuxLines.LPC);
                 }
             }
-            
+
             if (!this.auxRegOut.value.isEqualTo(auxReg)) { this.auxRegOut.value = auxReg; }
             if (!this.memoryOut.value.isEqualTo(memory)) { this.memoryOut.value = memory; }
             if (!this.regABCDOut.value.isEqualTo(regABCD)) { this.regABCDOut.value = regABCD; }
