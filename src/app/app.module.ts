@@ -14,7 +14,7 @@ import { DocumentationModule } from './components/docs/docs.module';
 import { InstructionSetModule } from './components/instrset/instrset.module';
 import { MemoryListModule } from './components/memory_list/memory_list.module';
 
-import { ClarityModule } from 'clarity-angular';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
