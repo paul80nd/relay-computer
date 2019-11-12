@@ -14,7 +14,7 @@ export interface IRegisterICard {
 
 export class RegisterICard implements IRegisterICard {
 
-    public register: IRegisterCardPart;
+    register: IRegisterCardPart;
 
     private i2b: boolean;
     private dataOut: CardPart;
@@ -28,7 +28,7 @@ export class RegisterICard implements IRegisterICard {
         this.dataOut = new CardPart();
     }
 
-    public connect(busGroup: ICardXBusGroup) {
+    connect(busGroup: ICardXBusGroup) {
         this.instrPart = busGroup.dataInstructionBus.instructionPart;
         this.dataPart = busGroup.dataInstructionBus.dataPart;
         const ctrlPart = busGroup.controlXBus.auxRegisterPart;
@@ -58,5 +58,5 @@ export class RegisterICard implements IRegisterICard {
                 this.dataOut.value = value;
             }
         }
-    }
+    };
 }

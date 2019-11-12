@@ -5,17 +5,17 @@ import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
     selector: '[rc-card-control-a]',
-    templateUrl: './card_control_a.component.html',
+    templateUrl: './card_control_a.component.html'
 })
 
 export class CardControlAComponent {
 
-    public at08Line = AbortLines.AT08;
+    at08Line = AbortLines.AT08;
 
-    public i2bLine = I2BLines.I2B;
+    i2bLine = I2BLines.I2B;
 
-    public merLine = MemoryLines.MER;
+    merLine = MemoryLines.MER;
 
-    @Input() public card: IControlCard;
+    @Input() card: IControlCard;
 
 }

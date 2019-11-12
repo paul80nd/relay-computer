@@ -19,7 +19,7 @@ import { Register16LedsComponent } from './register_leds/register_16_leds.compon
         DoubleByteLedsComponent,
         DoubleByteLedLightBarComponent,
         RegisterLedsComponent,
-        Register16LedsComponent,
+        Register16LedsComponent
     ],
     exports: [
         AluOperationLedLightBarComponent,
@@ -29,8 +29,8 @@ import { Register16LedsComponent } from './register_leds/register_16_leds.compon
         DoubleByteLedsComponent,
         DoubleByteLedLightBarComponent,
         RegisterLedsComponent,
-        Register16LedsComponent,
+        Register16LedsComponent
     ],
-    imports: [CommonModule],
+    imports: [CommonModule]
 })
 export class LedsModule { }

@@ -15,8 +15,8 @@ export interface IIncrementerCard {
 
 export class IncrementerCard implements IIncrementerCard {
 
-    public increment: BitValue;
-    public register: IRegisterCardPart;
+    increment: BitValue;
+    register: IRegisterCardPart;
 
     private addressPart: IAddressBusPart;
 
@@ -28,7 +28,7 @@ export class IncrementerCard implements IIncrementerCard {
         this.register = new RegisterCardPart(RegAuxLines.LIC, RegAuxLines.SIC);
     }
 
-    public connect(busGroup: ICardXBusGroup) {
+    connect(busGroup: ICardXBusGroup) {
         this.addressPart = busGroup.addressBus.addressPart;
         this.addressPart.subscribe(this.update);
         const ctrlPart = busGroup.controlXBus.auxRegisterPart;
@@ -44,5 +44,5 @@ export class IncrementerCard implements IIncrementerCard {
             if (!this.increment.isEqualTo(value)) { this.increment = value; }
             if (!this.incrementOut.value.isEqualTo(value)) { this.incrementOut.value = value; }
         }
-    }
+    };
 }

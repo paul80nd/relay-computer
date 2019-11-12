@@ -33,15 +33,15 @@ enum AuxInstruction {
 
 export class ControlSwitchesCard implements IControlSwitchesCard {
 
-    public clock: boolean;
-    public reset: boolean;
-    public run: boolean;
+    clock: boolean;
+    reset: boolean;
+    run: boolean;
 
     private auxInstr: AuxInstruction;
     private auxRegOut: CardPart;
     private auxState: number;
     private clockOut: CardPart;
-    public data: CardPart;
+    data: CardPart;
     private memoryOut: CardPart;
     private regABCDOut: CardPart;
     private resetOut: CardPart;
@@ -58,7 +58,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         this.sdsOut = new CardPart();
     }
 
-    public connect(busGroup: IControlSwitchesBusGroup) {
+    connect(busGroup: IControlSwitchesBusGroup) {
         // Outputs
         busGroup.controlXBus.clockPart.connect(this.clockOut);
         busGroup.controlXBus.resetPart.connect(this.resetOut);
@@ -69,31 +69,31 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         busGroup.dataControlBus.dataPart.connect(this.data);
     }
 
-    public deposit(): void {
+    deposit(): void {
         if (this.auxState == 0) {
             this.auxInstr = AuxInstruction.Deposit;
             this.startAuxClock();
         }
     }
-    public depositNext(): void {
+    depositNext(): void {
         if (this.auxState == 0) {
             this.auxInstr = AuxInstruction.DepositNext;
             this.startAuxClock();
         }
     }
-    public examine(): void {
+    examine(): void {
         if (this.auxState == 0) {
             this.auxInstr = AuxInstruction.Examine;
             this.startAuxClock();
         }
     }
-    public examineNext(): void {
+    examineNext(): void {
         if (this.auxState == 0) {
             this.auxInstr = AuxInstruction.ExamineNext;
             this.startAuxClock();
         }
     }
-    public loadAddr(): void {
+    loadAddr(): void {
         if (this.auxState == 0) {
             this.auxInstr = AuxInstruction.LoadAddr;
             this.startAuxClock();
@@ -189,9 +189,9 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             this.auxState += 1;
             setTimeout(this.auxClockRun, 333);
         }
-    }
+    };
 
-    public toggleRunStop(): void {
+    toggleRunStop(): void {
         this.run = !this.run;
         if (this.run) {
             setTimeout(this.clockRun, 500);
@@ -202,7 +202,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         }
     }
 
-    public toggleClock(): void {
+    toggleClock(): void {
         if (!this.clock) {
             this.clock = true;
             if (!this.run) { this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK); }
@@ -215,7 +215,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
         }
     }
 
-    public toggleReset(): void {
+    toggleReset(): void {
         if (!this.reset) {
             this.reset = true;
             if (!this.run) { this.resetOut.value = this.resetOut.value.flipBit(ResetLines.RES); }
@@ -234,7 +234,6 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK);
             setTimeout(this.clockRun, 500);
         }
-    }
+    };
 
 }
-

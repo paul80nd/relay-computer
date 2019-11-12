@@ -5,13 +5,13 @@ import { IMemoryCard } from '../../model/cards/memory.card';
 @Component({
     selector: 'rc-memory-list',
     templateUrl: 'memory_list.component.html',
-    styleUrls: ['memory_list.component.css'],
+    styleUrls: ['memory_list.component.css']
 })
 
 export class MemoryListComponent {
 
-    public offset = 0;
+    offset = 0;
 
-    @Input() public card: IMemoryCard;
+    @Input() card: IMemoryCard;
 
 }

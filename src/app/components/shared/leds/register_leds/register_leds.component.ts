@@ -6,11 +6,11 @@ import { IRegisterCardPart } from '../../../../model/cards/parts/register.cardpa
 @Component({
     providers: [ByteLedsComponent],
     selector: '[rc-register-leds]',
-    templateUrl: 'register_leds.component.html',
+    templateUrl: 'register_leds.component.html'
 })
 
 export class RegisterLedsComponent {
 
-    @Input() public register: IRegisterCardPart;
-    @Input() public description: string;
+    @Input() register: IRegisterCardPart;
+    @Input() description: string;
 }

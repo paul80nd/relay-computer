@@ -7,12 +7,12 @@ import { TactileSwitchComponent } from './tact_switch/tact_switch.component';
 @NgModule({
     declarations: [
         ByteSwitchComponent,
-        TactileSwitchComponent,
+        TactileSwitchComponent
     ],
     exports: [
         ByteSwitchComponent,
-        TactileSwitchComponent,
+        TactileSwitchComponent
     ],
-    imports: [CommonModule],
+    imports: [CommonModule]
 })
 export class SwitchesModule { }

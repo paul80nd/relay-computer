@@ -12,15 +12,15 @@ export interface IRegisterBCCard {
 
 export class RegisterBCCard implements IRegisterBCCard {
 
-    public registerB: IRegisterCardPart;
-    public registerC: IRegisterCardPart;
+    registerB: IRegisterCardPart;
+    registerC: IRegisterCardPart;
 
     constructor() {
         this.registerB = new RegisterCardPart(RegABCDLines.RLB, RegABCDLines.RSB);
         this.registerC = new RegisterCardPart(RegABCDLines.RLC, RegABCDLines.RSC);
     }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         const dataPart = busGroup.dataControlBus.dataPart;
         const ctrlPart = busGroup.controlZBus.regABCDPart;
         this.registerB.connect(dataPart, ctrlPart, dataPart);

@@ -15,9 +15,9 @@ export interface ISequencerCard {
 
 export class SequencerCard implements ISequencerCard {
 
-    public abort: BitValue;
-    public fsm: BitValue;
-    public pulse: BitValue;
+    abort: BitValue;
+    fsm: BitValue;
+    pulse: BitValue;
 
     private lastClock: boolean;
 
@@ -34,7 +34,7 @@ export class SequencerCard implements ISequencerCard {
         this.pulseOut = new CardPart();
     }
 
-    public connect(busGroup: ICardWBusGroup) {
+    connect(busGroup: ICardWBusGroup) {
         // Inputs
         this.resetPart = busGroup.controlXBus.resetPart;
         this.resetPart.subscribe(this.reset);
@@ -54,7 +54,7 @@ export class SequencerCard implements ISequencerCard {
                 this.derrivePulses();
             }
         }
-    }
+    };
 
     private abortChanged = () => {
         if (this.abortPart && this.fsm.bit(5)) {
@@ -62,7 +62,7 @@ export class SequencerCard implements ISequencerCard {
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
         }
-    }
+    };
 
     private clock = () => {
         const clock = this.clockPart.value.bit(ClockLines.CLK);
@@ -78,7 +78,7 @@ export class SequencerCard implements ISequencerCard {
             }
             this.derrivePulses();
         }
-    }
+    };
 
     private derrivePulses = () => {
         let pulse = BitValue.Zero;
@@ -98,7 +98,6 @@ export class SequencerCard implements ISequencerCard {
         this.pulse = pulse;
         this.pulseOut.value = pulse;
 
-    }
-
+    };
 
 }

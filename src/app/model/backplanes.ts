@@ -55,7 +55,7 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     constructor(private cardFactory: ICardFactory) { }
 
-    public createWBackplane(): IWBackplane {
+    createWBackplane(): IWBackplane {
         return new WBackplane(
             this.cardFactory.createControl(),
             this.cardFactory.createDecoder(),
@@ -63,7 +63,7 @@ export class BackplaneFactory implements IBackplaneFactory {
         );
     }
 
-    public createXBackplane(): IXBackplane {
+    createXBackplane(): IXBackplane {
         return new XBackplane(
             this.cardFactory.createIncrementer(),
             this.cardFactory.createRegisterI(),
@@ -71,13 +71,13 @@ export class BackplaneFactory implements IBackplaneFactory {
         );
     }
 
-    public createYBackplane(): IYBackplane {
+    createYBackplane(): IYBackplane {
         return new YBackplane(
             this.cardFactory.createMemory()
         );
     }
 
-    public createZBackplane(): IZBackplane {
+    createZBackplane(): IZBackplane {
         return new ZBackplane(
             this.cardFactory.createAluArithmetic(),
             this.cardFactory.createAluControl(),
@@ -95,7 +95,7 @@ class WBackplane implements IWBackplane {
         public decoder: IDecoderCard,
         public sequencer: ISequencerCard) { }
 
-    public connect(busGroup: ICardWBusGroup) {
+    connect(busGroup: ICardWBusGroup) {
         this.control.connect(busGroup);
         this.decoder.connect(busGroup);
         this.sequencer.connect(busGroup);
@@ -110,7 +110,7 @@ class XBackplane implements IXBackplane {
         public registerI: IRegisterICard,
         public registerPC: IRegisterPCCard) { }
 
-    public connect(busGroup: ICardXBusGroup) {
+    connect(busGroup: ICardXBusGroup) {
         this.incrementer.connect(busGroup);
         this.registerI.connect(busGroup);
         this.registerPC.connect(busGroup);
@@ -122,7 +122,7 @@ class YBackplane implements IYBackplane {
     constructor(
         public memory: IMemoryCard) { }
 
-    public connect(busGroup: ICardYBusGroup) {
+    connect(busGroup: ICardYBusGroup) {
         this.memory.connect(busGroup);
     }
 
@@ -137,7 +137,7 @@ class ZBackplane implements IZBackplane {
         public registerAD: IRegisterADCard,
         public registerBC: IRegisterBCCard) { }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         this.aluArithmetic.connect(busGroup);
         this.aluControl.connect(busGroup);
         this.aluLogic.connect(busGroup);
@@ -145,4 +145,3 @@ class ZBackplane implements IZBackplane {
         this.registerBC.connect(busGroup);
     }
 }
-

@@ -5,28 +5,28 @@ import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
     selector: '[rc-card-control-b]',
-    templateUrl: './card_control_b.component.html',
+    templateUrl: './card_control_b.component.html'
 })
 
 export class CardControlBComponent {
 
-    public ldALine: number = RegABCDLines.RLA;
-    public ldBLine: number = RegABCDLines.RLB;
-    public ldCLine: number = RegABCDLines.RLC;
-    public ldDLine: number = RegABCDLines.RLD;
-    public selALine: number = RegABCDLines.RSA;
-    public selBLine: number = RegABCDLines.RSB;
-    public selCLine: number = RegABCDLines.RSC;
-    public selDLine: number = RegABCDLines.RSD;
+    ldALine: number = RegABCDLines.RLA;
+    ldBLine: number = RegABCDLines.RLB;
+    ldCLine: number = RegABCDLines.RLC;
+    ldDLine: number = RegABCDLines.RLD;
+    selALine: number = RegABCDLines.RSA;
+    selBLine: number = RegABCDLines.RSB;
+    selCLine: number = RegABCDLines.RSC;
+    selDLine: number = RegABCDLines.RSD;
 
-    public clLine: number = AluFunctionClLines.CL;
+    clLine: number = AluFunctionClLines.CL;
 
-    public licLine: number = RegAuxLines.LIC;
-    public linLine: number = RegAuxLines.LIN;
-    public lpcLine: number = RegAuxLines.LPC;
-    public sicLine: number = RegAuxLines.SIC;
-    public spcLine: number = RegAuxLines.SPC;
+    licLine: number = RegAuxLines.LIC;
+    linLine: number = RegAuxLines.LIN;
+    lpcLine: number = RegAuxLines.LPC;
+    sicLine: number = RegAuxLines.SIC;
+    spcLine: number = RegAuxLines.SPC;
 
-    @Input() public card: IControlCard;
+    @Input() card: IControlCard;
 
 }

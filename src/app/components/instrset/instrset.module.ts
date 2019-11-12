@@ -4,6 +4,6 @@ import { InstructionSetComponent } from './instrset.component';
 
 @NgModule({
   declarations: [ InstructionSetComponent ],
-  exports:      [ InstructionSetComponent ],
+  exports:      [ InstructionSetComponent ]
 })
 export class InstructionSetModule { }

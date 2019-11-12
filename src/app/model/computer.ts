@@ -26,7 +26,7 @@ export interface IComputerFactory {
 
 export class ComputerFactory implements IComputerFactory {
 
-    public createComputer(): IComputer {
+    createComputer(): IComputer {
 
         const busFactory = new BusFactory(new BusPartFactory());
         const busGroupFactory = new BusGroupFactory(busFactory);
@@ -76,7 +76,7 @@ export class ComputerFactory implements IComputerFactory {
             wBackplane,
             xBackplane,
             yBackplane,
-            zBackplane,
+            zBackplane
         };
     }
 

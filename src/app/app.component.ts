@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { IComputer, IComputerFactory, ComputerFactory } from './model/computer';
+import { ComputerFactory, IComputer, IComputerFactory } from './model/computer';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { IComputer, IComputerFactory, ComputerFactory } from './model/computer';
 })
 export class AppComponent implements OnInit {
 
-    public computer: IComputer;
+    computer: IComputer;
 
-    public ngOnInit() {
+    ngOnInit() {
         const factory: IComputerFactory = new ComputerFactory();
         this.computer = factory.createComputer();
     }

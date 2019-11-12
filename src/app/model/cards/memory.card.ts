@@ -4,7 +4,6 @@ import { ICardYBusGroup } from '../bus/bus_groups';
 import { IAddressBusPart, IDataBusPart, IMemoryBusPart } from '../bus/bus_parts';
 import { MemoryLines } from '../bus/bus_part_lines';
 
-
 export interface IMemoryCard {
 
     memoryAddress: BitValue;
@@ -19,11 +18,11 @@ export interface IMemoryCard {
 
 export class MemoryCard implements IMemoryCard {
 
-    public memoryAddress: BitValue;
-    public memoryArray: number[];
-    public memoryData: BitValue;
-    public memoryCtrl: BitValue;
-    public memoryEnabled: CardPart;
+    memoryAddress: BitValue;
+    memoryArray: number[];
+    memoryData: BitValue;
+    memoryCtrl: BitValue;
+    memoryEnabled: CardPart;
 
     private addressPart: IAddressBusPart;
     private dataPart: IDataBusPart;
@@ -41,7 +40,7 @@ export class MemoryCard implements IMemoryCard {
         this.memoryCtrl = BitValue.Zero;
     }
 
-    public connect(busGroup: ICardYBusGroup) {
+    connect(busGroup: ICardYBusGroup) {
         this.addressPart = busGroup.addressBus.addressPart;
         this.addressPart.subscribe(this.update);
         this.dataPart = busGroup.dataControlBus.dataPart;
@@ -83,9 +82,9 @@ export class MemoryCard implements IMemoryCard {
                 }
             }
         }
-    }
+    };
 
-    public toggleEnabled(): void {
+    toggleEnabled(): void {
         this.memoryEnabled.value = this.memoryEnabled.value.flipBit(0);
     }
 }

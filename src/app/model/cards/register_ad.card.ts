@@ -12,15 +12,15 @@ export interface IRegisterADCard {
 
 export class RegisterADCard implements IRegisterADCard {
 
-    public registerA: IRegisterCardPart;
-    public registerD: IRegisterCardPart;
+    registerA: IRegisterCardPart;
+    registerD: IRegisterCardPart;
 
     constructor() {
         this.registerA = new RegisterCardPart(RegABCDLines.RLA, RegABCDLines.RSA);
         this.registerD = new RegisterCardPart(RegABCDLines.RLD, RegABCDLines.RSD);
     }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         const dataPart = busGroup.dataControlBus.dataPart;
         const ctrlPart = busGroup.controlZBus.regABCDPart;
         this.registerA.connect(dataPart, ctrlPart, dataPart);

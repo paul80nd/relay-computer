@@ -148,8 +148,7 @@
     ],
     "eofline": true,
     "curly": [
-      true,
-      "as-needed"
+      false
     ],
     "whitespace": [
       true,
@@ -313,7 +312,7 @@
     ],
     "pipe-impure": true,
     "i18n": [
-      true,
+      false,
       "check-id",
       "check-text"
     ]

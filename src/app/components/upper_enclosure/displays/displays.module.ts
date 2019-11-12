@@ -18,16 +18,16 @@ import { DisplayBConditionComponent } from './display_b/display_b_condition.comp
         DisplayAA2CComponent,
         DisplayBComponent,
         DisplayBAluComponent,
-        DisplayBConditionComponent,
+        DisplayBConditionComponent
     ],
     exports: [
         DisplayAComponent,
-        DisplayBComponent,
+        DisplayBComponent
     ],
     imports: [
         CommonModule,
         LedsModule,
-        SwitchesModule,
-    ],
+        SwitchesModule
+    ]
 })
 export class DisplaysModule { }

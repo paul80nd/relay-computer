@@ -7,7 +7,7 @@ import {
     II2BBusPart, IInstructionBusPart,
     IMemoryBusPart,
     IOperationBusPart, IPulseBusPart,
-    IRegisterABCDBusPart, IResetBusPart,
+    IRegisterABCDBusPart, IResetBusPart
 } from './bus_parts';
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
@@ -110,7 +110,6 @@ export interface IRegisterBCBus extends IBus {
     readonly registerCPart: IDataBusPart;
 }
 
-
 /**
  * Factory providing Bus instances
  */
@@ -138,12 +137,11 @@ export interface IBusSet {
     readonly pulse: IPulseBus;
 }
 
-
 export class BusFactory implements IBusFactory {
 
     constructor(private busPartFactory: IBusPartFactory) { }
 
-    public createBusses(): IBusSet {
+    createBusses(): IBusSet {
 
         // Build shared bus parts
         const abortPart = this.busPartFactory.getForAbort();
@@ -164,7 +162,7 @@ export class BusFactory implements IBusFactory {
         const sdsPart = this.busPartFactory.getForDataSwitchGate();
 
         // Build ribbon cables
-        const address = { addressPart: addressPart };
+        const address = { addressPart };
         const controlInstruction = { aluFunctionClPart, instructionPart };
         const dataControl = { aluFunctionClPart, conditionPart, dataPart };
         const dataInstruction = { dataPart, instructionPart };
@@ -173,7 +171,7 @@ export class BusFactory implements IBusFactory {
         const controlZ = { regABCDPart, aluOperationPart };
         const registerBC = {
               registerBPart: this.busPartFactory.getForData(),
-              registerCPart: this.busPartFactory.getForData(),
+              registerCPart: this.busPartFactory.getForData()
         };
         const displayA1 = {
               a1aPart: regABCDPart,
@@ -206,15 +204,15 @@ export class BusFactory implements IBusFactory {
             displayB3,
             operation,
             registerBC,
-            pulse,
+            pulse
         };
     }
 
-    public createBusForControlSwitches(): IDataControlBus {
+    createBusForControlSwitches(): IDataControlBus {
         return {
             aluFunctionClPart: this.busPartFactory.getForAluFunctionCl(),
             conditionPart: this.busPartFactory.getForCondition(),
-            dataPart: this.busPartFactory.getForData(),
+            dataPart: this.busPartFactory.getForData()
         };
     }
 }

@@ -18,7 +18,7 @@ import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { ClarityModule } from '@clr/angular';
     DocumentationModule,
     InstructionSetModule,
     MemoryListModule,
-    ClarityModule,
+    ClarityModule
   ],
   providers: [],
   bootstrap: [AppComponent]

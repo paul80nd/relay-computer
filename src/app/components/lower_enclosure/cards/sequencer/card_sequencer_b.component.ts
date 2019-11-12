@@ -5,13 +5,13 @@ import { ISequencerCard } from '../../../../model/cards/sequencer.card';
 
 @Component({
     selector: '[rc-card-sequencer-b]',
-    templateUrl: 'card_sequencer_b.component.html',
+    templateUrl: 'card_sequencer_b.component.html'
 })
 
 export class CardSequencerBComponent {
 
-    public at08Line = AbortLines.AT08;
+    at08Line = AbortLines.AT08;
 
-    @Input() public card: ISequencerCard;
+    @Input() card: ISequencerCard;
 
 }

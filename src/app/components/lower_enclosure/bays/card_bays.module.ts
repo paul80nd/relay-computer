@@ -12,14 +12,14 @@ import { CardBayZComponent } from './z/card_bay_z.component';
     CardBayWComponent,
     CardBayXComponent,
     CardBayYComponent,
-    CardBayZComponent,
+    CardBayZComponent
   ],
   exports: [
     CardBayWComponent,
     CardBayXComponent,
     CardBayYComponent,
-    CardBayZComponent,
+    CardBayZComponent
   ],
-  imports: [CardsModule],
+  imports: [CardsModule]
 })
 export class CardBaysModule { }

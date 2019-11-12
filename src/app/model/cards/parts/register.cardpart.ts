@@ -18,11 +18,11 @@ export interface IRegisterCardPart {
 
 export class RegisterCardPart implements IRegisterCardPart {
 
-    public value: CardPart;
-    public load: boolean;
-    public select: boolean;
+    value: CardPart;
+    load: boolean;
+    select: boolean;
 
-    public isSelectable: boolean;
+    isSelectable: boolean;
 
     private dataPart: IDataBusPart;
     private cardPart: CardPart;
@@ -38,7 +38,7 @@ export class RegisterCardPart implements IRegisterCardPart {
         this.valueOut = new CardPart();
     }
 
-    public connect(dataPartIn: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart = undefined) {
+    connect(dataPartIn: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart = undefined) {
         // Inputs
         this.dataPart = dataPartIn;
         this.dataPart.subscribe(this.update);
@@ -47,7 +47,7 @@ export class RegisterCardPart implements IRegisterCardPart {
         // Outputs
         if (dataPartOut) { dataPartOut.connect(this.valueOut); }
     }
-    public connectCardPart(cardPart: CardPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart) {
+    connectCardPart(cardPart: CardPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart) {
         // Inputs
         this.cardPart = cardPart;
         this.cardPart.subscribe(this.update);
@@ -56,7 +56,7 @@ export class RegisterCardPart implements IRegisterCardPart {
         // Outputs
         if (dataPartOut) { dataPartOut.connect(this.valueOut); }
     }
-    public connectDirect(registerConnect: IDataBusPart) {
+    connectDirect(registerConnect: IDataBusPart) {
         // Outputs
         registerConnect.connect(this.value);
     }
@@ -93,5 +93,5 @@ export class RegisterCardPart implements IRegisterCardPart {
                 this.valueOut.value = BitValue.Zero;
             }
         }
-    }
+    };
 }

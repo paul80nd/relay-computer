@@ -17,11 +17,11 @@ export interface IAluLogicCard {
 
 export class AluLogicCard implements IAluLogicCard {
 
-    public notValue: BitValue;
-    public shlValue: BitValue;
-    public orValue: BitValue;
-    public xorValue: BitValue;
-    public andValue: BitValue;
+    notValue: BitValue;
+    shlValue: BitValue;
+    orValue: BitValue;
+    xorValue: BitValue;
+    andValue: BitValue;
 
     private inputBPart: IDataBusPart;
     private inputCPart: IDataBusPart;
@@ -38,7 +38,7 @@ export class AluLogicCard implements IAluLogicCard {
         this.valueOut = new CardPart();
     }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         // Inputs
         this.inputBPart = busGroup.registerBCBus.registerBPart;
         this.inputBPart.subscribe(this.update);
@@ -69,12 +69,12 @@ export class AluLogicCard implements IAluLogicCard {
 
             const alu = this.aluOpPart.value;
             let valueOut = BitValue.Zero;
-            if (alu.bit(AluOperationLines.NOT)) { valueOut = valueOut.or(notValue); };
-            if (alu.bit(AluOperationLines.SHL)) { valueOut = valueOut.or(shlValue); };
-            if (alu.bit(AluOperationLines.ORR)) { valueOut = valueOut.or(orValue); };
-            if (alu.bit(AluOperationLines.XOR)) { valueOut = valueOut.or(xorValue); };
-            if (alu.bit(AluOperationLines.AND)) { valueOut = valueOut.or(andValue); };
+            if (alu.bit(AluOperationLines.NOT)) { valueOut = valueOut.or(notValue); }
+            if (alu.bit(AluOperationLines.SHL)) { valueOut = valueOut.or(shlValue); }
+            if (alu.bit(AluOperationLines.ORR)) { valueOut = valueOut.or(orValue); }
+            if (alu.bit(AluOperationLines.XOR)) { valueOut = valueOut.or(xorValue); }
+            if (alu.bit(AluOperationLines.AND)) { valueOut = valueOut.or(andValue); }
             this.valueOut.value = valueOut;
         }
-    }
+    };
 }

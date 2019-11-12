@@ -14,13 +14,13 @@ export interface IRegisterPCCard {
 
 export class RegisterPCCard implements IRegisterPCCard {
 
-    public register: IRegisterCardPart;
+    register: IRegisterCardPart;
 
     constructor() {
         this.register = new RegisterCardPart(RegAuxLines.LPC, RegAuxLines.SPC);
     }
 
-    public connect(busGroup: ICardXBusGroup) {
+    connect(busGroup: ICardXBusGroup) {
         const addressPart = busGroup.addressBus.addressPart;
         const ctrlPart = busGroup.controlXBus.auxRegisterPart;
         this.register.connect(addressPart, ctrlPart, addressPart);

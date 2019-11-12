@@ -13,7 +13,7 @@ export interface IDecoderCard {
 
 export class DecoderCard implements IDecoderCard {
 
-    public operation: BitValue;
+    operation: BitValue;
 
     private instrPart: IInstructionBusPart;
 
@@ -24,7 +24,7 @@ export class DecoderCard implements IDecoderCard {
         this.operationOut = new CardPart();
     }
 
-    public connect(busGroup: ICardWBusGroup) {
+    connect(busGroup: ICardWBusGroup) {
         // Inputs
         this.instrPart = busGroup.controlInstructionBus.instructionPart;
         this.instrPart.subscribe(this.update);
@@ -53,5 +53,5 @@ export class DecoderCard implements IDecoderCard {
             if (!this.operation.isEqualTo(oper)) { this.operation = oper; }
             this.operationOut.value = oper;
         }
-    }
+    };
 }

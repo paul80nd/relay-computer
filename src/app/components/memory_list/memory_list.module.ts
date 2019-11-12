@@ -7,13 +7,13 @@ import { HexPipe } from './hex.pipe';
 @NgModule({
     declarations: [
         MemoryListComponent,
-        HexPipe,
+        HexPipe
     ],
     exports: [
-        MemoryListComponent,
+        MemoryListComponent
     ],
     imports: [
-        CommonModule,
-    ],
+        CommonModule
+    ]
 })
 export class MemoryListModule { }

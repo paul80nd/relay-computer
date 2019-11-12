@@ -4,19 +4,19 @@ import { IControlSwitchesCard } from '../../../model/cards/control_switches.card
 
 @Component({
     selector: '[rc-control-switches]',
-    templateUrl: './control_switches.component.html',
+    templateUrl: './control_switches.component.html'
 })
 export class ControlSwitchesComponent {
 
-    @Input() public card: IControlSwitchesCard;
+    @Input() card: IControlSwitchesCard;
 
-    public deposit: boolean;
-    public depositNext: boolean;
-    public examine: boolean;
-    public examineNext: boolean;
-    public loadAddr: boolean;
+    deposit: boolean;
+    depositNext: boolean;
+    examine: boolean;
+    examineNext: boolean;
+    loadAddr: boolean;
 
-    public changeDeposit(up: boolean): void {
+    changeDeposit(up: boolean): void {
         if (!this.deposit && !this.depositNext) {
             if (up) {
                 this.deposit = false;
@@ -34,7 +34,7 @@ export class ControlSwitchesComponent {
         }
     }
 
-    public changeExamine(up: boolean): void {
+    changeExamine(up: boolean): void {
         if (!this.examine && !this.examineNext) {
             if (up) {
                 this.examine = false;
@@ -52,7 +52,7 @@ export class ControlSwitchesComponent {
         }
     }
 
-    public changeLoadAddr(): void {
+    changeLoadAddr(): void {
         if (!this.loadAddr) {
             this.loadAddr = true;
             this.card.loadAddr();

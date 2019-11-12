@@ -15,9 +15,9 @@ export interface IAluArithmeticCard {
 
 export class AluArithmeticCard implements IAluArithmeticCard {
 
-    public carryOut: boolean;
-    public value: BitValue;
-    public carryIn: boolean;
+    carryOut: boolean;
+    value: BitValue;
+    carryIn: boolean;
 
     private inputBPart: IDataBusPart;
     private inputCPart: IDataBusPart;
@@ -32,7 +32,7 @@ export class AluArithmeticCard implements IAluArithmeticCard {
         this.aluOpOut = new CardPart();
     }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         // Inputs
         this.inputBPart = busGroup.registerBCBus.registerBPart;
         this.inputBPart.subscribe(this.update);
@@ -66,5 +66,5 @@ export class AluArithmeticCard implements IAluArithmeticCard {
                 this.aluOpOut.value = this.aluOpOut.value.flipBit(AluOperationLines.ICY);
             }
         }
-    }
+    };
 }

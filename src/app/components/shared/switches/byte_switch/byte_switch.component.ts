@@ -4,14 +4,14 @@ import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
     selector: '[rc-byte-switch]',
-    templateUrl: 'byte_switch.component.html',
+    templateUrl: 'byte_switch.component.html'
 })
 
 export class ByteSwitchComponent {
 
-    @Input() public part: CardPart;
+    @Input() part: CardPart;
 
-    public flipBit(position: number) {
+    flipBit(position: number) {
         this.part.value = this.part.value.flipBit(position);
     }
 

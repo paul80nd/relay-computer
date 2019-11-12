@@ -5,18 +5,18 @@ import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
     selector: '[rc-tact-switch]',
-    templateUrl: 'tact_switch.component.html',
+    templateUrl: 'tact_switch.component.html'
 })
 
 export class TactileSwitchComponent  {
 
-    @Input() public part: CardPart;
-    @Input() public valueIn: BitValue;
-    @Input() public description: [string, string];
-    @Input() public color: string;
-    @Input() public bitTarget: number;
+    @Input() part: CardPart;
+    @Input() valueIn: BitValue;
+    @Input() description: [string, string];
+    @Input() color: string;
+    @Input() bitTarget: number;
 
-    public flipBit() {
+    flipBit() {
         this.part.value = this.part.value.flipBit(this.bitTarget);
     }
 

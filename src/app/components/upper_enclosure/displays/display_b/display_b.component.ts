@@ -5,16 +5,16 @@ import { IDisplayBCard } from '../../../../model/cards/display_b.card';
 
 @Component({
     selector: '[rc-display-b]',
-    templateUrl: './display_b.component.html',
+    templateUrl: './display_b.component.html'
 })
 export class DisplayBComponent {
 
-    public setLine = OperationLines.ISET;
-    public mv8Line = OperationLines.IMV8;
+    setLine = OperationLines.ISET;
+    mv8Line = OperationLines.IMV8;
 
-    public clkLine = ClockLines.CLK;
+    clkLine = ClockLines.CLK;
 
     @Input()
-    public card: IDisplayBCard;
+    card: IDisplayBCard;
 
 }

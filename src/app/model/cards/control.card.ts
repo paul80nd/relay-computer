@@ -3,7 +3,7 @@ import { BitValue } from '../bit_value';
 import { ICardWBusGroup } from '../bus/bus_groups';
 import {
     IAluFunctionClBusPart, IInstructionBusPart, IOperationBusPart,
-    IPulseBusPart,
+    IPulseBusPart
 } from '../bus/bus_parts';
 import {
     AbortLines, AluFunctionClLines, I2BLines, MemoryLines,
@@ -24,12 +24,12 @@ export interface IControlCard {
 
 export class ControlCard implements IControlCard {
 
-    public abort: BitValue;
-    public aluFunc: BitValue;
-    public auxReg: BitValue;
-    public i2b: BitValue;
-    public memory: BitValue;
-    public regABCD: BitValue;
+    abort: BitValue;
+    aluFunc: BitValue;
+    auxReg: BitValue;
+    i2b: BitValue;
+    memory: BitValue;
+    regABCD: BitValue;
 
     private abortOut: CardPart;
     private aluFuncOut: CardPart;
@@ -58,7 +58,7 @@ export class ControlCard implements IControlCard {
         this.regABCDOut = new CardPart();
     }
 
-    public connect(busGroup: ICardWBusGroup) {
+    connect(busGroup: ICardWBusGroup) {
         // Inputs
         this.operationPart = busGroup.operationBus.operationPart;
         this.operationPart.subscribe(this.update);
@@ -91,7 +91,7 @@ export class ControlCard implements IControlCard {
                 this.updateAlu();
             }
         }
-    }
+    };
 
     private updateInstFetchAndInc() {
         if (this.pulsePart) {

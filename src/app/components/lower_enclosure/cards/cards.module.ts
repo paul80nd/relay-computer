@@ -35,7 +35,7 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardRegisterBCComponent,
         CardRegisterIComponent,
         CardRegisterPCComponent,
-        CardSequencerBComponent,
+        CardSequencerBComponent
     ],
     exports: [
         CardAluArithmeticComponent,
@@ -52,11 +52,11 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardRegisterBCComponent,
         CardRegisterIComponent,
         CardRegisterPCComponent,
-        CardSequencerBComponent,
+        CardSequencerBComponent
     ],
     imports: [
         CommonModule,
-        LedsModule,
-    ],
+        LedsModule
+    ]
 })
 export class CardsModule { }

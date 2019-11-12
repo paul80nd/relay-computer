@@ -1,17 +1,16 @@
 import { IBusFactory } from './bus';
 import {
     IAddressBus,
-    IControlXBus, IControlYBus, IControlZBus,
-    IDataControlBus, IDataInstructionBus, IControlInstructionBus,
+    IControlInstructionBus, IControlXBus, IControlYBus,
+    IControlZBus, IDataControlBus, IDataInstructionBus,
     IDisplayA1Bus, IDisplayA2Bus,
     IDisplayB1Bus, IDisplayB2Bus, IDisplayB3Bus,
     IOperationBus, IPulseBus,
-    IRegisterBCBus,
+    IRegisterBCBus
 } from './bus';
 
 /** A Bus Group represents a collection of busses typically used against a certain card type (i.e. Z group)  */
 export interface IBusGroup { }
-
 
 /** Represents the collection of busses that make up the Aux Control Card group connectors */
 export interface IAuxControlBusGroup extends IBusGroup {
@@ -72,7 +71,6 @@ export interface IDisplayBBusGroup extends IBusGroup {
     readonly b3Bus: IDisplayB3Bus;
 }
 
-
 /**
  * Factory providing Bus Group instances
  */
@@ -98,7 +96,7 @@ export class BusGroupFactory implements IBusGroupFactory {
 
     constructor(private busFactory: IBusFactory) { }
 
-    public createBusGroups(): IBusGroupSet {
+    createBusGroups(): IBusGroupSet {
 
         // Build busses
         const b = this.busFactory.createBusses();
@@ -110,7 +108,7 @@ export class BusGroupFactory implements IBusGroupFactory {
               controlXBus: b.controlX,
               controlYBus: b.controlY,
               controlZBus: b.controlZ,
-              dataControlBus: this.busFactory.createBusForControlSwitches(),
+              dataControlBus: this.busFactory.createBusForControlSwitches()
         };
         const displayA = { a1Bus: b.displayA1, a2Bus: b.displayA2 };
         const displayB = { b1Bus: b.displayB1, b2Bus: b.displayB2, b3Bus: b.displayB3 };
@@ -140,7 +138,7 @@ export class BusGroupFactory implements IBusGroupFactory {
             w,
             x,
             y,
-            z,
+            z
         };
     }
 }

@@ -1,18 +1,18 @@
-import { IAuxControlCard, AuxControlCard } from './cards/aux_control.card';
-import { IControlCard, ControlCard } from './cards/control.card';
-import { IControlSwitchesCard, ControlSwitchesCard } from './cards/control_switches.card';
-import { IDecoderCard, DecoderCard } from './cards/decoder.card';
-import { IDisplayACard, DisplayACard } from './cards/display_a.card';
-import { IDisplayBCard, DisplayBCard } from './cards/display_b.card';
+import { AuxControlCard, IAuxControlCard } from './cards/aux_control.card';
+import { ControlCard, IControlCard } from './cards/control.card';
+import { ControlSwitchesCard, IControlSwitchesCard } from './cards/control_switches.card';
+import { DecoderCard, IDecoderCard } from './cards/decoder.card';
+import { DisplayACard, IDisplayACard } from './cards/display_a.card';
+import { DisplayBCard, IDisplayBCard } from './cards/display_b.card';
 import { IIncrementerCard, IncrementerCard } from './cards/incrementer.card';
 import { IMemoryCard, MemoryCard } from './cards/memory.card';
 import { IRegisterADCard, RegisterADCard } from './cards/register_ad.card';
 import { IRegisterBCCard, RegisterBCCard } from './cards/register_bc.card';
 import { IRegisterICard, RegisterICard } from './cards/register_i.card';
 import { IRegisterPCCard, RegisterPCCard } from './cards/register_pc.card';
-import { IAluLogicCard, AluLogicCard } from './cards/alu_logic.card';
-import { IAluArithmeticCard, AluArithmeticCard } from './cards/alu_arithmetic.card';
-import { IAluControlCard, AluControlCard } from './cards/alu_control.card';
+import { AluLogicCard, IAluLogicCard } from './cards/alu_logic.card';
+import { AluArithmeticCard, IAluArithmeticCard } from './cards/alu_arithmetic.card';
+import { AluControlCard, IAluControlCard } from './cards/alu_control.card';
 import { ISequencerCard, SequencerCard } from './cards/sequencer.card';
 
 export interface ICardFactory {
@@ -40,20 +40,21 @@ export interface ICards {
 
 class Cards implements ICards {
 
-    constructor(private auxControl: IAuxControlCard,
+    constructor(
+        private auxControl: IAuxControlCard,
         private controlSwitches: IControlSwitchesCard,
         private displayA: IDisplayACard,
         private displayB: IDisplayBCard) { }
 
-    public getAuxControl(): IAuxControlCard { return this.auxControl; }
-    public getControlSwitches(): IControlSwitchesCard { return this.controlSwitches; }
-    public getDisplayA(): IDisplayACard { return this.displayA; }
-    public getDisplayB(): IDisplayBCard { return this.displayB; }
+    getAuxControl(): IAuxControlCard { return this.auxControl; }
+    getControlSwitches(): IControlSwitchesCard { return this.controlSwitches; }
+    getDisplayA(): IDisplayACard { return this.displayA; }
+    getDisplayB(): IDisplayBCard { return this.displayB; }
 }
 
 export class CardFactory implements ICardFactory {
 
-    public createCards(): ICards {
+    createCards(): ICards {
         return new Cards(
             new AuxControlCard(),
             new ControlSwitchesCard(),
@@ -61,17 +62,17 @@ export class CardFactory implements ICardFactory {
             new DisplayBCard());
     }
 
-    public createAluArithmetic(): IAluArithmeticCard { return new AluArithmeticCard; }
-    public createAluControl(): IAluControlCard { return new AluControlCard; }
-    public createAluLogic(): IAluLogicCard { return new AluLogicCard; }
-    public createControl(): IControlCard { return new ControlCard; }
-    public createDecoder(): IDecoderCard { return new DecoderCard; }
-    public createIncrementer(): IIncrementerCard { return new IncrementerCard; }
-    public createMemory(): IMemoryCard { return new MemoryCard; }
-    public createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
-    public createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
-    public createRegisterI(): IRegisterICard { return new RegisterICard; }
-    public createRegisterPC(): IRegisterPCCard { return new RegisterPCCard; }
-    public createSequencer(): ISequencerCard { return new SequencerCard; }
+    createAluArithmetic(): IAluArithmeticCard { return new AluArithmeticCard; }
+    createAluControl(): IAluControlCard { return new AluControlCard; }
+    createAluLogic(): IAluLogicCard { return new AluLogicCard; }
+    createControl(): IControlCard { return new ControlCard; }
+    createDecoder(): IDecoderCard { return new DecoderCard; }
+    createIncrementer(): IIncrementerCard { return new IncrementerCard; }
+    createMemory(): IMemoryCard { return new MemoryCard; }
+    createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
+    createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
+    createRegisterI(): IRegisterICard { return new RegisterICard; }
+    createRegisterPC(): IRegisterPCCard { return new RegisterPCCard; }
+    createSequencer(): ISequencerCard { return new SequencerCard; }
 
 }

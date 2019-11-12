@@ -17,11 +17,11 @@ export interface IAluControlCard {
 
 export class AluControlCard implements IAluControlCard {
 
-    public condition: CardPart;
-    public func: BitValue;
-    public load: boolean;
-    public select: boolean;
-    public operation: CardPart;
+    condition: CardPart;
+    func: BitValue;
+    load: boolean;
+    select: boolean;
+    operation: CardPart;
 
     private aluOpPart: IAluOperationBusPart;
     private clPart: IAluFunctionClBusPart;
@@ -38,7 +38,7 @@ export class AluControlCard implements IAluControlCard {
         this.operationOut = new CardPart();
     }
 
-    public connect(busGroup: ICardZBusGroup) {
+    connect(busGroup: ICardZBusGroup) {
         // Inputs
         this.aluOpPart = busGroup.controlZBus.aluOperationPart;
         this.aluOpPart.subscribe(this.update);
@@ -104,10 +104,10 @@ export class AluControlCard implements IAluControlCard {
                 const c = this.aluOpPart.value.bit(AluOperationLines.ICY);
 
                 let valueOut = BitValue.Zero;
-                if (z) { valueOut = valueOut.flipBit(ConditionLines.EZ); };
-                if (!z) { valueOut = valueOut.flipBit(ConditionLines.NZ); };
-                if (s) { valueOut = valueOut.flipBit(ConditionLines.SN); };
-                if (c) { valueOut = valueOut.flipBit(ConditionLines.CY); };
+                if (z) { valueOut = valueOut.flipBit(ConditionLines.EZ); }
+                if (!z) { valueOut = valueOut.flipBit(ConditionLines.NZ); }
+                if (s) { valueOut = valueOut.flipBit(ConditionLines.SN); }
+                if (c) { valueOut = valueOut.flipBit(ConditionLines.CY); }
 
                 this.condition.value = valueOut;
                 this.conditionOut.value = valueOut;
@@ -116,11 +116,11 @@ export class AluControlCard implements IAluControlCard {
                 if (this.select) { this.select = false; }
             }
         }
-    }
+    };
 
     private updateOp = () => {
         if (this.aluOpPart) {
             this.operation.value = this.aluOpPart.value;
         }
-    }
+    };
 }

@@ -72,22 +72,22 @@ export interface IBusPartFactory {
 }
 
 export class BusPartFactory implements IBusPartFactory {
-    public getForAbort(): IAbortBusPart { return new BusPart(); }
-    public getForAddress(): IAbortBusPart { return new BusPart(); }
-    public getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
-    public getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
-    public getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }
-    public getForClock(): IClockBusPart { return new BusPart(); }
-    public getForCondition(): IConditionBusPart { return new BusPart(); }
-    public getForData(): IDataBusPart { return new BusPart(); }
-    public getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
-    public getForI2B(): II2BBusPart { return new BusPart(); }
-    public getForInstruction(): IInstructionBusPart { return new BusPart(); }
-    public getForMemory(): IMemoryBusPart { return new BusPart(); }
-    public getForOperation(): IOperationBusPart { return new BusPart(); }
-    public getForPulse(): IPulseBusPart { return new BusPart(); }
-    public getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
-    public getForReset(): IResetBusPart { return new BusPart(); }
+    getForAbort(): IAbortBusPart { return new BusPart(); }
+    getForAddress(): IAbortBusPart { return new BusPart(); }
+    getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
+    getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
+    getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }
+    getForClock(): IClockBusPart { return new BusPart(); }
+    getForCondition(): IConditionBusPart { return new BusPart(); }
+    getForData(): IDataBusPart { return new BusPart(); }
+    getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
+    getForI2B(): II2BBusPart { return new BusPart(); }
+    getForInstruction(): IInstructionBusPart { return new BusPart(); }
+    getForMemory(): IMemoryBusPart { return new BusPart(); }
+    getForOperation(): IOperationBusPart { return new BusPart(); }
+    getForPulse(): IPulseBusPart { return new BusPart(); }
+    getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
+    getForReset(): IResetBusPart { return new BusPart(); }
 }
 
 class BusPart extends Observable<BitValue> implements IBusPart {
@@ -101,26 +101,26 @@ class BusPart extends Observable<BitValue> implements IBusPart {
         this.connectedParts = [];
     }
 
-    public get value() {
+    get value() {
         return this._value;
     }
 
-    public connect(part: CardPart) {
+    connect(part: CardPart) {
         this.connectedParts.push(part);
         part.subscribe(this.update);
     }
 
-    public disconnect(part: CardPart) {
+    disconnect(part: CardPart) {
         this.connectedParts.splice(this.connectedParts.indexOf(part), 1);
         part.unsubscribe(this.update);
     }
 
-    public subscribe(handler: { (e: BitValue): void }): void {
+    subscribe(handler: { (e: BitValue): void }): void {
         super.subscribe(handler);
         this.update();
     }
 
-    public unsubscribe(handler: { (e: BitValue): void }): void {
+    unsubscribe(handler: { (e: BitValue): void }): void {
         super.unsubscribe(handler);
         this.update();
     }
@@ -133,7 +133,6 @@ class BusPart extends Observable<BitValue> implements IBusPart {
 
         this._value = newValue;
         this.notifyObservers(this._value);
-    }
+    };
 
 }
-

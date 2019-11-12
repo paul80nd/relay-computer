@@ -15,23 +15,23 @@ export class CardPart extends Observable<BitValue> {
         this._value = BitValue.Zero;
     }
 
-    public get value(): BitValue {
+    get value(): BitValue {
         return this._value;
     }
 
-    public set value(newValue: BitValue) {
+    set value(newValue: BitValue) {
         if (!this._value.isEqualTo(newValue)) {
             this._value = newValue;
             this.notifyObservers(newValue);
         }
     }
 
-    public subscribe(handler: {(e: BitValue): void}): void {
+    subscribe(handler: {(e: BitValue): void}): void {
         super.subscribe(handler);
         this.notifyObservers(this._value);
     }
 
-    public unsubscribe(handler: {(e: BitValue): void}): void {
+    unsubscribe(handler: {(e: BitValue): void}): void {
         super.unsubscribe(handler);
         this.notifyObservers(this._value);
     }

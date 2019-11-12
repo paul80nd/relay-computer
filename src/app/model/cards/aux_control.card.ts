@@ -20,7 +20,7 @@ export class AuxControlCard implements IAuxControlCard {
         this.data = new CardPart();
     }
 
-    public connect(busGroup1: IControlSwitchesBusGroup, busGroup2: IAuxControlBusGroup) {
+    connect(busGroup1: IControlSwitchesBusGroup, busGroup2: IAuxControlBusGroup) {
         // Inputs
         this.dataPart = busGroup1.dataControlBus.dataPart;
         this.dataPart.subscribe(this.update);
@@ -38,6 +38,6 @@ export class AuxControlCard implements IAuxControlCard {
             this.data.value = this.sds.value.bit(DataSwitchGateLines.SDS) ? this.dataPart.value : BitValue.Zero;
             this.addr.value = this.sds.value.bit(DataSwitchGateLines.SAS) ? this.dataPart.value : BitValue.Zero;
         }
-    }
+    };
 
 }
