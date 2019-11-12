@@ -16,13 +16,15 @@ export class RegisterXYCard implements IRegisterXYCard {
     constructor() {
         this.register = new RegisterYCardPart(
             RegJMXYLines.LDX, RegJMXYLines.SEX,
-            RegJMXYLines.LDY, RegJMXYLines.SEY);
+            RegJMXYLines.LDY, RegJMXYLines.SEY,
+            RegJMXYLines.LXY, RegJMXYLines.SXY);
     }
 
     connect(busGroup: ICardYBusGroup) {
+        const addressPart = busGroup.addressBus.addressPart;
         const dataPart = busGroup.dataControlBus.dataPart;
         const ctrlPart = busGroup.controlYBus.regJMXYPart;
-        this.register.connect(dataPart, ctrlPart, dataPart);
+        this.register.connect(dataPart, addressPart, ctrlPart, dataPart);
     }
 
 }

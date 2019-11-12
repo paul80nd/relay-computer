@@ -14,6 +14,10 @@ export class BitValue {
         return new BitValue(value);
     }
 
+    static fromHiLo(valueHi: BitValue, valueLo: BitValue) {
+        return new BitValue((valueLo.value & 0xFF) | ((valueHi.value & 0xFF) << 8));
+    }
+
     toUnsignedNumber() {
         return this.value;
     }
@@ -65,6 +69,13 @@ export class BitValue {
 
     add(other: BitValue) {
         return new BitValue(this.value + other.value);
+    }
+
+    hiPart() {
+        return new BitValue((this.value & 0xFF00) >> 8);
+    }
+    loPart() {
+        return new BitValue(this.value & 0xFF);
     }
 
     cap(bits: number) {
