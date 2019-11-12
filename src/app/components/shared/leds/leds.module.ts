@@ -9,6 +9,7 @@ import { DoubleByteLedsComponent } from './byte_leds/dbl_byte_leds.component';
 import { DoubleByteLedLightBarComponent } from './byte_llb/dbl_byte_llb.component';
 import { RegisterLedsComponent } from './register_leds/register_leds.component';
 import { Register16LedsComponent } from './register_leds/register_16_leds.component';
+import { RegisterLedsFlipComponent } from './register_leds/register_leds_flip.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { Register16LedsComponent } from './register_leds/register_16_leds.compon
         DoubleByteLedsComponent,
         DoubleByteLedLightBarComponent,
         RegisterLedsComponent,
+        RegisterLedsFlipComponent,
         Register16LedsComponent
     ],
     exports: [
@@ -29,6 +31,7 @@ import { Register16LedsComponent } from './register_leds/register_16_leds.compon
         DoubleByteLedsComponent,
         DoubleByteLedLightBarComponent,
         RegisterLedsComponent,
+        RegisterLedsFlipComponent,
         Register16LedsComponent
     ],
     imports: [CommonModule]
