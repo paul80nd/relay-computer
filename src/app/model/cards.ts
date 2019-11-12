@@ -14,6 +14,9 @@ import { AluLogicCard, IAluLogicCard } from './cards/alu_logic.card';
 import { AluArithmeticCard, IAluArithmeticCard } from './cards/alu_arithmetic.card';
 import { AluControlCard, IAluControlCard } from './cards/alu_control.card';
 import { ISequencerCard, SequencerCard } from './cards/sequencer.card';
+import { IRegisterJCard, RegisterJCard } from './cards/register_j.card';
+import { IRegisterMCard, RegisterMCard } from './cards/register_m.card';
+import { IRegisterXYCard, RegisterXYCard } from './cards/register_xy.card';
 
 export interface ICardFactory {
     createAluArithmetic(): IAluArithmeticCard;
@@ -27,7 +30,10 @@ export interface ICardFactory {
     createRegisterAD(): IRegisterADCard;
     createRegisterBC(): IRegisterBCCard;
     createRegisterI(): IRegisterICard;
+    createRegisterJ(): IRegisterJCard;
+    createRegisterM(): IRegisterMCard;
     createRegisterPC(): IRegisterPCCard;
+    createRegisterXY(): IRegisterXYCard;
     createSequencer(): ISequencerCard;
 }
 
@@ -72,7 +78,10 @@ export class CardFactory implements ICardFactory {
     createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
     createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
     createRegisterI(): IRegisterICard { return new RegisterICard; }
+    createRegisterJ(): IRegisterJCard { return new RegisterJCard; }
+    createRegisterM(): IRegisterMCard { return new RegisterMCard; }
     createRegisterPC(): IRegisterPCCard { return new RegisterPCCard; }
+    createRegisterXY(): IRegisterXYCard { return new RegisterXYCard; }
     createSequencer(): ISequencerCard { return new SequencerCard; }
 
 }

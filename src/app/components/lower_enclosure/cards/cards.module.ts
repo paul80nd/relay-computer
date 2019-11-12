@@ -18,6 +18,9 @@ import { CardRegisterBCComponent } from './registers/card_register_bc.component'
 import { CardRegisterIComponent } from './registers/card_register_i.component';
 import { CardRegisterPCComponent } from './registers/card_register_pc.component';
 import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component';
+import { CardRegisterJComponent } from './registers/card_register_j.component';
+import { CardRegisterMComponent } from './registers/card_register_m.component';
+import { CardRegisterXYComponent } from './registers/card_register_xy.component';
 
 @NgModule({
     declarations: [
@@ -33,8 +36,11 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardMemoryBComponent,
         CardRegisterADComponent,
         CardRegisterBCComponent,
+        CardRegisterJComponent,
+        CardRegisterMComponent,
         CardRegisterIComponent,
         CardRegisterPCComponent,
+        CardRegisterXYComponent,
         CardSequencerBComponent
     ],
     exports: [
@@ -51,7 +57,10 @@ import { CardSequencerBComponent } from './sequencer/card_sequencer_b.component'
         CardRegisterADComponent,
         CardRegisterBCComponent,
         CardRegisterIComponent,
+        CardRegisterJComponent,
+        CardRegisterMComponent,
         CardRegisterPCComponent,
+        CardRegisterXYComponent,
         CardSequencerBComponent
     ],
     imports: [

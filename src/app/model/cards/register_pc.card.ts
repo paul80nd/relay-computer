@@ -1,9 +1,6 @@
-import { CardPart } from '../../model/cards/card_part';
-import { BitValue } from '../bit_value';
 import { ICardXBusGroup } from '../bus/bus_groups';
-import { I2BLines, RegAuxLines } from '../bus/bus_part_lines';
+import { RegAuxLines } from '../bus/bus_part_lines';
 import { IRegisterCardPart, RegisterCardPart } from './parts/register.cardpart';
-import { IDataBusPart, II2BBusPart, IInstructionBusPart } from '../bus/bus_parts';
 
 export interface IRegisterPCCard {
 

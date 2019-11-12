@@ -10,11 +10,15 @@ import { DisplayAA2CComponent } from './display_a/display_a_a2c.component';
 import { DisplayBComponent } from './display_b/display_b.component';
 import { DisplayBAluComponent } from './display_b/display_b_alu.component';
 import { DisplayBConditionComponent } from './display_b/display_b_condition.component';
+import { DisplayAA2AComponent } from './display_a/display_a_a2a.component';
+import { DisplayAA2BComponent } from './display_a/display_a_a2b.component';
 
 @NgModule({
     declarations: [
         DisplayAComponent,
         DisplayAA1AComponent,
+        DisplayAA2AComponent,
+        DisplayAA2BComponent,
         DisplayAA2CComponent,
         DisplayBComponent,
         DisplayBAluComponent,

@@ -46,6 +46,8 @@ export interface IOperationBusPart extends IBusPart { }
 export interface IPulseBusPart extends IBusPart { }
 /** Bus part for the 8 lines that carry the register ABCD load and select lines */
 export interface IRegisterABCDBusPart extends IBusPart { }
+/** Bus part for the 14 lines that carry the register JMXY load and select lines */
+export interface IRegisterJMXYBusPart extends IBusPart { }
 /** Bus part for the 1 line that carries the RES signal */
 export interface IResetBusPart extends IBusPart { }
 
@@ -68,6 +70,7 @@ export interface IBusPartFactory {
     getForOperation(): IOperationBusPart;
     getForPulse(): IPulseBusPart;
     getForRegisterABCD(): IRegisterABCDBusPart;
+    getForRegisterJMXY(): IRegisterJMXYBusPart;
     getForReset(): IResetBusPart;
 }
 
@@ -87,6 +90,7 @@ export class BusPartFactory implements IBusPartFactory {
     getForOperation(): IOperationBusPart { return new BusPart(); }
     getForPulse(): IPulseBusPart { return new BusPart(); }
     getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
+    getForRegisterJMXY(): IRegisterJMXYBusPart { return new BusPart(); }
     getForReset(): IResetBusPart { return new BusPart(); }
 }
 

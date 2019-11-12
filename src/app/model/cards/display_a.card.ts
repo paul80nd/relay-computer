@@ -4,7 +4,7 @@ import { IDisplayABusGroup } from '../bus/bus_groups';
 import { IAluFunctionClBusPart, IAluOperationBusPart,
     IAuxRegisterBusPart, IClockBusPart,
     IDataSwitchGateBusPart, II2BBusPart,
-    IMemoryBusPart, IRegisterABCDBusPart } from '../bus/bus_parts';
+    IMemoryBusPart, IRegisterABCDBusPart, IRegisterJMXYBusPart } from '../bus/bus_parts';
 
 export interface IDisplayACard {
 
@@ -14,6 +14,7 @@ export interface IDisplayACard {
     a1bMemory: CardPart;
     a1cAuxReg: CardPart;
     a1cCl: CardPart;
+    a2abReg: CardPart;
     a2b: CardPart;
     a2c: CardPart;
 
@@ -23,6 +24,7 @@ export interface IDisplayACard {
     a1bMemoryIn: BitValue;
     a1cAuxRegIn: BitValue;
     a1cClIn: BitValue;
+    a2abRegIn: BitValue;
     a2bIn: BitValue;
     a2cIn: BitValue;
 
@@ -37,6 +39,7 @@ export class DisplayACard implements IDisplayACard {
     a1bMemory: CardPart;
     a1cAuxReg: CardPart;
     a1cCl: CardPart;
+    a2abReg: CardPart;
     a2b: CardPart;
     a2c: CardPart;
 
@@ -46,6 +49,7 @@ export class DisplayACard implements IDisplayACard {
     a1bMemoryIn: BitValue;
     a1cAuxRegIn: BitValue;
     a1cClIn: BitValue;
+    a2abRegIn: BitValue;
     a2bIn: BitValue;
     a2cIn: BitValue;
 
@@ -55,6 +59,7 @@ export class DisplayACard implements IDisplayACard {
     private a1bMemoryPart: IMemoryBusPart;
     private a1cAuxRegPart: IAuxRegisterBusPart;
     private a1cClPart: IAluFunctionClBusPart;
+    private a2abRegPart: IRegisterJMXYBusPart;
     private a2bPart: IDataSwitchGateBusPart;
     private a2cPart: IAluOperationBusPart;
 
@@ -65,6 +70,7 @@ export class DisplayACard implements IDisplayACard {
         this.a1bMemory = new CardPart();
         this.a1cAuxReg = new CardPart();
         this.a1cCl = new CardPart();
+        this.a2abReg = new CardPart();
         this.a2b = new CardPart();
         this.a2c = new CardPart();
 
@@ -74,6 +80,7 @@ export class DisplayACard implements IDisplayACard {
         this.a1bMemoryIn = BitValue.Zero;
         this.a1cAuxRegIn = BitValue.Zero;
         this.a1cClIn = BitValue.Zero;
+        this.a2abRegIn = BitValue.Zero;
         this.a2bIn = BitValue.Zero;
         this.a2cIn = BitValue.Zero;
     }
@@ -100,6 +107,10 @@ export class DisplayACard implements IDisplayACard {
         this.a1cAuxRegPart = busGroup.a1Bus.a1cAuxRegPart;
         this.a1cAuxRegPart.subscribe(v => this.a1cAuxRegIn = v);
         this.a1cAuxRegPart.connect(this.a1cAuxReg);
+
+        this.a2abRegPart = busGroup.a2Bus.a2abRegPart;
+        this.a2abRegPart.subscribe(v => this.a2abRegIn = v);
+        this.a2abRegPart.connect(this.a2abReg);
 
         this.a2bPart = busGroup.a2Bus.a2bPart;
         this.a2bPart.subscribe(v => this.a2bIn = v);

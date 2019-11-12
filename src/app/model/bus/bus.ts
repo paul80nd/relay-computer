@@ -7,7 +7,7 @@ import {
     II2BBusPart, IInstructionBusPart,
     IMemoryBusPart,
     IOperationBusPart, IPulseBusPart,
-    IRegisterABCDBusPart, IResetBusPart
+    IRegisterABCDBusPart, IRegisterJMXYBusPart, IResetBusPart
 } from './bus_parts';
 
 /** A bus represents a physical ribbon cable that carries one or more bus parts (collection of lines) */
@@ -36,6 +36,7 @@ export interface IControlXBus extends IBus {
 export interface IControlYBus extends IBus {
     readonly memoryPart: IMemoryBusPart;
     readonly sdsPart: IDataSwitchGateBusPart;
+    readonly regJMXYPart: IRegisterJMXYBusPart;
 }
 
 /** Repesents the Z Control bus ribbon cable  */
@@ -69,6 +70,7 @@ export interface IDisplayA1Bus extends IBus {
 
 /** Represents the Display A2 bus ribbon cable */
 export interface IDisplayA2Bus extends IBus {
+    readonly a2abRegPart: IRegisterJMXYBusPart;
     readonly a2bPart: IDataSwitchGateBusPart;
     readonly a2cPart: IAluOperationBusPart;
 }
@@ -158,6 +160,7 @@ export class BusFactory implements IBusFactory {
         const operationPart = this.busPartFactory.getForOperation();
         const pulsePart = this.busPartFactory.getForPulse();
         const regABCDPart = this.busPartFactory.getForRegisterABCD();
+        const regJMXYPart = this.busPartFactory.getForRegisterJMXY();
         const resetPart = this.busPartFactory.getForReset();
         const sdsPart = this.busPartFactory.getForDataSwitchGate();
 
@@ -167,22 +170,25 @@ export class BusFactory implements IBusFactory {
         const dataControl = { aluFunctionClPart, conditionPart, dataPart };
         const dataInstruction = { dataPart, instructionPart };
         const controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };
-        const controlY = { memoryPart, sdsPart };
+        const controlY = { memoryPart, sdsPart, regJMXYPart };
         const controlZ = { regABCDPart, aluOperationPart };
         const registerBC = {
-              registerBPart: this.busPartFactory.getForData(),
-              registerCPart: this.busPartFactory.getForData()
+            registerBPart: this.busPartFactory.getForData(),
+            registerCPart: this.busPartFactory.getForData()
         };
         const displayA1 = {
-              a1aPart: regABCDPart,
-              a1bClockPart: clockPart,
-              a1bI2bPart: i2bPart,
-              a1bMemoryPart: memoryPart,
-              a1cAuxRegPart: auxRegisterPart,
-              a1cClPart: aluFunctionClPart };
-        const displayA2 = { a2bPart: sdsPart, a2cPart: aluOperationPart };
+            a1aPart: regABCDPart,
+            a1bClockPart: clockPart,
+            a1bI2bPart: i2bPart,
+            a1bMemoryPart: memoryPart,
+            a1cAuxRegPart: auxRegisterPart,
+            a1cClPart: aluFunctionClPart };
+        const displayA2 = { 
+            a2abRegPart: regJMXYPart, 
+            a2bPart: sdsPart, 
+            a2cPart: aluOperationPart };
         const displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
-              conditionPart, dataPart };
+            conditionPart, dataPart };
         const displayB2 = { addressPart, instructionPart };
         const displayB3 = { operationPart };
         const operation = { abortPart, operationPart };

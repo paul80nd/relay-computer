@@ -12,10 +12,14 @@ import { IRegisterPCCard } from './cards/register_pc.card';
 import { ISequencerCard } from './cards/sequencer.card';
 import { ICardWBusGroup, ICardXBusGroup, ICardYBusGroup, ICardZBusGroup } from './bus/bus_groups';
 import { ICardFactory } from './cards';
+import { IRegisterMCard } from './cards/register_m.card';
+import { IRegisterXYCard } from './cards/register_xy.card';
+import { IRegisterJCard } from './cards/register_j.card';
 
 export interface IBackplaneFactory {
     createWBackplane(): IWBackplane;
     createXBackplane(): IXBackplane;
+    createYBackplane(): IYBackplane;
     createZBackplane(): IZBackplane;
 }
 
@@ -37,6 +41,9 @@ export interface IXBackplane {
 
 export interface IYBackplane {
     readonly memory: IMemoryCard;
+    readonly registerJ: IRegisterJCard
+    readonly registerM: IRegisterMCard;
+    readonly registerXY: IRegisterXYCard;
 
     connect(busGroup: ICardYBusGroup): void;
 }
@@ -73,7 +80,10 @@ export class BackplaneFactory implements IBackplaneFactory {
 
     createYBackplane(): IYBackplane {
         return new YBackplane(
-            this.cardFactory.createMemory()
+            this.cardFactory.createMemory(),
+            this.cardFactory.createRegisterJ(),
+            this.cardFactory.createRegisterM(),
+            this.cardFactory.createRegisterXY()
         );
     }
 
@@ -120,10 +130,16 @@ class XBackplane implements IXBackplane {
 class YBackplane implements IYBackplane {
 
     constructor(
-        public memory: IMemoryCard) { }
+        public memory: IMemoryCard,
+        public registerJ: IRegisterJCard,
+        public registerM: IRegisterMCard,
+        public registerXY: IRegisterXYCard) { }
 
     connect(busGroup: ICardYBusGroup) {
         this.memory.connect(busGroup);
+        this.registerJ.connect(busGroup);
+        this.registerM.connect(busGroup);
+        this.registerXY.connect(busGroup);
     }
 
 }

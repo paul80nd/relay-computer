@@ -108,6 +108,37 @@ export enum RegABCDLines {
     RSD
 }
 
+export enum RegJMXYLines {
+    /** Load Register J1 */
+    LJ1,
+    /** Load Register J2 */
+    LJ2,
+    /** Load Register M1 */
+    LM1,
+    /** Load Register M2 */
+    LM2,
+    /** Load Register XY */
+    LXY,
+    /** Load Register X */
+    LDX,
+    /** Load Register Y */
+    LDY,
+    /** Select Register J */
+    SEJ,
+    /** Select Register M */
+    SEM,
+    /** Select Register M1 */
+    SM1,
+    /** Select Register M2 */
+    SM2,
+    /** Select Register XY */
+    SXY,
+    /** Select Register X */
+    SEX,
+    /** Select Register Y */
+    SEY
+}
+
 export enum RegAuxLines {
     /* Load Incrementer Register */
     LIC,
