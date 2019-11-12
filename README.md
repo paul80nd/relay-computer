@@ -3,7 +3,7 @@ This is a simulation of my relay computer using angular and SVG. Mainly I'm usin
 
 More information on my relay computer can be found at my [blog](https://relaycomputer.co.uk)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
 
 ## Development server
 
