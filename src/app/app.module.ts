@@ -23,7 +23,7 @@ import { ClarityModule } from '@clr/angular';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ClarityModule.forRoot(),
+    ClarityModule,
     FormsModule,
     HttpModule,
     ArchitectureDiagramModule,
@@ -34,6 +34,7 @@ import { ClarityModule } from '@clr/angular';
     DocumentationModule,
     InstructionSetModule,
     MemoryListModule,
+    ClarityModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
