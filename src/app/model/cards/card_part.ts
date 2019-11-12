@@ -26,12 +26,12 @@ export class CardPart extends Observable<BitValue> {
         }
     }
 
-    subscribe(handler: {(e: BitValue): void}): void {
+    subscribe(handler: (e: BitValue) => void): void {
         super.subscribe(handler);
         this.notifyObservers(this._value);
     }
 
-    unsubscribe(handler: {(e: BitValue): void}): void {
+    unsubscribe(handler: (e: BitValue) => void): void {
         super.unsubscribe(handler);
         this.notifyObservers(this._value);
     }

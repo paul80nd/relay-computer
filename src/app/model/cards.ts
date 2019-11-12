@@ -68,20 +68,20 @@ export class CardFactory implements ICardFactory {
             new DisplayBCard());
     }
 
-    createAluArithmetic(): IAluArithmeticCard { return new AluArithmeticCard; }
-    createAluControl(): IAluControlCard { return new AluControlCard; }
-    createAluLogic(): IAluLogicCard { return new AluLogicCard; }
-    createControl(): IControlCard { return new ControlCard; }
-    createDecoder(): IDecoderCard { return new DecoderCard; }
-    createIncrementer(): IIncrementerCard { return new IncrementerCard; }
-    createMemory(): IMemoryCard { return new MemoryCard; }
-    createRegisterAD(): IRegisterADCard { return new RegisterADCard; }
-    createRegisterBC(): IRegisterBCCard { return new RegisterBCCard; }
-    createRegisterI(): IRegisterICard { return new RegisterICard; }
-    createRegisterJ(): IRegisterJCard { return new RegisterJCard; }
-    createRegisterM(): IRegisterMCard { return new RegisterMCard; }
-    createRegisterPC(): IRegisterPCCard { return new RegisterPCCard; }
-    createRegisterXY(): IRegisterXYCard { return new RegisterXYCard; }
-    createSequencer(): ISequencerCard { return new SequencerCard; }
+    createAluArithmetic(): IAluArithmeticCard { return new AluArithmeticCard(); }
+    createAluControl(): IAluControlCard { return new AluControlCard(); }
+    createAluLogic(): IAluLogicCard { return new AluLogicCard(); }
+    createControl(): IControlCard { return new ControlCard(); }
+    createDecoder(): IDecoderCard { return new DecoderCard(); }
+    createIncrementer(): IIncrementerCard { return new IncrementerCard(); }
+    createMemory(): IMemoryCard { return new MemoryCard(); }
+    createRegisterAD(): IRegisterADCard { return new RegisterADCard(); }
+    createRegisterBC(): IRegisterBCCard { return new RegisterBCCard(); }
+    createRegisterI(): IRegisterICard { return new RegisterICard(); }
+    createRegisterJ(): IRegisterJCard { return new RegisterJCard(); }
+    createRegisterM(): IRegisterMCard { return new RegisterMCard(); }
+    createRegisterPC(): IRegisterPCCard { return new RegisterPCCard(); }
+    createRegisterXY(): IRegisterXYCard { return new RegisterXYCard(); }
+    createSequencer(): ISequencerCard { return new SequencerCard(); }
 
 }

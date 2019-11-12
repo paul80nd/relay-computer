@@ -183,9 +183,9 @@ export class BusFactory implements IBusFactory {
             a1bMemoryPart: memoryPart,
             a1cAuxRegPart: auxRegisterPart,
             a1cClPart: aluFunctionClPart };
-        const displayA2 = { 
-            a2abRegPart: regJMXYPart, 
-            a2bPart: sdsPart, 
+        const displayA2 = {
+            a2abRegPart: regJMXYPart,
+            a2bPart: sdsPart,
             a2cPart: aluOperationPart };
         const displayB1 = { aluOperationPart, aluFunctionClPart, clockPart,
             conditionPart, dataPart };

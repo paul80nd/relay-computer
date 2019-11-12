@@ -41,7 +41,7 @@ export interface IXBackplane {
 
 export interface IYBackplane {
     readonly memory: IMemoryCard;
-    readonly registerJ: IRegisterJCard
+    readonly registerJ: IRegisterJCard;
     readonly registerM: IRegisterMCard;
     readonly registerXY: IRegisterXYCard;
 

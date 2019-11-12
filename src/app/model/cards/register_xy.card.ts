@@ -1,30 +1,28 @@
 import { ICardYBusGroup } from '../bus/bus_groups';
-import { RegABCDLines, RegJMXYLines } from '../bus/bus_part_lines';
-import { IRegisterCardPart, RegisterCardPart } from './parts/register.cardpart';
+import { RegJMXYLines } from '../bus/bus_part_lines';
+import { IRegisterYCardPart, RegisterYCardPart } from './parts/register_y.cardpart';
 
 export interface IRegisterXYCard {
 
-    registerX: IRegisterCardPart;
-    registerY: IRegisterCardPart;
+    register: IRegisterYCardPart;
 
     connect(dataBus: ICardYBusGroup): void;
 }
 
 export class RegisterXYCard implements IRegisterXYCard {
 
-    registerX: IRegisterCardPart;
-    registerY: IRegisterCardPart;
+    register: IRegisterYCardPart;
 
     constructor() {
-        this.registerX = new RegisterCardPart(RegJMXYLines.LDX, RegJMXYLines.SEX);
-        this.registerY = new RegisterCardPart(RegJMXYLines.LDY, RegJMXYLines.SEY);
+        this.register = new RegisterYCardPart(
+            RegJMXYLines.LDX, RegJMXYLines.SEX,
+            RegJMXYLines.LDY, RegJMXYLines.SEY);
     }
 
     connect(busGroup: ICardYBusGroup) {
         const dataPart = busGroup.dataControlBus.dataPart;
         const ctrlPart = busGroup.controlYBus.regJMXYPart;
-        this.registerX.connect(dataPart, ctrlPart, dataPart);
-        this.registerY.connect(dataPart, ctrlPart, dataPart);
+        this.register.connect(dataPart, ctrlPart, dataPart);
     }
 
 }
