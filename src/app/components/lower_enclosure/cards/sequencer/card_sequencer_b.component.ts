@@ -11,6 +11,8 @@ import { ISequencerCard } from '../../../../model/cards/sequencer.card';
 export class CardSequencerBComponent {
 
     at08Line = AbortLines.AT08;
+    at10Line = AbortLines.AT10;
+    at12Line = AbortLines.AT12;
 
     @Input() card: ISequencerCard;
 

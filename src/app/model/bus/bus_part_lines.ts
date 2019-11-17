@@ -1,6 +1,10 @@
 export enum AbortLines {
     /** Abort 8 (8 cycle instruction) */
-    AT08
+    AT08,
+    /** Abort 10 (10 cycle instruction) */
+    AT10,
+    /** Abort 12 (12 cycle instruction) */
+    AT12
 }
 
 export enum AluFunctionClLines {
@@ -86,7 +90,13 @@ export enum PulseLines {
     B,
     C,
     D,
-    E
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K    
 }
 
 export enum RegABCDLines {
