@@ -69,7 +69,11 @@ export class SequencerCard implements ISequencerCard {
         if (clock !== this.lastClock) {
             this.lastClock = clock;
             this.fsm = this.fsm.shiftLeft(24);
-            if (this.fsm.bit(13)) {
+            if (this.fsm.bit(15) && this.abort.bit(AbortLines.AT14)) {
+                this.fsm = this.fsm.flipBit(15);
+                this.fsm = this.fsm.flipBit(0);
+            }            
+            if (this.fsm.bit(13) && this.abort.bit(AbortLines.AT12)) {
                 this.fsm = this.fsm.flipBit(13);
                 this.fsm = this.fsm.flipBit(0);
             }            
@@ -114,6 +118,22 @@ export class SequencerCard implements ISequencerCard {
         if (fsm.bit(8) || fsm.bit(9) || fsm.bit(10)) { pulse = pulse.flipBit(PulseLines.J); }
         // P-K = S9'
         if (fsm.bit(9)) { pulse = pulse.flipBit(PulseLines.K); }
+        // P-L = S12
+        if (fsm.bit(12) || fsm.bit(13)) { pulse = pulse.flipBit(PulseLines.L); }
+        // P-M = S12'
+        if (fsm.bit(12)) { pulse = pulse.flipBit(PulseLines.M); }
+        // P-N = S15 | S16
+        if (fsm.bit(15) || fsm.bit(16) || fsm.bit(17)) { pulse = pulse.flipBit(PulseLines.N); }
+        // P-O = S16'
+        if (fsm.bit(16)) { pulse = pulse.flipBit(PulseLines.O); }
+        // P-Q = S19
+        if (fsm.bit(19) || fsm.bit(20)) { pulse = pulse.flipBit(PulseLines.Q); }
+        // P-R = S19'
+        if (fsm.bit(19)) { pulse = pulse.flipBit(PulseLines.R); }
+        // P-S = S22
+        if (fsm.bit(22) || fsm.bit(23)) { pulse = pulse.flipBit(PulseLines.S); }
+        // P-T = S22'
+        if (fsm.bit(22)) { pulse = pulse.flipBit(PulseLines.T); }
 
         this.pulse = pulse;
         this.pulseOut.value = pulse;
