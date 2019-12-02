@@ -2,7 +2,7 @@
     <!-- Origin is at center of first (LD) led -->
     <svg:g>
         <!-- Hi Register -->
-        <svg:title>Register {{descriptionHi}}</svg:title>
+        <svg:title>Register {{ descriptionHi }}</svg:title>
     
         <svg:rect x="-4" y="7" width="107" height="5" fill="white" />
         
@@ -23,12 +23,12 @@
         <svg:g rc-byte-leds [value]="register.valueHi.value" transform="translate(22,0)"></svg:g>
         
         <svg:text transform="translate(18 7)" fill="black">
-            <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{descriptionHi}}</svg:tspan>
+            <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ descriptionHi }}</svg:tspan>
         </svg:text>
     </svg:g>
     <svg:g transform="translate(110,0)">
         <!-- Lo Register -->
-        <svg:title>{{descriptionLo}}</svg:title>
+        <svg:title>{{ descriptionLo }}</svg:title>
 
         <svg:rect x="-4" y="7" width="107" height="5" fill="white" />
             
@@ -49,7 +49,7 @@
         </svg:g>
 
         <svg:text transform="translate(-4 7)" fill="black">
-            <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{descriptionLo}}</svg:tspan>
+            <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ descriptionLo }}</svg:tspan>
         </svg:text>
     </svg:g>
 </svg:g>

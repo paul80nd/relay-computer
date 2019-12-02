@@ -7,14 +7,14 @@
         <svg:circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
         <svg:circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledOutline" />
         <svg:text [attr.transform]="'translate(' + (10 + (i * 11)) + ' 32)'" fill="black">
-            <svg:tspan class="d-text4" x=".44140625" y="4">S0{{i}}</svg:tspan>
+            <svg:tspan class="d-text4" x=".44140625" y="4">S0{{ i }}</svg:tspan>
         </svg:text>
     </svg:g>    
     <svg:g *ngFor="let i of [10,11,12]">
         <svg:circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
         <svg:circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledOutline" />
         <svg:text [attr.transform]="'translate(' + (10 + (i * 11)) + ' 32)'" fill="black">
-            <svg:tspan class="d-text4" x=".44140625" y="4">S{{i}}</svg:tspan>
+            <svg:tspan class="d-text4" x=".44140625" y="4">S{{ i }}</svg:tspan>
         </svg:text>
     </svg:g>    
 

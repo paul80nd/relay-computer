@@ -1,6 +1,6 @@
 <svg:g>
     <!-- Origin is at center of first (LD) led -->
-    <svg:title>Register {{description}}</svg:title>
+    <svg:title>Register {{ description }}</svg:title>
 
     <svg:rect x="-4" y="7" width="107" height="5" fill="white" />
     
@@ -21,6 +21,6 @@
     <svg:g rc-byte-leds [value]="register.value.value" transform="translate(22,0)"></svg:g>
     
     <svg:text transform="translate(18 7)" fill="black">
-        <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{description}}</svg:tspan>
+        <svg:tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ description }}</svg:tspan>
     </svg:text>
 </svg:g>
