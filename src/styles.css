@@ -5,6 +5,7 @@ svg text {
     -moz-user-select: none;
     -ms-user-select: none;
     cursor: default;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 svg text::selection {
