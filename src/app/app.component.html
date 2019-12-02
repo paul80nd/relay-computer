@@ -1,7 +1,7 @@
 <div style="position: absolute; width: 100vw; height: 100vh; padding: 3px; padding-left: 75vh;">
     <div class="main-container">
         <header class="header-6">
-            <div class="branding">
+            <div class="branding" style="padding: 0 .4rem;">
                 <a href="#" class="nav-link">
                     <clr-icon shape="lightbulb"></clr-icon>
                     <span class="title">Relay Computer Simulator</span>
@@ -10,9 +10,9 @@
             <div class="header-actions">
                 <clr-dropdown>
                     <button class="nav-icon" clrDropdownTrigger>
-                                    <clr-icon shape="library"></clr-icon>
-                                    <clr-icon shape="caret down"></clr-icon>
-                                </button>
+                        <clr-icon shape="library"></clr-icon>
+                        <clr-icon shape="caret down"></clr-icon>
+                    </button>
                     <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
                         <a href="https://relaycomputer.co.uk" target="_blank" clrDropdownItem>Blog</a>
                         <a href="https://github.com/paul80nd/relay-computer" target="_blank" clrDropdownItem>GitHub Source</a>
@@ -24,13 +24,13 @@
             <div class="content-area" style="width: 60%; padding-right: 4px !important;">
                 <clr-tabs>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="help-info"></clr-icon></button>
+                        <button clrTabLink><clr-icon shape="help-info"></clr-icon> Info</button>
                         <clr-tab-content *clrIfActive="true">
                             <rc-documentation></rc-documentation>
                         </clr-tab-content>
                     </clr-tab>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="design"></clr-icon></button>
+                        <button clrTabLink><clr-icon shape="design"></clr-icon> Architecture</button>
                         <clr-tab-content *clrIfActive>
                             <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
                                 <svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 239 234">
@@ -44,35 +44,19 @@
             <div class="content-area" style="width: 40%">
                 <clr-tabs>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="help-info"></clr-icon></button>
+                        <button clrTabLink><clr-icon shape="memory"></clr-icon> Memory</button>
                         <clr-tab-content *clrIfActive="true">
-                            <rc-documentation></rc-documentation>
+                            <rc-memory-list [card]="computer.yBackplane.memory"></rc-memory-list>
                         </clr-tab-content>
                     </clr-tab>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="design"></clr-icon></button>
-                        <clr-tab-content *clrIfActive="true">
-                            <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
-                                <svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 239 234">
-                                    <svg:g rc-architecture-diagram transform="translate(-480,0)"></svg:g>
-                                </svg>
-                            </div>
-                        </clr-tab-content>
-                    </clr-tab>
-                    <clr-tab>
-                        <button clrTabLink><clr-icon shape="list"></clr-icon></button>
+                        <button clrTabLink><clr-icon shape="list"></clr-icon> Opcodes</button>
                         <clr-tab-content *clrIfActive>
                             <div class="scaling-svg-container" style="padding-bottom:285.36585366%">
                                 <svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 82 234">
                                     <svg:g rc-instruction-set transform="translate(0,0)"></svg:g>
                                 </svg>
                             </div>
-                        </clr-tab-content>
-                    </clr-tab>
-                    <clr-tab>
-                        <button clrTabLink><clr-icon shape="memory"></clr-icon></button>
-                        <clr-tab-content *clrIfActive>
-                            <rc-memory-list [card]="computer.yBackplane.memory"></rc-memory-list>
                         </clr-tab-content>
                     </clr-tab>
                 </clr-tabs>
