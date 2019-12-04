@@ -84,7 +84,9 @@ export enum OperationLines {
     /** MOVE-8 */
     IMV8,
     /** ALU */
-    IALU
+    IALU,
+    /** GTO */
+    IGTO
 }
 
 export enum PulseLines {

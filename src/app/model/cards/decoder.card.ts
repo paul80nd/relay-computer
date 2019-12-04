@@ -37,6 +37,10 @@ export class DecoderCard implements IDecoderCard {
             const opCode = this.instrPart.value;
             let oper = BitValue.Zero;
 
+            if (opCode.bit(7) && opCode.bit(6)) {
+                // 11xxxxxx GOTO
+                oper = oper.flipBit(OperationLines.IGTO);
+            }
             if (opCode.bit(7) && !opCode.bit(6) && !opCode.bit(5) && !opCode.bit(4)) {
                 // 1000xxxx ALU
                 oper = oper.flipBit(OperationLines.IALU);

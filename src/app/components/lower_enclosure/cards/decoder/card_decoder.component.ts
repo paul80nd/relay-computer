@@ -13,6 +13,7 @@ export class CardDecoderComponent {
     aluLine = OperationLines.IALU;
     setLine = OperationLines.ISET;
     mv8Line = OperationLines.IMV8;
+    gtoLine = OperationLines.IGTO;
 
     @Input() card: IDecoderCard;
 
