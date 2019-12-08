@@ -6,7 +6,7 @@ import { IRegisterCardPart } from '../../../../model/cards/parts/register.cardpa
 @Component({
     providers: [ByteLedsComponent],
     selector: '[rc-register-leds]',
-    templateUrl: 'register_leds.component.html'
+    templateUrl: 'register_leds.component.svg'
 })
 
 export class RegisterLedsComponent {

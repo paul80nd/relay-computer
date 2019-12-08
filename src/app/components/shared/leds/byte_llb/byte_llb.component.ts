@@ -4,7 +4,7 @@ import { BitValue } from '../../../../model/bit_value';
 
 @Component({
     selector: '[rc-byte-llb]',
-    templateUrl: 'byte_llb.component.html'
+    templateUrl: 'byte_llb.component.svg'
 })
 
 export class ByteLedLightBarComponent {

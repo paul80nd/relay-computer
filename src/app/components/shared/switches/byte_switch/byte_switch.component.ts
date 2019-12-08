@@ -4,7 +4,7 @@ import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
     selector: '[rc-byte-switch]',
-    templateUrl: 'byte_switch.component.html'
+    templateUrl: 'byte_switch.component.svg'
 })
 
 export class ByteSwitchComponent {

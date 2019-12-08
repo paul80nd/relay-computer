@@ -5,7 +5,7 @@ import { CardPart } from '../../../../model/cards/card_part';
 
 @Component({
     selector: '[rc-tact-switch]',
-    templateUrl: 'tact_switch.component.html'
+    templateUrl: 'tact_switch.component.svg'
 })
 
 export class TactileSwitchComponent  {

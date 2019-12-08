@@ -4,7 +4,7 @@ import { BitValue } from '../../../../model/bit_value';
 
 @Component({
     selector: '[rc-byte-leds]',
-    templateUrl: 'byte_leds.component.html'
+    templateUrl: 'byte_leds.component.svg'
 })
 
 export class ByteLedsComponent {

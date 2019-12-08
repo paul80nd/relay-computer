@@ -4,7 +4,7 @@ import { BitValue } from '../../../../model/bit_value';
 
 @Component({
     selector: '[rc-alu-op-llb]',
-    templateUrl: 'alu_op_llb.component.html'
+    templateUrl: 'alu_op_llb.component.svg'
 })
 
 export class AluOperationLedLightBarComponent {
