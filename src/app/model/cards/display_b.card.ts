@@ -9,6 +9,7 @@ export interface IDisplayBCard {
     clock: BitValue;
     condition: BitValue;
     data: BitValue;
+    instruction: BitValue;
     operation: BitValue;
 
     connect(dataBus: IDisplayBBusGroup): void;
