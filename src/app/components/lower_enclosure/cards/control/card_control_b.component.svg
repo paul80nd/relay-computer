@@ -52,31 +52,31 @@
         <tspan class="d-text4" x="2.4433594" y="4">CL</tspan>
     </text>
 
-    <!--
-    <circle cx="58" cy="14" r="4" class="ledYellow" />
+    <circle cx="58" cy="14" r="4" class="ledYellow" [class.on]="card.regJMXY.bit(ldJ1Line)" />
     <circle cx="58" cy="14" r="4" class="ledOutline" />
-    <circle cx="69" cy="14" r="4" class="ledYellow" />
+    <circle cx="69" cy="14" r="4" class="ledYellow" [class.on]="card.regJMXY.bit(ldJ2Line)" />
     <circle cx="69" cy="14" r="4" class="ledOutline" />
-    <circle cx="91" cy="14" r="4" class="ledYellow" />
+    <circle cx="91" cy="14" r="4" class="ledYellow" [class.on]="card.regJMXY.bit(ldM1Line)" />
     <circle cx="91" cy="14" r="4" class="ledOutline" />
-    <circle cx="102" cy="14" r="4" class="ledYellow" />
+    <circle cx="102" cy="14" r="4" class="ledYellow" [class.on]="card.regJMXY.bit(ldM2Line)" />
     <circle cx="102" cy="14" r="4" class="ledOutline" />
+    <!--
     <circle cx="135" cy="14" r="4" class="ledYellow" />
     <circle cx="135" cy="14" r="4" class="ledOutline" />
     <circle cx="124" cy="14" r="4" class="ledYellow" />
     <circle cx="124" cy="14" r="4" class="ledOutline" />
-    <circle cx="146" cy="14" r="4" class="ledYellow" />
-    <circle cx="146" cy="14" r="4" class="ledOutline" />
     -->
+    <circle cx="146" cy="14" r="4" class="ledYellow" [class.on]="card.regJMXY.bit(ldXYLine)" />
+    <circle cx="146" cy="14" r="4" class="ledOutline" />
     <circle cx="168" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(linLine)" />
     <circle cx="168" cy="14" r="4" class="ledOutline" />
     <circle cx="190" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(licLine)" />
     <circle cx="190" cy="14" r="4" class="ledOutline" />
     <circle cx="201" cy="14" r="4" class="ledYellow" [class.on]="card.auxReg.bit(lpcLine)" />
     <circle cx="201" cy="14" r="4" class="ledOutline" />
-    <!--
-    <circle cx="80" cy="25" r="4" class="ledGreen" />
+    <circle cx="80" cy="25" r="4" class="ledGreen" [class.on]="card.regJMXY.bit(selJLine)" />
     <circle cx="80" cy="25" r="4" class="ledOutline" />
+    <!--
     <circle cx="91" cy="25" r="4" class="ledGreen" />
     <circle cx="91" cy="25" r="4" class="ledOutline" />
     <circle cx="102" cy="25" r="4" class="ledGreen" />
@@ -99,6 +99,7 @@
     <circle cx="223" cy="25" r="4" class="ledOutline" />
     <circle cx="146" cy="25" r="4" class="ledGreen" />
     <circle cx="146" cy="25" r="4" class="ledOutline" />
+    -->
     <text transform="translate(53 3)" fill="black">
         <tspan class="d-text4" x="1.7753906" y="4">LJ1</tspan>
     </text>
@@ -111,16 +112,17 @@
     <text transform="translate(97 3)" fill="black">
         <tspan class="d-text4" x="1.109375" y="4">LM2</tspan>
     </text>
+    <!--
     <text transform="translate(119 3)" fill="black">
         <tspan class="d-text4" x="1.109375" y="4">LDX</tspan>
     </text>
     <text transform="translate(130 3)" fill="black">
         <tspan class="d-text4" x="1.109375" y="4">LDY</tspan>
     </text>
+    -->
     <text transform="translate(141 3)" fill="black">
         <tspan class="d-text4" x="1.21972656" y="4">LXY</tspan>
     </text>
-    -->
     <text transform="translate(163 3)" fill="black">
         <tspan class="d-text4" x="1.8876953" y="4">LIN</tspan>
     </text>
@@ -130,10 +132,10 @@
     <text transform="translate(196 3)" fill="black">
         <tspan class="d-text4" x="1.109375" y="4">LPC</tspan>
     </text>
-    <!--
-    <text transform="translate(175 32)" fill="black">
+    <text transform="translate(75 32)" fill="black">
         <tspan class="d-text4" x="1.33203125" y="4">SEJ</tspan>
     </text>
+    <!--
     <text transform="translate(186 32)" fill="black">
         <tspan class="d-text4" x=".8876953" y="4">SM1</tspan>
     </text>
