@@ -4,7 +4,7 @@ import { IAluArithmeticCard } from '../../../../model/cards/alu_arithmetic.card'
 
 @Component({
     selector: '[rc-card-alu-arith]',
-    templateUrl: './card_alu_arith.component.html'
+    templateUrl: './card_alu_arith.component.svg'
 })
 
 export class CardAluArithmeticComponent {

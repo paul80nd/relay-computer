@@ -1,0 +1,97 @@
+<svg:g>
+    <!-- Origin at bay top left -->
+    <title>Sequencer Card B</title>
+
+    <rect x="10" y="32" width="140" height="5" fill="white" />
+    <g *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
+        <circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
+        <circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledOutline" />
+        <text [attr.transform]="'translate(' + (10 + (i * 11)) + ' 32)'" fill="black">
+            <tspan class="d-text4" x=".44140625" y="4">S0{{ i }}</tspan>
+        </text>
+    </g>    
+    <g *ngFor="let i of [10,11,12]">
+        <circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
+        <circle [attr.cx]="14+(11*i)" cy="25" r="4" class="ledOutline" />
+        <text [attr.transform]="'translate(' + (10 + (i * 11)) + ' 32)'" fill="black">
+            <tspan class="d-text4" x=".44140625" y="4">S{{ i }}</tspan>
+        </text>
+    </g>    
+
+    <circle cx="102" cy="14" r="4" class="ledYellow" [class.on]="card.abort.bit(at08Line)" />
+    <circle cx="102" cy="14" r="4" class="ledOutline" />
+    <circle cx="124" cy="14" r="4" class="ledYellow" [class.on]="card.abort.bit(at10Line)" />
+    <circle cx="124" cy="14" r="4" class="ledOutline" />
+    <circle cx="146" cy="14" r="4" class="ledYellow" [class.on]="card.abort.bit(at12Line)" />
+    <circle cx="146" cy="14" r="4" class="ledOutline" />
+    <rect x="95" y="3" width="14" height="5" fill="white" />
+    <text transform="translate(95 3)" fill="black">
+        <tspan class="d-text4" x=".8857422" y="4">ABT08</tspan>
+    </text>
+    <rect x="117" y="3" width="14" height="5" fill="white" />
+    <text transform="translate(117 3)" fill="black">
+        <tspan class="d-text4" x=".8857422" y="4">ABT10</tspan>
+    </text>
+    <rect x="139" y="3" width="14" height="5" fill="white" />
+    <text transform="translate(139 3)" fill="black">
+        <tspan class="d-text4" x=".8857422" y="4">ABT12</tspan>
+    </text>
+
+    <circle cx="168" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(0)" />
+    <circle cx="168" cy="25" r="4" class="ledOutline" />
+    <circle cx="168" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(1)" />
+    <circle cx="168" cy="14" r="4" class="ledOutline" />
+    <circle cx="179" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(2)" />
+    <circle cx="179" cy="25" r="4" class="ledOutline" />
+    <circle cx="179" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(3)" />
+    <circle cx="179" cy="14" r="4" class="ledOutline" />
+    <circle cx="190" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(4)" />
+    <circle cx="190" cy="25" r="4" class="ledOutline" />
+    <circle cx="201" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(5)" />
+    <circle cx="201" cy="25" r="4" class="ledOutline" />
+    <circle cx="201" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(6)" />
+    <circle cx="201" cy="14" r="4" class="ledOutline" />
+    <circle cx="212" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(7)" />
+    <circle cx="212" cy="25" r="4" class="ledOutline" />
+    <circle cx="212" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(8)" />
+    <circle cx="212" cy="14" r="4" class="ledOutline" />
+    <circle cx="223" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(9)" />
+    <circle cx="223" cy="25" r="4" class="ledOutline" /> 
+    <circle cx="223" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(10)" />
+    <circle cx="223" cy="14" r="4" class="ledOutline" />
+    <rect x="164" y="3" width="63" height="5" fill="white" />
+    <rect x="164" y="32" width="63" height="5" fill="white" />
+    <text transform="translate(164 32)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">A</tspan>
+    </text>
+    <text transform="translate(164 3)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">B</tspan>
+    </text>
+    <text transform="translate(175 32)" fill="black">
+        <tspan class="d-text4" x="2.555664" y="4">C</tspan>
+    </text>
+    <text transform="translate(175 3)" fill="black">
+        <tspan class="d-text4" x="2.555664" y="4">D</tspan>
+    </text>
+    <text transform="translate(186 32)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">E</tspan>
+    </text>    
+    <text transform="translate(197 32)" fill="black">
+        <tspan class="d-text4" x="2.7783203" y="4">F</tspan>
+    </text>
+    <text transform="translate(197 3)" fill="black">
+        <tspan class="d-text4" x="2.444336" y="4">G</tspan>
+    </text>
+    <text transform="translate(208 32)" fill="black">
+        <tspan class="d-text4" x="2.555664" y="4">H</tspan>
+    </text>
+    <text transform="translate(208 3)" fill="black">
+        <tspan class="d-text4" x="3.444336" y="4">I</tspan>
+    </text>
+    <text transform="translate(219 32)" fill="black">
+        <tspan class="d-text4" x="3" y="4">J</tspan>
+    </text>
+    <text transform="translate(219 3)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">K</tspan>
+    </text>
+</svg:g>

@@ -1,0 +1,64 @@
+<svg:g>
+    <!-- Origin at bay top left -->
+    <title>Sequencer Card A</title>
+
+    <rect x="10" y="32" width="118" height="5" fill="white" />    
+    <g *ngFor="let i of [13,14,15,16,17,18,19,20,21,22,23]">
+        <circle [attr.cx]="14+(11*(i-13))" cy="25" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
+        <circle [attr.cx]="14+(11*(i-13))" cy="25" r="4" class="ledOutline" />
+        <text [attr.transform]="'translate(' + (10 + ((i-13) * 11)) + ' 32)'" fill="black">
+            <tspan class="d-text4" x=".44140625" y="4">S{{ i }}</tspan>
+        </text>
+    </g>    
+
+    <circle cx="25" cy="14" r="4" class="ledYellow" [class.on]="card.abort.bit(at14Line)" />
+    <circle cx="25" cy="14" r="4" class="ledOutline" />
+    <rect x="18" y="3" width="14" height="5" fill="white" />
+    <text transform="translate(18 3)" fill="black">
+        <tspan class="d-text4" x=".8857422" y="4">ABT14</tspan>
+    </text>
+
+    <circle cx="190" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(11)" />
+    <circle cx="190" cy="25" r="4" class="ledOutline" />
+    <circle cx="190" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(12)" />
+    <circle cx="190" cy="14" r="4" class="ledOutline" />
+    <circle cx="201" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(13)" />
+    <circle cx="201" cy="25" r="4" class="ledOutline" />
+    <circle cx="201" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(14)" />
+    <circle cx="201" cy="14" r="4" class="ledOutline" />
+    <circle cx="212" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(15)" />
+    <circle cx="212" cy="25" r="4" class="ledOutline" />
+    <circle cx="212" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(16)" />
+    <circle cx="212" cy="14" r="4" class="ledOutline" />
+    <circle cx="223" cy="25" r="4" class="ledGreen" [class.on]="card.pulse.bit(17)" />
+    <circle cx="223" cy="25" r="4" class="ledOutline" /> 
+    <circle cx="223" cy="14" r="4" class="ledGreen" [class.on]="card.pulse.bit(18)" />
+    <circle cx="223" cy="14" r="4" class="ledOutline" />
+    <rect x="186" y="3" width="41" height="5" fill="white" />
+    <rect x="186" y="32" width="41" height="5" fill="white" />
+    <text transform="translate(186 32)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">L</tspan>
+    </text>    
+    <text transform="translate(186 3)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">M</tspan>
+    </text>    
+    <text transform="translate(197 32)" fill="black">
+        <tspan class="d-text4" x="2.7783203" y="4">N</tspan>
+    </text>
+    <text transform="translate(197 3)" fill="black">
+        <tspan class="d-text4" x="2.444336" y="4">O</tspan>
+    </text>
+    <text transform="translate(208 32)" fill="black">
+        <tspan class="d-text4" x="2.555664" y="4">Q</tspan>
+    </text>
+    <text transform="translate(208 3)" fill="black">
+        <tspan class="d-text4" x="3.444336" y="4">R</tspan>
+    </text>
+    <text transform="translate(219 32)" fill="black">
+        <tspan class="d-text4" x="3" y="4">S</tspan>
+    </text>
+    <text transform="translate(219 3)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="4">T</tspan>
+    </text>
+    -->
+</svg:g>

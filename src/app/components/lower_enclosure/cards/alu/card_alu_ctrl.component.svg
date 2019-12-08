@@ -1,0 +1,81 @@
+<svg:g>
+    <!-- Origin at bay top left -->
+    <title>ALU Control Card</title>
+    <circle cx="14" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f2Line)" />
+    <circle cx="14" cy="25" r="4" class="ledOutline" />
+    <circle cx="25" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f1Line)" />
+    <circle cx="25" cy="25" r="4" class="ledOutline" />
+    <circle cx="36" cy="25" r="4" class="ledYellow" [class.on]="card.func.bit(f0Line)" />
+    <circle cx="36" cy="25" r="4" class="ledOutline" />
+    <rect x="10" y="32" width="30" height="5" fill="white" />
+    <text transform="translate(10 32)" fill="black">
+        <tspan class="d-text4" x="10.553711" y="3.75">Func</tspan>
+    </text>
+    <circle cx="47" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(shlLine)" />
+    <circle cx="47" cy="25" r="4" class="ledOutline" />
+    <circle cx="58" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(notLine)" />
+    <circle cx="58" cy="25" r="4" class="ledOutline" />
+    <circle cx="69" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(xorLine)" />
+    <circle cx="69" cy="25" r="4" class="ledOutline" />
+    <circle cx="80" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(orrLine)" />
+    <circle cx="80" cy="25" r="4" class="ledOutline" />
+    <circle cx="91" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(andLine)" />
+    <circle cx="91" cy="25" r="4" class="ledOutline" />
+    <circle cx="102" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(incLine)" />
+    <circle cx="102" cy="25" r="4" class="ledOutline" />
+    <circle cx="113" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(addLine)" />
+    <circle cx="113" cy="25" r="4" class="ledOutline" />
+    <circle cx="124" cy="25" r="4" class="ledGreen" [class.on]="card.operation.value.bit(clrLine)" />
+    <circle cx="124" cy="25" r="4" class="ledOutline" />
+    <rect x="43" y="32" width="85" height="5" fill="white" />
+    <text transform="translate(43 32)" fill="black">
+        <tspan class="d-text4" x="1.109375" y="3.75">Shl</tspan>
+    </text>
+    <text transform="translate(54 32)" fill="black">
+        <tspan class="d-text4" x=".8876953" y="3.75">Not</tspan>
+    </text>
+    <text transform="translate(65 32)" fill="black">
+        <tspan class="d-text4" x=".8876953" y="3.75">Xor</tspan>
+    </text>
+    <text transform="translate(76 32)" fill="black">
+        <tspan class="d-text4" x="1.7783203" y="3.75">Or</tspan>
+    </text>
+    <text transform="translate(87 32)" fill="black">
+        <tspan class="d-text4" x=".44140625" y="3.75">And</tspan>
+    </text>
+    <text transform="translate(98 32)" fill="black">
+        <tspan class="d-text4" x="1.33203125" y="3.75">Inc</tspan>
+    </text>
+    <text transform="translate(109 32)" fill="black">
+        <tspan class="d-text4" x=".44140625" y="3.75">Add</tspan>
+    </text>
+    <text transform="translate(120 32)" fill="black">
+        <tspan class="d-text4" x="1.4453125" y="3.75">Clr</tspan>
+    </text>
+    <circle cx="179" cy="25" r="4" class="ledYellow" [class.on]="card.load" />
+    <circle cx="179" cy="25" r="4" class="ledOutline" />
+    <circle cx="190" cy="25" r="4" class="ledGreen" [class.on]="card.select" />
+    <circle cx="190" cy="25" r="4" class="ledOutline" />
+    <circle cx="201" cy="25" r="4" class="ledRed" [class.on]="card.condition.value.bit(snLine)" />
+    <circle cx="201" cy="25" r="4" class="ledOutline" />
+    <circle cx="212" cy="25" r="4" class="ledRed" [class.on]="card.condition.value.bit(cyLine)" />
+    <circle cx="212" cy="25" r="4" class="ledOutline" />
+    <circle cx="223" cy="25" r="4" class="ledRed" [class.on]="card.condition.value.bit(ezLine)" />
+    <circle cx="223" cy="25" r="4" class="ledOutline" />
+    <rect x="175" y="32" width="52" height="5" fill="white" />
+    <text transform="translate(175 32)" fill="black">
+        <tspan class="d-text4" x="1.7753906" y="3.75">Ld</tspan>
+    </text>
+    <text transform="translate(186 32)" fill="black">
+        <tspan class="d-text4" x="1.5537109" y="3.75">En</tspan>
+    </text>
+    <text transform="translate(197 32)" fill="black">
+        <tspan class="d-text4" x="2.6660156" y="3.75">S</tspan>
+    </text>
+    <text transform="translate(208 32)" fill="black">
+        <tspan class="d-text4" x="1.2216797" y="3.75">CY</tspan>
+    </text>
+    <text transform="translate(219 32)" fill="black">
+        <tspan class="d-text4" x="2.7783203" y="3.75">Z</tspan>
+    </text>
+</svg:g>

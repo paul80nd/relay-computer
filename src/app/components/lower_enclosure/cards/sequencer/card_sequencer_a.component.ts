@@ -5,7 +5,7 @@ import { ISequencerCard } from '../../../../model/cards/sequencer.card';
 
 @Component({
     selector: '[rc-card-sequencer-a]',
-    templateUrl: 'card_sequencer_a.component.html'
+    templateUrl: 'card_sequencer_a.component.svg'
 })
 
 export class CardSequencerAComponent {

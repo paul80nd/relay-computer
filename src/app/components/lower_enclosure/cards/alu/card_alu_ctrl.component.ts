@@ -8,7 +8,7 @@ import { IAluControlCard } from '../../../../model/cards/alu_control.card';
 
 @Component({
     selector: '[rc-card-alu-ctrl]',
-    templateUrl: './card_alu_ctrl.component.html'
+    templateUrl: './card_alu_ctrl.component.svg'
 })
 
 export class CardAluControlComponent {

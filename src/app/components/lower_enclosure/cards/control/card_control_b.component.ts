@@ -5,7 +5,7 @@ import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
     selector: '[rc-card-control-b]',
-    templateUrl: './card_control_b.component.html'
+    templateUrl: './card_control_b.component.svg'
 })
 
 export class CardControlBComponent {

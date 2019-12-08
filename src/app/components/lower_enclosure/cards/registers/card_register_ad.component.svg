@@ -1,0 +1,5 @@
+<svg:g>
+    <!-- Origin at bay top left -->
+    <g rc-register-leds [register]="card.registerA" description="Register A" transform="translate(14,25)"></g>
+    <g rc-register-leds [register]="card.registerD" description="Register D" transform="translate(124,25)"></g>
+</svg:g>

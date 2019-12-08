@@ -1,0 +1,17 @@
+<svg:g>
+    <!-- Origin at bay top left -->
+    <title>Memory B</title>
+
+    <g rc-byte-leds [value]="card.memoryData" transform="translate(124,14)"></g>
+    <rect x="120" y="3" width="85" height="5" fill="white" />
+    <text transform="translate(120 3)" fill="black">
+        <tspan class="d-text4" x="42" y="4" text-anchor="middle">Memory Data</tspan>
+    </text>
+
+    <g rc-dbl-byte-leds [value]="card.memoryAddress" transform="translate(36,25)"></g>
+    <rect x="32" y="32" width="173" height="5" fill="white" />
+    <text transform="translate(32 32)" fill="black">
+        <tspan class="d-text4" fill="black" x="86" y="3.75" text-anchor="middle">Memory Address</tspan>
+    </text>
+
+</svg:g>

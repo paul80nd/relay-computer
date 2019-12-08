@@ -5,7 +5,7 @@ import { IMemoryCard } from '../../../../model/cards/memory.card';
 
 @Component({
     selector: '[rc-card-memory-a]',
-    templateUrl: 'card_memory_a.component.html'
+    templateUrl: 'card_memory_a.component.svg'
 })
 
 export class CardMemoryAComponent {

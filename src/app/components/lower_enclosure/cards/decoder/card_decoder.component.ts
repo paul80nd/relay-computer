@@ -5,7 +5,7 @@ import { IDecoderCard } from '../../../../model/cards/decoder.card';
 
 @Component({
     selector: '[rc-card-decoder]',
-    templateUrl: './card_decoder.component.html'
+    templateUrl: './card_decoder.component.svg'
 })
 
 export class CardDecoderComponent {
