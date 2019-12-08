@@ -5,7 +5,7 @@ import { AluOperationLines } from '../../../../model/bus/bus_part_lines';
 
 @Component({
     selector: '[rc-display-a-a2c]',
-    templateUrl: 'display_a_a2c.component.html'
+    templateUrl: 'display_a_a2c.component.svg'
 })
 export class DisplayAA2CComponent {
 

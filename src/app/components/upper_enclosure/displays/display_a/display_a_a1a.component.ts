@@ -5,7 +5,7 @@ import { RegABCDLines } from '../../../../model/bus/bus_part_lines';
 
 @Component({
     selector: '[rc-display-a-a1a]',
-    templateUrl: 'display_a_a1a.component.html'
+    templateUrl: 'display_a_a1a.component.svg'
 })
 export class DisplayAA1AComponent {
 

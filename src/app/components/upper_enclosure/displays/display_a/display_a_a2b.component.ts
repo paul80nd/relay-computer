@@ -5,7 +5,7 @@ import { RegJMXYLines } from '../../../../model/bus/bus_part_lines';
 
 @Component({
     selector: '[rc-display-a-a2b]',
-    templateUrl: 'display_a_a2b.component.html'
+    templateUrl: 'display_a_a2b.component.svg'
 })
 export class DisplayAA2BComponent {
 

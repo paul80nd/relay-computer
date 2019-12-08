@@ -8,7 +8,7 @@ import {
 
 @Component({
     selector: '[rc-display-b-alu]',
-    templateUrl: 'display_b_alu.component.html'
+    templateUrl: 'display_b_alu.component.svg'
 })
 export class DisplayBAluComponent {
 

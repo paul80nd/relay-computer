@@ -4,7 +4,7 @@ import { IControlSwitchesCard } from '../../../model/cards/control_switches.card
 
 @Component({
     selector: '[rc-control-switches]',
-    templateUrl: './control_switches.component.html'
+    templateUrl: './control_switches.component.svg'
 })
 export class ControlSwitchesComponent {
 

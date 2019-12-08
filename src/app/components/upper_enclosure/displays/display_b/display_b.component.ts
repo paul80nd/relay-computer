@@ -5,7 +5,7 @@ import { IDisplayBCard } from '../../../../model/cards/display_b.card';
 
 @Component({
     selector: '[rc-display-b]',
-    templateUrl: './display_b.component.html'
+    templateUrl: './display_b.component.svg'
 })
 export class DisplayBComponent {
 

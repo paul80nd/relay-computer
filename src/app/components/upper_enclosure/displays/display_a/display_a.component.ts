@@ -9,7 +9,7 @@ import { IDisplayACard } from '../../../../model/cards/display_a.card';
 
 @Component({
     selector: '[rc-display-a]',
-    templateUrl: './display_a.component.html'
+    templateUrl: './display_a.component.svg'
 })
 export class DisplayAComponent {
 
