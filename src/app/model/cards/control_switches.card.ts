@@ -7,6 +7,7 @@ import { ClockLines } from '../bus/bus_part_lines';
 export interface IControlSwitchesCard {
 
     clock: boolean;
+    clockSpeed: number;
     reset: boolean;
     run: boolean;
 
@@ -34,6 +35,7 @@ enum AuxInstruction {
 export class ControlSwitchesCard implements IControlSwitchesCard {
 
     clock: boolean;
+    clockSpeed: number;
     reset: boolean;
     run: boolean;
 
@@ -49,6 +51,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
     constructor() {
         this.auxState = 0;
+        this.clockSpeed = 500;
         this.auxRegOut = new CardPart();
         this.clockOut = new CardPart();
         this.data = new CardPart();
@@ -194,7 +197,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     toggleRunStop(): void {
         this.run = !this.run;
         if (this.run) {
-            setTimeout(this.clockRun, 500);
+            setTimeout(this.clockRun, this.clockSpeed);
         } else {
             if (this.clockOut.value.bit(ClockLines.CLK)) {
                 this.clockOut.value =  this.clockOut.value.flipBit(ClockLines.CLK);
@@ -232,7 +235,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
     private clockRun = () => {
         if (this.run) {
             this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK);
-            setTimeout(this.clockRun, 500);
+            setTimeout(this.clockRun, this.clockSpeed);
         }
     };
 
