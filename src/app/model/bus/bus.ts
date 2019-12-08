@@ -20,6 +20,7 @@ export interface IAddressBus extends IBus {
 
 /** Represents the Control and Instruction bus ribbon cable (C/I) */
 export interface IControlInstructionBus extends IBus {
+    readonly conditionPart: IConditionBusPart;
     readonly aluFunctionClPart: IAluFunctionClBusPart;
     readonly instructionPart: IInstructionBusPart;
 }
@@ -166,7 +167,7 @@ export class BusFactory implements IBusFactory {
 
         // Build ribbon cables
         const address = { addressPart };
-        const controlInstruction = { aluFunctionClPart, instructionPart };
+        const controlInstruction = { aluFunctionClPart, conditionPart, instructionPart };
         const dataControl = { aluFunctionClPart, conditionPart, dataPart };
         const dataInstruction = { dataPart, instructionPart };
         const controlX = { auxRegisterPart, clockPart, i2bPart, resetPart };

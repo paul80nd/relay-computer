@@ -3,11 +3,12 @@ import { BitValue } from '../bit_value';
 import { ICardWBusGroup } from '../bus/bus_groups';
 import {
     IAluFunctionClBusPart, IInstructionBusPart, IOperationBusPart,
-    IPulseBusPart
+    IPulseBusPart,
+    IConditionBusPart
 } from '../bus/bus_parts';
 import {
     AbortLines, AluFunctionClLines, I2BLines, MemoryLines,
-    OperationLines, PulseLines, RegABCDLines, RegAuxLines
+    OperationLines, PulseLines, RegABCDLines, RegAuxLines, RegJMXYLines, ConditionLines
 } from '../bus/bus_part_lines';
 
 export interface IControlCard {
@@ -30,6 +31,7 @@ export class ControlCard implements IControlCard {
     i2b: BitValue;
     memory: BitValue;
     regABCD: BitValue;
+    regJMXY: BitValue;
 
     private abortOut: CardPart;
     private aluFuncOut: CardPart;
@@ -37,8 +39,10 @@ export class ControlCard implements IControlCard {
     private i2bOut: CardPart;
     private memoryOut: CardPart;
     private regABCDOut: CardPart;
+    private regJMXYOut: CardPart;
 
     private aluFuncClPart: IAluFunctionClBusPart;
+    private aluConditionPart: IConditionBusPart;
     private instructionPart: IInstructionBusPart;
     private pulsePart: IPulseBusPart;
     private operationPart: IOperationBusPart;
@@ -56,6 +60,8 @@ export class ControlCard implements IControlCard {
         this.memoryOut = new CardPart();
         this.regABCD = BitValue.Zero;
         this.regABCDOut = new CardPart();
+        this.regJMXY = BitValue.Zero;
+        this.regJMXYOut = new CardPart();
     }
 
     connect(busGroup: ICardWBusGroup) {
@@ -68,11 +74,14 @@ export class ControlCard implements IControlCard {
         this.instructionPart.subscribe(this.update);
         this.aluFuncClPart = busGroup.controlInstructionBus.aluFunctionClPart;
         this.aluFuncClPart.subscribe(this.update);
+        this.aluConditionPart = busGroup.controlInstructionBus.conditionPart;
+        this.aluConditionPart.subscribe(this.update);
         // Outputs
         busGroup.controlInstructionBus.aluFunctionClPart.connect(this.aluFuncOut);
         busGroup.controlXBus.i2bPart.connect(this.i2bOut);
         busGroup.controlXBus.auxRegisterPart.connect(this.auxRegOut);
         busGroup.controlYBus.memoryPart.connect(this.memoryOut);
+        busGroup.controlYBus.regJMXYPart.connect(this.regJMXYOut);
         busGroup.controlZBus.regABCDPart.connect(this.regABCDOut);
         busGroup.operationBus.abortPart.connect(this.abortOut);
     }
@@ -89,6 +98,8 @@ export class ControlCard implements IControlCard {
                 this.updateSet();
             } else if (operation.bit(OperationLines.IALU)) {
                 this.updateAlu();
+            } else if (operation.bit(OperationLines.IGTO)) {
+                this.updateGoto();
             }
         }
     };
@@ -249,6 +260,78 @@ export class ControlCard implements IControlCard {
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
             this.abortOut.value = abort;
+        }
+    }
+
+    private updateGoto() {
+        if (this.pulsePart && this.instructionPart && this.aluConditionPart) {
+            const pulse = this.pulsePart.value;
+            const instr = this.instructionPart.value;
+            const alu = this.aluConditionPart.value;
+
+            let auxReg = this.auxReg;
+            let memory = this.memory;
+            let regJMXY = BitValue.Zero;
+
+            if (pulse.bit(PulseLines.J) || pulse.bit(PulseLines.N)) {
+                // SEL-PC & MEM-RD
+                auxReg = auxReg.flipBit(RegAuxLines.SPC);
+                memory = memory.flipBit(MemoryLines.MER);                
+            }
+            if (pulse.bit(PulseLines.K) || pulse.bit(PulseLines.O)) {
+                // LD-INC
+                auxReg = auxReg.flipBit(RegAuxLines.LIC);
+            }
+            if (pulse.bit(PulseLines.K)) {
+                // LD-M1/J1
+                if (instr.bit(5)) {
+                    regJMXY = regJMXY.flipBit(RegJMXYLines.LJ1);
+                } else {
+                    regJMXY = regJMXY.flipBit(RegJMXYLines.LM1);
+                }
+            }
+            if (pulse.bit(PulseLines.O)) {
+                // LD-M2/J2
+                if (instr.bit(5)) {
+                    regJMXY = regJMXY.flipBit(RegJMXYLines.LJ2);
+                } else {
+                    regJMXY = regJMXY.flipBit(RegJMXYLines.LM2);
+                }
+            }
+            if (pulse.bit(PulseLines.L) || pulse.bit(PulseLines.Q)) {
+                // SEL-INC
+                auxReg = auxReg.flipBit(RegAuxLines.SIC);
+            }
+            if (pulse.bit(PulseLines.M) || pulse.bit(PulseLines.R)) {
+                // LD-PC
+                auxReg = auxReg.flipBit(RegAuxLines.LPC);
+            }
+            if (pulse.bit(PulseLines.R)) {
+                // LD-XY (optional)
+                if (instr.bit(0)) {
+                    regJMXY = regJMXY.flipBit(RegJMXYLines.LXY);
+                } 
+            }
+            if (pulse.bit(PulseLines.S)) {
+                // SEL-J
+                regJMXY = regJMXY.flipBit(RegJMXYLines.SEJ);
+            }
+            if (pulse.bit(PulseLines.T)) {
+                // LD-PC (optional)
+                if ((instr.bit(1) &&  alu.bit(ConditionLines.NZ)) ||
+                    (instr.bit(2) &&  alu.bit(ConditionLines.EZ)) || 
+                    (instr.bit(3) &&  alu.bit(ConditionLines.CY)) || 
+                    (instr.bit(4) &&  alu.bit(ConditionLines.SN))) {
+                        auxReg = auxReg.flipBit(RegAuxLines.LPC);
+                }
+            }
+
+            if (!this.auxReg.isEqualTo(auxReg)) { this.auxReg = auxReg; }
+            this.auxRegOut.value = auxReg;
+            if (!this.memory.isEqualTo(memory)) { this.memory = memory; }
+            this.memoryOut.value = memory;
+            if (!this.regJMXY.isEqualTo(regJMXY)) { this.regJMXY = regJMXY; }
+            this.regJMXYOut.value = regJMXY;
         }
     }
 
