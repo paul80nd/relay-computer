@@ -3,7 +3,7 @@ body {
     overflow: hidden;
 }
 
-.content-area { padding: 0 !important; }
+.content-area { padding: 0 0.5rem !important; }
 
 svg text {
     -webkit-user-select: none;
@@ -94,3 +94,5 @@ svg text::selection {
 .d-text10 { font-size: 10px; }
 .d-text13 { font-size: 13px; }
 .d-text14 { font-size: 14px; }
+
+rc-documentation pre { max-height: none; }
