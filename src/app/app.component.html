@@ -1,25 +1,38 @@
-<div style="position: absolute; width: 100vw; height: 100vh; padding: 3px; padding-left: 75vh;">
-    <div class="main-container">
-        <header class="header-6">
-            <div class="branding" style="padding: 0 .4rem;">
-                <a href="#" class="nav-link">
-                    <clr-icon shape="lightbulb"></clr-icon>
-                    <span class="title">Relay Computer Simulator</span>
-                </a>
-            </div>
-            <div class="header-actions">
-                <clr-dropdown>
-                    <button class="nav-icon" clrDropdownTrigger>
-                        <clr-icon shape="library"></clr-icon>
-                        <clr-icon shape="caret down"></clr-icon>
-                    </button>
-                    <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                        <a href="https://relaycomputer.co.uk" target="_blank" clrDropdownItem>Blog</a>
-                        <a href="https://github.com/paul80nd/relay-computer" target="_blank" clrDropdownItem>GitHub Source</a>
-                    </clr-dropdown-menu>
-                </clr-dropdown>
-            </div>
-        </header>
+<header class="header-6">
+    <div class="branding" style="padding: 0 .4rem;">
+        <a href="#" class="nav-link">
+            <clr-icon shape="lightbulb"></clr-icon>
+            <span class="title">Relay Computer Simulator</span>
+        </a>
+    </div>
+    <div class="header-actions">
+        <clr-dropdown>
+            <button class="nav-icon" clrDropdownTrigger>
+                <clr-icon shape="library"></clr-icon>
+                <clr-icon shape="caret down"></clr-icon>
+            </button>
+            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+                <a href="https://relaycomputer.co.uk" target="_blank" clrDropdownItem>Blog</a>
+                <a href="https://github.com/paul80nd/relay-computer" target="_blank" clrDropdownItem>GitHub Source</a>
+            </clr-dropdown-menu>
+        </clr-dropdown>
+    </div>
+</header>
+<div style="position: absolute; width: 100vw; padding: 2px;">
+    <div class="scaling-svg-container" style="padding-bottom:45.625%;">
+        <svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 960 438">
+            <svg:g rc-display-a [card]="computer.displayACard"></svg:g>
+            <svg:g rc-display-b transform="translate(240,0)" [card]="computer.displayBCard"></svg:g>
+            <svg:g rc-control-switches transform="translate(0,172)" [card]="computer.controlSwitchesCard"></svg:g>
+            <svg:g rc-card-bay-w transform="translate(0,235)" [backplane]="computer.wBackplane"></svg:g>
+            <svg:g rc-card-bay-x transform="translate(240,235)" [backplane]="computer.xBackplane"></svg:g>
+            <svg:g rc-card-bay-y transform="translate(480,235)" [backplane]="computer.yBackplane"></svg:g>
+            <svg:g rc-card-bay-z transform="translate(720,235)" [backplane]="computer.zBackplane"></svg:g>
+        </svg>
+    </div>
+</div>
+<div style="position: absolute; width: 50vw; height: 24.3vw; padding: 3px; left: 50vw; overflow: hidden;">
+    <div class="main-container" style="height: 24.1vw">
         <div class="content-container">
             <div class="content-area" style="width: 60%; padding-right: 4px !important;">
                 <clr-tabs>
@@ -62,18 +75,5 @@
                 </clr-tabs>
             </div>
         </div>
-    </div>
-</div>
-<div style="position: absolute; width: 75vh; height: 100vh; padding: 2px;">
-    <div class="scaling-svg-container" style="padding-bottom:133.3333%;">
-        <svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 480 640">
-            <svg:g rc-display-a [card]="computer.displayACard"></svg:g>
-            <svg:g rc-display-b transform="translate(240,0)" [card]="computer.displayBCard"></svg:g>
-            <svg:g rc-control-switches transform="translate(0,172)" [card]="computer.controlSwitchesCard"></svg:g>
-            <svg:g rc-card-bay-w transform="translate(0,235)" [backplane]="computer.wBackplane"></svg:g>
-            <svg:g rc-card-bay-x transform="translate(240,235)" [backplane]="computer.xBackplane"></svg:g>
-            <svg:g rc-card-bay-y transform="translate(240,438)" [backplane]="computer.yBackplane"></svg:g>
-            <svg:g rc-card-bay-z transform="translate(0,438)" [backplane]="computer.zBackplane"></svg:g>
-        </svg>
     </div>
 </div>
