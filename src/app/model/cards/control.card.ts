@@ -19,6 +19,7 @@ export interface IControlCard {
     i2b: BitValue;
     memory: BitValue;
     regABCD: BitValue;
+    regJMXY: BitValue;
 
     connect(dataBus: ICardWBusGroup): void;
 }
