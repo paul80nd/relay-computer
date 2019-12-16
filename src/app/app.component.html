@@ -65,7 +65,7 @@
                     <clr-tab>
                         <button clrTabLink><clr-icon shape="memory"></clr-icon> Memory</button>
                         <clr-tab-content *clrIfActive="true">
-                            <rc-memory-list [card]="computer.yBackplane.memory"></rc-memory-list>
+                            <rc-memory-list [card]="computer.yBackplane.memory" [pc]="computer.xBackplane.registerPC"></rc-memory-list>
                         </clr-tab-content>
                     </clr-tab>
                     <clr-tab>

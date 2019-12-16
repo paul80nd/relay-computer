@@ -5,6 +5,7 @@ import { IRegisterCardPart, RegisterCardPart } from './parts/register.cardpart';
 export interface IRegisterPCCard {
 
     register: IRegisterCardPart;
+    pcAddress: number;
 
     connect(dataBus: ICardXBusGroup): void;
 }
@@ -12,6 +13,7 @@ export interface IRegisterPCCard {
 export class RegisterPCCard implements IRegisterPCCard {
 
     register: IRegisterCardPart;
+    pcAddress: number;
 
     constructor() {
         this.register = new RegisterCardPart(RegAuxLines.LPC, RegAuxLines.SPC);
@@ -21,5 +23,6 @@ export class RegisterPCCard implements IRegisterPCCard {
         const addressPart = busGroup.addressBus.addressPart;
         const ctrlPart = busGroup.controlXBus.auxRegisterPart;
         this.register.connect(addressPart, ctrlPart, addressPart);
+        this.register.value.subscribe(e => this.pcAddress = e.toUnsignedNumber());
     }
 }
