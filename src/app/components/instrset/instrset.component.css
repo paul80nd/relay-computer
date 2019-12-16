@@ -1,0 +1,20 @@
+.instrset-class {
+    background-color: #00AB9A;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+}
+
+.instrset-cycles {
+    background-color: #00BFA9;
+    color: white;
+}
+
+.instrset-opcode {
+    background-color: #49AFD9;
+    color:white;
+}
+
+.instrset-opcode .classbit {
+    background-color: #0095D3;
+}

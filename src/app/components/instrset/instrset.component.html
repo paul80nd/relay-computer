@@ -1,0 +1,171 @@
+<div>
+    <!-- ALU -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <td colspan="7" class="instrset-class"><code>ALU</code></td>
+                <td class="instrset-cycles"><code>8</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td class="classbit"><code>1</code></td>
+                <td class="classbit"><code>0</code></td>
+                <td class="classbit"><code>0</code></td>
+                <td class="classbit"><code>0</code></td>
+                <td><code>r</code></td>
+                <td><code>f</code></td>
+                <td><code>f</code></td>
+                <td><code>f</code></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <b>ALU Operation</b><br />
+                    Performs an ALU operation on the B (and optional C) register(s)
+                </td>   
+            </tr>
+            <tr>
+                <td colspan="8" class="left">
+                    <code>
+                        &nbsp;&nbsp;&nbsp;r = destination register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0-A 1-D<br />
+                        &nbsp;fff = function code<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;000-NOP 001-ADD 010-INC
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;011-AND 100-OR  101-XOR
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;110-NOT 111-SHL
+                    </code>
+                </td>
+            </tr>
+        </tbody> 
+    </table>
+    <!-- GOTO -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <td colspan="7" class="instrset-class"><code>GOTO</code></td>
+                <td class="instrset-cycles"><code>24</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td class="classbit"><code>1</code></td>
+                <td class="classbit"><code>1</code></td>
+                <td><code>d</code></td>
+                <td><code>s</code></td>
+                <td><code>c</code></td>
+                <td><code>z</code></td>
+                <td><code>n</code></td>
+                <td><code>x</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+                <td><code>l</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+                <td><code>h</code></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <b>Branch/Call & 16-bit Load Immediate</b><br />
+                    Branches to a given address if stated condition register flag(s) is set.<br />
+                    Address of next instruction can optionally be saved in XY register.<br />
+                    M register can also be loaded with 16-bit value (without jump).
+                </td>   
+            </tr>
+            <tr>
+                <td colspan="8" class="left">
+                    <code>
+                        &nbsp;d = destination register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0-M 1-J<br />
+                        &nbsp;s = jump if sign bit set<br />
+                        &nbsp;c = jump if carry bit set<br />
+                        &nbsp;z = jump if zero bit set<br />
+                        &nbsp;n = jump if zero bit not set<br />
+                        &nbsp;x = load XY=PC before jump<br /><br />
+                        &nbsp;llllllll = address low byte<br />
+                        &nbsp;hhhhhhhh = address high byte<br />
+                    </code>
+                </td>
+            </tr>
+        </tbody> 
+    </table>
+    <!-- MOV8 -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <td colspan="7" class="instrset-class"><code>MOV8</code></td>
+                <td class="instrset-cycles"><code>8</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td class="classbit"><code>0</code></td>
+                <td class="classbit"><code>0</code></td>
+                <td><code>d</code></td>
+                <td><code>d</code></td>
+                <td><code>d</code></td>
+                <td><code>s</code></td>
+                <td><code>s</code></td>
+                <td><code>s</code></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <b>8-Bit Move</b><br />
+                    Copies the content of one 8-bit register to another
+                </td>   
+            </tr>
+            <tr>
+                <td colspan="8" class="left">
+                    <code>
+                        &nbsp;ddd = destination register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;000-A 001-B 010-C 011-D<br />
+                        &nbsp;sss = source register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;000-A 001-B 010-C 011-D
+                    </code>
+                </td>
+            </tr>
+        </tbody> 
+    </table>
+    <!-- SETAB -->
+    <table class="table">
+        <tbody>
+            <tr>
+                <td colspan="7" class="instrset-class"><code>SETAB</code></td>
+                <td class="instrset-cycles"><code>8</code></td>
+            </tr>
+            <tr class="instrset-opcode">
+                <td class="classbit"><code>0</code></td>
+                <td class="classbit"><code>1</code></td>
+                <td><code>r</code></td>
+                <td><code>v</code></td>
+                <td><code>v</code></td>
+                <td><code>v</code></td>
+                <td><code>v</code></td>
+                <td><code>v</code></td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <b>Load Immediate</b><br />
+                    Loads a value between -16 and +15 in register A or B
+                </td>   
+            </tr>
+            <tr>
+                <td colspan="8" class="left">
+                    <code>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r = destination register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0-A 1-B<br />
+                        &nbsp;vvvvv = value (sign extended)<br />
+                    </code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+</div>
