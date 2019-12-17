@@ -1,5 +1,8 @@
 <div>
     <h3>Relay Computer Simulator</h3>
+    <p>
+        <b>New: Tutorial below now uses branching to calculate the Fibonacci sequence!</b>
+    </p>
     <p>This is a simulation of my relay computer using angular and SVG. Mainly I'm using it to learn and practice those dev
         frameworks but this also provides me a way of virtually refining the next part of my relay computer without having
         to spend the time and expense of experimenting for real.</p>
@@ -15,62 +18,46 @@
         to the right are all momentary and will reset to off after a short pause.</p>
     <h5>Tutorial</h5>
     <p>Assuming the simulator is in its default state (refresh this page to re-default it if not) you can follow this tutorial
-        to perform a simple arithmetic sequence of ((2 + 4 + 1) x 3) - 3. This will allow you to try out the three instruction
-        classes currently supported by the computer</p>
-    <p>Here are the steps that make up the program using the three instruction classes ALU, MOVE8 and SETAB:</p>
-    <pre><code> SETAB B &lt;- 2       2 + 4 = 6
- SETAB A &lt;- 4
- MOVE8 C &lt;- A
- ALU   A &lt;- ADD
+        to perform a calculation of the fibonacci sequence up to 233 (as that is the largest fibonacci number that can fit in an
+        8-bit register). This will allow you to try out the four instruction classes currently supported by the computer and
+        uses the newly added branching (GOTO) instruction.
+    </p>
+    <p>Here are the steps that make up the program using the four instruction classes ALU, MOVE8, GOTO and SETAB:</p>
+    <pre><code> 0000 SETAB A = 1  ; Initalise A = B = 1
+ 0001 MOV8  B = A
   
- MOVE8 B &lt;- A       6 + 1 = 7
- ALU   A &lt;- INC
-  
- MOVE8 B &lt;- A       7 * 3 = 21
- MOVE8 C &lt;- A
- ALU   A &lt;- ADD
- MOVE8 B &lt;- A
- ALU   A &lt;- ADD
-  
- SETAB B &lt;- 3       Negate 3
- ALU   D &lt;- NOT
- MOVE8 B &lt;- D
- ALU   D &lt;- INC
- MOVE8 B &lt;- A       21 - 3 = 18
- MOVE8 C &lt;- D
- ALU   A &lt;- ADD</code></pre>
+ 0002 MOV8  C = B  ; C = B then B = A
+ 0003 MOV8  B = A
+ 0004 ALU   ADD    ; A = B + C
+
+ 0005 GOTO  0005 C ; Loop forever if add
+                   ; caused an overflow
+                   ; otherwise ...
+
+ 0008 GOTO  0002   ; Jump back to line 2
+                   ; and repeat for next
+                   ; number in series</code></pre>
     <p>
         Using the list of instructions each line of this program can be converted in to the binary opcode equivalent as follows:
     </p>
-    <pre><code> 01100010       2 + 4 = 6
- 01000100
- 00010000
- 10000001
-  
- 00001000       6 + 1 = 7
- 10000010
-  
- 00001000       7 * 3 = 21
- 00010000
- 10000001
- 00001000
- 10000001
-  
- 01100011       Negate 3
- 10001110
- 00001011
- 10001010
- 00001000       21 - 3 = 18
- 00010011
- 10000001
+    <pre><code> 0000 01000001 ; SETAB A = 1
+ 0001 00001000 ; MOV8  B = A
+        
+ 0002 00010001 ; MOV8  C = B
+ 0003 00001000 ; MOV8  B = A
+ 0004 10000001 ; ALU   ADD
+
+ 0005 11101000 ; GOTO  0005 C
+ 0006 00000101
+ 0007 00000000
  
- 00011000       Move A to D</code></pre>
+ 0008 11100110 ; GOTO  0002
+ 0009 00000010
+ 000A 00000000</code></pre>
     <p>
-        I've added an additional instruction at the end of the program here to copy the result (of 18) to register D from register
-        A. This is needed as there currently isn't a way to tell the computer the program has ended and so it'll carry on
-        executing the instructions in memory. In the simulator each instruction will be all zeros (assuming the simulator
-        has been reset beforehand) and 00000000 is the opcode for MOVE8 from A to A which effectively clears the current
-        value in register A. By copying the value to D first it ensures the result isn't lost.
+        Because the computer hasn't got a HALT instruction yet it's necessary to put it in an infinite loop when the add
+        operation causes an overflow (at which point the last result we got of 233 is as high as we can count in a single
+        8-bit register).
     </p>
     <p>
         To load this program in to memory, line-by-line, set the black primary switches to match the opcode and then flick the 'DEP
@@ -78,10 +65,11 @@
         primary switches and flicking 'DEP NEXT' until all opcodes have been entered. Once the program is loaded you should
         see the following values in the memory view:
     </p>
-    <pre><code> 000  62 44 10 81 08 82 08 10
-      81 08 81 63 8E 0B 8A 08
- 001  13 81 18 00 00 00 00 00
-      00 00 00 00 00 00 00 00</code></pre>
+    <pre><code> 000  41 08 11 08 81 E8 00 05
+      E6 00 02 00 00 00 00 00
+ 001  00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00
+ ...</code></pre>
     <p>
         This is the hexadecimal representation of each 8-bit opcode loaded in to memory. To execute the program first set all the black
         switches back to 0 and flick the 'LOAD ADDR' switch to reset the program counter back to the first position in memory.
@@ -89,8 +77,8 @@
         to RUN and the program will begin executing.
     </p>
     <p>
-        Once the program keeps running the MOVE8 A &lt;- A instruction (00000000) you should see the result value of 18 (00010010) in register D.
-        If you stop the clock (flick RUN/STOP to STOP) and manually clock (with CLK) to a point where nothing is on the data bus you can select 
-        register D to see the value on the data bus.
+        Immediately following each ALU ADD you'll find the next sequence number in register A. The sequence starts with 1 loaded in to
+        register B and C so the sequence in register A goes 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 at which point the program then
+        loops endlessly when the next value (377) causes an overflow.
     </p>    
 </div>
