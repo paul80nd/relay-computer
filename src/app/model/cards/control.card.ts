@@ -145,7 +145,7 @@ export class ControlCard implements IControlCard {
             const pulse = this.pulsePart.value;
             const instr = this.instructionPart.value;
             let regABCD = BitValue.Zero;
-            const abort = BitValue.Zero;
+            let abort = BitValue.Zero;
             let aluFunc = BitValue.Zero;
 
             if (pulse.bit(PulseLines.D)) {
@@ -157,6 +157,8 @@ export class ControlCard implements IControlCard {
                 }
                 // COND-LD
                 aluFunc = aluFunc.flipBit(AluFunctionClLines.CL);
+                // ABORT
+                abort = abort.flipBit(AbortLines.AT08);
             }
             if (pulse.bit(PulseLines.E)) {
                 // ALU-FUNC
