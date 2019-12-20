@@ -105,7 +105,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
 
     private startAuxClock(): void {
         this.auxState = 1;
-        setTimeout(this.auxClockRun, 333);
+        setTimeout(this.auxClockRun, 100);
     }
 
     private auxClockRun = () => {
@@ -190,7 +190,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             }
 
             this.auxState += 1;
-            setTimeout(this.auxClockRun, 333);
+            setTimeout(this.auxClockRun, 100);
         }
     };
 
