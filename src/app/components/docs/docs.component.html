@@ -48,12 +48,12 @@
  0004 10000001 ; ALU   ADD
 
  0005 11101000 ; GOTO  0005 C
- 0006 00000101
- 0007 00000000
+ 0006 00000000
+ 0007 00000101
  
  0008 11100110 ; GOTO  0002
- 0009 00000010
- 000A 00000000</code></pre>
+ 0009 00000000
+ 000A 00000010</code></pre>
     <p>
         Because the computer hasn't got a HALT instruction yet it's necessary to put it in an infinite loop when the add
         operation causes an overflow (at which point the last result we got of 233 is as high as we can count in a single
