@@ -20,19 +20,20 @@
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
     "@clr/angular": "^4.0.16",
+    "@clr/core": "^3.0.0",
     "@clr/icons": "^4.0.16",
     "@clr/ui": "^4.0.16",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
     "rxjs": "~6.6.7",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2",
-    "@clr/core": "^3.0.0",
-    "@webcomponents/webcomponentsjs": "^2.0.0"
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.14",
     "@angular/cli": "~11.2.14",
     "@angular/compiler-cli": "~11.2.14",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0",
     "codelyzer": "^6.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",

@@ -19,6 +19,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 If the built project will not be hosted at the root url then it can be built as follows, for example, `ng build --prod --base-href https://simulator.relaycomputer.co.uk`
 
+## Deploy
+
+Once built the app can be deployed to the Github Pages branch with
+`npx angular-cli-ghpages --dir=dist --cname=simulator.relaycomputer.co.uk`
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
