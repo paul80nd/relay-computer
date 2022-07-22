@@ -86,13 +86,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         }
@@ -101,6 +99,7 @@
   },
   "defaultProject": "relay-computer",
   "cli": {
-    "analytics": "f15beba5-892a-4067-9791-301d64991638"
+    "analytics": "f15beba5-892a-4067-9791-301d64991638",
+    "defaultCollection": "@angular-eslint/schematics"
   }
 }
