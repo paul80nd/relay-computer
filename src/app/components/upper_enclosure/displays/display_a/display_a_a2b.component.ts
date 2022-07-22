@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { BitValue } from '../../../../model/bit_value';
 import { RegJMXYLines } from '../../../../model/bus/bus_part_lines';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-display-a-a2b]',
   templateUrl: 'display_a_a2b.component.svg'

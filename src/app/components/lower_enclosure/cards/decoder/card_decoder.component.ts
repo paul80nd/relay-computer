@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { OperationLines } from '../../../../model/bus/bus_part_lines';
 import { IDecoderCard } from '../../../../model/cards/decoder.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-card-decoder]',
   templateUrl: './card_decoder.component.svg'

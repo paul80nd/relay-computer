@@ -7,6 +7,7 @@ import {
 } from '../../../../model/bus/bus_part_lines';
 import { IDisplayACard } from '../../../../model/cards/display_a.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-display-a]',
   templateUrl: './display_a.component.svg'

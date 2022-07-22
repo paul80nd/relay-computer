@@ -6,6 +6,7 @@ import {
 } from '../../../../model/bus/bus_part_lines';
 import { IAluControlCard } from '../../../../model/cards/alu_control.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-card-alu-ctrl]',
   templateUrl: './card_alu_ctrl.component.svg'

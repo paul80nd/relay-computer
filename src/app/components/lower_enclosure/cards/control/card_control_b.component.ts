@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines } from '../../../../model/bus/bus_part_lines';
 import { IControlCard } from '../../../../model/cards/control.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-card-control-b]',
   templateUrl: './card_control_b.component.svg'

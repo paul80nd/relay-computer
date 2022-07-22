@@ -6,6 +6,7 @@ import {
   AluOperationLines
 } from '../../../../model/bus/bus_part_lines';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-display-b-alu]',
   templateUrl: 'display_b_alu.component.svg'

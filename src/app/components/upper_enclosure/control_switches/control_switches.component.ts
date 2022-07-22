@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { IControlSwitchesCard } from '../../../model/cards/control_switches.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-control-switches]',
   templateUrl: './control_switches.component.svg'

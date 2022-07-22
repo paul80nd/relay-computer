@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { BitValue } from '../../../../model/bit_value';
 import { AluOperationLines } from '../../../../model/bus/bus_part_lines';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-display-a-a2c]',
   templateUrl: 'display_a_a2c.component.svg'

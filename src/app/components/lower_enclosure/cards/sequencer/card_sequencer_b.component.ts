@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { AbortLines } from '../../../../model/bus/bus_part_lines';
 import { ISequencerCard } from '../../../../model/cards/sequencer.card';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-card-sequencer-b]',
   templateUrl: 'card_sequencer_b.component.svg'
