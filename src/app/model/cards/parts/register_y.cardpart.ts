@@ -88,8 +88,8 @@ export class RegisterYCardPart implements IRegisterYCardPart {
         if (this.ctrlPart) {
 
             const ldHi =  this.loadLineHi ? this.ctrlPart.value.bit(this.loadLineHi) : false;
-            const ldLo =  this.loadLineLo ? this.ctrlPart.value.bit(this.loadLineLo) :false;
-            const ldHiLo =  this.loadLineHiLo ? this.ctrlPart.value.bit(this.loadLineHiLo) :false;
+            const ldLo =  this.loadLineLo ? this.ctrlPart.value.bit(this.loadLineLo) : false;
+            const ldHiLo =  this.loadLineHiLo ? this.ctrlPart.value.bit(this.loadLineHiLo) : false;
             const selHi = this.selectLineHi ? this.ctrlPart.value.bit(this.selectLineHi) : false;
             const selLo = this.selectLineLo ? this.ctrlPart.value.bit(this.selectLineLo) : false;
             const selHiLo = this.selectLineHiLo ? this.ctrlPart.value.bit(this.selectLineHiLo) : false;

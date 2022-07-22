@@ -15,9 +15,9 @@ export class RegisterJCard implements IRegisterJCard {
 
     constructor() {
         this.register = new RegisterYCardPart(
-            RegJMXYLines.LJ1,undefined,
-            RegJMXYLines.LJ2,undefined,
-            undefined,RegJMXYLines.SEJ);
+            RegJMXYLines.LJ1, undefined,
+            RegJMXYLines.LJ2, undefined,
+            undefined, RegJMXYLines.SEJ);
     }
 
     connect(busGroup: ICardYBusGroup) {
