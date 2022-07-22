@@ -13,7 +13,7 @@ export class MemoryListComponent {
 
   offset = 0;
 
-  @Input() card: IMemoryCard;
-  @Input() pc: IRegisterPCCard;
+  @Input() card!: IMemoryCard;
+  @Input() pc!: IRegisterPCCard;
 
 }

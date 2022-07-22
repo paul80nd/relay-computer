@@ -14,6 +14,6 @@ export class CardMemoryAComponent {
   merLine = MemoryLines.MER;
   mewLine = MemoryLines.MEW;
 
-  @Input() card: IMemoryCard;
+  @Input() card!: IMemoryCard;
 
 }

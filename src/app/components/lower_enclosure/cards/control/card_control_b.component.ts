@@ -34,6 +34,6 @@ export class CardControlBComponent {
   sicLine: number = RegAuxLines.SIC;
   spcLine: number = RegAuxLines.SPC;
 
-  @Input() card: IControlCard;
+  @Input() card!: IControlCard;
 
 }

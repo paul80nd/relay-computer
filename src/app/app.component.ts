@@ -8,7 +8,7 @@ import { ComputerFactory, IComputer, IComputerFactory } from './model/computer';
 })
 export class AppComponent implements OnInit {
 
-  computer: IComputer;
+  computer!: IComputer;
 
   ngOnInit() {
     const factory: IComputerFactory = new ComputerFactory();

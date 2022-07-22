@@ -9,6 +9,6 @@ import { IIncrementerCard } from '../../../../model/cards/incrementer.card';
 
 export class CardIncrementerAComponent {
 
-  @Input() card: IIncrementerCard;
+  @Input() card!: IIncrementerCard;
 
 }

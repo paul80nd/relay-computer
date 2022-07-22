@@ -17,7 +17,7 @@ export class DisplayAA2CComponent {
   xorLine: number = AluOperationLines.XOR;
   notLine: number = AluOperationLines.NOT;
 
-  @Input() value: BitValue;
-  @Input() valueIn: BitValue;
+  @Input() value!: BitValue;
+  @Input() valueIn!: BitValue;
 
 }

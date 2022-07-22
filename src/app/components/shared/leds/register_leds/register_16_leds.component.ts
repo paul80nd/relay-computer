@@ -11,6 +11,6 @@ import { IRegisterCardPart } from '../../../../model/cards/parts/register.cardpa
 
 export class Register16LedsComponent {
 
-  @Input() register: IRegisterCardPart;
-  @Input() description: string;
+  @Input() register!: IRegisterCardPart;
+  @Input() description!: string;
 }

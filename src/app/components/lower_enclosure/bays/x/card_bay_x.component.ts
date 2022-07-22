@@ -9,6 +9,6 @@ import { IXBackplane } from '../../../../model/backplanes';
 
 export class CardBayXComponent {
 
-  @Input() backplane: IXBackplane;
+  @Input() backplane!: IXBackplane;
 
 }

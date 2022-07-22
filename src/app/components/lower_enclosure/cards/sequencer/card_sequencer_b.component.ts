@@ -14,6 +14,6 @@ export class CardSequencerBComponent {
   at10Line = AbortLines.AT10;
   at12Line = AbortLines.AT12;
 
-  @Input() card: ISequencerCard;
+  @Input() card!: ISequencerCard;
 
 }

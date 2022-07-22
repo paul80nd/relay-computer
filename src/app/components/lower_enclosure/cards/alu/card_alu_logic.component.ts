@@ -9,6 +9,6 @@ import { IAluLogicCard } from '../../../../model/cards/alu_logic.card';
 
 export class CardAluLogicComponent {
 
-  @Input() card: IAluLogicCard;
+  @Input() card!: IAluLogicCard;
 
 }

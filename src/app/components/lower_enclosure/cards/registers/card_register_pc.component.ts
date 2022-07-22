@@ -9,6 +9,6 @@ import { IRegisterPCCard } from '../../../../model/cards/register_pc.card';
 
 export class CardRegisterPCComponent {
 
-  @Input() card: IRegisterPCCard;
+  @Input() card!: IRegisterPCCard;
 
 }

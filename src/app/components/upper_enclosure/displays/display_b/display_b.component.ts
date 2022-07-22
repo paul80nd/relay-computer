@@ -16,6 +16,6 @@ export class DisplayBComponent {
   clkLine = ClockLines.CLK;
 
   @Input()
-  card: IDisplayBCard;
+  card!: IDisplayBCard;
 
 }

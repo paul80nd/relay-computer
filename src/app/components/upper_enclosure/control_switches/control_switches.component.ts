@@ -8,13 +8,13 @@ import { IControlSwitchesCard } from '../../../model/cards/control_switches.card
 })
 export class ControlSwitchesComponent {
 
-  @Input() card: IControlSwitchesCard;
+  @Input() card!: IControlSwitchesCard;
 
-  deposit: boolean;
-  depositNext: boolean;
-  examine: boolean;
-  examineNext: boolean;
-  loadAddr: boolean;
+  deposit: boolean = false;
+  depositNext: boolean = false;
+  examine: boolean = false;
+  examineNext: boolean = false;
+  loadAddr: boolean = false;
 
   changeDeposit(up: boolean): void {
     if (!this.deposit && !this.depositNext) {

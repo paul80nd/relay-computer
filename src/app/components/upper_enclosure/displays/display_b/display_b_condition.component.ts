@@ -13,6 +13,6 @@ export class DisplayBConditionComponent {
   snLine = ConditionLines.SN;
   ezLine = ConditionLines.EZ;
 
-  @Input() value: BitValue;
+  @Input() value!: BitValue;
 
 }

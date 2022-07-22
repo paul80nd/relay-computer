@@ -9,6 +9,6 @@ import { IAluArithmeticCard } from '../../../../model/cards/alu_arithmetic.card'
 
 export class CardAluArithmeticComponent {
 
-  @Input() card: IAluArithmeticCard;
+  @Input() card!: IAluArithmeticCard;
 
 }

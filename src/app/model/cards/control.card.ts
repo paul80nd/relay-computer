@@ -42,11 +42,11 @@ export class ControlCard implements IControlCard {
   private regABCDOut: CardPart;
   private regJMXYOut: CardPart;
 
-  private aluFuncClPart: IAluFunctionClBusPart;
-  private aluConditionPart: IConditionBusPart;
-  private instructionPart: IInstructionBusPart;
-  private pulsePart: IPulseBusPart;
-  private operationPart: IOperationBusPart;
+  private aluFuncClPart: IAluFunctionClBusPart | undefined;
+  private aluConditionPart: IConditionBusPart | undefined;
+  private instructionPart: IInstructionBusPart | undefined;
+  private pulsePart: IPulseBusPart | undefined;
+  private operationPart: IOperationBusPart | undefined;
 
   constructor() {
     this.abort = BitValue.Zero;

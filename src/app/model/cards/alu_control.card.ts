@@ -19,13 +19,13 @@ export class AluControlCard implements IAluControlCard {
 
   condition: CardPart;
   func: BitValue;
-  load: boolean;
-  select: boolean;
+  load: boolean = false;
+  select: boolean = false;
   operation: CardPart;
 
-  private aluOpPart: IAluOperationBusPart;
-  private clPart: IAluFunctionClBusPart;
-  private dataPart: IDataBusPart;
+  private aluOpPart: IAluOperationBusPart | undefined;
+  private clPart: IAluFunctionClBusPart | undefined;
+  private dataPart: IDataBusPart | undefined;
 
   private conditionOut: CardPart;
   private operationOut: CardPart;

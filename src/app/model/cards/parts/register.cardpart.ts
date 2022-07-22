@@ -19,18 +19,18 @@ export interface IRegisterCardPart {
 export class RegisterCardPart implements IRegisterCardPart {
 
   value: CardPart;
-  load: boolean;
-  select: boolean;
+  load: boolean = false;
+  select: boolean = false;
 
   isSelectable: boolean;
 
-  private dataPart: IDataBusPart;
-  private cardPart: CardPart;
-  private ctrlPart: IRegisterABCDBusPart;
+  private dataPart: IDataBusPart | undefined;
+  private cardPart: CardPart | undefined;
+  private ctrlPart: IRegisterABCDBusPart | undefined;
 
   private valueOut: CardPart;
 
-  constructor(private loadLine: number, private selectLine: number = undefined) {
+  constructor(private loadLine: number, private selectLine: number | undefined = undefined) {
 
     this.isSelectable = (selectLine !== undefined);
 
@@ -38,7 +38,7 @@ export class RegisterCardPart implements IRegisterCardPart {
     this.valueOut = new CardPart();
   }
 
-  connect(dataPartIn: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart = undefined) {
+  connect(dataPartIn: IDataBusPart, ctrlPart: IBusPart, dataPartOut: IDataBusPart | undefined = undefined) {
     // Inputs
     this.dataPart = dataPartIn;
     this.dataPart.subscribe(this.update);

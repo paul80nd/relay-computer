@@ -9,6 +9,6 @@ import { IWBackplane } from '../../../../model/backplanes';
 
 export class CardBayWComponent {
 
-  @Input() backplane: IWBackplane;
+  @Input() backplane!: IWBackplane;
 
 }

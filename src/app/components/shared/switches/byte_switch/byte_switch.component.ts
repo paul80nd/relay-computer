@@ -9,7 +9,7 @@ import { CardPart } from '../../../../model/cards/card_part';
 
 export class ByteSwitchComponent {
 
-  @Input() part: CardPart;
+  @Input() part!: CardPart;
 
   flipBit(position: number) {
     this.part.value = this.part.value.flipBit(position);

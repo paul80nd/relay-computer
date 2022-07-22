@@ -23,9 +23,9 @@ export class AluLogicCard implements IAluLogicCard {
   xorValue: BitValue;
   andValue: BitValue;
 
-  private inputBPart: IDataBusPart;
-  private inputCPart: IDataBusPart;
-  private aluOpPart: IAluOperationBusPart;
+  private inputBPart: IDataBusPart | undefined;
+  private inputCPart: IDataBusPart | undefined;
+  private aluOpPart: IAluOperationBusPart | undefined;
 
   private valueOut: CardPart;
 

@@ -9,6 +9,6 @@ import { IComputer } from '../model/computer';
 export class ComputerComponent {
 
   @Input()
-  computer: IComputer;
+  computer!: IComputer;
 
 }

@@ -24,9 +24,9 @@ export class MemoryCard implements IMemoryCard {
   memoryCtrl: BitValue;
   memoryEnabled: CardPart;
 
-  private addressPart: IAddressBusPart;
-  private dataPart: IDataBusPart;
-  private memoryPart: IMemoryBusPart;
+  private addressPart: IAddressBusPart | undefined;
+  private dataPart: IDataBusPart | undefined;
+  private memoryPart: IMemoryBusPart | undefined;
 
   private dataOut: CardPart;
 

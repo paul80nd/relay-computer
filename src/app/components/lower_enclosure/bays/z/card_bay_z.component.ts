@@ -9,6 +9,6 @@ import { IZBackplane } from '../../../../model/backplanes';
 
 export class CardBayZComponent {
 
-  @Input() backplane: IZBackplane;
+  @Input() backplane!: IZBackplane;
 
 }

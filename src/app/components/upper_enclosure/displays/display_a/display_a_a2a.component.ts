@@ -18,7 +18,7 @@ export class DisplayAA2AComponent {
   selMLine: number = RegJMXYLines.SEM;
   selJLine: number = RegJMXYLines.SEJ;
 
-  @Input() value: BitValue;
-  @Input() valueIn: BitValue;
+  @Input() value: BitValue | undefined;
+  @Input() valueIn: BitValue | undefined;
 
 }

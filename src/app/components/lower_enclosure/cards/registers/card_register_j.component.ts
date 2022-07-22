@@ -9,6 +9,6 @@ import { IRegisterJCard } from '../../../../model/cards/register_j.card';
 
 export class CardRegisterJComponent {
 
-  @Input() card: IRegisterJCard;
+  @Input() card!: IRegisterJCard;
 
 }

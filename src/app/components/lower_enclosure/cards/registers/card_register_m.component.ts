@@ -9,6 +9,6 @@ import { IRegisterMCard } from '../../../../model/cards/register_m.card';
 
 export class CardRegisterMComponent {
 
-  @Input() card: IRegisterMCard;
+  @Input() card!: IRegisterMCard;
 
 }

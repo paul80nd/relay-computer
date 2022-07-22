@@ -29,6 +29,6 @@ export class DisplayAComponent {
   merLine: number = MemoryLines.MER;
   mewLine: number = MemoryLines.MEW;
 
-  @Input() card: IDisplayACard;
+  @Input() card!: IDisplayACard;
 
 }

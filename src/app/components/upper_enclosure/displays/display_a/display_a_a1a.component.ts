@@ -18,7 +18,7 @@ export class DisplayAA1AComponent {
   selCLine: number = RegABCDLines.RSC;
   selDLine: number = RegABCDLines.RSD;
 
-  @Input() value: BitValue;
-  @Input() valueIn: BitValue;
+  @Input() value: BitValue | undefined;
+  @Input() valueIn: BitValue | undefined;
 
 }

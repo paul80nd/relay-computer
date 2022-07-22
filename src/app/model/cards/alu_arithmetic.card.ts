@@ -15,13 +15,13 @@ export interface IAluArithmeticCard {
 
 export class AluArithmeticCard implements IAluArithmeticCard {
 
-  carryOut: boolean;
+  carryOut: boolean = false;
   value: BitValue;
-  carryIn: boolean;
+  carryIn: boolean = false;
 
-  private inputBPart: IDataBusPart;
-  private inputCPart: IDataBusPart;
-  private aluOpPart: IAluOperationBusPart;
+  private inputBPart: IDataBusPart | undefined;
+  private inputCPart: IDataBusPart | undefined;
+  private aluOpPart: IAluOperationBusPart | undefined;
 
   private valueOut: CardPart;
   private aluOpOut: CardPart;

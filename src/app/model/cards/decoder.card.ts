@@ -15,7 +15,7 @@ export class DecoderCard implements IDecoderCard {
 
   operation: BitValue;
 
-  private instrPart: IInstructionBusPart;
+  private instrPart: IInstructionBusPart | undefined;
 
   private operationOut: CardPart;
 

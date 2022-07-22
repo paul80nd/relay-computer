@@ -25,7 +25,7 @@ export class DisplayBAluComponent {
   f1Line: number = AluFunctionClLines.F1;
   f0Line: number = AluFunctionClLines.F0;
 
-  @Input() alu: BitValue;
-  @Input() aluFuncCl: BitValue;
+  @Input() alu!: BitValue;
+  @Input() aluFuncCl!: BitValue;
 
 }

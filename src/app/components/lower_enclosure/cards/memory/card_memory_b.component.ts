@@ -9,6 +9,6 @@ import { IMemoryCard } from '../../../../model/cards/memory.card';
 
 export class CardMemoryBComponent {
 
-  @Input() card: IMemoryCard;
+  @Input() card!: IMemoryCard;
 
 }

@@ -9,9 +9,9 @@ import { BitValue } from '../../../../model/bit_value';
 
 export class AluOperationLedLightBarComponent {
 
-  @Input() value: BitValue;
-  @Input() description: string;
-  @Input() color: string;
-  @Input() bitTarget: number;
+  @Input() value!: BitValue;
+  @Input() description!: string;
+  @Input() color!: string;
+  @Input() bitTarget!: number;
 
 }

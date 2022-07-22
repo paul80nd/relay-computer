@@ -18,7 +18,7 @@ export class IncrementerCard implements IIncrementerCard {
   increment: BitValue;
   register: IRegisterCardPart;
 
-  private addressPart: IAddressBusPart;
+  private addressPart: IAddressBusPart | undefined;
 
   private incrementOut: CardPart;
 

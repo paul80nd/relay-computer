@@ -9,6 +9,6 @@ import { IRegisterADCard } from '../../../../model/cards/register_ad.card';
 
 export class CardRegisterADComponent {
 
-  @Input() card: IRegisterADCard;
+  @Input() card!: IRegisterADCard;
 
 }

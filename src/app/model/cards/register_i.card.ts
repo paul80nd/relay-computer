@@ -16,12 +16,12 @@ export class RegisterICard implements IRegisterICard {
 
   register: IRegisterCardPart;
 
-  private i2b: boolean;
+  private i2b: boolean = false;
   private dataOut: CardPart;
 
-  private i2bPart: II2BBusPart;
-  private instrPart: IInstructionBusPart;
-  private dataPart: IDataBusPart;
+  private i2bPart: II2BBusPart | undefined;
+  private instrPart: IInstructionBusPart | undefined;
+  private dataPart: IDataBusPart | undefined;
 
   constructor() {
     this.register = new RegisterCardPart(RegAuxLines.LIN);

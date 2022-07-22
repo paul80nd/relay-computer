@@ -26,29 +26,29 @@ export class RegisterYCardPart implements IRegisterYCardPart {
   valueLo: CardPart;
   valueHi: CardPart;
   valueHiLo: CardPart;
-  loadLo: boolean;
-  loadHi: boolean;
-  loadHiLo: boolean;
-  selectLo: boolean;
-  selectHi: boolean;
-  selectHiLo: boolean;
+  loadLo: boolean = false;
+  loadHi: boolean = false;
+  loadHiLo: boolean = false;
+  selectLo: boolean = false;
+  selectHi: boolean = false;
+  selectHiLo: boolean = false;
 
   isSelectableLo: boolean;
   isSelectableHi: boolean;
   isLoadableHiLo: boolean;
 
-  private addressPart: IAddressBusPart;
-  private dataPart: IDataBusPart;
-  private ctrlPart: IRegisterABCDBusPart;
+  private addressPart: IAddressBusPart | undefined;
+  private dataPart: IDataBusPart | undefined;
+  private ctrlPart: IRegisterABCDBusPart | undefined;
 
   private valueOutHi: CardPart;
   private valueOutLo: CardPart;
   private valueOutHiLo: CardPart;
 
   constructor(
-    private loadLineHi: number, private selectLineHi: number,
-    private loadLineLo: number, private selectLineLo: number,
-    private loadLineHiLo: number, private selectLineHiLo: number) {
+    private loadLineHi: number, private selectLineHi: number | undefined,
+    private loadLineLo: number, private selectLineLo: number | undefined,
+    private loadLineHiLo: number | undefined, private selectLineHiLo: number) {
 
     this.isSelectableHi = (selectLineHi !== undefined);
     this.isSelectableLo = (selectLineLo !== undefined);

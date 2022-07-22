@@ -11,7 +11,7 @@ import { IRegisterYCardPart } from '../../../../model/cards/parts/register_y.car
 
 export class Register816LedsComponent {
 
-  @Input() register: IRegisterYCardPart;
-  @Input() descriptionHi: string;
-  @Input() descriptionLo: string;
+  @Input() register!: IRegisterYCardPart;
+  @Input() descriptionHi!: string;
+  @Input() descriptionLo!: string;
 }

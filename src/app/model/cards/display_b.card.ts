@@ -18,14 +18,14 @@ export interface IDisplayBCard {
 
 export class DisplayBCard implements IDisplayBCard {
 
-  address: BitValue;
-  alu: BitValue;
-  aluFuncCl: BitValue;
-  clock: BitValue;
-  condition: BitValue;
-  data: BitValue;
-  instruction: BitValue;
-  operation: BitValue;
+  address: BitValue = BitValue.Zero;
+  alu: BitValue = BitValue.Zero;
+  aluFuncCl: BitValue = BitValue.Zero;
+  clock: BitValue = BitValue.Zero;
+  condition: BitValue = BitValue.Zero;
+  data: BitValue = BitValue.Zero;
+  instruction: BitValue = BitValue.Zero;
+  operation: BitValue = BitValue.Zero;
 
   connect(busGroup: IDisplayBBusGroup) {
     busGroup.b1Bus.aluFunctionClPart.subscribe(v => this.aluFuncCl = v);

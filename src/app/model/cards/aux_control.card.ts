@@ -12,8 +12,8 @@ export class AuxControlCard implements IAuxControlCard {
 
   private addr: CardPart;
   private data: CardPart;
-  private dataPart: IDataBusPart;
-  private sds: IDataSwitchGateBusPart;
+  private dataPart: IDataBusPart | undefined;
+  private sds: IDataSwitchGateBusPart | undefined;
 
   constructor() {
     this.addr = new CardPart();

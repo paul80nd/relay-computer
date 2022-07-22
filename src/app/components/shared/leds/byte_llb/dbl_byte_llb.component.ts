@@ -9,6 +9,6 @@ import { BitValue } from '../../../../model/bit_value';
 
 export class DoubleByteLedLightBarComponent {
 
-  @Input() value: BitValue;
+  @Input() value!: BitValue;
 
 }

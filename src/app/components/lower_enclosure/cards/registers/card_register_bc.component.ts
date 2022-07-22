@@ -9,6 +9,6 @@ import { IRegisterBCCard } from '../../../../model/cards/register_bc.card';
 
 export class CardRegisterBCComponent {
 
-  @Input() card: IRegisterBCCard;
+  @Input() card!: IRegisterBCCard;
 
 }

@@ -16,6 +16,6 @@ export class CardControlAComponent {
 
   merLine = MemoryLines.MER;
 
-  @Input() card: IControlCard;
+  @Input() card!: IControlCard;
 
 }

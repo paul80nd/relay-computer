@@ -9,6 +9,6 @@ import { IYBackplane } from '../../../../model/backplanes';
 
 export class CardBayYComponent {
 
-  @Input() backplane: IYBackplane;
+  @Input() backplane!: IYBackplane;
 
 }

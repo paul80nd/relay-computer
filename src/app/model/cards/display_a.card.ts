@@ -55,15 +55,15 @@ export class DisplayACard implements IDisplayACard {
   a2bIn: BitValue;
   a2cIn: BitValue;
 
-  private a1aPart: IRegisterABCDBusPart;
-  private a1bClockPart: IClockBusPart;
-  private a1bI2bPart: II2BBusPart;
-  private a1bMemoryPart: IMemoryBusPart;
-  private a1cAuxRegPart: IAuxRegisterBusPart;
-  private a1cClPart: IAluFunctionClBusPart;
-  private a2abRegPart: IRegisterJMXYBusPart;
-  private a2bPart: IDataSwitchGateBusPart;
-  private a2cPart: IAluOperationBusPart;
+  private a1aPart: IRegisterABCDBusPart | undefined;
+  private a1bClockPart: IClockBusPart | undefined;
+  private a1bI2bPart: II2BBusPart | undefined;
+  private a1bMemoryPart: IMemoryBusPart | undefined;
+  private a1cAuxRegPart: IAuxRegisterBusPart | undefined;
+  private a1cClPart: IAluFunctionClBusPart | undefined;
+  private a2abRegPart: IRegisterJMXYBusPart | undefined;
+  private a2bPart: IDataSwitchGateBusPart | undefined;
+  private a2cPart: IAluOperationBusPart | undefined;
 
   constructor() {
     this.a1a = new CardPart();
