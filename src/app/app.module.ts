@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +13,20 @@ import { InstructionSetModule } from './components/instrset/instrset.module';
 import { MemoryListModule } from './components/memory_list/memory_list.module';
 
 import { ClarityModule } from '@clr/angular';
+
+import {
+  ClarityIcons,
+  angleIcon,
+  clockIcon,
+  flaskIcon,
+  helpInfoIcon,
+  libraryIcon,
+  listIcon,
+  memoryIcon,
+  rulerPencilIcon
+} from '@cds/core/icon';
+
+ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, helpInfoIcon, libraryIcon, listIcon, memoryIcon, rulerPencilIcon);
 
 @NgModule({
   declarations: [
@@ -33,6 +47,7 @@ import { ClarityModule } from '@clr/angular';
     ClarityModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
