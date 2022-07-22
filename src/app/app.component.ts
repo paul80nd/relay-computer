@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ComputerFactory, IComputer, IComputerFactory } from './model/computer';
 
 @Component({
-  selector: 'app-root',
+  selector: 'rc-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
