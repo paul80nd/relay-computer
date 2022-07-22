@@ -12,28 +12,28 @@ import { Register16LedsComponent } from './register_leds/register_16_leds.compon
 import { Register816LedsComponent } from './register_leds/register_816_leds.component';
 
 @NgModule({
-    declarations: [
-        AluOperationLedLightBarComponent,
-        ByteLedsComponent,
-        ByteLedLightBarComponent,
-        ByteStackedLedsComponent,
-        DoubleByteLedsComponent,
-        DoubleByteLedLightBarComponent,
-        RegisterLedsComponent,
-        Register816LedsComponent,
-        Register16LedsComponent
-    ],
-    exports: [
-        AluOperationLedLightBarComponent,
-        ByteLedsComponent,
-        ByteLedLightBarComponent,
-        ByteStackedLedsComponent,
-        DoubleByteLedsComponent,
-        DoubleByteLedLightBarComponent,
-        RegisterLedsComponent,
-        Register816LedsComponent,
-        Register16LedsComponent
-    ],
-    imports: [CommonModule]
+  declarations: [
+    AluOperationLedLightBarComponent,
+    ByteLedsComponent,
+    ByteLedLightBarComponent,
+    ByteStackedLedsComponent,
+    DoubleByteLedsComponent,
+    DoubleByteLedLightBarComponent,
+    RegisterLedsComponent,
+    Register816LedsComponent,
+    Register16LedsComponent
+  ],
+  exports: [
+    AluOperationLedLightBarComponent,
+    ByteLedsComponent,
+    ByteLedLightBarComponent,
+    ByteStackedLedsComponent,
+    DoubleByteLedsComponent,
+    DoubleByteLedLightBarComponent,
+    RegisterLedsComponent,
+    Register816LedsComponent,
+    Register16LedsComponent
+  ],
+  imports: [CommonModule]
 })
 export class LedsModule { }

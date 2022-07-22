@@ -4,17 +4,17 @@ import { OperationLines } from '../../../../model/bus/bus_part_lines';
 import { IDecoderCard } from '../../../../model/cards/decoder.card';
 
 @Component({
-    selector: '[rc-card-decoder]',
-    templateUrl: './card_decoder.component.svg'
+  selector: '[rc-card-decoder]',
+  templateUrl: './card_decoder.component.svg'
 })
 
 export class CardDecoderComponent {
 
-    aluLine = OperationLines.IALU;
-    setLine = OperationLines.ISET;
-    mv8Line = OperationLines.IMV8;
-    gtoLine = OperationLines.IGTO;
+  aluLine = OperationLines.IALU;
+  setLine = OperationLines.ISET;
+  mv8Line = OperationLines.IMV8;
+  gtoLine = OperationLines.IGTO;
 
-    @Input() card: IDecoderCard;
+  @Input() card: IDecoderCard;
 
 }

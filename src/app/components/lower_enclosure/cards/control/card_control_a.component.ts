@@ -4,18 +4,18 @@ import { AbortLines, I2BLines, MemoryLines } from '../../../../model/bus/bus_par
 import { IControlCard } from '../../../../model/cards/control.card';
 
 @Component({
-    selector: '[rc-card-control-a]',
-    templateUrl: './card_control_a.component.svg'
+  selector: '[rc-card-control-a]',
+  templateUrl: './card_control_a.component.svg'
 })
 
 export class CardControlAComponent {
 
-    at08Line = AbortLines.AT08;
+  at08Line = AbortLines.AT08;
 
-    i2bLine = I2BLines.I2B;
+  i2bLine = I2BLines.I2B;
 
-    merLine = MemoryLines.MER;
+  merLine = MemoryLines.MER;
 
-    @Input() card: IControlCard;
+  @Input() card: IControlCard;
 
 }

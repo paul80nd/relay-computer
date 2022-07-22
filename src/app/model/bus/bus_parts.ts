@@ -8,12 +8,12 @@ import { CardPart } from '../../model/cards/card_part';
  * the bus part as a whole when any individial line changes.
  */
 export interface IBusPart extends IObservable<BitValue> {
-    /** Gets the current value on the bus part */
-    readonly value: BitValue;
-    /** Connects this bus part to a card part value provider */
-    connect(provider: CardPart): void;
-    /** Disconnect this bus part from a card part value provider */
-    disconnect(provider: CardPart): void;
+  /** Gets the current value on the bus part */
+  readonly value: BitValue;
+  /** Connects this bus part to a card part value provider */
+  connect(provider: CardPart): void;
+  /** Disconnect this bus part from a card part value provider */
+  disconnect(provider: CardPart): void;
 }
 
 /** Bus part for the 4 lines that carry the Abort value */
@@ -55,88 +55,88 @@ export interface IResetBusPart extends IBusPart { }
  * Factory providing Bus Part instances
  */
 export interface IBusPartFactory {
-    getForAbort(): IAbortBusPart;
-    getForAddress(): IAddressBusPart;
-    getForAluFunctionCl(): IAluFunctionClBusPart;
-    getForAluOperation(): IAluOperationBusPart;
-    getForAuxRegister(): IAuxRegisterBusPart;
-    getForClock(): IClockBusPart;
-    getForCondition(): IConditionBusPart;
-    getForData(): IDataBusPart;
-    getForDataSwitchGate(): IDataSwitchGateBusPart;
-    getForI2B(): II2BBusPart;
-    getForInstruction(): IInstructionBusPart;
-    getForMemory(): IMemoryBusPart;
-    getForOperation(): IOperationBusPart;
-    getForPulse(): IPulseBusPart;
-    getForRegisterABCD(): IRegisterABCDBusPart;
-    getForRegisterJMXY(): IRegisterJMXYBusPart;
-    getForReset(): IResetBusPart;
+  getForAbort(): IAbortBusPart;
+  getForAddress(): IAddressBusPart;
+  getForAluFunctionCl(): IAluFunctionClBusPart;
+  getForAluOperation(): IAluOperationBusPart;
+  getForAuxRegister(): IAuxRegisterBusPart;
+  getForClock(): IClockBusPart;
+  getForCondition(): IConditionBusPart;
+  getForData(): IDataBusPart;
+  getForDataSwitchGate(): IDataSwitchGateBusPart;
+  getForI2B(): II2BBusPart;
+  getForInstruction(): IInstructionBusPart;
+  getForMemory(): IMemoryBusPart;
+  getForOperation(): IOperationBusPart;
+  getForPulse(): IPulseBusPart;
+  getForRegisterABCD(): IRegisterABCDBusPart;
+  getForRegisterJMXY(): IRegisterJMXYBusPart;
+  getForReset(): IResetBusPart;
 }
 
 export class BusPartFactory implements IBusPartFactory {
-    getForAbort(): IAbortBusPart { return new BusPart(); }
-    getForAddress(): IAbortBusPart { return new BusPart(); }
-    getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
-    getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
-    getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }
-    getForClock(): IClockBusPart { return new BusPart(); }
-    getForCondition(): IConditionBusPart { return new BusPart(); }
-    getForData(): IDataBusPart { return new BusPart(); }
-    getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
-    getForI2B(): II2BBusPart { return new BusPart(); }
-    getForInstruction(): IInstructionBusPart { return new BusPart(); }
-    getForMemory(): IMemoryBusPart { return new BusPart(); }
-    getForOperation(): IOperationBusPart { return new BusPart(); }
-    getForPulse(): IPulseBusPart { return new BusPart(); }
-    getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
-    getForRegisterJMXY(): IRegisterJMXYBusPart { return new BusPart(); }
-    getForReset(): IResetBusPart { return new BusPart(); }
+  getForAbort(): IAbortBusPart { return new BusPart(); }
+  getForAddress(): IAbortBusPart { return new BusPart(); }
+  getForAluFunctionCl(): IAluFunctionClBusPart { return new BusPart(); }
+  getForAluOperation(): IAluOperationBusPart { return new BusPart(); }
+  getForAuxRegister(): IAuxRegisterBusPart { return new BusPart(); }
+  getForClock(): IClockBusPart { return new BusPart(); }
+  getForCondition(): IConditionBusPart { return new BusPart(); }
+  getForData(): IDataBusPart { return new BusPart(); }
+  getForDataSwitchGate(): IDataSwitchGateBusPart { return new BusPart(); }
+  getForI2B(): II2BBusPart { return new BusPart(); }
+  getForInstruction(): IInstructionBusPart { return new BusPart(); }
+  getForMemory(): IMemoryBusPart { return new BusPart(); }
+  getForOperation(): IOperationBusPart { return new BusPart(); }
+  getForPulse(): IPulseBusPart { return new BusPart(); }
+  getForRegisterABCD(): IRegisterABCDBusPart { return new BusPart(); }
+  getForRegisterJMXY(): IRegisterJMXYBusPart { return new BusPart(); }
+  getForReset(): IResetBusPart { return new BusPart(); }
 }
 
 class BusPart extends Observable<BitValue> implements IBusPart {
 
-    private _value: BitValue;
-    private connectedParts: CardPart[];
+  private _value: BitValue;
+  private connectedParts: CardPart[];
 
-    constructor() {
-        super();
-        this._value = BitValue.Zero;
-        this.connectedParts = [];
+  constructor() {
+    super();
+    this._value = BitValue.Zero;
+    this.connectedParts = [];
+  }
+
+  get value() {
+    return this._value;
+  }
+
+  connect(part: CardPart) {
+    this.connectedParts.push(part);
+    part.subscribe(this.update);
+  }
+
+  disconnect(part: CardPart) {
+    this.connectedParts.splice(this.connectedParts.indexOf(part), 1);
+    part.unsubscribe(this.update);
+  }
+
+  subscribe(handler: { (e: BitValue): void }): void {
+    super.subscribe(handler);
+    this.update();
+  }
+
+  unsubscribe(handler: { (e: BitValue): void }): void {
+    super.unsubscribe(handler);
+    this.update();
+  }
+
+  private update = () => {
+    let newValue = BitValue.Zero;
+    if (this.connectedParts.length > 0) {
+      newValue = BitValue.combine(this.connectedParts.map(bv => bv.value));
     }
 
-    get value() {
-        return this._value;
-    }
-
-    connect(part: CardPart) {
-        this.connectedParts.push(part);
-        part.subscribe(this.update);
-    }
-
-    disconnect(part: CardPart) {
-        this.connectedParts.splice(this.connectedParts.indexOf(part), 1);
-        part.unsubscribe(this.update);
-    }
-
-    subscribe(handler: { (e: BitValue): void }): void {
-        super.subscribe(handler);
-        this.update();
-    }
-
-    unsubscribe(handler: { (e: BitValue): void }): void {
-        super.unsubscribe(handler);
-        this.update();
-    }
-
-    private update = () => {
-        let newValue = BitValue.Zero;
-        if (this.connectedParts.length > 0) {
-            newValue = BitValue.combine(this.connectedParts.map(bv => bv.value));
-        }
-
-        this._value = newValue;
-        this.notifyObservers(this._value);
-    }
+    this._value = newValue;
+    this.notifyObservers(this._value);
+  }
 
 }

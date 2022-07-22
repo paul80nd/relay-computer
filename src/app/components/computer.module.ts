@@ -6,12 +6,12 @@ import { ControlSwitchesModule } from './upper_enclosure/control_switches/contro
 import { DisplaysModule } from './upper_enclosure/displays/displays.module';
 
 @NgModule({
-  declarations: [ ComputerComponent ],
+  declarations: [ComputerComponent],
   imports: [
     CardBaysModule,
     ControlSwitchesModule,
     DisplaysModule
   ],
-  exports:      [ ComputerComponent ]
+  exports: [ComputerComponent]
 })
 export class ComputerModule { }
