@@ -36,7 +36,7 @@
 </header>
 <div style="position: absolute; width: 100vw; padding: 2px;">
     <div class="scaling-svg-container" style="padding-bottom:49.375%;">
-        <div rc-computer [computer]="computer"></div>
+        <rc-computer [computer]="computer"></rc-computer>
     </div>
 </div>
 <div style="position: absolute; width: 50vw; height: 26.8vw; padding: 4px 5px 4px 2px; left: 50vw; overflow: hidden;">
@@ -54,7 +54,7 @@
                         <button clrTabLink><cds-icon shape="ruler-pencil"></cds-icon> Architecture</button>
                         <clr-tab-content *clrIfActive>
                             <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
-                                <div rc-architecture-diagram></div>
+                                <rc-architecture-diagram></rc-architecture-diagram>
                             </div>
                         </clr-tab-content>
                     </clr-tab>
@@ -71,7 +71,7 @@
                     <clr-tab>
                         <button clrTabLink><cds-icon shape="list"></cds-icon> Opcodes</button>
                         <clr-tab-content *clrIfActive>
-                            <div rc-instruction-set></div>
+                            <rc-instruction-set></rc-instruction-set>
                         </clr-tab-content>
                     </clr-tab>
                 </clr-tabs>

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IComputer } from '../model/computer';
 
 @Component({
-  selector: '[rc-computer]',
+  selector: 'rc-computer',
   templateUrl: './computer.component.svg'
 })
 
