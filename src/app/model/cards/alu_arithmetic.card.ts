@@ -66,5 +66,5 @@ export class AluArithmeticCard implements IAluArithmeticCard {
                 this.aluOpOut.value = this.aluOpOut.value.flipBit(AluOperationLines.ICY);
             }
         }
-    };
+    }
 }

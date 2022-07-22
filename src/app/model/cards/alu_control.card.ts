@@ -116,11 +116,11 @@ export class AluControlCard implements IAluControlCard {
                 if (this.select) { this.select = false; }
             }
         }
-    };
+    }
 
     private updateOp = () => {
         if (this.aluOpPart) {
             this.operation.value = this.aluOpPart.value;
         }
-    };
+    }
 }

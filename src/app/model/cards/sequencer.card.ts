@@ -54,7 +54,7 @@ export class SequencerCard implements ISequencerCard {
                 this.derrivePulses();
             }
         }
-    };
+    }
 
     private abortChanged = () => {
         if (this.abortPart && this.fsm.bit(5)) {
@@ -62,7 +62,7 @@ export class SequencerCard implements ISequencerCard {
 
             if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
         }
-    };
+    }
 
     private clock = () => {
         const clock = this.clockPart.value.bit(ClockLines.CLK);
@@ -72,15 +72,15 @@ export class SequencerCard implements ISequencerCard {
             if (this.fsm.bit(15) && this.abort.bit(AbortLines.AT14)) {
                 this.fsm = this.fsm.flipBit(15);
                 this.fsm = this.fsm.flipBit(0);
-            }            
+            }
             if (this.fsm.bit(13) && this.abort.bit(AbortLines.AT12)) {
                 this.fsm = this.fsm.flipBit(13);
                 this.fsm = this.fsm.flipBit(0);
-            }            
+            }
             if (this.fsm.bit(11) && this.abort.bit(AbortLines.AT10)) {
                 this.fsm = this.fsm.flipBit(11);
                 this.fsm = this.fsm.flipBit(0);
-            }            
+            }
             else if (this.fsm.bit(9) && this.abort.bit(AbortLines.AT08)) {
                 this.fsm = this.fsm.flipBit(9);
                 this.fsm = this.fsm.flipBit(0);
@@ -90,7 +90,7 @@ export class SequencerCard implements ISequencerCard {
             }
             this.derrivePulses();
         }
-    };
+    }
 
     private derrivePulses = () => {
         let pulse = BitValue.Zero;
@@ -138,6 +138,6 @@ export class SequencerCard implements ISequencerCard {
         this.pulse = pulse;
         this.pulseOut.value = pulse;
 
-    };
+    }
 
 }

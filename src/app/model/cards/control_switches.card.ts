@@ -192,7 +192,7 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             this.auxState += 1;
             setTimeout(this.auxClockRun, 100);
         }
-    };
+    }
 
     toggleRunStop(): void {
         this.run = !this.run;
@@ -237,6 +237,6 @@ export class ControlSwitchesCard implements IControlSwitchesCard {
             this.clockOut.value = this.clockOut.value.flipBit(ClockLines.CLK);
             setTimeout(this.clockRun, this.clockSpeed);
         }
-    };
+    }
 
 }

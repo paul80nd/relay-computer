@@ -93,5 +93,5 @@ export class RegisterCardPart implements IRegisterCardPart {
                 this.valueOut.value = BitValue.Zero;
             }
         }
-    };
+    }
 }

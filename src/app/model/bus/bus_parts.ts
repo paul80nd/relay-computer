@@ -137,6 +137,6 @@ class BusPart extends Observable<BitValue> implements IBusPart {
 
         this._value = newValue;
         this.notifyObservers(this._value);
-    };
+    }
 
 }

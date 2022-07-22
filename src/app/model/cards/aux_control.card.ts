@@ -38,6 +38,6 @@ export class AuxControlCard implements IAuxControlCard {
             this.data.value = this.sds.value.bit(DataSwitchGateLines.SDS) ? this.dataPart.value : BitValue.Zero;
             this.addr.value = this.sds.value.bit(DataSwitchGateLines.SAS) ? this.dataPart.value : BitValue.Zero;
         }
-    };
+    }
 
 }

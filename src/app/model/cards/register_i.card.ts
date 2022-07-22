@@ -58,5 +58,5 @@ export class RegisterICard implements IRegisterICard {
                 this.dataOut.value = value;
             }
         }
-    };
+    }
 }

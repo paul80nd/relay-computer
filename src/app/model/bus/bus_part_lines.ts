@@ -108,7 +108,7 @@ export enum PulseLines {
     Q,
     R,
     S,
-    T    
+    T
 }
 
 export enum RegABCDLines {

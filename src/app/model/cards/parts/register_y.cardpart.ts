@@ -71,9 +71,9 @@ export class RegisterYCardPart implements IRegisterYCardPart {
         this.ctrlPart = ctrlPart;
         this.ctrlPart.subscribe(this.update);
         // Outputs
-        if (dataPartOut) { 
+        if (dataPartOut) {
             dataPartOut.connect(this.valueOutHi);
-            dataPartOut.connect(this.valueOutLo);            
+            dataPartOut.connect(this.valueOutLo);
          }
          if (addressPart) {
              addressPart.connect(this.valueOutHiLo);
@@ -179,5 +179,5 @@ export class RegisterYCardPart implements IRegisterYCardPart {
                 this.valueOutHiLo.value = BitValue.Zero;
             }
         }
-    };
+    }
 }

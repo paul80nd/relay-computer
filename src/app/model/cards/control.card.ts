@@ -103,7 +103,7 @@ export class ControlCard implements IControlCard {
                 this.updateGoto();
             }
         }
-    };
+    }
 
     private updateInstFetchAndInc() {
         if (this.pulsePart) {
@@ -279,7 +279,7 @@ export class ControlCard implements IControlCard {
             if (pulse.bit(PulseLines.J) || pulse.bit(PulseLines.N)) {
                 // SEL-PC & MEM-RD
                 auxReg = auxReg.flipBit(RegAuxLines.SPC);
-                memory = memory.flipBit(MemoryLines.MER);                
+                memory = memory.flipBit(MemoryLines.MER);
             }
             if (pulse.bit(PulseLines.K) || pulse.bit(PulseLines.O)) {
                 // LD-INC
@@ -313,7 +313,7 @@ export class ControlCard implements IControlCard {
                 // LD-XY (optional)
                 if (instr.bit(0)) {
                     regJMXY = regJMXY.flipBit(RegJMXYLines.LXY);
-                } 
+                }
             }
             if (pulse.bit(PulseLines.S)) {
                 // SEL-J
@@ -322,8 +322,8 @@ export class ControlCard implements IControlCard {
             if (pulse.bit(PulseLines.T)) {
                 // LD-PC (optional)
                 if ((instr.bit(1) &&  alu.bit(ConditionLines.NZ)) ||
-                    (instr.bit(2) &&  alu.bit(ConditionLines.EZ)) || 
-                    (instr.bit(3) &&  alu.bit(ConditionLines.CY)) || 
+                    (instr.bit(2) &&  alu.bit(ConditionLines.EZ)) ||
+                    (instr.bit(3) &&  alu.bit(ConditionLines.CY)) ||
                     (instr.bit(4) &&  alu.bit(ConditionLines.SN))) {
                         auxReg = auxReg.flipBit(RegAuxLines.LPC);
                 }

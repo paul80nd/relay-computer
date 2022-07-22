@@ -82,7 +82,7 @@ export class MemoryCard implements IMemoryCard {
                 }
             }
         }
-    };
+    }
 
     toggleEnabled(): void {
         this.memoryEnabled.value = this.memoryEnabled.value.flipBit(0);

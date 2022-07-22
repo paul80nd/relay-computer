@@ -44,5 +44,5 @@ export class IncrementerCard implements IIncrementerCard {
             if (!this.increment.isEqualTo(value)) { this.increment = value; }
             if (!this.incrementOut.value.isEqualTo(value)) { this.incrementOut.value = value; }
         }
-    };
+    }
 }
