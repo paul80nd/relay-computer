@@ -2,13 +2,14 @@ import { Component, Input } from '@angular/core';
 
 import { IYBackplane } from '../../../../model/backplanes';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-bay-y]',
-    templateUrl: 'card_bay_y.component.html'
+  selector: '[rc-card-bay-y]',
+  templateUrl: 'card_bay_y.component.html'
 })
 
 export class CardBayYComponent {
 
-    @Input() backplane: IYBackplane;
+  @Input() backplane!: IYBackplane;
 
 }

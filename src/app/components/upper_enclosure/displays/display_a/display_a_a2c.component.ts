@@ -3,21 +3,22 @@ import { Component, Input } from '@angular/core';
 import { BitValue } from '../../../../model/bit_value';
 import { AluOperationLines } from '../../../../model/bus/bus_part_lines';
 
+/* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-display-a-a2c]',
-    templateUrl: 'display_a_a2c.component.svg'
+  selector: '[rc-display-a-a2c]',
+  templateUrl: 'display_a_a2c.component.svg'
 })
 export class DisplayAA2CComponent {
 
-    addLine: number = AluOperationLines.ADD;
-    incLine: number = AluOperationLines.INC;
-    shlLine: number = AluOperationLines.SHL;
-    andLine: number = AluOperationLines.AND;
-    orrLine: number = AluOperationLines.ORR;
-    xorLine: number = AluOperationLines.XOR;
-    notLine: number = AluOperationLines.NOT;
+  addLine: number = AluOperationLines.ADD;
+  incLine: number = AluOperationLines.INC;
+  shlLine: number = AluOperationLines.SHL;
+  andLine: number = AluOperationLines.AND;
+  orrLine: number = AluOperationLines.ORR;
+  xorLine: number = AluOperationLines.XOR;
+  notLine: number = AluOperationLines.NOT;
 
-    @Input() value: BitValue;
-    @Input() valueIn: BitValue;
+  @Input() value!: BitValue;
+  @Input() valueIn!: BitValue;
 
 }

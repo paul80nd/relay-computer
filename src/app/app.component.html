@@ -1,15 +1,15 @@
 <header class="header-6">
     <div class="branding" style="padding: 0 .4rem;">
         <a href="#" class="nav-link">
-            <clr-icon shape="flask" class="is-solid"></clr-icon>
+            <cds-icon shape="flask" solid></cds-icon>
             <span class="title">Relay Computer Simulator</span>
         </a>
     </div>
     <div class="header-actions">
         <clr-dropdown>
             <button class="nav-icon" clrDropdownTrigger>
-                <clr-icon shape="clock"></clr-icon>
-                <clr-icon shape="caret down"></clr-icon>
+                <cds-icon shape="clock"></cds-icon>
+                <cds-icon shape="angle" direction="down"></cds-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
                 <h4 class="dropdown-header">Clock Speed</h4>
@@ -23,8 +23,8 @@
         </clr-dropdown>
         <clr-dropdown>
             <button class="nav-icon" clrDropdownTrigger>
-                <clr-icon shape="library"></clr-icon>
-                <clr-icon shape="caret down"></clr-icon>
+                <cds-icon shape="library"></cds-icon>
+                <cds-icon shape="angle" direction="down"></cds-icon>
             </button>
             <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
                     <h4 class="dropdown-header">Related Sites</h4>
@@ -36,7 +36,7 @@
 </header>
 <div style="position: absolute; width: 100vw; padding: 2px;">
     <div class="scaling-svg-container" style="padding-bottom:49.375%;">
-        <div rc-computer [computer]="computer"></div>
+        <rc-computer [computer]="computer"></rc-computer>
     </div>
 </div>
 <div style="position: absolute; width: 50vw; height: 26.8vw; padding: 4px 5px 4px 2px; left: 50vw; overflow: hidden;">
@@ -45,16 +45,16 @@
             <div class="content-area" style="width: 55%; padding-right: 4px !important;">
                 <clr-tabs>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="help-info"></clr-icon> Info</button>
+                        <button clrTabLink><cds-icon shape="help-info"></cds-icon> Info</button>
                         <clr-tab-content *clrIfActive="true">
                             <rc-documentation></rc-documentation>
                         </clr-tab-content>
                     </clr-tab>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="design"></clr-icon> Architecture</button>
+                        <button clrTabLink><cds-icon shape="ruler-pencil"></cds-icon> Architecture</button>
                         <clr-tab-content *clrIfActive>
                             <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
-                                <div rc-architecture-diagram></div>
+                                <rc-architecture-diagram></rc-architecture-diagram>
                             </div>
                         </clr-tab-content>
                     </clr-tab>
@@ -63,15 +63,15 @@
             <div class="content-area" style="width: 45%">
                 <clr-tabs>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="memory"></clr-icon> Memory</button>
+                        <button clrTabLink><cds-icon shape="memory"></cds-icon> Memory</button>
                         <clr-tab-content *clrIfActive="true">
                             <rc-memory-list [card]="computer.yBackplane.memory" [pc]="computer.xBackplane.registerPC"></rc-memory-list>
                         </clr-tab-content>
                     </clr-tab>
                     <clr-tab>
-                        <button clrTabLink><clr-icon shape="list"></clr-icon> Opcodes</button>
+                        <button clrTabLink><cds-icon shape="list"></cds-icon> Opcodes</button>
                         <clr-tab-content *clrIfActive>
-                            <div rc-instruction-set></div>
+                            <rc-instruction-set></rc-instruction-set>
                         </clr-tab-content>
                     </clr-tab>
                 </clr-tabs>

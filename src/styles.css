@@ -18,18 +18,18 @@ svg text::selection {
 }
 
 .scaling-svg-container {
-  position: relative; 
-  height:0; 
-  width: 100%; 
+  position: relative;
+  height:0;
+  width: 100%;
   padding: 0;
-  padding-bottom: 100%; 
+  padding-bottom: 100%;
   /* over-ride this inline for aspect ratio other than square */
 }
 .scaling-svg {
-  position: absolute; 
-  height: 100%; 
-  width: 100%; 
-  left: 0; 
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
   top:0;
 }
 
@@ -38,7 +38,7 @@ svg text::selection {
 .diagElementOutline {
     stroke: white;
     stroke-linecap: round;
-    stroke-linejoin: round; 
+    stroke-linejoin: round;
     stroke-width: .5;
 }
 
@@ -47,7 +47,7 @@ svg text::selection {
 .cardOutline {
     stroke: black;
     stroke-linecap: round;
-    stroke-linejoin: round; 
+    stroke-linejoin: round;
     stroke-width: .25;
 }
 
@@ -79,8 +79,8 @@ svg text::selection {
     fill: firebrick;
 }
 
-.d-text3, .d-text4, .d-text5, 
-.d-text6, .d-text7, .d-text8, .d-text9, 
+.d-text3, .d-text4, .d-text5,
+.d-text6, .d-text7, .d-text8, .d-text9,
 .d-text10, .d-text13, .d-text14 {
     font-size: 6px;
     font-weight: 500;

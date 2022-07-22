@@ -24,51 +24,51 @@ import { CardRegisterMComponent } from './registers/card_register_m.component';
 import { CardRegisterXYComponent } from './registers/card_register_xy.component';
 
 @NgModule({
-    declarations: [
-        CardAluArithmeticComponent,
-        CardAluControlComponent,
-        CardAluLogicComponent,
-        CardControlAComponent,
-        CardControlBComponent,
-        CardDecoderComponent,
-        CardIncrementerAComponent,
-        CardIncrementerBComponent,
-        CardMemoryAComponent,
-        CardMemoryBComponent,
-        CardRegisterADComponent,
-        CardRegisterBCComponent,
-        CardRegisterJComponent,
-        CardRegisterMComponent,
-        CardRegisterIComponent,
-        CardRegisterPCComponent,
-        CardRegisterXYComponent,
-        CardSequencerAComponent,
-        CardSequencerBComponent
-    ],
-    exports: [
-        CardAluArithmeticComponent,
-        CardAluControlComponent,
-        CardAluLogicComponent,
-        CardControlAComponent,
-        CardControlBComponent,
-        CardDecoderComponent,
-        CardIncrementerAComponent,
-        CardIncrementerBComponent,
-        CardMemoryAComponent,
-        CardMemoryBComponent,
-        CardRegisterADComponent,
-        CardRegisterBCComponent,
-        CardRegisterIComponent,
-        CardRegisterJComponent,
-        CardRegisterMComponent,
-        CardRegisterPCComponent,
-        CardRegisterXYComponent,
-        CardSequencerAComponent,
-        CardSequencerBComponent
-    ],
-    imports: [
-        CommonModule,
-        LedsModule
-    ]
+  declarations: [
+    CardAluArithmeticComponent,
+    CardAluControlComponent,
+    CardAluLogicComponent,
+    CardControlAComponent,
+    CardControlBComponent,
+    CardDecoderComponent,
+    CardIncrementerAComponent,
+    CardIncrementerBComponent,
+    CardMemoryAComponent,
+    CardMemoryBComponent,
+    CardRegisterADComponent,
+    CardRegisterBCComponent,
+    CardRegisterJComponent,
+    CardRegisterMComponent,
+    CardRegisterIComponent,
+    CardRegisterPCComponent,
+    CardRegisterXYComponent,
+    CardSequencerAComponent,
+    CardSequencerBComponent
+  ],
+  exports: [
+    CardAluArithmeticComponent,
+    CardAluControlComponent,
+    CardAluLogicComponent,
+    CardControlAComponent,
+    CardControlBComponent,
+    CardDecoderComponent,
+    CardIncrementerAComponent,
+    CardIncrementerBComponent,
+    CardMemoryAComponent,
+    CardMemoryBComponent,
+    CardRegisterADComponent,
+    CardRegisterBCComponent,
+    CardRegisterIComponent,
+    CardRegisterJComponent,
+    CardRegisterMComponent,
+    CardRegisterPCComponent,
+    CardRegisterXYComponent,
+    CardSequencerAComponent,
+    CardSequencerBComponent
+  ],
+  imports: [
+    CommonModule,
+    LedsModule
+  ]
 })
 export class CardsModule { }

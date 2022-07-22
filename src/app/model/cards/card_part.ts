@@ -8,31 +8,31 @@ import { Observable } from '../observable';
  */
 export class CardPart extends Observable<BitValue> {
 
-    private _value: BitValue;
+  private _value: BitValue;
 
-    constructor() {
-        super();
-        this._value = BitValue.Zero;
-    }
+  constructor() {
+    super();
+    this._value = BitValue.Zero;
+  }
 
-    get value(): BitValue {
-        return this._value;
-    }
+  get value(): BitValue {
+    return this._value;
+  }
 
-    set value(newValue: BitValue) {
-        if (!this._value.isEqualTo(newValue)) {
-            this._value = newValue;
-            this.notifyObservers(newValue);
-        }
+  set value(newValue: BitValue) {
+    if (!this._value.isEqualTo(newValue)) {
+      this._value = newValue;
+      this.notifyObservers(newValue);
     }
+  }
 
-    subscribe(handler: (e: BitValue) => void): void {
-        super.subscribe(handler);
-        this.notifyObservers(this._value);
-    }
+  subscribe(handler: (e: BitValue) => void): void {
+    super.subscribe(handler);
+    this.notifyObservers(this._value);
+  }
 
-    unsubscribe(handler: (e: BitValue) => void): void {
-        super.unsubscribe(handler);
-        this.notifyObservers(this._value);
-    }
+  unsubscribe(handler: (e: BitValue) => void): void {
+    super.unsubscribe(handler);
+    this.notifyObservers(this._value);
+  }
 }

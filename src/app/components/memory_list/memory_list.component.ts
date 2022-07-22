@@ -4,16 +4,16 @@ import { IMemoryCard } from '../../model/cards/memory.card';
 import { IRegisterPCCard } from 'src/app/model/cards/register_pc.card';
 
 @Component({
-    selector: 'rc-memory-list',
-    templateUrl: 'memory_list.component.html',
-    styleUrls: ['memory_list.component.css']
+  selector: 'rc-memory-list',
+  templateUrl: 'memory_list.component.html',
+  styleUrls: ['memory_list.component.css']
 })
 
 export class MemoryListComponent {
 
-    offset = 0;
+  offset = 0;
 
-    @Input() card: IMemoryCard;
-    @Input() pc: IRegisterPCCard;
+  @Input() card!: IMemoryCard;
+  @Input() pc!: IRegisterPCCard;
 
 }

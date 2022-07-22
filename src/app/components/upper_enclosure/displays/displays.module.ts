@@ -14,24 +14,24 @@ import { DisplayAA2AComponent } from './display_a/display_a_a2a.component';
 import { DisplayAA2BComponent } from './display_a/display_a_a2b.component';
 
 @NgModule({
-    declarations: [
-        DisplayAComponent,
-        DisplayAA1AComponent,
-        DisplayAA2AComponent,
-        DisplayAA2BComponent,
-        DisplayAA2CComponent,
-        DisplayBComponent,
-        DisplayBAluComponent,
-        DisplayBConditionComponent
-    ],
-    exports: [
-        DisplayAComponent,
-        DisplayBComponent
-    ],
-    imports: [
-        CommonModule,
-        LedsModule,
-        SwitchesModule
-    ]
+  declarations: [
+    DisplayAComponent,
+    DisplayAA1AComponent,
+    DisplayAA2AComponent,
+    DisplayAA2BComponent,
+    DisplayAA2CComponent,
+    DisplayBComponent,
+    DisplayBAluComponent,
+    DisplayBConditionComponent
+  ],
+  exports: [
+    DisplayAComponent,
+    DisplayBComponent
+  ],
+  imports: [
+    CommonModule,
+    LedsModule,
+    SwitchesModule
+  ]
 })
 export class DisplaysModule { }
