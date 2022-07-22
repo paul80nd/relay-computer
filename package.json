@@ -22,7 +22,7 @@
     "@cds/core": "^5.0.0",
     "@clr/angular": "^5.4.1",
     "@clr/core": "^3.0.0",
-    "@clr/icons": "^4.0.16",
+    "@clr/icons": "^5.5.3",
     "@clr/ui": "^5.4.1",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "rxjs": "~6.6.7",
