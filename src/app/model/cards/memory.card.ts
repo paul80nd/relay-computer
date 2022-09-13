@@ -5,7 +5,6 @@ import { IAddressBusPart, IDataBusPart, IMemoryBusPart } from '../bus/bus_parts'
 import { MemoryLines } from '../bus/bus_part_lines';
 
 export interface IMemoryCard {
-
   memoryAddress: BitValue;
   memoryArray: number[];
   memoryData: BitValue;
@@ -14,6 +13,7 @@ export interface IMemoryCard {
 
   connect(dataBus: ICardYBusGroup): void;
   toggleEnabled(): void;
+  loadProgram(offset: number, prog: number[]): void;
 }
 
 export class MemoryCard implements IMemoryCard {
@@ -87,4 +87,11 @@ export class MemoryCard implements IMemoryCard {
   toggleEnabled(): void {
     this.memoryEnabled.value = this.memoryEnabled.value.flipBit(0);
   }
+
+  loadProgram(offset: number, prog: number[]): void {
+    for (let i = 0; i < prog.length; i++) {
+      this.memoryArray[offset + i] = prog[i];
+    }
+  }
+
 }
