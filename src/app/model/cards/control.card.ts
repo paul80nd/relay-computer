@@ -216,6 +216,7 @@ export class ControlCard implements IControlCard {
       const pulse = this.pulsePart.value;
       const instr = this.instructionPart.value;
       let regABCD = BitValue.Zero;
+      let regJMXY = BitValue.Zero;
       let abort = BitValue.Zero;
 
       if (pulse.bit(PulseLines.C)) {
@@ -232,6 +233,20 @@ export class ControlCard implements IControlCard {
               regABCD = regABCD.flipBit(RegABCDLines.RSC);
             } else {
               regABCD = regABCD.flipBit(RegABCDLines.RSD);
+            }
+          }
+        } else {
+          if (!instr.bit(1)) {
+            if (!instr.bit(0)) {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.SM1);
+            } else {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.SM2);
+            }
+          } else {
+            if (!instr.bit(0)) {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.SEX);
+            } else {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.SEY);
             }
           }
         }
@@ -253,6 +268,20 @@ export class ControlCard implements IControlCard {
               regABCD = regABCD.flipBit(RegABCDLines.RLD);
             }
           }
+        } else {
+          if (!instr.bit(4)) {
+            if (!instr.bit(3)) {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.LM1);
+            } else {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.LM2);
+            }
+          } else {
+            if (!instr.bit(3)) {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.LDX);
+            } else {
+              regJMXY = regJMXY.flipBit(RegJMXYLines.LDY);
+            }
+          }
         }
         // ABT-8
         abort = abort.flipBit(AbortLines.AT08);
@@ -260,6 +289,9 @@ export class ControlCard implements IControlCard {
 
       if (!this.regABCD.isEqualTo(regABCD)) { this.regABCD = regABCD; }
       this.regABCDOut.value = regABCD;
+
+      if (!this.regJMXY.isEqualTo(regJMXY)) { this.regJMXY = regJMXY; }
+      this.regJMXYOut.value = regJMXY;
 
       if (!this.abort.isEqualTo(abort)) { this.abort = abort; }
       this.abortOut.value = abort;
