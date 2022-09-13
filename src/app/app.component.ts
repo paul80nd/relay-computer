@@ -15,4 +15,8 @@ export class AppComponent implements OnInit {
     this.computer = factory.createComputer();
   }
 
+  loadFromClipboard() {
+    alert('here');
+  }
+
 }
