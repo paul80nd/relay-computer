@@ -1,81 +1,100 @@
 <header class="header-6">
-    <div class="branding" style="padding: 0 .4rem;">
-        <a href="#" class="nav-link">
-            <cds-icon shape="flask" solid></cds-icon>
-            <span class="title">Relay Computer Simulator</span>
-        </a>
-    </div>
-    <div class="header-actions">
-        <clr-dropdown>
-            <button class="nav-icon" clrDropdownTrigger>
-                <cds-icon shape="clock"></cds-icon>
-                <cds-icon shape="angle" direction="down"></cds-icon>
-            </button>
-            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                <h4 class="dropdown-header">Clock Speed</h4>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 500" clrDropdownItem>1Hz</a>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 250" clrDropdownItem>2Hz</a>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 125" clrDropdownItem>4Hz</a>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 62" clrDropdownItem>8Hz</a>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 31" clrDropdownItem>16Hz</a>
-                <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 1" clrDropdownItem>Max Hz</a>
-            </clr-dropdown-menu>
-        </clr-dropdown>
-        <clr-dropdown>
-            <button class="nav-icon" clrDropdownTrigger>
-                <cds-icon shape="library"></cds-icon>
-                <cds-icon shape="angle" direction="down"></cds-icon>
-            </button>
-            <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-                    <h4 class="dropdown-header">Related Sites</h4>
-                    <a href="https://relaycomputer.co.uk" target="_blank" clrDropdownItem>Blog</a>
-                <a href="https://github.com/paul80nd/relay-computer" target="_blank" clrDropdownItem>GitHub Source</a>
-            </clr-dropdown-menu>
-        </clr-dropdown>
-    </div>
+  <div class="branding" style="padding: 0 .4rem;">
+    <a href="#" class="nav-link">
+      <cds-icon shape="flask" solid></cds-icon>
+      <span class="title">Relay Computer Simulator</span>
+    </a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <cds-icon shape="upload-cloud"></cds-icon>
+        <cds-icon shape="angle" direction="down"></cds-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <h4 class="dropdown-header">Import Assembled</h4>
+        <a href="#" (click)="loadFromClipboard()" clrDropdownItem>from Clipboard</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <cds-icon shape="clock"></cds-icon>
+        <cds-icon shape="angle" direction="down"></cds-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <h4 class="dropdown-header">Clock Speed</h4>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 500" clrDropdownItem>1Hz</a>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 250" clrDropdownItem>2Hz</a>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 125" clrDropdownItem>4Hz</a>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 62" clrDropdownItem>8Hz</a>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 31" clrDropdownItem>16Hz</a>
+        <a href="#" (click)="computer.controlSwitchesCard.clockSpeed = 1" clrDropdownItem>Max Hz</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <cds-icon shape="library"></cds-icon>
+        <cds-icon shape="angle" direction="down"></cds-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <h4 class="dropdown-header">Related Sites</h4>
+        <a href="https://relaycomputer.co.uk" target="_blank" clrDropdownItem>Blog</a>
+        <a href="https://github.com/paul80nd/relay-computer" target="_blank" clrDropdownItem>GitHub Source</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
 </header>
 <div style="position: absolute; width: 100vw; padding: 2px;">
-    <div class="scaling-svg-container" style="padding-bottom:49.375%;">
-        <rc-computer [computer]="computer"></rc-computer>
-    </div>
+  <div class="scaling-svg-container" style="padding-bottom:49.375%;">
+    <rc-computer [computer]="computer"></rc-computer>
+  </div>
 </div>
 <div style="position: absolute; width: 50vw; height: 26.8vw; padding: 4px 5px 4px 2px; left: 50vw; overflow: hidden;">
-    <div class="main-container" style="height: 26.5vw">
-        <div class="content-container">
-            <div class="content-area" style="width: 55%; padding-right: 4px !important;">
-                <clr-tabs>
-                    <clr-tab>
-                        <button clrTabLink><cds-icon shape="help-info"></cds-icon> Info</button>
-                        <clr-tab-content *clrIfActive="true">
-                            <rc-documentation></rc-documentation>
-                        </clr-tab-content>
-                    </clr-tab>
-                    <clr-tab>
-                        <button clrTabLink><cds-icon shape="ruler-pencil"></cds-icon> Architecture</button>
-                        <clr-tab-content *clrIfActive>
-                            <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
-                                <rc-architecture-diagram></rc-architecture-diagram>
-                            </div>
-                        </clr-tab-content>
-                    </clr-tab>
-                </clr-tabs>
-            </div>
-            <div class="content-area" style="width: 45%">
-                <clr-tabs>
-                    <clr-tab>
-                        <button clrTabLink><cds-icon shape="memory"></cds-icon> Memory</button>
-                        <clr-tab-content *clrIfActive="true">
-                            <rc-memory-list [card]="computer.yBackplane.memory" [pc]="computer.xBackplane.registerPC"></rc-memory-list>
-                        </clr-tab-content>
-                    </clr-tab>
-                    <clr-tab>
-                        <button clrTabLink><cds-icon shape="list"></cds-icon> Opcodes</button>
-                        <clr-tab-content *clrIfActive>
-                            <rc-instruction-set></rc-instruction-set>
-                        </clr-tab-content>
-                    </clr-tab>
-                </clr-tabs>
-            </div>
-        </div>
+  <div class="main-container" style="height: 26.5vw">
+    <div class="content-container">
+      <div class="content-area" style="width: 55%; padding-right: 4px !important;">
+        <clr-tabs>
+          <clr-tab>
+            <button clrTabLink>
+              <cds-icon shape="help-info"></cds-icon> Info
+            </button>
+            <clr-tab-content *clrIfActive="true">
+              <rc-documentation></rc-documentation>
+            </clr-tab-content>
+          </clr-tab>
+          <clr-tab>
+            <button clrTabLink>
+              <cds-icon shape="ruler-pencil"></cds-icon> Architecture
+            </button>
+            <clr-tab-content *clrIfActive>
+              <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
+                <rc-architecture-diagram></rc-architecture-diagram>
+              </div>
+            </clr-tab-content>
+          </clr-tab>
+        </clr-tabs>
+      </div>
+      <div class="content-area" style="width: 45%">
+        <clr-tabs>
+          <clr-tab>
+            <button clrTabLink>
+              <cds-icon shape="memory"></cds-icon> Memory
+            </button>
+            <clr-tab-content *clrIfActive="true">
+              <rc-memory-list [card]="computer.yBackplane.memory" [pc]="computer.xBackplane.registerPC">
+              </rc-memory-list>
+            </clr-tab-content>
+          </clr-tab>
+          <clr-tab>
+            <button clrTabLink>
+              <cds-icon shape="list"></cds-icon> Opcodes
+            </button>
+            <clr-tab-content *clrIfActive>
+              <rc-instruction-set></rc-instruction-set>
+            </clr-tab-content>
+          </clr-tab>
+        </clr-tabs>
+      </div>
     </div>
+  </div>
 </div>

@@ -18,6 +18,7 @@ import {
   ClarityIcons,
   angleIcon,
   clockIcon,
+  uploadCloudIcon,
   flaskIcon,
   helpInfoIcon,
   libraryIcon,
@@ -26,7 +27,7 @@ import {
   rulerPencilIcon
 } from '@cds/core/icon';
 
-ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, helpInfoIcon, libraryIcon, listIcon, memoryIcon, rulerPencilIcon);
+ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, uploadCloudIcon, helpInfoIcon, libraryIcon, listIcon, memoryIcon, rulerPencilIcon);
 
 @NgModule({
   declarations: [
