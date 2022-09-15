@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { AbortLines } from '../../../../model/bus/bus_part_lines';
-import { ISequencerCard } from '../../../../model/cards/sequencer.card';
+import { AbortLines, ISequencerCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

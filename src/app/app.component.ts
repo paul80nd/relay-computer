@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ComputerFactory, IComputer, IComputerFactory } from './model/computer';
+import { ComputerFactory, IComputer, IComputerFactory } from '@paul80nd/relay-computer-model';
 
 @Component({
   selector: 'rc-root',

@@ -2,9 +2,8 @@ import { Component, Input } from '@angular/core';
 
 import {
   AluFunctionClLines, AluOperationLines,
-  ConditionLines
-} from '../../../../model/bus/bus_part_lines';
-import { IAluControlCard } from '../../../../model/cards/alu_control.card';
+  ConditionLines, IAluControlCard
+} from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

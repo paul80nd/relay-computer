@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IMemoryCard } from '../../model/cards/memory.card';
-import { IRegisterPCCard } from 'src/app/model/cards/register_pc.card';
+import { IMemoryCard, IRegisterPCCard } from '@paul80nd/relay-computer-model';
 
 @Component({
   selector: 'rc-memory-list',

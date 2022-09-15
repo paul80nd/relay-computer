@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IControlSwitchesCard } from '../../../model/cards/control_switches.card';
+import { IControlSwitchesCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

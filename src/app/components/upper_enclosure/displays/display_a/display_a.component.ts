@@ -3,9 +3,8 @@ import { Component, Input } from '@angular/core';
 import {
   AluFunctionClLines, ClockLines,
   DataSwitchGateLines, I2BLines,
-  MemoryLines, RegAuxLines
-} from '../../../../model/bus/bus_part_lines';
-import { IDisplayACard } from '../../../../model/cards/display_a.card';
+  MemoryLines, RegAuxLines, IDisplayACard
+} from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

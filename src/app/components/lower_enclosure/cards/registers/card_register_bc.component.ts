@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IRegisterBCCard } from '../../../../model/cards/register_bc.card';
+import { IRegisterBCCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

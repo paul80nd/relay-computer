@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IComputer } from '../model/computer';
+import { IComputer } from '@paul80nd/relay-computer-model'
 
 @Component({
   selector: 'rc-computer',
