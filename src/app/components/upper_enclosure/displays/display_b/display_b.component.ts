@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ClockLines, OperationLines } from '../../../../model/bus/bus_part_lines';
-import { IDisplayBCard } from '../../../../model/cards/display_b.card';
+import { ClockLines, OperationLines, IDisplayBCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

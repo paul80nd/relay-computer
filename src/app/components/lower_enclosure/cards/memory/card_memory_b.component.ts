@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { IMemoryCard } from '../../../../model/cards/memory.card';
+import { IMemoryCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

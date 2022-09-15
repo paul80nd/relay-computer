@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { ByteLedsComponent } from './../byte_leds/byte_leds.component';
-import { IRegisterYCardPart } from '../../../../model/cards/parts/register_y.cardpart';
+import { IRegisterYCardPart } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

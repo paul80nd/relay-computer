@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { OperationLines } from '../../../../model/bus/bus_part_lines';
-import { IDecoderCard } from '../../../../model/cards/decoder.card';
+import { OperationLines, IDecoderCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

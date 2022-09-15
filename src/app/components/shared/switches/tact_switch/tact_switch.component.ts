@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { BitValue } from '../../../../model/bit_value';
-import { CardPart } from '../../../../model/cards/card_part';
+import { BitValue, CardPart } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

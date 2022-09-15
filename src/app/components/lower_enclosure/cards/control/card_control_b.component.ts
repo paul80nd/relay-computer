@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines } from '../../../../model/bus/bus_part_lines';
-import { IControlCard } from '../../../../model/cards/control.card';
+import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines, IControlCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({

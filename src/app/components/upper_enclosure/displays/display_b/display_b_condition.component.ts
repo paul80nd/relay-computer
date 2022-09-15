@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
-import { BitValue } from '../../../../model/bit_value';
-import { ConditionLines } from '../../../../model/bus/bus_part_lines';
+import { BitValue } from '@paul80nd/relay-computer-model';
+import { ConditionLines } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
