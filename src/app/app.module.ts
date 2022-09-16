@@ -1,8 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 
@@ -37,18 +35,13 @@ ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, uploadCloudIcon, helpInfo
     BrowserModule,
     BrowserAnimationsModule,
     ClarityModule,
-    FormsModule,
-    HttpClientModule,
     ArchitectureDiagramModule,
-    BrowserModule,
     ComputerModule,
     DocumentationModule,
     InstructionSetModule,
-    MemoryListModule,
-    ClarityModule
+    MemoryListModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
