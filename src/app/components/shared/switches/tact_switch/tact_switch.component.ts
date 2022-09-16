@@ -12,7 +12,7 @@ export class TactileSwitchComponent {
 
   @Input() part!: CardPart;
   @Input() valueIn!: BitValue;
-  @Input() description!: [string, string];
+  @Input() description!: [string, string?];
   @Input() color!: string;
   @Input() bitTarget!: number;
 

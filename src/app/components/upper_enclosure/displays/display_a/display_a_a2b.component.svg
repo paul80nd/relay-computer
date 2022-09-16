@@ -1,15 +1,15 @@
 <svg:g>
     <!-- Origin at top left switch -->
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','X']" [color]="'Yellow'" [bitTarget]="ldXLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','X']" [color]="'Yellow'" [bitTarget]="ldXLine"
         transform="translate(0,0)"></g>
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','Y']" [color]="'Yellow'" [bitTarget]="ldYLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','Y']" [color]="'Yellow'" [bitTarget]="ldYLine"
         transform="translate(23,0)"></g>
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['ld','XY']" [color]="'Yellow'" [bitTarget]="ldXYLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','XY']" [color]="'Yellow'" [bitTarget]="ldXYLine"
         transform="translate(46,0)"></g>
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','X']" [color]="'Green'" [bitTarget]="selXLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','X']" [color]="'Green'" [bitTarget]="selXLine"
         transform="translate(0,23)"></g>
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','Y']" [color]="'Green'" [bitTarget]="selYLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','Y']" [color]="'Green'" [bitTarget]="selYLine"
         transform="translate(23,23)"></g>
-    <g rc-tact-switch [part]="value" [valueIn]="valueIn" [description]="['sel','XY']" [color]="'Green'" [bitTarget]="selXYLine" 
+    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','XY']" [color]="'Green'" [bitTarget]="selXYLine"
         transform="translate(46,23)"></g>
 </svg:g>
