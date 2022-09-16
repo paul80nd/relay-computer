@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { BitValue , RegABCDLines } from '@paul80nd/relay-computer-model';
+import { BitValue, CardPart, RegABCDLines } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
@@ -18,7 +18,7 @@ export class DisplayAA1AComponent {
   selCLine: number = RegABCDLines.RSC;
   selDLine: number = RegABCDLines.RSD;
 
-  @Input() value: BitValue | undefined;
-  @Input() valueIn: BitValue | undefined;
+  @Input() part!: CardPart;
+  @Input() valueIn!: BitValue;
 
 }
