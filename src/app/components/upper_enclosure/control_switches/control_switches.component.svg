@@ -3,8 +3,7 @@
     <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
         <g>
 
-            <rect x="0" y="172" width="477" height="60" fill="gray" />
-            <rect x="0" y="172" width="477" height="60" stroke="black" class="cardOutline" />
+            <rect x="0" y="172" width="474" height="60" class="perspex" />
 
             <g rc-byte-switch [part]="card.data" transform="translate(10,176)"></g>
 
@@ -36,14 +35,12 @@
                 <rect x="278" y="187" width="21" height="15" fill="none" pointer-events="visible" (click)="changeExamine(true)" />
                 <rect x="278" y="202" width="21" height="15" fill="none" pointer-events="visible" (click)="changeExamine(false)" />
             </g>
-            <rect x="250" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(250 175.5)" fill="black">
-                <tspan class="d-text4" x="6.3876953" y="4">DEP</tspan>
-                <tspan class="d-text4" x="5.1660156" y="8">NEXT</tspan>
+            <text transform="translate(250 175.5)" fill="white">
+                <tspan class="d-text5" x="5.3876953" y="3">DEP</tspan>
+                <tspan class="d-text5" x="4.1660156" y="9">NEXT</tspan>
             </text>
-            <rect x="250" y="220" width="21" height="8" fill="white" />
-            <text transform="translate(250 221.5)" fill="black">
-                <tspan class="d-text4" x="6.3876953" y="4">DEP</tspan>
+            <text transform="translate(250 221.5)" fill="white">
+                <tspan class="d-text5" x="5.3876953" y="4">DEP</tspan>
             </text>
 
             <g class="clickable">
@@ -66,14 +63,12 @@
                 <rect x="250" y="187" width="21" height="15" fill="none" pointer-events="visible" (click)="changeDeposit(true)" />
                 <rect x="250" y="202" width="21" height="15" fill="none" pointer-events="visible" (click)="changeDeposit(false)" />
             </g>
-            <rect x="278" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(278 175.5)" fill="black">
-                <tspan class="d-text4" x="4.8320312" y="4">EXAM</tspan>
-                <tspan class="d-text4" x="5.1660156" y="8">NEXT</tspan>
+            <text transform="translate(278 175.5)" fill="white">
+                <tspan class="d-text5" x="3.8320312" y="3">EXAM</tspan>
+                <tspan class="d-text5" x="4.1660156" y="9">NEXT</tspan>
             </text>
-            <rect x="278" y="220" width="21" height="8" fill="white" />
-            <text transform="translate(278 221.5)" fill="black">
-                <tspan class="d-text4" x="4.8320312" y="4">EXAM</tspan>
+            <text transform="translate(278 221.5)" fill="white">
+                <tspan class="d-text5" x="3.4320312" y="4">EXAM</tspan>
             </text>
 
             <g (click)="changeLoadAddr()" class="clickable">
@@ -90,10 +85,9 @@
                     <ellipse cx="330.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>
             </g>
-            <rect x="320" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(320 175.5)" fill="black">
-                <tspan class="d-text4" x="5.053711" y="4">LOAD</tspan>
-                <tspan class="d-text4" x="4.9433594" y="8">ADRS</tspan>
+            <text transform="translate(320 175.5)" fill="white">
+                <tspan class="d-text5" x="3.053711" y="3">LOAD</tspan>
+                <tspan class="d-text5" x="2.9433594" y="9">ADRS</tspan>
             </text>
                 <!--
                 <rect x="390" y="176" width="21" height="8" fill="white" />
@@ -117,10 +111,9 @@
                     <ellipse cx="372.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>
             </g>
-            <rect x="362" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(362 175.5)" fill="black">
-                <tspan class="d-text4" x="6.609375" y="4">CLK</tspan>
-                <tspan class="d-text4" x="5.2763672" y="8">STEP</tspan>
+            <text transform="translate(362 175.5)" fill="white">
+                <tspan class="d-text5" x="5.109375" y="3">CLK</tspan>
+                <tspan class="d-text5" x="3.7763672" y="9">STEP</tspan>
             </text>
 
 
@@ -138,9 +131,8 @@
                     <ellipse cx="428.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>
             </g>
-            <rect x="418" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(418 177.5)" fill="black">
-                <tspan class="d-text4" x="5.1660156" y="4">RSET</tspan>
+            <text transform="translate(418 177.5)" fill="white">
+                <tspan class="d-text5" x="4.1660156" y="4">RSET</tspan>
             </text>
 
             <g (click)="card.toggleRunStop()" class="clickable">
@@ -157,13 +149,11 @@
                     <ellipse cx="456.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
                 </g>
             </g>
-            <rect x="446" y="176" width="21" height="8" fill="white" />
-            <text transform="translate(446 177.5)" fill="black">
-                <tspan class="d-text4" x="6.1669922" y="4">RUN</tspan>
+            <text transform="translate(446 177.5)" fill="white">
+                <tspan class="d-text5" x="5.1669922" y="4">RUN</tspan>
             </text>
-            <rect x="446" y="220" width="21" height="8" fill="white" />
-            <text transform="translate(446 221.5)" fill="black">
-                <tspan class="d-text4" x="5.0546875" y="4">STOP</tspan>
+            <text transform="translate(446 221.5)" fill="white">
+                <tspan class="d-text5" x="4.0546875" y="4">STOP</tspan>
             </text>
 
         </g>

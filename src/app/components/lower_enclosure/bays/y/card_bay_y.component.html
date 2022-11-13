@@ -3,16 +3,16 @@
     <title>Card Bay Y</title>
     <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
         <svg:g>
-            <svg:rect x="0" y="0" width="237" height="200" fill="gray" />
-            <svg:rect x="0" y="0" width="237" height="200" class="cardOutline" />
+            <svg:rect x="0" y="0" width="237" height="200" class="bayBackground" />
+            <svg:rect x="11" y="2" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+            <svg:rect x="11" y="42" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+            <svg:rect x="11" y="82" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+            <svg:rect x="11" y="122" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+            <svg:rect x="11" y="162" width="214" height="30" class="ledHolder" rx="5" ry="5" />
             <svg:g rc-card-register-j [card]="backplane.registerJ" transform="translate(0,0)"></svg:g>
-            <svg:line x1="0" y1="40" x2="237" y2="40" class="cardOutline" />
             <svg:g rc-card-register-m [card]="backplane.registerM" transform="translate(0,40)"></svg:g>
-            <svg:line x1="0" y1="80" x2="237" y2="80" class="cardOutline" />
             <svg:g rc-card-register-xy [card]="backplane.registerXY" transform="translate(0,80)"></svg:g>
-            <svg:line x1="0" y1="120" x2="237" y2="120" class="cardOutline" />
             <svg:g rc-card-memory-a [card]="backplane.memory" transform="translate(0,120)"></svg:g>
-            <svg:line x1="0" y1="160" x2="237" y2="160" class="cardOutline" />
             <svg:g rc-card-memory-b [card]="backplane.memory" transform="translate(0,160)"></svg:g>
         </svg:g>
     </svg:g>

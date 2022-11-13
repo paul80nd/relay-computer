@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: darkslategrey;
+    background-color: hsl(198, 0%, 20%);
     overflow: hidden;
 }
 
@@ -54,7 +54,39 @@ svg text::selection {
     stroke: black;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: .25;
+    stroke-width: .5;
+}
+
+.bayBackground {
+  fill: hsl(198, 0%, 15%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
+.ledHolder {
+  fill: hsl(93, 100%, 10%);
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
+.sectionTitle {
+  fill: hsl(198, 100%, 21%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
+.perspex {
+  fill: hsl(198, 0%, 10%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
 /* Button Styling (SVG) */
@@ -63,33 +95,55 @@ svg text::selection {
     cursor: pointer;
 }
 
-.btnOutline, .indOutline, .ledOutline, .swtOutline {
-    stroke: navy;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: .5;
+.btnOutline, .swtOutline {
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
-.btnYellow, .btnGreen, .btnRed,
-.ledYellow, .ledGreen, .ledRed,
+.indOutline {
+  stroke: #eee;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1;
+}
+
 .indYellow, .indGreen, .indRed {
+    fill: hsl(198, 0%, 50%);
+}
+
+.ledRed, .ledYellow, .ledGreen {
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
+.ledRed {
     fill: #bbb;
 }
+.btnYellow { fill: hsl(38, 100%, 28%); }
+.ledYellow { fill: hsl(31, 100%, 19%); }
 .btnYellow.on, .indYellow.on, .ledYellow.on {
-    fill: yellow;
+    fill: hsl(48, 94%, 57%);
 }
+.btnGreen { fill: hsl(93, 100%, 21%); }
+.ledGreen { fill: hsl(93, 100%, 13%); }
 .btnGreen.on, .indGreen.on, .ledGreen.on {
-    fill: #80ff00;
+    fill: hsl(93, 77%, 44%);
 }
+.btnRed { fill: hsl(9, 100%, 20%); }
+.ledRed { fill: hsl(9, 100%, 20%); }
 .btnRed.on, .indRed.on, .ledRed.on {
-    fill: firebrick;
+    fill:  hsl(9, 92%, 50%);
 }
 
 .d-text3, .d-text4, .d-text5,
 .d-text6, .d-text7, .d-text8, .d-text9,
 .d-text10, .d-text13, .d-text14 {
     font-size: 6px;
-    font-weight: 500;
+    font-weight: 600;
 }
 .d-text3 { font-size: 3px; }
 .d-text4 { font-size: 4px; }
