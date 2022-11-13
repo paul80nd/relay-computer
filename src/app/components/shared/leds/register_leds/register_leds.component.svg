@@ -2,25 +2,13 @@
     <!-- Origin is at center of first (LD) led -->
     <title>Register {{ description }}</title>
 
-    <rect x="-4" y="7" width="107" height="5" fill="white" />
-    
     <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.load" />
     <circle cx="0" cy="0" r="4" class="ledOutline" />
-    <text transform="translate(-4 7)" fill="black">
-        <tspan class="d-text4" fill="black" x="1.7753906" y="3.75">Ld</tspan>
-    </text>
 
     <g *ngIf="register.isSelectable">
-        <circle cx="11" cy="0" r="4" class="ledGreen" [class.on]="register.select" />
-        <circle cx="11" cy="0" r="4" class="ledOutline" />
-        <text transform="translate(6 7)" fill="black">
-            <tspan class="d-text4" x="2.109375" y="3.75">Sel</tspan>
-        </text>
+        <circle cx="10.75" cy="0" r="4" class="ledGreen" [class.on]="register.select" />
+        <circle cx="10.75" cy="0" r="4" class="ledOutline" />
     </g>
-    
-    <g rc-byte-leds [value]="register.value.value" transform="translate(22,0)"></g>
-    
-    <text transform="translate(18 7)" fill="black">
-        <tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ description }}</tspan>
-    </text>
+
+    <g rc-byte-leds [value]="register.value.value" transform="translate(21.5,0)"></g>
 </svg:g>
