@@ -3,53 +3,31 @@
     <g>
         <!-- Hi Register -->
         <title>Register {{ descriptionHi }}</title>
-    
-        <rect x="-4" y="7" width="107" height="5" fill="white" />
-        
+
         <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.loadHi" />
         <circle cx="0" cy="0" r="4" class="ledOutline" />
-        <text transform="translate(-4 7)" fill="black">
-            <tspan class="d-text4" fill="black" x="1.7753906" y="3.75">Ld</tspan>
-        </text>
-    
+
         <g *ngIf="register.isSelectableHi">
-            <circle cx="11" cy="0" r="4" class="ledGreen" [class.on]="register.selectHi" />
-            <circle cx="11" cy="0" r="4" class="ledOutline" />
-            <text transform="translate(6 7)" fill="black">
-                <tspan class="d-text4" x="2.109375" y="3.75">Sel</tspan>
-            </text>
+            <circle cx="10.25" cy="0" r="4" class="ledGreen" [class.on]="register.selectHi" />
+            <circle cx="10.25" cy="0" r="4" class="ledOutline" />
         </g>
-        
-        <g rc-byte-leds [value]="register.valueHi.value" transform="translate(22,0)"></g>
-        
-        <text transform="translate(18 7)" fill="black">
-            <tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ descriptionHi }}</tspan>
-        </text>
+
+        <g rc-byte-leds [value]="register.valueHi.value" transform="translate(20.5,0)"></g>
+
     </g>
-    <g transform="translate(110,0)">
+    <g transform="translate(104,0)">
         <!-- Lo Register -->
         <title>{{ descriptionLo }}</title>
 
-        <rect x="-4" y="7" width="107" height="5" fill="white" />
-            
         <g rc-byte-leds [value]="register.valueLo.value" transform="translate(0,0)"></g>
-        
-        <circle cx="88" cy="0" r="4" class="ledYellow" [class.on]="register.loadLo" />
-        <circle cx="88" cy="0" r="4" class="ledOutline" />
-        <text transform="translate(84 7)" fill="black">
-            <tspan class="d-text4" fill="black" x="1.7753906" y="3.75">Ld</tspan>
-        </text>
+
+        <circle cx="82.25" cy="0" r="4" class="ledYellow" [class.on]="register.loadLo" />
+        <circle cx="82.25" cy="0" r="4" class="ledOutline" />
 
         <g *ngIf="register.isSelectableLo">
-            <circle cx="99" cy="0" r="4" class="ledGreen" [class.on]="register.selectLo" />
-            <circle cx="99" cy="0" r="4" class="ledOutline" />
-            <text transform="translate(94 7)" fill="black">
-                <tspan class="d-text4" x="2.109375" y="3.75">Sel</tspan>
-            </text>
+            <circle cx="93" cy="0" r="4" class="ledGreen" [class.on]="register.selectLo" />
+            <circle cx="93" cy="0" r="4" class="ledOutline" />
         </g>
 
-        <text transform="translate(-4 7)" fill="black">
-            <tspan class="d-text4" fill="black" x="42" y="3.75" text-anchor="middle">{{ descriptionLo }}</tspan>
-        </text>
     </g>
 </svg:g>
