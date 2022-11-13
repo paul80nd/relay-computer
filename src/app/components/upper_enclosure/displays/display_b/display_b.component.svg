@@ -2,7 +2,7 @@
     <title>Display B</title>
     <g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
         <g>
-            <rect x="240" y="0" width="237" height="169" fill="gray" />
+            <rect x="240" y="0" width="237" height="169" class="perspex" />
             <rect x="240" y="0" width="237" height="169" stroke="black" class="cardOutline" />
 
             <g *ngFor="let i of [7,6,5,4,3,2,1,0]">
