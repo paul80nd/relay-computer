@@ -3,36 +3,25 @@
     <title>Control Card A</title>
 
     <circle cx="19.5" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at08Line)" />
-    <circle cx="19.5" cy="13" r="4" class="ledOutline" />
     <!--
     <circle cx="25" cy="25" r="4" class="ledYellow" />
-    <circle cx="25" cy="25" r="4" class="ledOutline" />
     <circle cx="36" cy="25" r="4" class="ledYellow" />
-    <circle cx="36" cy="25" r="4" class="ledOutline" />
     <circle cx="47" cy="25" r="4" class="ledYellow" />
-    <circle cx="47" cy="25" r="4" class="ledOutline" />
     -->
 
     <!--
     <circle cx="97" cy="25" r="4" class="ledYellow" />
-    <circle cx="97" cy="25" r="4" class="ledOutline" />
     -->
     <circle cx="107.5" cy="13" r="4" class="ledYellow" [class.on]="card.memory.bit(merLine)" />
-    <circle cx="107.5" cy="13" r="4" class="ledOutline" />
     <!--
     <circle cx="119" cy="25" r="4" class="ledYellow" />
-    <circle cx="119" cy="25" r="4" class="ledOutline" />
     -->
     <circle cx="128" cy="13" r="4" class="ledYellow" [class.on]="card.i2b.bit(i2bLine)" />
-    <circle cx="128" cy="13" r="4" class="ledOutline" />
 
     <!--
     <circle cx="190" cy="25" r="4" class="ledYellow" />
-    <circle cx="190" cy="25" r="4" class="ledOutline" />
     <circle cx="201" cy="25" r="4" class="ledYellow" />
-    <circle cx="201" cy="25" r="4" class="ledOutline" />
     <circle cx="179" cy="25" r="4" class="ledYellow" />
-    <circle cx="179" cy="25" r="4" class="ledOutline" />
     -->
 
        <svg:g transform="translate(-4,10)">

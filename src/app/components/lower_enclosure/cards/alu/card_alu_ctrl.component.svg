@@ -2,38 +2,22 @@
     <!-- Origin at bay top left -->
     <title>ALU Control Card</title>
     <circle cx="19" cy="13" r="4" class="ledYellow" [class.on]="card.func.bit(f2Line)" />
-    <circle cx="19" cy="13" r="4" class="ledOutline" />
     <circle cx="29.25" cy="13" r="4" class="ledYellow" [class.on]="card.func.bit(f1Line)" />
-    <circle cx="29.25" cy="13" r="4" class="ledOutline" />
     <circle cx="39.5" cy="13" r="4" class="ledYellow" [class.on]="card.func.bit(f0Line)" />
-    <circle cx="39.5" cy="13" r="4" class="ledOutline" />
     <circle cx="49.75" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(shlLine)" />
-    <circle cx="49.75" cy="13" r="4" class="ledOutline" />
     <circle cx="60" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(notLine)" />
-    <circle cx="60" cy="13" r="4" class="ledOutline" />
     <circle cx="70.25" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(xorLine)" />
-    <circle cx="70.25" cy="13" r="4" class="ledOutline" />
     <circle cx="80.75" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(orrLine)" />
-    <circle cx="80.75" cy="13" r="4" class="ledOutline" />
     <circle cx="91.5" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(andLine)" />
-    <circle cx="91.5" cy="13" r="4" class="ledOutline" />
     <circle cx="102" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(incLine)" />
-    <circle cx="102" cy="13" r="4" class="ledOutline" />
     <circle cx="112.5" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(addLine)" />
-    <circle cx="112.5" cy="13" r="4" class="ledOutline" />
     <circle cx="123" cy="13" r="4" class="ledGreen" [class.on]="card.operation.value.bit(clrLine)" />
-    <circle cx="123" cy="13" r="4" class="ledOutline" />
 
     <circle cx="175.5" cy="13" r="4" class="ledYellow" [class.on]="card.load" />
-    <circle cx="175.5" cy="13" r="4" class="ledOutline" />
     <circle cx="185.75" cy="13" r="4" class="ledGreen" [class.on]="card.select" />
-    <circle cx="185.75" cy="13" r="4" class="ledOutline" />
     <circle cx="196" cy="13" r="4" class="ledRed" [class.on]="card.condition.value.bit(snLine)" />
-    <circle cx="196" cy="13" r="4" class="ledOutline" />
     <circle cx="206.25" cy="13" r="4" class="ledRed" [class.on]="card.condition.value.bit(cyLine)" />
-    <circle cx="206.25" cy="13" r="4" class="ledOutline" />
     <circle cx="216.5" cy="13" r="4" class="ledRed" [class.on]="card.condition.value.bit(ezLine)" />
-    <circle cx="216.5" cy="13" r="4" class="ledOutline" />
 
 
       <svg:g transform="translate(-4,10)">

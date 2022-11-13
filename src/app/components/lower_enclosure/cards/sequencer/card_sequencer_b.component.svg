@@ -4,43 +4,26 @@
 
     <g *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]">
         <circle [attr.cx]="18.75+(10.4*i)" cy="18" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
-        <circle [attr.cx]="18.75+(10.4*i)" cy="18" r="4" class="ledOutline" />
     </g>
     <g *ngFor="let i of [10,11,12]">
         <circle [attr.cx]="18.75+(10.4*i)" cy="18" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
-        <circle [attr.cx]="18.75+(10.4*i)" cy="18" r="4" class="ledOutline" />
     </g>
 
     <circle cx="102" cy="8.5" r="4" class="ledYellow" [class.on]="card.abort.bit(at08Line)" />
-    <circle cx="102" cy="8.5" r="4" class="ledOutline" />
     <circle cx="122.7" cy="8.5" r="4" class="ledYellow" [class.on]="card.abort.bit(at10Line)" />
-    <circle cx="122.7" cy="8.5" r="4" class="ledOutline" />
     <circle cx="143.5" cy="8.5" r="4" class="ledYellow" [class.on]="card.abort.bit(at12Line)" />
-    <circle cx="143.5" cy="8.5" r="4" class="ledOutline" />
 
     <circle cx="165" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(0)" />
-    <circle cx="165" cy="18" r="4" class="ledOutline" />
     <circle cx="165" cy="8.5" r="4" class="ledGreen" [class.on]="card.pulse.bit(1)" />
-    <circle cx="165" cy="8.5" r="4" class="ledOutline" />
     <circle cx="175.5" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(2)" />
-    <circle cx="175.5" cy="18" r="4" class="ledOutline" />
     <circle cx="175.5" cy="8.5" r="4" class="ledGreen" [class.on]="card.pulse.bit(3)" />
-    <circle cx="175.5" cy="8.5" r="4" class="ledOutline" />
     <circle cx="185.25" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(4)" />
-    <circle cx="185.25" cy="18" r="4" class="ledOutline" />
     <circle cx="195.5" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(5)" />
-    <circle cx="195.5" cy="18" r="4" class="ledOutline" />
     <circle cx="195.5" cy="8.5" r="4" class="ledGreen" [class.on]="card.pulse.bit(6)" />
-    <circle cx="195.5" cy="8.5" r="4" class="ledOutline" />
     <circle cx="206" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(7)" />
-    <circle cx="206" cy="18" r="4" class="ledOutline" />
     <circle cx="206" cy="8.5" r="4" class="ledGreen" [class.on]="card.pulse.bit(8)" />
-    <circle cx="206" cy="8.5" r="4" class="ledOutline" />
     <circle cx="216.25" cy="18" r="4" class="ledGreen" [class.on]="card.pulse.bit(9)" />
-    <circle cx="216.25" cy="18" r="4" class="ledOutline" />
     <circle cx="216.25" cy="8.5" r="4" class="ledGreen" [class.on]="card.pulse.bit(10)" />
-    <circle cx="216.25" cy="8.5" r="4" class="ledOutline" />
-
 
          <svg:g transform="translate(-4,10)">
          <?xml version="1.0" encoding="utf-8" standalone="no"?>

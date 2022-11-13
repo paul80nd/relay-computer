@@ -2,10 +2,8 @@
     <!-- Origin at bay top left -->
     <title>ALU Arithmetic Card</title>
     <circle cx="60.5" cy="13" r="4" class="ledGreen" [class.on]="card.carryOut" />
-    <circle cx="60.5" cy="13" r="4" class="ledOutline" />
     <g rc-byte-leds [value]="card.value" transform="translate(82.25,13)"></g>
     <circle cx="175.5" cy="13" r="4" class="ledYellow" [class.on]="card.carryIn" />
-    <circle cx="175.5" cy="13" r="4" class="ledOutline" />
 
       <svg:g transform="translate(-4,10)">
       <?xml version="1.0" encoding="utf-8" standalone="no"?>

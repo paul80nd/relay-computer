@@ -95,11 +95,11 @@ svg text::selection {
     cursor: pointer;
 }
 
-.btnOutline, .ledOutline, .swtOutline {
-    stroke: navy;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: .5;
+.btnOutline, .swtOutline {
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
 .indOutline {
@@ -111,6 +111,13 @@ svg text::selection {
 
 .indYellow, .indGreen, .indRed {
     fill: hsl(198, 0%, 50%);
+}
+
+.ledRed, .ledYellow, .ledGreen {
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
 .ledRed {
