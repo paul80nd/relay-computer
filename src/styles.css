@@ -54,11 +54,31 @@ svg text::selection {
     stroke: black;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke-width: .25;
+    stroke-width: .5;
+}
+
+.bayBackground {
+  fill: hsl(198, 0%, 15%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
+.sectionTitle {
+  fill: hsl(198, 100%, 21%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
 .perspex {
   fill: hsl(198, 0%, 10%);
+  stroke: hsl(198, 100%, 32%);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
 }
 
 /* Button Styling (SVG) */

@@ -4,7 +4,6 @@
         <g>
 
             <rect x="0" y="172" width="477" height="60" class="perspex" />
-            <rect x="0" y="172" width="477" height="60" stroke="black" class="cardOutline" />
 
             <g rc-byte-switch [part]="card.data" transform="translate(10,176)"></g>
 
