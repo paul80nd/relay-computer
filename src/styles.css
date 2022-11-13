@@ -65,6 +65,14 @@ svg text::selection {
   stroke-width: .5;
 }
 
+.ledHolder {
+  fill: hsl(93, 100%, 10%);
+  stroke: black;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: .5;
+}
+
 .sectionTitle {
   fill: hsl(198, 100%, 21%);
   stroke: hsl(198, 100%, 32%);
@@ -95,7 +103,7 @@ svg text::selection {
 }
 
 .indOutline {
-  stroke: white;
+  stroke: #eee;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1;
