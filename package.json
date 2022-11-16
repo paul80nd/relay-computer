@@ -23,7 +23,7 @@
     "@clr/angular": "^13.8.2",
     "@clr/icons": "^13.0.2",
     "@clr/ui": "^13.8.2",
-    "@paul80nd/relay-computer-model": "^1.1.0",
+    "@paul80nd/relay-computer-model": "^1.2.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
