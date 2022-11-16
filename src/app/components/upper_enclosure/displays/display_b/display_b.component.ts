@@ -12,6 +12,7 @@ export class DisplayBComponent {
   setLine = OperationLines.ISET;
   mv8Line = OperationLines.IMV8;
   gtoLine = OperationLines.IGTO;
+  mscLine = OperationLines.IMSC;
 
   clkLine = ClockLines.CLK;
 
