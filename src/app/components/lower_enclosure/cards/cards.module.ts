@@ -6,6 +6,7 @@ import { LedsModule } from '../../shared/leds/leds.module';
 import { CardAluArithmeticComponent } from './alu/card_alu_arith.component';
 import { CardAluControlComponent } from './alu/card_alu_ctrl.component';
 import { CardAluLogicComponent } from './alu/card_alu_logic.component';
+import { CardClockComponent } from './clock/card_clock.component';
 import { CardControlAComponent } from './control/card_control_a.component';
 import { CardControlBComponent } from './control/card_control_b.component';
 import { CardIncrementerAComponent } from './incrementer/card_incrementer_a.component';
@@ -28,6 +29,7 @@ import { CardRegisterXYComponent } from './registers/card_register_xy.component'
     CardAluArithmeticComponent,
     CardAluControlComponent,
     CardAluLogicComponent,
+    CardClockComponent,
     CardControlAComponent,
     CardControlBComponent,
     CardDecoderComponent,
@@ -49,6 +51,7 @@ import { CardRegisterXYComponent } from './registers/card_register_xy.component'
     CardAluArithmeticComponent,
     CardAluControlComponent,
     CardAluLogicComponent,
+    CardClockComponent,
     CardControlAComponent,
     CardControlBComponent,
     CardDecoderComponent,
