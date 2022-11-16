@@ -1,84 +1,90 @@
 <div>
-    <h3>Relay Computer Simulator</h3>
-    <p>
-        <b>New: Tutorial below now uses branching to calculate the Fibonacci sequence!</b>
-    </p>
-    <p>This is a simulation of my relay computer using angular and SVG. Mainly I'm using it to learn and practice those dev
-        frameworks but this also provides me a way of virtually refining the next part of my relay computer without having
-        to spend the time and expense of experimenting for real.</p>
-    <p>More information on my relay computer can be found at my <a target="_blank" href="https://relaycomputer.co.uk">blog</a>.</p>
-    <p>If you would like to dive straight in and have a go on this simulator there is a tutorial section following the operating
-        instructions below</p>
-    <h5>Operating Instructions</h5>
-    <p>Most parts of the computer can be operated manually by using the switches in Display A (at the top left). Click a switch
-        once to turn it on and again to turn it off. When that line is active the switch lights up.</p>
-    <p>The primary switches are below Display A. Click a switch to turn it on (black circle is up) and again to turn it off
-        (black circle is down). The 'Deposit' and 'Exam' switches can be pushed up or down by clicking on the upper or lower
-        half. The remaining switches can be turned on by clicking anywhere within the switch. The 'Dep Next' and switches
-        to the right are all momentary and will reset to off after a short pause.</p>
-    <h5>Tutorial</h5>
-    <p>Assuming the simulator is in its default state (refresh this page to re-default it if not) you can follow this tutorial
-        to perform a calculation of the fibonacci sequence up to 233 (as that is the largest fibonacci number that can fit in an
-        8-bit register). This will allow you to try out the four instruction classes currently supported by the computer and
-        uses the newly added branching (GOTO) instruction.
-    </p>
-    <p>Here are the steps that make up the program using the four instruction classes ALU, MOVE8, GOTO and SETAB:</p>
-    <pre><code> 0000 SETAB A = 1  ; Initalise A = B = 1
+  <h3>Relay Computer Simulator</h3>
+  <p>
+    <b>New: Clock card added supporting the HALT instruction!</b>
+  </p>
+  <p>This is a simulation of my relay computer using angular and SVG. Mainly I'm using it to learn and practice those
+    dev frameworks but this also provides me a way of virtually refining the next part of my relay computer without
+    having to spend the time and expense of experimenting for real.</p>
+  <p>More information on my relay computer can be found at my <a target="_blank"
+      href="https://relaycomputer.co.uk">blog</a>.</p>
+  <p>If you would like to dive straight in and have a go on this simulator there is a tutorial section following the
+    operating instructions below. Alternatively you can <a target="_blank"
+      href="https://editor.relaycomputer.co.uk">write a program in assembly</a> and then import the opcodes to the
+    'memory' of this simulation.</p>
+  <h5>Operating Instructions</h5>
+  <p>Most parts of the computer can be operated manually by using the switches in Display A (at the top left). Click a
+    switch once to turn it on and again to turn it off. When that line is active the switch lights up.</p>
+  <p>The primary switches are below Display A. Click a switch to turn it on (black circle is up) and again to turn it
+    off (black circle is down). The 'Deposit' and 'Exam' switches can be pushed up or down by clicking on the upper or
+    lower half. The remaining switches can be turned on by clicking anywhere within the switch. The 'Dep Next' and
+    switches to the right are all momentary and will reset to off after a short pause.</p>
+  <h5>Tutorial</h5>
+  <p>Assuming the simulator is in its default state (refresh this page to re-default it if not) you can follow this
+    tutorial to perform a calculation of the fibonacci sequence up to 233 (as that is the largest fibonacci number that
+    can fit in an 8-bit register). This will allow you to try out the five instruction classes currently supported by
+    the computer.
+  </p>
+  <p>Here are the steps that make up the program using the five instruction classes ALU, MOVE8, GOTO, HALT and SETAB:
+  </p>
+  <pre><code> 0000 SETAB A = 1  ; Initalise A = B = 1
  0001 MOV8  B = A
-  
+
  0002 MOV8  C = B  ; C = B then B = A
  0003 MOV8  B = A
  0004 ALU   ADD    ; A = B + C
 
- 0005 GOTO  0005 C ; Loop forever if add
-                   ; caused an overflow
+ 0005 GOTO  000B C ; Jump to halt line if
+                   ; add caused an overflow
                    ; otherwise ...
 
  0008 GOTO  0002   ; Jump back to line 2
                    ; and repeat for next
-                   ; number in series</code></pre>
-    <p>
-        Using the list of instructions each line of this program can be converted in to the binary opcode equivalent as follows:
-    </p>
-    <pre><code> 0000 01000001 ; SETAB A = 1
+                   ; number in series
+
+ 000B HALT         ; Halt execution</code></pre>
+  <p>
+    Using the list of instructions each line of this program can be converted in to the binary opcode equivalent as
+    follows:
+  </p>
+  <pre><code> 0000 01000001 ; SETAB A = 1
  0001 00001000 ; MOV8  B = A
-        
+
  0002 00010001 ; MOV8  C = B
  0003 00001000 ; MOV8  B = A
  0004 10000001 ; ALU   ADD
 
- 0005 11101000 ; GOTO  0005 C
+ 0005 11101000 ; GOTO  000B C
  0006 00000000
- 0007 00000101
- 
+ 0007 00001011
+
  0008 11100110 ; GOTO  0002
  0009 00000000
- 000A 00000010</code></pre>
-    <p>
-        Because the computer hasn't got a HALT instruction yet it's necessary to put it in an infinite loop when the add
-        operation causes an overflow (at which point the last result we got of 233 is as high as we can count in a single
-        8-bit register).
-    </p>
-    <p>
-        To load this program in to memory, line-by-line, set the black primary switches to match the opcode and then flick the 'DEP
-        NEXT' switch which will load the instrucion into memory and then advance the program counter. Just keep setting the
-        primary switches and flicking 'DEP NEXT' until all opcodes have been entered. Once the program is loaded you should
-        see the following values in the memory view:
-    </p>
-    <pre><code> 000  41 08 11 08 81 E8 00 05
-      E6 00 02 00 00 00 00 00
+ 000A 00000010
+
+ 000B 10101110 ; HALT</code></pre>
+  <p>
+    To load this program in to memory, line-by-line, set the black primary switches to match the opcode and then flick
+    the 'DEP NEXT' switch which will load the instrucion into memory and then advance the program counter. Just keep
+    setting the primary switches and flicking 'DEP NEXT' until all opcodes have been entered. Once the program is loaded
+    you should see the following values in the memory view:
+  </p>
+  <pre><code> 000  41 08 11 08 81 E8 00 0B
+      E6 00 02 AE 00 00 00 00
  001  00 00 00 00 00 00 00 00
       00 00 00 00 00 00 00 00
  ...</code></pre>
-    <p>
-        This is the hexadecimal representation of each 8-bit opcode loaded in to memory. To execute the program first set all the black
-        switches back to 0 and flick the 'LOAD ADDR' switch to reset the program counter back to the first position in memory.
-        To prime the sequencer flick the 'RSET' switch which sets the 'S00' light in the sequencer. You can now flick the RUN/STOP switch
-        to RUN and the program will begin executing.
-    </p>
-    <p>
-        Immediately following each ALU ADD you'll find the next sequence number in register A. The sequence starts with 1 loaded in to
-        register B and C so the sequence in register A goes 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 at which point the program then
-        loops endlessly when the next value (377) causes an overflow.
-    </p>    
+  <p>
+    This is the hexadecimal representation of each 8-bit opcode loaded in to memory. To execute the program first set
+    all the black switches back to 0 and flick the 'LOAD ADDR' switch to reset the program counter back to the first
+    position in memory. To prime the sequencer flick the 'RSET' switch which sets the 'S00' light in the sequencer. You
+    can now flick the RUN/STOP switch to RUN and the program will begin executing.
+  </p>
+  <p>
+    Immediately following each ALU ADD you'll find the next sequence number in register A. The sequence starts with 1
+    loaded in to register B and C so the sequence in register A goes 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 at which
+    point the program then jumps to the halt instruction (when the next value (377) causes an overflow) and the clock is
+    halted. Execution can be continued by flicking the 'RSRT' (Restart) switch although the computer will just run the
+    remaining 00s in memory which represent copying register A to register A (clearing the value).
+  </p>
 </div>
