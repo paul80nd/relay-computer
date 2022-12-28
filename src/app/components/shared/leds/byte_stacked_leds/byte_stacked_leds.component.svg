@@ -1,9 +1,9 @@
 <svg:g>
-    <!-- Origin is at centre of bit 7 led -->
-    <g *ngFor="let i of [7,6,5,4]">
-        <circle [attr.cx]="31-(10.35*(i-4))" cy="0" r="4" class="ledRed" [class.on]="value.bit(i)"></circle>
-    </g>
-    <g *ngFor="let i of [3,2,1,0]">
-        <circle [attr.cx]="31-(10.35*i)" cy="9.5" r="4" class="ledRed" [class.on]="value.bit(i)"></circle>
-    </g>
+  <!-- Origin is at centre of bit 7 led -->
+  <g *ngFor="let i of [7,6,5,4]">
+    <circle [attr.cx]="31-(10.35*(i-4))" cy="0" r="4" class="ledRed" [class.on]="value.bit(i)"></circle>
+  </g>
+  <g *ngFor="let i of [3,2,1,0]">
+    <circle [attr.cx]="31-(10.35*i)" cy="9.5" r="4" class="ledRed" [class.on]="value.bit(i)"></circle>
+  </g>
 </svg:g>

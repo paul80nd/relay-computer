@@ -1,6 +1,6 @@
 <svg:g>
   <!-- Origin at bay top left -->
-  <g rc-register-816-leds [register]="card.register" descriptionHi="Register M1" descriptionLo="Register M2" transform="translate(19.75,13)"></g>
+  <g rc-register-816-leds [register]="card.register" descriptionHi="Register M1" descriptionLo="Register M2" transform="translate(19.75,17.5)"></g>
 
   <svg:g transform="translate(-4,10)">
     <?xml version="1.0" encoding="utf-8" standalone="no"?>
