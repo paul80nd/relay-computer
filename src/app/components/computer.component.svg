@@ -1,42 +1,44 @@
-<svg class="scaling-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 951 468">
-    <svg:g rc-display-a transform="translate(474,12)" [card]="computer.displayACard"></svg:g>
-    <svg:g rc-display-b transform="translate(711,12)" [card]="computer.displayBCard"></svg:g>
-    <svg:g rc-control-switches transform="translate(474,193)" [card]="computer.controlSwitchesCard"></svg:g>
-    <svg:g rc-card-bay-w transform="translate(0,265)" [backplane]="computer.wBackplane"></svg:g>
-    <svg:g rc-card-bay-x transform="translate(237,265)" [backplane]="computer.xBackplane"></svg:g>
-    <svg:g rc-card-bay-y transform="translate(474,265)" [backplane]="computer.yBackplane"></svg:g>
-    <svg:g rc-card-bay-z transform="translate(711,265)" [backplane]="computer.zBackplane"></svg:g>
-    <svg:g rc-state-view transform="translate(237,12)" [computer]="computer"></svg:g>
-    <svg:rect x="237" y="0" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(237 0)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Computer State</svg:tspan>
-    </svg:text>
-    <svg:rect x="474" y="0" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(474 0)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Display A</svg:tspan>
-    </svg:text>
-    <svg:rect x="711" y="0" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(711 0)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Display B</svg:tspan>
-    </svg:text>
-    <svg:rect x="474" y="181" width="474" height="12" class="sectionTitle" />
-    <svg:text transform="translate(474 181)" fill="#eee">
-        <svg:tspan class="d-text7" x="238.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Primary Control Switches</svg:tspan>
-    </svg:text>
-    <svg:rect x="0" y="253" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(0 253)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay W</svg:tspan>
-    </svg:text>
-    <svg:rect x="237" y="253" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(237 253)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay X</svg:tspan>
-    </svg:text>
-    <svg:rect x="474" y="253" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(474 253)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay Y</svg:tspan>
-    </svg:text>
-    <svg:rect x="711" y="253" width="237" height="12" class="sectionTitle" />
-    <svg:text transform="translate(711 253)" fill="#eee">
-        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay Z</svg:tspan>
-    </svg:text>
+<svg class="scaling-svg"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="-1 -1 951 468">
+  <svg:g rc-display-a transform="translate(474,12)" [card]="computer.displayACard"></svg:g>
+  <svg:g rc-display-b transform="translate(711,12)" [card]="computer.displayBCard"></svg:g>
+  <svg:g rc-control-switches transform="translate(474,193)" [card]="computer.controlSwitchesCard"></svg:g>
+  <svg:g rc-card-bay-w transform="translate(0,265)" [backplane]="computer.wBackplane"></svg:g>
+  <svg:g rc-card-bay-x transform="translate(237,265)" [backplane]="computer.xBackplane"></svg:g>
+  <svg:g rc-card-bay-y transform="translate(474,265)" [backplane]="computer.yBackplane"></svg:g>
+  <svg:g rc-card-bay-z transform="translate(711,265)" [backplane]="computer.zBackplane"></svg:g>
+  <svg:g rc-state-view transform="translate(237,12)" [computer]="computer"></svg:g>
+  <svg:rect x="237" y="0" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(237 0)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Simulation Memory &amp; Register State</svg:tspan>
+  </svg:text>
+  <svg:rect x="474" y="0" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(474 0)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Display A</svg:tspan>
+  </svg:text>
+  <svg:rect x="711" y="0" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(711 0)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Display B</svg:tspan>
+  </svg:text>
+  <svg:rect x="474" y="181" width="474" height="12" class="sectionTitle" />
+  <svg:text transform="translate(474 181)" fill="#eee">
+    <svg:tspan class="d-text7" x="238.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Primary Control Switches</svg:tspan>
+  </svg:text>
+  <svg:rect x="0" y="253" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(0 253)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay W</svg:tspan>
+  </svg:text>
+  <svg:rect x="237" y="253" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(237 253)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay X</svg:tspan>
+  </svg:text>
+  <svg:rect x="474" y="253" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(474 253)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay Y</svg:tspan>
+  </svg:text>
+  <svg:rect x="711" y="253" width="237" height="12" class="sectionTitle" />
+  <svg:text transform="translate(711 253)" fill="#eee">
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Card Bay Z</svg:tspan>
+  </svg:text>
 </svg>
