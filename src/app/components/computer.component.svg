@@ -6,6 +6,11 @@
     <svg:g rc-card-bay-x transform="translate(237,265)" [backplane]="computer.xBackplane"></svg:g>
     <svg:g rc-card-bay-y transform="translate(474,265)" [backplane]="computer.yBackplane"></svg:g>
     <svg:g rc-card-bay-z transform="translate(711,265)" [backplane]="computer.zBackplane"></svg:g>
+    <svg:g rc-state-view transform="translate(237,12)" [computer]="computer"></svg:g>
+    <svg:rect x="237" y="0" width="237" height="12" class="sectionTitle" />
+    <svg:text transform="translate(237 0)" fill="#eee">
+        <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Computer State</svg:tspan>
+    </svg:text>
     <svg:rect x="474" y="0" width="237" height="12" class="sectionTitle" />
     <svg:text transform="translate(474 0)" fill="#eee">
         <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Display A</svg:tspan>

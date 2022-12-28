@@ -1,0 +1,30 @@
+.mem-row-label,
+.alu-label,
+.mem-cell-text {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+.alu-label {
+  font-size: 24px;
+  fill: #e6e6e6;
+}
+
+.mem-row-label {
+  font-size: 19px;
+  fill: #999999
+}
+
+.mem-cell-text {
+  font-size: 19px;
+  fill: #e6e6e6;
+}
+
+.mem-pc,
+.alu-active rect {
+  fill: #e6e6e6;
+}
+
+.mem-pc.mem-cell-text,
+.alu-active .alu-label {
+  fill: black;
+}
