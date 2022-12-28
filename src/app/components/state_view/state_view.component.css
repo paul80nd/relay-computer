@@ -1,6 +1,10 @@
 .mem-row-label,
 .alu-label,
-.mem-cell-text {
+.mem-cell-text,
+.register-label,
+.register-value,
+.register-value-int,
+.register-value-sint {
   font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
 }
 
@@ -17,6 +21,26 @@
 .mem-cell-text {
   font-size: 19px;
   fill: #e6e6e6;
+}
+
+.register-value {
+  font-size: 20px;
+  fill: #e6e6e6;
+}
+
+.register-value-int {
+  font-size: 17px;
+  fill: #e6e6e6;
+}
+
+.register-value-sint {
+  font-size: 15px;
+  fill: #e6e6e6;
+}
+
+.register-label {
+  font-size: 22px;
+  fill: #999999
 }
 
 .mem-pc,
