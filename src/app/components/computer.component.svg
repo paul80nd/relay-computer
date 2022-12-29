@@ -11,7 +11,7 @@
   <svg:g rc-state-view transform="translate(237,12)" [computer]="computer"></svg:g>
   <svg:rect x="237" y="0" width="237" height="12" class="sectionTitle" />
   <svg:text transform="translate(237 0)" fill="#eee">
-    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Simulation Memory &amp; Register State</svg:tspan>
+    <svg:tspan class="d-text7" x="118.5" y="6.5" dominant-baseline="middle" text-anchor="middle">Memory &amp; Register State</svg:tspan>
   </svg:text>
   <svg:rect x="474" y="0" width="237" height="12" class="sectionTitle" />
   <svg:text transform="translate(474 0)" fill="#eee">
