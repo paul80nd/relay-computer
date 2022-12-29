@@ -8,7 +8,6 @@ import { ArchitectureDiagramModule } from './components/archdiag/archdiag.module
 import { ComputerModule } from './components/computer.module';
 import { DocumentationModule } from './components/docs/docs.module';
 import { InstructionSetModule } from './components/instrset/instrset.module';
-import { MemoryListModule } from './components/memory_list/memory_list.module';
 
 import { ClarityModule } from '@clr/angular';
 
@@ -21,11 +20,10 @@ import {
   helpInfoIcon,
   libraryIcon,
   listIcon,
-  memoryIcon,
   rulerPencilIcon
 } from '@cds/core/icon';
 
-ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, uploadCloudIcon, helpInfoIcon, libraryIcon, listIcon, memoryIcon, rulerPencilIcon);
+ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, uploadCloudIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon);
 
 @NgModule({
   declarations: [
@@ -38,8 +36,7 @@ ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, uploadCloudIcon, helpInfo
     ArchitectureDiagramModule,
     ComputerModule,
     DocumentationModule,
-    InstructionSetModule,
-    MemoryListModule
+    InstructionSetModule
   ],
   providers: [],
   bootstrap: [AppComponent]
