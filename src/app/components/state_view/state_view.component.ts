@@ -19,4 +19,7 @@ export class StateViewComponent {
 
   @Input() computer!: IComputer;
 
+  shift(value: number) {
+    return value << 8;
+  }
 }
