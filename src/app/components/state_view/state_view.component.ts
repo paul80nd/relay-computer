@@ -16,6 +16,7 @@ export class StateViewComponent {
   ezLine = ConditionLines.EZ;
 
   offset = 0;
+  memoryDec = false;
 
   @Input() computer!: IComputer;
 

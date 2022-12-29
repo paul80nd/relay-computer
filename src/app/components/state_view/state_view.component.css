@@ -1,6 +1,7 @@
 .mem-row-label,
 .alu-label,
 .mem-cell-text,
+.mem-cell-text-int,
 .register-label,
 .register-value,
 .register-value-big,
@@ -20,7 +21,12 @@
 }
 
 .mem-cell-text {
-  font-size: 19px;
+  font-size: 18px;
+  fill: #e6e6e6;
+}
+
+.mem-cell-text-int {
+  font-size: 16px;
   fill: #e6e6e6;
 }
 
@@ -55,6 +61,7 @@
 }
 
 .mem-pc.mem-cell-text,
+.mem-pc.mem-cell-text-int,
 .alu-active .alu-label {
   fill: black;
 }
