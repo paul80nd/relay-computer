@@ -22,4 +22,12 @@ export class StateViewComponent {
   shift(value: number) {
     return value << 8;
   }
+
+  nextPage() {
+    this.offset += 0x100;
+  }
+  prevPage() {
+    this.offset -= 0x100;
+  }
+
 }
