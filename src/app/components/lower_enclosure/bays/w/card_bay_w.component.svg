@@ -1,0 +1,18 @@
+<svg:g>
+  <!-- Origin at bay top left -->
+  <svg:g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1">
+    <svg:g>
+      <svg:rect x="0" y="0" width="237" height="200" class="bayBackground" />
+      <svg:rect x="11" y="2" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+      <svg:rect x="11" y="42" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+      <svg:rect x="11" y="82" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+      <svg:rect x="11" y="122" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+      <svg:rect x="11" y="162" width="214" height="30" class="ledHolder" rx="5" ry="5" />
+      <svg:g rc-card-sequencer-a [card]="backplane.sequencer" transform="translate(0,0)"></svg:g>
+      <svg:g rc-card-sequencer-b [card]="backplane.sequencer" transform="translate(0,40)"></svg:g>
+      <svg:g rc-card-control-a [card]="backplane.control" transform="translate(0,80)"></svg:g>
+      <svg:g rc-card-control-b [card]="backplane.control" transform="translate(0,120)"></svg:g>
+      <svg:g rc-card-decoder [card]="backplane.decoder" transform="translate(0,160)"></svg:g>
+    </svg:g>
+  </svg:g>
+</svg:g>

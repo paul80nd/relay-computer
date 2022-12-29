@@ -34,7 +34,7 @@
     <rc-computer [computer]="computer"></rc-computer>
   </div>
 </div>
-<div style="position: absolute; width: 50vw; height: 26.7vw; padding: 4px 2px 4px 5px; overflow: hidden;">
+<div style="position: absolute; width: 25.2vw; height: 26.7vw; padding: 4px 2px 4px 5px; overflow: hidden;">
   <div class="main-container" style="height: 26.5vw">
     <div class="content-container">
       <div class="content-area" style="width: 55%; padding-right: 4px !important;">
@@ -55,19 +55,6 @@
               <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
                 <rc-architecture-diagram></rc-architecture-diagram>
               </div>
-            </clr-tab-content>
-          </clr-tab>
-        </clr-tabs>
-      </div>
-      <div class="content-area" style="width: 45%">
-        <clr-tabs>
-          <clr-tab>
-            <button clrTabLink>
-              <cds-icon shape="memory"></cds-icon> Memory
-            </button>
-            <clr-tab-content *clrIfActive="true">
-              <rc-memory-list [card]="computer.yBackplane.memory" [pc]="computer.xBackplane.registerPC">
-              </rc-memory-list>
             </clr-tab-content>
           </clr-tab>
           <clr-tab>

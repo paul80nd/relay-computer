@@ -1,0 +1,31 @@
+.register-label,
+.register-value,
+.register-value-int,
+.register-value-sint {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+.register-value {
+  font-size: 20px;
+  fill: #e6e6e6;
+}
+
+.register-value-int {
+  font-size: 17px;
+  fill: #e6e6e6;
+}
+
+.register-value-sint {
+  font-size: 15px;
+  fill: #e6e6e6;
+}
+
+.register-label {
+  font-size: 22px;
+  fill: #999999
+}
+
+.register-bit {
+  fill: #e6e6e6;
+}
+

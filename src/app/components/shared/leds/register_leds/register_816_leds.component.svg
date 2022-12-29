@@ -1,29 +1,33 @@
 <svg:g>
-    <!-- Origin is at center of first (LD) led -->
-    <g>
-        <!-- Hi Register -->
-        <title>Register {{ descriptionHi }}</title>
+  <!-- Origin is at center of first (LD) led (lower row) -->
+  <g *ngIf="register.isLoadableHiLo">
+    <circle cx="0" cy="-9.5" r="4" class="ledYellow" [class.on]="register.loadHiLo" />
+  </g>
+  <circle cx="197" cy="-9.5" r="4" class="ledGreen" [class.on]="register.selectHiLo" />
+  <g>
+    <!-- Hi Register -->
+    <title>{{ descriptionHi }}</title>
 
-        <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.loadHi" />
+    <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.loadHi" />
 
-        <g *ngIf="register.isSelectableHi">
-            <circle cx="10.25" cy="0" r="4" class="ledGreen" [class.on]="register.selectHi" />
-        </g>
-
-        <g rc-byte-leds [value]="register.valueHi.value" transform="translate(20.5,0)"></g>
-
+    <g *ngIf="register.isSelectableHi">
+      <circle cx="10.25" cy="0" r="4" class="ledGreen" [class.on]="register.selectHi" />
     </g>
-    <g transform="translate(104,0)">
-        <!-- Lo Register -->
-        <title>{{ descriptionLo }}</title>
 
-        <g rc-byte-leds [value]="register.valueLo.value" transform="translate(0,0)"></g>
+    <g rc-byte-leds [value]="register.valueHi.value" transform="translate(20.5,0)"></g>
 
-        <circle cx="82.25" cy="0" r="4" class="ledYellow" [class.on]="register.loadLo" />
+  </g>
+  <g transform="translate(104,0)">
+    <!-- Lo Register -->
+    <title>{{ descriptionLo }}</title>
 
-        <g *ngIf="register.isSelectableLo">
-            <circle cx="93" cy="0" r="4" class="ledGreen" [class.on]="register.selectLo" />
-        </g>
+    <g rc-byte-leds [value]="register.valueLo.value" transform="translate(0,0)"></g>
 
+    <circle cx="82.25" cy="0" r="4" class="ledYellow" [class.on]="register.loadLo" />
+
+    <g *ngIf="register.isSelectableLo">
+      <circle cx="93" cy="0" r="4" class="ledGreen" [class.on]="register.selectLo" />
     </g>
+
+  </g>
 </svg:g>

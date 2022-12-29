@@ -1,0 +1,67 @@
+.mem-row-label,
+.alu-label,
+.mem-cell-text,
+.mem-cell-text-int,
+.register-label,
+.register-value,
+.register-value-big,
+.register-value-int,
+.register-value-sint {
+  font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
+
+.alu-label {
+  font-size: 24px;
+  fill: #e6e6e6;
+}
+
+.mem-row-label {
+  font-size: 19px;
+  fill: #999999
+}
+
+.mem-cell-text {
+  font-size: 18px;
+  fill: #e6e6e6;
+}
+
+.mem-cell-text-int {
+  font-size: 16px;
+  fill: #e6e6e6;
+}
+
+.register-value {
+  font-size: 20px;
+  fill: #e6e6e6;
+}
+
+.register-value-big {
+  font-size: 28px;
+  fill: #e6e6e6;
+}
+
+.register-value-int {
+  font-size: 17px;
+  fill: #e6e6e6;
+}
+
+.register-value-sint {
+  font-size: 15px;
+  fill: #e6e6e6;
+}
+
+.register-label {
+  font-size: 22px;
+  fill: #999999
+}
+
+.mem-pc,
+.alu-active rect {
+  fill: #e6e6e6;
+}
+
+.mem-pc.mem-cell-text,
+.mem-pc.mem-cell-text-int,
+.alu-active .alu-label {
+  fill: black;
+}
