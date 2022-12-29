@@ -2,16 +2,16 @@
   <text x="285" y="37" class="register-label" text-anchor="middle">{{ registerName }}</text>
   <rect x="265" y="49" width="40" height="25" fill="none" stroke="#999999" />
   <text x="285" y="69" class="register-value" text-anchor="middle">{{ registerPart.value.toUnsignedNumber() | hex:"2" }}</text>
-  <rect x="265" y="74" width="5" height="10" fill="none" stroke="#999999" />
-  <rect x="270" y="74" width="5" height="10" fill="none" stroke="#999999" />
-  <rect x="275" y="74" width="5" height="10" fill="none" stroke="#999999" />
-  <rect x="280" y="74" width="5" height="10" fill="#e6e6e6" stroke="#999999" />
-  <rect x="285" y="74" width="5" height="10" fill="none" stroke="#999999" />
-  <rect x="290" y="74" width="5" height="10" fill="#e6e6e6" stroke="#999999" />
-  <rect x="295" y="74" width="5" height="10" fill="none" stroke="#999999" />
-  <rect x="300" y="74" width="5" height="10" fill="none" stroke="#999999" />
+  <rect x="265" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(7)" />
+  <rect x="270" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(6)" />
+  <rect x="275" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(5)" />
+  <rect x="280" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(4)" />
+  <rect x="285" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(3)" />
+  <rect x="290" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(2)" />
+  <rect x="295" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(1)" />
+  <rect x="300" y="74" width="5" height="10" fill="none" stroke="#999999" [class.register-bit]="registerPart.value.bit(0)" />
   <rect x="265" y="84" width="40" height="25" fill="none" stroke="#999999" />
-  <text x="285" y="103" class="register-value-int" text-anchor="middle">000</text>
+  <text x="285" y="103" class="register-value-int" text-anchor="middle">{{ registerPart.value.toUnsignedNumber() | dec:"2":false }}</text>
   <rect x="265" y="109" width="40" height="25" fill="none" stroke="#999999" />
-  <text x="285" y="127" class="register-value-sint" text-anchor="middle">-000</text>
+  <text x="285" y="127" class="register-value-sint" text-anchor="middle">{{ registerPart.value.toUnsignedNumber() | dec:"2":true }}</text>
 </svg:g>

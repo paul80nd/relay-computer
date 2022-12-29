@@ -50,12 +50,7 @@
     <svg:g rc-register-view transform="translate(400,0)" [registerPart]="computer.yBackplane.registerJ.register.valueLo" [registerName]="'J2'"></svg:g>
 
 
-
-
     <!--
-
-
-
     <rect x="625" y="134" width="80" height="25" fill="none" stroke="#999999" />
     <g transform="translate(-0.5 -0.5)">
       <switch>
