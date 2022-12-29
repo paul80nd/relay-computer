@@ -3,6 +3,7 @@
 .mem-cell-text,
 .register-label,
 .register-value,
+.register-value-big,
 .register-value-int,
 .register-value-sint {
   font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
@@ -25,6 +26,11 @@
 
 .register-value {
   font-size: 20px;
+  fill: #e6e6e6;
+}
+
+.register-value-big {
+  font-size: 28px;
   fill: #e6e6e6;
 }
 
