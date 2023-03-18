@@ -24,9 +24,9 @@
     "@clr/icons": "^13.0.2",
     "@clr/ui": "^15.0.3",
     "@paul80nd/relay-computer-model": "^1.2.0",
-    "rxjs": "~7.5.0",
+    "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.2.4",
