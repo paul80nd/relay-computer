@@ -8,6 +8,7 @@
 # Node
 /node_modules
 npm-debug.log
+.npmrc
 
 # IDEs and editors
 .idea/
