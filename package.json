@@ -22,7 +22,7 @@
     "@cds/core": "^6.4.2",
     "@clr/angular": "^16.0.2",
     "@clr/ui": "^16.0.2",
-    "@paul80nd/relay-computer-model": "^1.2.0",
+    "@paul80nd/relay-computer-model": "^1.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
