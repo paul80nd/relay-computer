@@ -2,8 +2,8 @@
   <!-- Origin at bay top left -->
   <title>Control Card A</title>
 
-  <circle cx="19.5" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at08Line)" />
-  <circle cx="29.75" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at10Line)" />
+  <circle cx="19.5" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(at08Line)" />
+  <circle cx="29.75" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(at10Line)" />
   <!--
   <circle cx="40" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at12Line)" />
   <circle cx="50.5" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at14Line)" />
@@ -12,16 +12,16 @@
   <!--
     <circle cx="97" cy="13" r="4" class="ledYellow" />
     -->
-  <circle cx="107.5" cy="13" r="4" class="ledYellow" [class.on]="card.memory.bit(merLine)" />
+  <circle cx="107.5" cy="13" r="4" class="ledYellow" [class.on]="card().memory.bit(merLine)" />
   <!--
     <circle cx="119" cy="13" r="4" class="ledYellow" />
     -->
-  <circle cx="128" cy="13" r="4" class="ledYellow" [class.on]="card.i2b.bit(i2bLine)" />
+  <circle cx="128" cy="13" r="4" class="ledYellow" [class.on]="card().i2b.bit(i2bLine)" />
 
 
-  <circle cx="174.5" cy="13" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(f2Line)" />
-  <circle cx="185" cy="13" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(f1Line)" />
-  <circle cx="195.5" cy="13" r="4" class="ledYellow" [class.on]="card.aluFunc.bit(f0Line)"/>
+  <circle cx="174.5" cy="13" r="4" class="ledYellow" [class.on]="card().aluFunc.bit(f2Line)" />
+  <circle cx="185" cy="13" r="4" class="ledYellow" [class.on]="card().aluFunc.bit(f1Line)" />
+  <circle cx="195.5" cy="13" r="4" class="ledYellow" [class.on]="card().aluFunc.bit(f0Line)"/>
 
 
   <svg:g transform="translate(-4,10)">

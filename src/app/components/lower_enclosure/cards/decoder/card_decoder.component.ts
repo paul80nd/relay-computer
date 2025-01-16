@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { OperationLines, IDecoderCard } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-decoder]',
-    templateUrl: './card_decoder.component.svg',
-    standalone: true
+  selector: '[rc-card-decoder]',
+  templateUrl: './card_decoder.component.svg',
+  standalone: true
 })
 
 export class CardDecoderComponent {
@@ -17,6 +17,6 @@ export class CardDecoderComponent {
   gtoLine = OperationLines.IGTO;
   mscLine = OperationLines.IMSC;
 
-  @Input() card!: IDecoderCard;
+  readonly card = input.required<IDecoderCard>();
 
 }

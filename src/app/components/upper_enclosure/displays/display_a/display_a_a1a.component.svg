@@ -1,19 +1,19 @@
 <svg:g>
     <!-- Origin at top left switch -->
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','A']" [color]="'Yellow'" [bitTarget]="ldALine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','A']" [color]="'Yellow'" [bitTarget]="ldALine"
         transform="translate(0,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','B']" [color]="'Yellow'" [bitTarget]="ldBLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','B']" [color]="'Yellow'" [bitTarget]="ldBLine"
         transform="translate(23,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','C']" [color]="'Yellow'" [bitTarget]="ldCLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','C']" [color]="'Yellow'" [bitTarget]="ldCLine"
         transform="translate(46,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','D']" [color]="'Yellow'" [bitTarget]="ldDLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','D']" [color]="'Yellow'" [bitTarget]="ldDLine"
         transform="translate(69,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','A']" [color]="'Green'" [bitTarget]="selALine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','A']" [color]="'Green'" [bitTarget]="selALine"
         transform="translate(0,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','B']" [color]="'Green'" [bitTarget]="selBLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','B']" [color]="'Green'" [bitTarget]="selBLine"
         transform="translate(23,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','C']" [color]="'Green'" [bitTarget]="selCLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','C']" [color]="'Green'" [bitTarget]="selCLine"
         transform="translate(46,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','D']" [color]="'Green'" [bitTarget]="selDLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','D']" [color]="'Green'" [bitTarget]="selDLine"
         transform="translate(69,23)"></g>
 </svg:g>

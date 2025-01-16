@@ -15,12 +15,12 @@
         <text x="40" [attr.y]="258+(30*idx)" class="mem-row-label" text-anchor="middle">{{ ((offset/16) + idx) | hex:"3" }}</text>
         @for (sidx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track sidx) {
           <g>
-            <rect [attr.x]="65+(40*sidx)" [attr.y]="236+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" width="40" height="30" fill="none" stroke="#999999" />
+            <rect [attr.x]="65+(40*sidx)" [attr.y]="236+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer().xBackplane.registerPC.pcAddress" width="40" height="30" fill="none" stroke="#999999" />
             @if (!memoryDec) {
-              <text [attr.x]="85+(40*sidx)" [attr.y]="258+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | hex:"2" }}</text>
+              <text [attr.x]="85+(40*sidx)" [attr.y]="258+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer().xBackplane.registerPC.pcAddress" class="mem-cell-text" text-anchor="middle">{{ computer().yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | hex:"2" }}</text>
             }
             @if (memoryDec) {
-              <text [attr.x]="85+(40*sidx)" [attr.y]="257+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text-int" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | dec:"2":false }}</text>
+              <text [attr.x]="85+(40*sidx)" [attr.y]="257+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer().xBackplane.registerPC.pcAddress" class="mem-cell-text-int" text-anchor="middle">{{ computer().yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | dec:"2":false }}</text>
             }
           </g>
         }
@@ -35,52 +35,52 @@
     <path d="M 225 185 L 225 115" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" />
 
     <!-- ALU Flags -->
-    <g [class.alu-active]="computer.zBackplane.aluControl.condition.value.bit(snLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(snLine)">
       <rect x="265" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="288" y="174" class="alu-label" text-anchor="middle">S</text>
     </g>
-    <g [class.alu-active]="computer.zBackplane.aluControl.condition.value.bit(cyLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(cyLine)">
       <rect x="323" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="346" y="174" class="alu-label" text-anchor="middle">C</text>
     </g>
-    <g [class.alu-active]="computer.zBackplane.aluControl.condition.value.bit(ezLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(ezLine)">
       <rect x="380" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="403" y="174" class="alu-label" text-anchor="middle">Z</text>
     </g>
 
     <!-- 8-bit Registers -->
-    <svg:g rc-register-view transform="translate(0,0)" [registerPart]="computer.zBackplane.registerAD.registerA.value" [registerName]="'A'"></svg:g>
-      <svg:g rc-register-view transform="translate(40,0)" [registerPart]="computer.zBackplane.registerBC.registerB.value" [registerName]="'B'"></svg:g>
-        <svg:g rc-register-view transform="translate(80,0)" [registerPart]="computer.zBackplane.registerBC.registerC.value" [registerName]="'C'"></svg:g>
-          <svg:g rc-register-view transform="translate(120,0)" [registerPart]="computer.zBackplane.registerAD.registerD.value" [registerName]="'D'"></svg:g>
-            <svg:g rc-register-view transform="translate(200,0)" [registerPart]="computer.yBackplane.registerM.register.valueHi" [registerName]="'M1'"></svg:g>
-              <svg:g rc-register-view transform="translate(240,0)" [registerPart]="computer.yBackplane.registerM.register.valueLo" [registerName]="'M2'"></svg:g>
-                <svg:g rc-register-view transform="translate(280,0)" [registerPart]="computer.yBackplane.registerXY.register.valueHi" [registerName]="'X'"></svg:g>
-                  <svg:g rc-register-view transform="translate(320,0)" [registerPart]="computer.yBackplane.registerXY.register.valueLo" [registerName]="'Y'"></svg:g>
-                    <svg:g rc-register-view transform="translate(360,0)" [registerPart]="computer.yBackplane.registerJ.register.valueHi" [registerName]="'J1'"></svg:g>
-                      <svg:g rc-register-view transform="translate(400,0)" [registerPart]="computer.yBackplane.registerJ.register.valueLo" [registerName]="'J2'"></svg:g>
+    <svg:g rc-register-view transform="translate(0,0)" [registerPart]="computer().zBackplane.registerAD.registerA.value" [registerName]="'A'"></svg:g>
+      <svg:g rc-register-view transform="translate(40,0)" [registerPart]="computer().zBackplane.registerBC.registerB.value" [registerName]="'B'"></svg:g>
+        <svg:g rc-register-view transform="translate(80,0)" [registerPart]="computer().zBackplane.registerBC.registerC.value" [registerName]="'C'"></svg:g>
+          <svg:g rc-register-view transform="translate(120,0)" [registerPart]="computer().zBackplane.registerAD.registerD.value" [registerName]="'D'"></svg:g>
+            <svg:g rc-register-view transform="translate(200,0)" [registerPart]="computer().yBackplane.registerM.register.valueHi" [registerName]="'M1'"></svg:g>
+              <svg:g rc-register-view transform="translate(240,0)" [registerPart]="computer().yBackplane.registerM.register.valueLo" [registerName]="'M2'"></svg:g>
+                <svg:g rc-register-view transform="translate(280,0)" [registerPart]="computer().yBackplane.registerXY.register.valueHi" [registerName]="'X'"></svg:g>
+                  <svg:g rc-register-view transform="translate(320,0)" [registerPart]="computer().yBackplane.registerXY.register.valueLo" [registerName]="'Y'"></svg:g>
+                    <svg:g rc-register-view transform="translate(360,0)" [registerPart]="computer().yBackplane.registerJ.register.valueHi" [registerName]="'J1'"></svg:g>
+                      <svg:g rc-register-view transform="translate(400,0)" [registerPart]="computer().yBackplane.registerJ.register.valueLo" [registerName]="'J2'"></svg:g>
 
                         <!-- 16-bit Registers -->
                         <rect x="625" y="134" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="665" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <text x="665" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer().yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
                         <rect x="625" y="159" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="665" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <text x="665" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer().yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
                         <rect x="545" y="134" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="585" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <text x="585" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer().yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
                         <rect x="545" y="159" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="585" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <text x="585" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer().yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
                         <rect x="465" y="134" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="505" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <text x="505" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer().yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
                         <rect x="465" y="159" width="80" height="25" fill="none" stroke="#999999" />
-                        <text x="505" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <text x="505" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer().yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer().yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
 
                         <!-- Inst and PC -->
                         <text x="105" y="39" class="register-label" text-anchor="middle">PC</text>
                         <rect x="65" y="50" width="80" height="35" fill="none" stroke="#999999" />
-                        <text x="105" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerPC.register.value.value.toUnsignedNumber() | hex:"4" }}</text>
+                        <text x="105" y="78" class="register-value-big" text-anchor="middle">{{ computer().xBackplane.registerPC.register.value.value.toUnsignedNumber() | hex:"4" }}</text>
                         <text x="185" y="39" class="register-label" text-anchor="middle">INST</text>
                         <rect x="145" y="50" width="80" height="35" fill="none" stroke="#999999" />
-                        <text x="185" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerI.register.value.value.toUnsignedNumber() | hex:"2" }}</text>
+                        <text x="185" y="78" class="register-value-big" text-anchor="middle">{{ computer().xBackplane.registerI.register.value.value.toUnsignedNumber() | hex:"2" }}</text>
 
                         <!-- Memory Paging -->
                         <text x="77" y="143" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Page</text>

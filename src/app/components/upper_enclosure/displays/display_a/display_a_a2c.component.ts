@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BitValue , CardPart, AluOperationLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
@@ -19,7 +19,7 @@ export class DisplayAA2CComponent {
   xorLine: number = AluOperationLines.XOR;
   notLine: number = AluOperationLines.NOT;
 
-  @Input() part!: CardPart;
-  @Input() valueIn!: BitValue;
+  readonly part = input.required<CardPart>();
+  readonly valueIn = input.required<BitValue>();
 
 }

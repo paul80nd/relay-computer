@@ -1,13 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BitValue, CardPart, RegABCDLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-display-a-a1a]',
-    templateUrl: 'display_a_a1a.component.svg',
-    imports: [TactileSwitchComponent]
+  selector: '[rc-display-a-a1a]',
+  templateUrl: 'display_a_a1a.component.svg',
+  imports: [TactileSwitchComponent]
 })
 export class DisplayAA1AComponent {
 
@@ -20,7 +20,7 @@ export class DisplayAA1AComponent {
   selCLine: number = RegABCDLines.RSC;
   selDLine: number = RegABCDLines.RSD;
 
-  @Input() part!: CardPart;
-  @Input() valueIn!: BitValue;
+  readonly part = input.required<CardPart>();
+  readonly valueIn = input.required<BitValue>();
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import {
   AluFunctionClLines,
@@ -28,7 +28,7 @@ export class DisplayBAluComponent {
   f1Line: number = AluFunctionClLines.F1;
   f0Line: number = AluFunctionClLines.F0;
 
-  @Input() alu!: BitValue;
-  @Input() aluFuncCl!: BitValue;
+  readonly alu = input.required<BitValue>();
+  readonly aluFuncCl = input.required<BitValue>();
 
 }

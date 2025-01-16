@@ -2,43 +2,43 @@
   <!-- Origin at bay top left -->
   <title>Clock</title>
 
-  <circle cx="19" cy="13" r="4" class="ledRed" [class.on]="card.stages.bit(0)" />
-  <circle cx="29.5" cy="13" r="4" class="ledRed" [class.on]="card.stages.bit(1)" />
-  <circle cx="40" cy="13" r="4" class="ledRed" [class.on]="card.stages.bit(2)" />
-  <circle cx="50.5" cy="13" r="4" class="ledRed" [class.on]="card.stages.bit(3)" />
+  <circle cx="19" cy="13" r="4" class="ledRed" [class.on]="card().stages.bit(0)" />
+  <circle cx="29.5" cy="13" r="4" class="ledRed" [class.on]="card().stages.bit(1)" />
+  <circle cx="40" cy="13" r="4" class="ledRed" [class.on]="card().stages.bit(2)" />
+  <circle cx="50.5" cy="13" r="4" class="ledRed" [class.on]="card().stages.bit(3)" />
 
-  <circle cx="81.5" cy="13" r="4" class="ledGreen" [class.on]="card.clock.bit(0)" />
-  <circle cx="92" cy="13" r="4" class="ledGreen" [class.on]="card.clock.bit(0)" />
+  <circle cx="81.5" cy="13" r="4" class="ledGreen" [class.on]="card().clock.bit(0)" />
+  <circle cx="92" cy="13" r="4" class="ledGreen" [class.on]="card().clock.bit(0)" />
 
-  <g (click)="card.toggleClockType()" class="clickable" transform="rotate(90) translate(-215 -282) scale(0.5 0.75)">
+  <g (click)="card().toggleClockType()" class="clickable" transform="rotate(90) translate(-215 -282) scale(0.5 0.75)">
     <path d="M 446 199.275 L 446 204.275 L 446 208.2241 L 446 209 L 446 209.27499 L 446.05586 209.27499 C 446.29495 210.92855 447.30146 212.53621 449.07537 213.80329 C 453.17585 216.73224 459.82403 216.73224 463.9245 213.80329 C 465.69842 212.53621 466.70492 210.92855 466.944 209.27499  L 466.99987 209.27499 L 466.99987 209 L 466.99987 204.275 L 466.99987 199.77209 L 466.99987 199.59587 C 467 199.55712 467.00008 199.51837 466.99987 199.47961 L 466.99987 199.275 L 466.99987 197 L 466.99987 194.7721 C 466.99891 194.65521 467.001 194.53824 466.9993 194.4213 L   466.99987 194.275 L 466.99518 194.275 C 466.9182 192.43126 465.89463 190.60394 463.9245 189.19671 C 459.82403 186.26776 453.17585 186.26776 449.07537 189.19671 C 447.10524 190.60394 446.08168 192.43126 446.0047 194.275 L 446 194.275 L 446 197 Z" fill="#bbb" />
     <path d="M 446 199.275 L 446 204.275 L 446 208.2241 L 446 209 L 446 209.27499 L 446.05586 209.27499 C 446.29495 210.92855 447.30146 212.53621 449.07537 213.80329 C 453.17585 216.73224 459.82403 216.73224 463.9245 213.80329 C 465.69842 212.53621 466.70492 210.92855 466.944 209.27499  L 466.99987 209.27499 L 466.99987 209 L 466.99987 204.275 L 466.99987 199.77209 L 466.99987 199.59587 C 467 199.55712 467.00008 199.51837 466.99987 199.47961 L 466.99987 199.275 L 466.99987 197 L 466.99987 194.7721 C 466.99891 194.65521 467.001 194.53824 466.9993 194.4213 L   466.99987 194.275 L 466.99518 194.275 C 466.9182 192.43126 465.89463 190.60394 463.9245 189.19671 C 459.82403 186.26776 453.17585 186.26776 449.07537 189.19671 C 447.10524 190.60394 446.08168 192.43126 446.0047 194.275 L 446 194.275 L 446 197 Z" class="swtOutline" />
-    <g [style.display]="card.clockType.value.bit(0) ? 'inherit':'none'">>
+    <g [style.display]="card().clockType.value.bit(0) ? 'inherit':'none'">>
       <ellipse cx="456.49994" cy="194.5" rx="9.0999594" ry="6.5000086" fill="black" />
       <ellipse cx="456.49994" cy="194.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
     </g>
-    <g [style.display]="!card.clockType.value.bit(0) ? 'inherit':'none'">>
+    <g [style.display]="!card().clockType.value.bit(0) ? 'inherit':'none'">>
       <ellipse cx="456.49994" cy="208.5" rx="9.0999594" ry="6.5000086" fill="black" />
       <ellipse cx="456.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
     </g>
   </g>
 
-  <g (click)="card.toggleEnabled()" class="clickable" transform="rotate(90) translate(-215 -354) scale(0.5 0.75)">
+  <g (click)="card().toggleEnabled()" class="clickable" transform="rotate(90) translate(-215 -354) scale(0.5 0.75)">
     <path d="M 446 199.275 L 446 204.275 L 446 208.2241 L 446 209 L 446 209.27499 L 446.05586 209.27499 C 446.29495 210.92855 447.30146 212.53621 449.07537 213.80329 C 453.17585 216.73224 459.82403 216.73224 463.9245 213.80329 C 465.69842 212.53621 466.70492 210.92855 466.944 209.27499  L 466.99987 209.27499 L 466.99987 209 L 466.99987 204.275 L 466.99987 199.77209 L 466.99987 199.59587 C 467 199.55712 467.00008 199.51837 466.99987 199.47961 L 466.99987 199.275 L 466.99987 197 L 466.99987 194.7721 C 466.99891 194.65521 467.001 194.53824 466.9993 194.4213 L   466.99987 194.275 L 466.99518 194.275 C 466.9182 192.43126 465.89463 190.60394 463.9245 189.19671 C 459.82403 186.26776 453.17585 186.26776 449.07537 189.19671 C 447.10524 190.60394 446.08168 192.43126 446.0047 194.275 L 446 194.275 L 446 197 Z" fill="#bbb" />
     <path d="M 446 199.275 L 446 204.275 L 446 208.2241 L 446 209 L 446 209.27499 L 446.05586 209.27499 C 446.29495 210.92855 447.30146 212.53621 449.07537 213.80329 C 453.17585 216.73224 459.82403 216.73224 463.9245 213.80329 C 465.69842 212.53621 466.70492 210.92855 466.944 209.27499  L 466.99987 209.27499 L 466.99987 209 L 466.99987 204.275 L 466.99987 199.77209 L 466.99987 199.59587 C 467 199.55712 467.00008 199.51837 466.99987 199.47961 L 466.99987 199.275 L 466.99987 197 L 466.99987 194.7721 C 466.99891 194.65521 467.001 194.53824 466.9993 194.4213 L   466.99987 194.275 L 466.99518 194.275 C 466.9182 192.43126 465.89463 190.60394 463.9245 189.19671 C 459.82403 186.26776 453.17585 186.26776 449.07537 189.19671 C 447.10524 190.60394 446.08168 192.43126 446.0047 194.275 L 446 194.275 L 446 197 Z" class="swtOutline" />
 
-    <g [style.display]="card.clockEnabled.value.bit(0) ? 'inherit':'none'">>
+    <g [style.display]="card().clockEnabled.value.bit(0) ? 'inherit':'none'">>
       <ellipse cx="456.49994" cy="194.5" rx="9.0999594" ry="6.5000086" fill="black" />
       <ellipse cx="456.49994" cy="194.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
     </g>
-    <g [style.display]="!card.clockEnabled.value.bit(0) ? 'inherit':'none'">>
+    <g [style.display]="!card().clockEnabled.value.bit(0) ? 'inherit':'none'">>
       <ellipse cx="456.49994" cy="208.5" rx="9.0999594" ry="6.5000086" fill="black" />
       <ellipse cx="456.49994" cy="208.5" rx="9.0999594" ry="6.5000086" class="swtOutline" />
     </g>
   </g>
 
-  <g (click)="card.nextClockSpeed()" class="clickable" transform="translate(167 13)">
-    <g [attr.transform]="'rotate('+(card.clockSpeed.value.toUnsignedNumber() * 45)+')'">
+  <g (click)="card().nextClockSpeed()" class="clickable" transform="translate(167 13)">
+    <g [attr.transform]="'rotate('+(card().clockSpeed.value.toUnsignedNumber() * 45)+')'">
       <ellipse cx="0" cy="0" rx="6" ry="6" fill="#bbb" class="swtOutline" />
       <ellipse cx="0" cy="0" rx="5" ry="5" fill="black" />
       <path d="M 0 0 L 0 5.5" stroke-width="1.5" stroke="#bbb" />

@@ -5,7 +5,7 @@
 
       @for (i of [7,6,5,4,3,2,1,0]; track i) {
         <g>
-          <rect [attr.x]="459-(9*i)" y="9.99998" width="8" height="17" class="indGreen" [class.on]="card.instruction.bit(i)" />
+          <rect [attr.x]="459-(9*i)" y="9.99998" width="8" height="17" class="indGreen" [class.on]="card().instruction.bit(i)" />
           <rect [attr.x]="459-(9*i)" y="9.99998" width="8" height="17" class="indOutline" />
           <text [attr.transform]="'translate(' + (460.6967-(9*i)) +' 12.906828)'" fill="black">
             <tspan class="d-text9" x="0" y="9">{{ i }}</tspan>
@@ -19,7 +19,7 @@
       <!-- <text transform="translate(361.77557 10.2)" fill="black">
       <tspan class="d-text6" x="7.495527" y="6">LOAD</tspan>
     </text> -->
-    <rect x="360" y="18.999977" width="35" height="8" class="indYellow" [class.on]="card.operation.bit(mscLine)" />
+    <rect x="360" y="18.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(mscLine)" />
     <rect x="360" y="18.999977" width="35" height="8" class="indOutline" />
     <text transform="translate(361.77557 19.2)" fill="black">
       <tspan class="d-text6" x="8.1649607" y="6">MISC</tspan>
@@ -34,17 +34,17 @@
   <!-- <text transform="translate(361.77557 37.2)" fill="black">
   <tspan class="d-text6" x="6.4965037" y="6">INCXY</tspan>
 </text> -->
-<rect x="396" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card.operation.bit(gtoLine)" />
+<rect x="396" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(gtoLine)" />
 <rect x="396" y="27.999977" width="35" height="8" class="indOutline" />
 <text transform="translate(397.77557 28.2)" fill="black">
   <tspan class="d-text6" x="6.8846873" y="6">GOTO</tspan>
 </text>
-<rect x="396" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card.operation.bit(mv8Line)" />
+<rect x="396" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(mv8Line)" />
 <rect x="396" y="36.999977" width="35" height="8" class="indOutline" />
 <text transform="translate(397.77557 37.2)" fill="black">
   <tspan class="d-text6" x="7.1630076" y="6">MOV8</tspan>
 </text>
-<rect x="432" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card.operation.bit(setLine)" />
+<rect x="432" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(setLine)" />
 <rect x="432" y="27.999977" width="35" height="8" class="indOutline" />
 <text transform="translate(433.77557 28.2)" fill="black">
   <tspan class="d-text6" x="6.0497263" y="6">SETAB</tspan>
@@ -55,24 +55,24 @@
   <!--    <tspan class="d-text6" x="5.4945505" y="6">MOV16</tspan>-->
 </text>
 
-<rect x="268" y="115.99998" width="35" height="17" class="indRed" [class.on]="card.clockCtrl.bit(hltLine)" />
+<rect x="268" y="115.99998" width="35" height="17" class="indRed" [class.on]="card().clockCtrl.bit(hltLine)" />
 <rect x="268" y="115.99998" width="35" height="17" class="indOutline" />
 <text transform="translate(268.88062 119.406825)" fill="black">
   <tspan class="d-text8" x="6.630414" y="8">HALT</tspan>
 </text>
 
-<rect x="250" y="115.99998" width="17" height="17" class="indYellow" [class.on]="card.clock.bit(clkLine)" />
+<rect x="250" y="115.99998" width="17" height="17" class="indYellow" [class.on]="card().clock.bit(clkLine)" />
 <rect x="250" y="115.99998" width="17" height="17" class="indOutline" />
 <text transform="translate(250.86242 120.79813)" fill="black">
   <tspan class="d-text7" x=".80010144" y="6">CLK</tspan>
 </text>
 
-<g rc-display-b-condition [value]="card.condition" transform="translate(250 141.99998)"></g>
+<g rc-display-b-condition [value]="card().condition" transform="translate(250 141.99998)"></g>
 
-<g rc-display-b-alu [alu]="card.alu" [aluFuncCl]="card.aluFuncCl" transform="translate(432 53.99998)"></g>
+<g rc-display-b-alu [alu]="card().alu" [aluFuncCl]="card().aluFuncCl" transform="translate(432 53.99998)"></g>
 
-<g rc-byte-llb [value]="card.data" transform="translate(324,141.99998)"></g>
-<g rc-dbl-byte-llb [value]="card.address" transform="translate(324,115.99998)"></g>
+<g rc-byte-llb [value]="card().data" transform="translate(324,141.99998)"></g>
+<g rc-dbl-byte-llb [value]="card().address" transform="translate(324,115.99998)"></g>
 
 </g>
 </g>

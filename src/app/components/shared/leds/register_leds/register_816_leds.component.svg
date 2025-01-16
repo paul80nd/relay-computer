@@ -8,7 +8,7 @@
   <circle cx="197" cy="-9.5" r="4" class="ledGreen" [class.on]="register.selectHiLo" />
   <g>
     <!-- Hi Register -->
-    <title>{{ descriptionHi }}</title>
+    <title>{{ descriptionHi() }}</title>
 
     <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.loadHi" />
 
@@ -23,7 +23,7 @@
   </g>
   <g transform="translate(104,0)">
     <!-- Lo Register -->
-    <title>{{ descriptionLo }}</title>
+    <title>{{ descriptionLo() }}</title>
 
     <g rc-byte-leds [value]="register.valueLo.value" transform="translate(0,0)"></g>
 

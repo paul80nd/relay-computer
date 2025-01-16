@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { IWBackplane } from '@paul80nd/relay-computer-model';
 import { CardSequencerAComponent } from '../../cards/sequencer/card_sequencer_a.component';
@@ -9,13 +9,13 @@ import { CardDecoderComponent } from '../../cards/decoder/card_decoder.component
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-bay-w]',
-    templateUrl: './card_bay_w.component.svg',
-    imports: [CardSequencerAComponent, CardSequencerBComponent, CardControlAComponent, CardControlBComponent, CardDecoderComponent]
+  selector: '[rc-card-bay-w]',
+  templateUrl: './card_bay_w.component.svg',
+  imports: [CardSequencerAComponent, CardSequencerBComponent, CardControlAComponent, CardControlBComponent, CardDecoderComponent]
 })
 
 export class CardBayWComponent {
 
-  @Input() backplane!: IWBackplane;
+  readonly backplane = input.required<IWBackplane>();
 
 }

@@ -1,41 +1,41 @@
 <svg:g>
     <!-- Origin at top left CL led light bar -->
-    <rect x="0" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl.bit(clLine)" />
+    <rect x="0" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl().bit(clLine)" />
     <rect x="0" y="0" width="8" height="17" class="indOutline" />
     <text transform="translate(1.6967 1.406848)" fill="black">
         <tspan class="d-text6" x="0" y="6">C</tspan>
         <tspan class="d-text6" x=".4729043" y="13">L</tspan>
     </text>
-    <rect x="9" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl.bit(f2Line)" />
+    <rect x="9" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl().bit(f2Line)" />
     <rect x="9" y="0" width="8" height="17" class="indOutline" />
     <text transform="translate(10.6967 2.906825)" fill="black">
         <tspan class="d-text9" x="0" y="9">2</tspan>
     </text>
-    <rect x="18" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl.bit(f1Line)" />
+    <rect x="18" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl().bit(f1Line)" />
     <rect x="18" y="0" width="8" height="17" class="indOutline" />
     <text transform="translate(19.6967 2.906825)" fill="black">
         <tspan class="d-text9" x="0" y="9">1</tspan>
     </text>
-    <rect x="27" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl.bit(f0Line)" />
+    <rect x="27" y="0" width="8" height="17" class="indGreen" [class.on]="aluFuncCl().bit(f0Line)" />
     <rect x="27" y="0" width="8" height="17" class="indOutline" />
     <text transform="translate(28.6967 2.906825)" fill="black">
         <tspan class="d-text9" x="0" y="9">0</tspan>
     </text>
     
-    <g rc-alu-op-llb [value]="alu" [description]="'INC'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'INC'" [color]="'Yellow'" 
         [bitTarget]="incLine" transform="translate(18 18)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'OR'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'OR'" [color]="'Yellow'" 
         [bitTarget]="orrLine" transform="translate(18 27)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'NOT'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'NOT'" [color]="'Yellow'" 
         [bitTarget]="notLine" transform="translate(18 36)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'NOP'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'NOP'" [color]="'Yellow'" 
         [bitTarget]="-1" transform="translate(18 45)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'ADD'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'ADD'" [color]="'Yellow'" 
         [bitTarget]="addLine" transform="translate(0 18)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'AND'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'AND'" [color]="'Yellow'" 
         [bitTarget]="andLine" transform="translate(0 27)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'XOR'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'XOR'" [color]="'Yellow'" 
         [bitTarget]="xorLine" transform="translate(0 36)"></g>
-    <g rc-alu-op-llb [value]="alu" [description]="'SHL'" [color]="'Yellow'" 
+    <g rc-alu-op-llb [value]="alu()" [description]="'SHL'" [color]="'Yellow'" 
         [bitTarget]="shlLine" transform="translate(0 45)"></g>
 </svg:g>

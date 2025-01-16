@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BitValue } from '@paul80nd/relay-computer-model';
 import { ConditionLines } from '@paul80nd/relay-computer-model';
@@ -15,6 +15,6 @@ export class DisplayBConditionComponent {
   snLine = ConditionLines.SN;
   ezLine = ConditionLines.EZ;
 
-  @Input() value!: BitValue;
+  readonly value = input.required<BitValue>();
 
 }

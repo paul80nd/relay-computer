@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BitValue } from '@paul80nd/relay-computer-model';
 
@@ -11,6 +11,6 @@ import { BitValue } from '@paul80nd/relay-computer-model';
 
 export class DoubleByteLedsComponent {
 
-  @Input() value!: BitValue;
+  readonly value = input.required<BitValue>();
 
 }

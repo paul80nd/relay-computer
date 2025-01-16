@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { AbortLines, I2BLines, MemoryLines, IControlCard, AluFunctionClLines } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-control-a]',
-    templateUrl: './card_control_a.component.svg',
-    standalone: true
+  selector: '[rc-card-control-a]',
+  templateUrl: './card_control_a.component.svg',
+  standalone: true
 })
 
 export class CardControlAComponent {
@@ -22,6 +22,6 @@ export class CardControlAComponent {
 
   merLine = MemoryLines.MER;
 
-  @Input() card!: IControlCard;
+  readonly card = input.required<IControlCard>();
 
 }

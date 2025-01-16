@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ConditionLines, IComputer } from '@paul80nd/relay-computer-model';
 import { RegisterViewComponent } from './components/register_view.component';
 import { DecPipe } from './dec.pipe';
@@ -21,7 +21,7 @@ export class StateViewComponent {
   offset = 0;
   memoryDec = false;
 
-  @Input() computer!: IComputer;
+  readonly computer = input.required<IComputer>();
 
   shift(value: number) {
     return value << 8;

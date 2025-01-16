@@ -1,19 +1,19 @@
 <svg:g>
     <!-- Origin at top left switch -->
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','M1']" [color]="'Yellow'" [bitTarget]="ldM1Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','M1']" [color]="'Yellow'" [bitTarget]="ldM1Line"
         transform="translate(0,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','M2']" [color]="'Yellow'" [bitTarget]="ldM2Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','M2']" [color]="'Yellow'" [bitTarget]="ldM2Line"
         transform="translate(23,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','J1']" [color]="'Yellow'" [bitTarget]="ldJ1Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','J1']" [color]="'Yellow'" [bitTarget]="ldJ1Line"
         transform="translate(74,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['ld','J2']" [color]="'Yellow'" [bitTarget]="ldJ2Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['ld','J2']" [color]="'Yellow'" [bitTarget]="ldJ2Line"
         transform="translate(97,0)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','M1']" [color]="'Green'" [bitTarget]="selM1Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','M1']" [color]="'Green'" [bitTarget]="selM1Line"
         transform="translate(0,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','M2']" [color]="'Green'" [bitTarget]="selM2Line"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','M2']" [color]="'Green'" [bitTarget]="selM2Line"
         transform="translate(23,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','M']" [color]="'Green'" [bitTarget]="selMLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','M']" [color]="'Green'" [bitTarget]="selMLine"
         transform="translate(46,23)"></g>
-    <g rc-tact-switch [part]="part" [valueIn]="valueIn" [description]="['sel','J']" [color]="'Green'" [bitTarget]="selJLine"
+    <g rc-tact-switch [part]="part()" [valueIn]="valueIn()" [description]="['sel','J']" [color]="'Green'" [bitTarget]="selJLine"
         transform="translate(97,23)"></g>
 </svg:g>

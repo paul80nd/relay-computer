@@ -2,11 +2,11 @@
   <!-- Origin at bay top left -->
   <title>ALU Logic Card</title>
 
-  <g rc-byte-stacked-leds [value]="card.notValue" transform="translate(19.5,8.5)"></g>
-  <g rc-byte-stacked-leds [value]="card.shlValue" transform="translate(60.75,8.5)"></g>
-  <g rc-byte-stacked-leds [value]="card.orValue" transform="translate(102,8.5)"></g>
-  <g rc-byte-stacked-leds [value]="card.xorValue" transform="translate(143.25,8.5)"></g>
-  <g rc-byte-stacked-leds [value]="card.andValue" transform="translate(184.5,8.5)"></g>
+  <g rc-byte-stacked-leds [value]="card().notValue" transform="translate(19.5,8.5)"></g>
+  <g rc-byte-stacked-leds [value]="card().shlValue" transform="translate(60.75,8.5)"></g>
+  <g rc-byte-stacked-leds [value]="card().orValue" transform="translate(102,8.5)"></g>
+  <g rc-byte-stacked-leds [value]="card().xorValue" transform="translate(143.25,8.5)"></g>
+  <g rc-byte-stacked-leds [value]="card().andValue" transform="translate(184.5,8.5)"></g>
 
   <svg:g transform="translate(-4,10)">
     <?xml version="1.0" encoding="utf-8" standalone="no"?>

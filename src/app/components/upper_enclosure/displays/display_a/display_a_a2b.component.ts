@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { BitValue, CardPart, RegJMXYLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
@@ -18,7 +18,7 @@ export class DisplayAA2BComponent {
   selYLine: number = RegJMXYLines.SEY;
   selXYLine: number = RegJMXYLines.SXY;
 
-  @Input() part!: CardPart;
-  @Input() valueIn!: BitValue;
+  readonly part = input.required<CardPart>();
+  readonly valueIn = input.required<BitValue>();
 
 }

@@ -3,7 +3,7 @@
   <title>Incrementer</title>
 
 
-  <g rc-dbl-byte-leds [value]="card.increment" transform="translate(40.25,13)"></g>
+  <g rc-dbl-byte-leds [value]="card().increment" transform="translate(40.25,13)"></g>
 
 
   <svg:g transform="translate(-4,10)">

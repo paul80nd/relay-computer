@@ -1,17 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { IControlSwitchesCard } from '@paul80nd/relay-computer-model';
 import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-control-switches]',
-    templateUrl: './control_switches.component.svg',
-    imports: [ByteSwitchComponent]
+  selector: '[rc-control-switches]',
+  templateUrl: './control_switches.component.svg',
+  imports: [ByteSwitchComponent]
 })
 export class ControlSwitchesComponent {
 
-  @Input() card!: IControlSwitchesCard;
+  readonly card = input.required<IControlSwitchesCard>();
 
   deposit: boolean = false;
   depositNext: boolean = false;
@@ -24,11 +24,11 @@ export class ControlSwitchesComponent {
       if (up) {
         this.deposit = false;
         this.depositNext = true;
-        this.card.depositNext();
+        this.card().depositNext();
       } else {
         this.deposit = true;
         this.depositNext = false;
-        this.card.deposit();
+        this.card().deposit();
       }
       setTimeout(() => {
         this.deposit = false;
@@ -42,11 +42,11 @@ export class ControlSwitchesComponent {
       if (up) {
         this.examine = false;
         this.examineNext = true;
-        this.card.examineNext();
+        this.card().examineNext();
       } else {
         this.examine = true;
         this.examineNext = false;
-        this.card.examine();
+        this.card().examine();
       }
       setTimeout(() => {
         this.examine = false;
@@ -58,7 +58,7 @@ export class ControlSwitchesComponent {
   changeLoadAddr(): void {
     if (!this.loadAddr) {
       this.loadAddr = true;
-      this.card.loadAddr();
+      this.card().loadAddr();
       setTimeout(() => {
         this.loadAddr = false;
       }, 500);

@@ -2,24 +2,24 @@
   <!-- Origin at bay top left -->
   <title>Decoder</title>
 
-  <circle cx="34.5" cy="13" r="4" class="ledYellow" [class.on]="card.operation.bit(gtoLine)"/>
+  <circle cx="34.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(gtoLine)"/>
 
-  <circle cx="56" cy="13" r="4" class="ledYellow" [class.on]="card.operation.bit(setLine)"/>
+  <circle cx="56" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(setLine)"/>
 
-  <circle cx="76.5" cy="13" r="4" class="ledYellow" [class.on]="card.operation.bit(mv8Line)"/>
+  <circle cx="76.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(mv8Line)"/>
 
   <!--
     <circle cx="97" cy="13" r="4" class="ledYellow"/>
     -->
 
-  <circle cx="118" cy="13" r="4" class="ledYellow" [class.on]="card.operation.bit(aluLine)"/>
+  <circle cx="118" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(aluLine)"/>
 
   <!--
     <circle cx="141" cy="13" r="4" class="ledYellow"/>
 
     <circle cx="163" cy="13" r="4" class="ledYellow"/>
 -->
-  <circle cx="180" cy="13" r="4" class="ledYellow" [class.on]="card.operation.bit(mscLine)"/>
+  <circle cx="180" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(mscLine)"/>
   <!--
   <circle cx="207" cy="13" r="4" class="ledYellow"/>
     -->

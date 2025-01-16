@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ClockLines, OperationLines, IDisplayBCard } from '@paul80nd/relay-computer-model';
 import { ClockCtrlLines } from '@paul80nd/relay-computer-model/lib/src/bus/bus-part-lines';
 import { DisplayBConditionComponent } from './display_b_condition.component';
@@ -23,6 +23,5 @@ export class DisplayBComponent {
 
   hltLine = ClockCtrlLines.HLT;
 
-  @Input()
-  card!: IDisplayBCard;
+  readonly card = input.required<IDisplayBCard>();
 }

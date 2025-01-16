@@ -2,9 +2,9 @@
   <!-- Origin at bay top left -->
   <title>Memory B</title>
 
-  <g rc-byte-leds [value]="card.memoryData" transform="translate(124,8.5)"></g>
+  <g rc-byte-leds [value]="card().memoryData" transform="translate(124,8.5)"></g>
 
-  <g rc-dbl-byte-leds [value]="card.memoryAddress" transform="translate(41.1,18)"></g>
+  <g rc-dbl-byte-leds [value]="card().memoryAddress" transform="translate(41.1,18)"></g>
 
   <svg:g transform="translate(-4,10)">
     <?xml version="1.0" encoding="utf-8" standalone="no"?>

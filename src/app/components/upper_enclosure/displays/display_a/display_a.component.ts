@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import {
   AluFunctionClLines, ClockLines,
@@ -35,6 +35,6 @@ export class DisplayAComponent {
   merLine: number = MemoryLines.MER;
   mewLine: number = MemoryLines.MEW;
 
-  @Input() card!: IDisplayACard;
+  readonly card = input.required<IDisplayACard>();
 
 }

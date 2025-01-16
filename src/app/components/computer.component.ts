@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { IComputer } from '@paul80nd/relay-computer-model'
 import { DisplayAComponent } from './upper_enclosure/displays/display_a/display_a.component';
 import { DisplayBComponent } from './upper_enclosure/displays/display_b/display_b.component';
@@ -10,14 +10,13 @@ import { CardBayZComponent } from './lower_enclosure/bays/z/card_bay_z.component
 import { StateViewComponent } from './state_view/state_view.component';
 
 @Component({
-    selector: 'rc-computer',
-    templateUrl: './computer.component.svg',
-    imports: [DisplayAComponent, DisplayBComponent, ControlSwitchesComponent, CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent, StateViewComponent]
+  selector: 'rc-computer',
+  templateUrl: './computer.component.svg',
+  imports: [DisplayAComponent, DisplayBComponent, ControlSwitchesComponent, CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent, StateViewComponent]
 })
 
 export class ComputerComponent {
 
-  @Input()
-  computer!: IComputer;
+  readonly computer = input.required<IComputer>();
 
 }

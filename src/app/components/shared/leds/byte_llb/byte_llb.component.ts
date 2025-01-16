@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BitValue } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
@@ -9,5 +9,5 @@ import { BitValue } from '@paul80nd/relay-computer-model';
 
 export class ByteLedLightBarComponent {
 
-  @Input() value!: BitValue;
+  readonly value = input.required<BitValue>();
 }

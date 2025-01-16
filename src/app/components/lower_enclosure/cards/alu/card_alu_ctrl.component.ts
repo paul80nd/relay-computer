@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import {
   AluFunctionClLines, AluOperationLines,
@@ -7,9 +7,9 @@ import {
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-alu-ctrl]',
-    templateUrl: './card_alu_ctrl.component.svg',
-    standalone: true
+  selector: '[rc-card-alu-ctrl]',
+  templateUrl: './card_alu_ctrl.component.svg',
+  standalone: true
 })
 
 export class CardAluControlComponent {
@@ -31,5 +31,5 @@ export class CardAluControlComponent {
   f1Line = AluFunctionClLines.F1;
   f0Line = AluFunctionClLines.F0;
 
-  @Input() card!: IAluControlCard;
+  readonly card = input.required<IAluControlCard>();
 }

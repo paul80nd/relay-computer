@@ -1,7 +1,7 @@
 <svg:g>
   <!-- Origin at bay top left -->
-  <g rc-register-leds [register]="card.registerB" description="Register B" transform="translate(19,13)"></g>
-  <g rc-register-leds [register]="card.registerC" description="Register C" transform="translate(123,13)"></g>
+  <g rc-register-leds [register]="card().registerB" description="Register B" transform="translate(19,13)"></g>
+  <g rc-register-leds [register]="card().registerC" description="Register C" transform="translate(123,13)"></g>
 
   <svg:g transform="translate(-4,10)">
     <?xml version="1.0" encoding="utf-8" standalone="no"?>

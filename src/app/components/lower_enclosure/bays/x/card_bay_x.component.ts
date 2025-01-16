@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 import { IXBackplane } from '@paul80nd/relay-computer-model';
 import { CardRegisterIComponent } from '../../cards/registers/card_register_i.component';
@@ -9,13 +9,13 @@ import { CardClockComponent } from '../../cards/clock/card_clock.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-card-bay-x]',
-    templateUrl: 'card_bay_x.component.svg',
-    imports: [CardRegisterIComponent, CardRegisterPCComponent, CardIncrementerAComponent, CardIncrementerBComponent, CardClockComponent]
+  selector: '[rc-card-bay-x]',
+  templateUrl: 'card_bay_x.component.svg',
+  imports: [CardRegisterIComponent, CardRegisterPCComponent, CardIncrementerAComponent, CardIncrementerBComponent, CardClockComponent]
 })
 
 export class CardBayXComponent {
 
-  @Input() backplane!: IXBackplane;
+  readonly backplane = input.required<IXBackplane>();
 
 }
