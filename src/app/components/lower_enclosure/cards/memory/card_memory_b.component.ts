@@ -8,7 +8,6 @@ import { DoubleByteLedsComponent } from '../../../shared/leds/byte_leds/dbl_byte
 @Component({
     selector: '[rc-card-memory-b]',
     templateUrl: 'card_memory_b.component.svg',
-    standalone: true,
     imports: [ByteLedsComponent, DoubleByteLedsComponent]
 })
 

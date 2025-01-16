@@ -7,7 +7,6 @@ import { NgClass } from '@angular/common';
 @Component({
     selector: '[rc-alu-op-llb]',
     templateUrl: 'alu_op_llb.component.svg',
-    standalone: true,
     imports: [NgClass]
 })
 

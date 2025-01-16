@@ -1,14 +1,10 @@
 import { Component, Input } from '@angular/core';
-
 import { CardPart } from '@paul80nd/relay-computer-model';
-import { NgFor } from '@angular/common';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-byte-switch]',
-    templateUrl: 'byte_switch.component.svg',
-    standalone: true,
-    imports: [NgFor]
+  selector: '[rc-byte-switch]',
+  templateUrl: 'byte_switch.component.svg'
 })
 
 export class ByteSwitchComponent {
@@ -18,5 +14,4 @@ export class ByteSwitchComponent {
   flipBit(position: number) {
     this.part.value = this.part.value.flipBit(position);
   }
-
 }

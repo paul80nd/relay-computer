@@ -12,7 +12,6 @@ import { StateViewComponent } from './state_view/state_view.component';
 @Component({
     selector: 'rc-computer',
     templateUrl: './computer.component.svg',
-    standalone: true,
     imports: [DisplayAComponent, DisplayBComponent, ControlSwitchesComponent, CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent, StateViewComponent]
 })
 

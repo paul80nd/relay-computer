@@ -11,7 +11,6 @@ import { CardDecoderComponent } from '../../cards/decoder/card_decoder.component
 @Component({
     selector: '[rc-card-bay-w]',
     templateUrl: './card_bay_w.component.svg',
-    standalone: true,
     imports: [CardSequencerAComponent, CardSequencerBComponent, CardControlAComponent, CardControlBComponent, CardDecoderComponent]
 })
 

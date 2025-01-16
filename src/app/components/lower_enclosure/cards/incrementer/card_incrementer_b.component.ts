@@ -7,7 +7,6 @@ import { Register16LedsComponent } from '../../../shared/leds/register_leds/regi
 @Component({
     selector: '[rc-card-incrementer-b]',
     templateUrl: 'card_incrementer_b.component.svg',
-    standalone: true,
     imports: [Register16LedsComponent]
 })
 

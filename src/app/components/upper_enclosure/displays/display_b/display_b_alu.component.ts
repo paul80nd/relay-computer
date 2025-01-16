@@ -11,7 +11,6 @@ import { AluOperationLedLightBarComponent } from '../../../shared/leds/alu_op_ll
 @Component({
     selector: '[rc-display-b-alu]',
     templateUrl: 'display_b_alu.component.svg',
-    standalone: true,
     imports: [AluOperationLedLightBarComponent]
 })
 export class DisplayBAluComponent {

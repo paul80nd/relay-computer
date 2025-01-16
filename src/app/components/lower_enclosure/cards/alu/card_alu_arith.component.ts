@@ -7,7 +7,6 @@ import { ByteLedsComponent } from '../../../shared/leds/byte_leds/byte_leds.comp
 @Component({
     selector: '[rc-card-alu-arith]',
     templateUrl: './card_alu_arith.component.svg',
-    standalone: true,
     imports: [ByteLedsComponent]
 })
 

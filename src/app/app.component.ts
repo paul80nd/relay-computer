@@ -10,7 +10,6 @@ import { InstructionSetComponent } from './components/instrset/instrset.componen
 @Component({
     selector: 'rc-root',
     templateUrl: './app.component.html',
-    standalone: true,
     imports: [ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ComputerComponent, ClrTabsModule, DocumentationComponent, ArchitectureDiagramComponent, InstructionSetComponent]
 })
 export class AppComponent implements OnInit {

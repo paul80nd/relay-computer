@@ -15,7 +15,6 @@ import { DisplayAA2CComponent } from './display_a_a2c.component';
 @Component({
     selector: '[rc-display-a]',
     templateUrl: './display_a.component.svg',
-    standalone: true,
     imports: [DisplayAA1AComponent, DisplayAA2AComponent, TactileSwitchComponent, DisplayAA2BComponent, DisplayAA2CComponent]
 })
 export class DisplayAComponent {

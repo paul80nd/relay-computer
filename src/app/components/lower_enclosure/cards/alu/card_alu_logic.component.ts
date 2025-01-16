@@ -7,7 +7,6 @@ import { ByteStackedLedsComponent } from '../../../shared/leds/byte_stacked_leds
 @Component({
     selector: '[rc-card-alu-logic]',
     templateUrl: './card_alu_logic.component.svg',
-    standalone: true,
     imports: [ByteStackedLedsComponent]
 })
 

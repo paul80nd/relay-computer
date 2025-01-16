@@ -7,7 +7,6 @@ import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_swit
 @Component({
     selector: '[rc-control-switches]',
     templateUrl: './control_switches.component.svg',
-    standalone: true,
     imports: [ByteSwitchComponent]
 })
 export class ControlSwitchesComponent {

@@ -11,7 +11,6 @@ import { CardClockComponent } from '../../cards/clock/card_clock.component';
 @Component({
     selector: '[rc-card-bay-x]',
     templateUrl: 'card_bay_x.component.svg',
-    standalone: true,
     imports: [CardRegisterIComponent, CardRegisterPCComponent, CardIncrementerAComponent, CardIncrementerBComponent, CardClockComponent]
 })
 

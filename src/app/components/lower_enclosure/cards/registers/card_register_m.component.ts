@@ -7,7 +7,6 @@ import { Register816LedsComponent } from '../../../shared/leds/register_leds/reg
 @Component({
     selector: '[rc-card-register-m]',
     templateUrl: 'card_register_m.component.svg',
-    standalone: true,
     imports: [Register816LedsComponent]
 })
 

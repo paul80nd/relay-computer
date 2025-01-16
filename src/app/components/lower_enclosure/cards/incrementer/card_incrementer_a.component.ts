@@ -7,7 +7,6 @@ import { DoubleByteLedsComponent } from '../../../shared/leds/byte_leds/dbl_byte
 @Component({
     selector: '[rc-card-incrementer-a]',
     templateUrl: 'card_incrementer_a.component.svg',
-    standalone: true,
     imports: [DoubleByteLedsComponent]
 })
 

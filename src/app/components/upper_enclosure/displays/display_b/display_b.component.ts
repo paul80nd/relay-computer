@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
-
 import { ClockLines, OperationLines, IDisplayBCard } from '@paul80nd/relay-computer-model';
 import { ClockCtrlLines } from '@paul80nd/relay-computer-model/lib/src/bus/bus-part-lines';
-import { NgFor } from '@angular/common';
 import { DisplayBConditionComponent } from './display_b_condition.component';
 import { DisplayBAluComponent } from './display_b_alu.component';
 import { ByteLedLightBarComponent } from '../../../shared/leds/byte_llb/byte_llb.component';
@@ -10,10 +8,9 @@ import { DoubleByteLedLightBarComponent } from '../../../shared/leds/byte_llb/db
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-    selector: '[rc-display-b]',
-    templateUrl: './display_b.component.svg',
-    standalone: true,
-    imports: [NgFor, DisplayBConditionComponent, DisplayBAluComponent, ByteLedLightBarComponent, DoubleByteLedLightBarComponent]
+  selector: '[rc-display-b]',
+  templateUrl: './display_b.component.svg',
+  imports: [DisplayBConditionComponent, DisplayBAluComponent, ByteLedLightBarComponent, DoubleByteLedLightBarComponent]
 })
 export class DisplayBComponent {
 
@@ -28,5 +25,4 @@ export class DisplayBComponent {
 
   @Input()
   card!: IDisplayBCard;
-
 }

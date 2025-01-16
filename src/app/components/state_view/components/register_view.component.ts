@@ -9,7 +9,6 @@ import { HexPipe } from '../hex.pipe';
     selector: '[rc-register-view]',
     templateUrl: './register_view.component.svg',
     styleUrls: ['./register_view.component.css'],
-    standalone: true,
     imports: [DecPipe, HexPipe]
 })
 

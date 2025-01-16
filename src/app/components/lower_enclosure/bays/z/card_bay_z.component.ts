@@ -11,7 +11,6 @@ import { CardAluLogicComponent } from '../../cards/alu/card_alu_logic.component'
 @Component({
     selector: '[rc-card-bay-z]',
     templateUrl: 'card_bay_z.component.svg',
-    standalone: true,
     imports: [CardRegisterADComponent, CardRegisterBCComponent, CardAluControlComponent, CardAluArithmeticComponent, CardAluLogicComponent]
 })
 

@@ -7,7 +7,6 @@ import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tac
 @Component({
     selector: '[rc-display-a-a2a]',
     templateUrl: 'display_a_a2a.component.svg',
-    standalone: true,
     imports: [TactileSwitchComponent]
 })
 export class DisplayAA2AComponent {

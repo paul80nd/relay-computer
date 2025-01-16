@@ -11,7 +11,6 @@ import { CardMemoryBComponent } from '../../cards/memory/card_memory_b.component
 @Component({
     selector: '[rc-card-bay-y]',
     templateUrl: 'card_bay_y.component.svg',
-    standalone: true,
     imports: [CardRegisterJComponent, CardRegisterMComponent, CardRegisterXYComponent, CardMemoryAComponent, CardMemoryBComponent]
 })
 
