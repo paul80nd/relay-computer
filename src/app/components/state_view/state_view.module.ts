@@ -7,17 +7,15 @@ import { RegisterViewComponent } from './components/register_view.component';
 import { DecPipe } from './dec.pipe';
 
 @NgModule({
-  declarations: [
-    StateViewComponent,
-    RegisterViewComponent,
-    DecPipe,
-    HexPipe
-  ],
-  exports: [
-    StateViewComponent
-  ],
-  imports: [
-    CommonModule
-  ]
+    exports: [
+        StateViewComponent
+    ],
+    imports: [
+        CommonModule,
+        StateViewComponent,
+        RegisterViewComponent,
+        DecPipe,
+        HexPipe
+    ]
 })
 export class StateViewModule { }

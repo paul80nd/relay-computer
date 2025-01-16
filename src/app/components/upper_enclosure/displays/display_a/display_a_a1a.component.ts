@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 
 import { BitValue, CardPart, RegABCDLines } from '@paul80nd/relay-computer-model';
+import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-  selector: '[rc-display-a-a1a]',
-  templateUrl: 'display_a_a1a.component.svg'
+    selector: '[rc-display-a-a1a]',
+    templateUrl: 'display_a_a1a.component.svg',
+    standalone: true,
+    imports: [TactileSwitchComponent]
 })
 export class DisplayAA1AComponent {
 

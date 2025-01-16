@@ -7,8 +7,9 @@ import {
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-  selector: '[rc-card-alu-ctrl]',
-  templateUrl: './card_alu_ctrl.component.svg'
+    selector: '[rc-card-alu-ctrl]',
+    templateUrl: './card_alu_ctrl.component.svg',
+    standalone: true
 })
 
 export class CardAluControlComponent {

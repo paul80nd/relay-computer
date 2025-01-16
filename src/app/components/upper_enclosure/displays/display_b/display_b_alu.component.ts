@@ -5,11 +5,14 @@ import {
   AluOperationLines,
   BitValue
 } from '@paul80nd/relay-computer-model';
+import { AluOperationLedLightBarComponent } from '../../../shared/leds/alu_op_llb/alu_op_llb.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-  selector: '[rc-display-b-alu]',
-  templateUrl: 'display_b_alu.component.svg'
+    selector: '[rc-display-b-alu]',
+    templateUrl: 'display_b_alu.component.svg',
+    standalone: true,
+    imports: [AluOperationLedLightBarComponent]
 })
 export class DisplayBAluComponent {
 

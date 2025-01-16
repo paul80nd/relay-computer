@@ -8,18 +8,15 @@ import { CardBayYComponent } from './y/card_bay_y.component';
 import { CardBayZComponent } from './z/card_bay_z.component';
 
 @NgModule({
-  declarations: [
-    CardBayWComponent,
-    CardBayXComponent,
-    CardBayYComponent,
-    CardBayZComponent
-  ],
-  exports: [
-    CardBayWComponent,
-    CardBayXComponent,
-    CardBayYComponent,
-    CardBayZComponent
-  ],
-  imports: [CardsModule]
+    exports: [
+        CardBayWComponent,
+        CardBayXComponent,
+        CardBayYComponent,
+        CardBayZComponent
+    ],
+    imports: [CardsModule, CardBayWComponent,
+        CardBayXComponent,
+        CardBayYComponent,
+        CardBayZComponent]
 })
 export class CardBaysModule { }

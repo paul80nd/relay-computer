@@ -5,8 +5,7 @@ import { SwitchesModule } from '../../shared/switches/switches.module';
 import { ControlSwitchesComponent } from './control_switches.component';
 
 @NgModule({
-  declarations: [ControlSwitchesComponent],
-  exports: [ControlSwitchesComponent],
-  imports: [SwitchesModule]
+    exports: [ControlSwitchesComponent],
+    imports: [SwitchesModule, ControlSwitchesComponent]
 })
 export class ControlSwitchesModule { }

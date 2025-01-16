@@ -7,13 +7,13 @@ import { ControlSwitchesModule } from './upper_enclosure/control_switches/contro
 import { DisplaysModule } from './upper_enclosure/displays/displays.module';
 
 @NgModule({
-  declarations: [ComputerComponent],
-  imports: [
-    CardBaysModule,
-    ControlSwitchesModule,
-    DisplaysModule,
-    StateViewModule
-  ],
-  exports: [ComputerComponent]
+    imports: [
+        CardBaysModule,
+        ControlSwitchesModule,
+        DisplaysModule,
+        StateViewModule,
+        ComputerComponent
+    ],
+    exports: [ComputerComponent]
 })
 export class ComputerModule { }

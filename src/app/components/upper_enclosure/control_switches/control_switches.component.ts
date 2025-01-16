@@ -1,11 +1,14 @@
 import { Component, Input } from '@angular/core';
 
 import { IControlSwitchesCard } from '@paul80nd/relay-computer-model';
+import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-  selector: '[rc-control-switches]',
-  templateUrl: './control_switches.component.svg'
+    selector: '[rc-control-switches]',
+    templateUrl: './control_switches.component.svg',
+    standalone: true,
+    imports: [ByteSwitchComponent]
 })
 export class ControlSwitchesComponent {
 

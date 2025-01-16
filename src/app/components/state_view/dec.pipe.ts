@@ -1,6 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({ name: 'dec' })
+@Pipe({
+    name: 'dec',
+    standalone: true
+})
 export class DecPipe implements PipeTransform {
   transform(value: number, length: string, neg: boolean): string {
     const len = parseInt(length);

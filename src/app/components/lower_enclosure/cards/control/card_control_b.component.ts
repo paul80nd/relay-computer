@@ -4,8 +4,9 @@ import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines, IControlCa
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
-  selector: '[rc-card-control-b]',
-  templateUrl: './card_control_b.component.svg'
+    selector: '[rc-card-control-b]',
+    templateUrl: './card_control_b.component.svg',
+    standalone: true
 })
 
 export class CardControlBComponent {
