@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { ByteLedsComponent } from './../byte_leds/byte_leds.component';
 import { IRegisterCardPart } from '@paul80nd/relay-computer-model';
 import { DoubleByteLedsComponent } from '../byte_leds/dbl_byte_leds.component';
@@ -13,6 +13,6 @@ import { DoubleByteLedsComponent } from '../byte_leds/dbl_byte_leds.component';
 
 export class Register16LedsComponent {
 
-  @Input() register!: IRegisterCardPart;
+  readonly register = input.required<IRegisterCardPart>();
   readonly description = input.required<string>();
 }

@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { BitValue, CardPart } from '@paul80nd/relay-computer-model';
 import { NgClass } from '@angular/common';
 
@@ -13,7 +13,10 @@ export class TactileSwitchComponent {
 
   readonly part = input.required<CardPart>();
   readonly valueIn = input.required<BitValue>();
-  @Input() description!: [string, string?];
+  readonly description = input.required<[
+    string,
+    string?
+]>();
   readonly color = input.required<string>();
   readonly bitTarget = input.required<number>();
 

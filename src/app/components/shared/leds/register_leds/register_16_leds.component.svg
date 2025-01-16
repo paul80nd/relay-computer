@@ -2,14 +2,14 @@
   <!-- Origin is at center of first (LD) led -->
   <title>Register {{ description() }}</title>
 
-  <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register.load" />
+  <circle cx="0" cy="0" r="4" class="ledYellow" [class.on]="register().load" />
 
-  @if (register.isSelectable) {
+  @if (register().isSelectable) {
     <g>
-      <circle cx="197" cy="0" r="4" class="ledGreen" [class.on]="register.select" />
+      <circle cx="197" cy="0" r="4" class="ledGreen" [class.on]="register().select" />
     </g>
   }
 
-  <g rc-dbl-byte-leds [value]="register.value.value" transform="translate(20.25,0)"></g>
+  <g rc-dbl-byte-leds [value]="register().value.value" transform="translate(20.25,0)"></g>
 
   </svg:g>
