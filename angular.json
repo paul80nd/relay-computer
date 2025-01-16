@@ -23,8 +23,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/@clr/ui/clr-ui.min.css"
+              "node_modules/@cds/core/global.min.css",
+              "node_modules/@cds/core/styles/theme.dark.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "src/styles.css"
             ]
           },
           "configurations": {
@@ -70,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "relay-computer:build:production"
+              "buildTarget": "relay-computer:build:production"
             },
             "development": {
-              "browserTarget": "relay-computer:build:development"
+              "buildTarget": "relay-computer:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "relay-computer:build"
+            "buildTarget": "relay-computer:build"
           }
         },
         "lint": {
