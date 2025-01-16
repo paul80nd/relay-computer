@@ -1,12 +1,39 @@
-* {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+:root [cds-theme] {
+  --cds-alias-object-interaction-outline: none;
+  --clr-header-divider-color: inherit;
+}
+
+*:focus {
   -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
   outline: none !important;
 }
 
 body {
     background-color: hsl(198, 0%, 20%);
     overflow: hidden;
+}
+
+header {
+  --clr-header-height: 2rem;
+
+  .branding .nav-link cds-icon {
+    fill: var(--cds-global-color-warm-gray-300);
+    height: var(--cds-global-space-10);
+    width: var(--cds-global-space-10);
+  }
+  .nav-link {
+    height: var(--clr-header-height);
+    clr-checkbox-wrapper {
+      margin-right: 0;
+    }
+  }
+  .header-actions {
+    padding-right: .5em;
+    .dropdown-toggle {
+      padding: var(--cds-global-space-5) var(--cds-global-space-5) !important;
+    }
+  }
 }
 
 .content-area { padding: 0 0.5rem !important; }
@@ -29,6 +56,7 @@ svg text::selection {
   width: 100%;
   padding: 0;
   padding-bottom: 100%;
+  overflow: auto;
   /* over-ride this inline for aspect ratio other than square */
 }
 .scaling-svg {
@@ -143,7 +171,7 @@ svg text::selection {
 .d-text6, .d-text7, .d-text8, .d-text9,
 .d-text10, .d-text13, .d-text14 {
     font-size: 6px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .d-text3 { font-size: 3px; }
 .d-text4 { font-size: 4px; }
