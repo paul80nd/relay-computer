@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ComputerFactory, IComputer, IComputerFactory } from '@paul80nd/relay-computer-model';
+import { ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ClrTabsModule } from '@clr/angular';
+import { ComputerComponent } from './components/computer.component';
+import { DocumentationComponent } from './components/docs/docs.component';
+import { ArchitectureDiagramComponent } from './components/archdiag/archdiag.component';
+import { InstructionSetComponent } from './components/instrset/instrset.component';
 
 @Component({
-  selector: 'rc-root',
-  templateUrl: './app.component.html'
+    selector: 'rc-root',
+    templateUrl: './app.component.html',
+    standalone: true,
+    imports: [ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ComputerComponent, ClrTabsModule, DocumentationComponent, ArchitectureDiagramComponent, InstructionSetComponent]
 })
 export class AppComponent implements OnInit {
 

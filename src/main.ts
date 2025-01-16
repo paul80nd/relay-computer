@@ -1,12 +1,30 @@
 import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { AppComponent } from './app/app.component';
+
+import {
+  ClarityIcons,
+  angleIcon,
+  clockIcon,
+  flaskIcon,
+  helpInfoIcon,
+  importIcon,
+  libraryIcon,
+  listIcon,
+  rulerPencilIcon
+} from '@cds/core/icon';
+
+ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, importIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon);
 
 if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+bootstrapApplication(AppComponent, {
+    providers: [
+    provideAnimations()
+]
+})
   .catch(err => console.error(err));
