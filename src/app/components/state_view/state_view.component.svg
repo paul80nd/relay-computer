@@ -3,19 +3,29 @@
   <svg:g transform="scale(0.325 0.325) translate(5 5)">
 
     <!-- Memory Column Titles -->
-    <g *ngFor="let idx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-      <text [attr.x]="85+(40*idx)" y="228" class="mem-row-label" text-anchor="middle">{{ idx | hex:"1" }}</text>
-    </g>
+    @for (idx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track idx) {
+      <g>
+        <text [attr.x]="85+(40*idx)" y="228" class="mem-row-label" text-anchor="middle">{{ idx | hex:"1" }}</text>
+      </g>
+    }
 
     <!-- Memory Rows -->
-    <g *ngFor="let idx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-      <text x="40" [attr.y]="258+(30*idx)" class="mem-row-label" text-anchor="middle">{{ ((offset/16) + idx) | hex:"3" }}</text>
-      <g *ngFor="let sidx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]">
-        <rect [attr.x]="65+(40*sidx)" [attr.y]="236+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" width="40" height="30" fill="none" stroke="#999999" />
-        <text *ngIf="!memoryDec" [attr.x]="85+(40*sidx)" [attr.y]="258+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | hex:"2" }}</text>
-        <text *ngIf="memoryDec" [attr.x]="85+(40*sidx)" [attr.y]="257+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text-int" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | dec:"2":false }}</text>
+    @for (idx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track idx) {
+      <g>
+        <text x="40" [attr.y]="258+(30*idx)" class="mem-row-label" text-anchor="middle">{{ ((offset/16) + idx) | hex:"3" }}</text>
+        @for (sidx of [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]; track sidx) {
+          <g>
+            <rect [attr.x]="65+(40*sidx)" [attr.y]="236+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" width="40" height="30" fill="none" stroke="#999999" />
+            @if (!memoryDec) {
+              <text [attr.x]="85+(40*sidx)" [attr.y]="258+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | hex:"2" }}</text>
+            }
+            @if (memoryDec) {
+              <text [attr.x]="85+(40*sidx)" [attr.y]="257+(30*idx)" [class.mem-pc]="offset + (idx*16) + sidx === computer.xBackplane.registerPC.pcAddress" class="mem-cell-text-int" text-anchor="middle">{{ computer.yBackplane.memory.memoryArray[offset + (idx*16) + sidx] | dec:"2":false }}</text>
+            }
+          </g>
+        }
       </g>
-    </g>
+    }
 
     <path d="M 705 206 L 255 206" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" />
     <path d="M 705 236 L 705 206" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" />
@@ -40,57 +50,61 @@
 
     <!-- 8-bit Registers -->
     <svg:g rc-register-view transform="translate(0,0)" [registerPart]="computer.zBackplane.registerAD.registerA.value" [registerName]="'A'"></svg:g>
-    <svg:g rc-register-view transform="translate(40,0)" [registerPart]="computer.zBackplane.registerBC.registerB.value" [registerName]="'B'"></svg:g>
-    <svg:g rc-register-view transform="translate(80,0)" [registerPart]="computer.zBackplane.registerBC.registerC.value" [registerName]="'C'"></svg:g>
-    <svg:g rc-register-view transform="translate(120,0)" [registerPart]="computer.zBackplane.registerAD.registerD.value" [registerName]="'D'"></svg:g>
-    <svg:g rc-register-view transform="translate(200,0)" [registerPart]="computer.yBackplane.registerM.register.valueHi" [registerName]="'M1'"></svg:g>
-    <svg:g rc-register-view transform="translate(240,0)" [registerPart]="computer.yBackplane.registerM.register.valueLo" [registerName]="'M2'"></svg:g>
-    <svg:g rc-register-view transform="translate(280,0)" [registerPart]="computer.yBackplane.registerXY.register.valueHi" [registerName]="'X'"></svg:g>
-    <svg:g rc-register-view transform="translate(320,0)" [registerPart]="computer.yBackplane.registerXY.register.valueLo" [registerName]="'Y'"></svg:g>
-    <svg:g rc-register-view transform="translate(360,0)" [registerPart]="computer.yBackplane.registerJ.register.valueHi" [registerName]="'J1'"></svg:g>
-    <svg:g rc-register-view transform="translate(400,0)" [registerPart]="computer.yBackplane.registerJ.register.valueLo" [registerName]="'J2'"></svg:g>
+      <svg:g rc-register-view transform="translate(40,0)" [registerPart]="computer.zBackplane.registerBC.registerB.value" [registerName]="'B'"></svg:g>
+        <svg:g rc-register-view transform="translate(80,0)" [registerPart]="computer.zBackplane.registerBC.registerC.value" [registerName]="'C'"></svg:g>
+          <svg:g rc-register-view transform="translate(120,0)" [registerPart]="computer.zBackplane.registerAD.registerD.value" [registerName]="'D'"></svg:g>
+            <svg:g rc-register-view transform="translate(200,0)" [registerPart]="computer.yBackplane.registerM.register.valueHi" [registerName]="'M1'"></svg:g>
+              <svg:g rc-register-view transform="translate(240,0)" [registerPart]="computer.yBackplane.registerM.register.valueLo" [registerName]="'M2'"></svg:g>
+                <svg:g rc-register-view transform="translate(280,0)" [registerPart]="computer.yBackplane.registerXY.register.valueHi" [registerName]="'X'"></svg:g>
+                  <svg:g rc-register-view transform="translate(320,0)" [registerPart]="computer.yBackplane.registerXY.register.valueLo" [registerName]="'Y'"></svg:g>
+                    <svg:g rc-register-view transform="translate(360,0)" [registerPart]="computer.yBackplane.registerJ.register.valueHi" [registerName]="'J1'"></svg:g>
+                      <svg:g rc-register-view transform="translate(400,0)" [registerPart]="computer.yBackplane.registerJ.register.valueLo" [registerName]="'J2'"></svg:g>
 
-    <!-- 16-bit Registers -->
-    <rect x="625" y="134" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="665" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
-    <rect x="625" y="159" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="665" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
-    <rect x="545" y="134" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="585" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
-    <rect x="545" y="159" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="585" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
-    <rect x="465" y="134" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="505" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
-    <rect x="465" y="159" width="80" height="25" fill="none" stroke="#999999" />
-    <text x="505" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <!-- 16-bit Registers -->
+                        <rect x="625" y="134" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="665" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <rect x="625" y="159" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="665" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerJ.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerJ.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <rect x="545" y="134" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="585" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <rect x="545" y="159" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="585" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerXY.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerXY.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
+                        <rect x="465" y="134" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="505" y="153" class="register-value-int" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":false }}</text>
+                        <rect x="465" y="159" width="80" height="25" fill="none" stroke="#999999" />
+                        <text x="505" y="177" class="register-value-sint" text-anchor="middle">{{ (shift(computer.yBackplane.registerM.register.valueHi.value.toUnsignedNumber()) + computer.yBackplane.registerM.register.valueLo.value.toUnsignedNumber())  | dec:"4":true }}</text>
 
-    <!-- Inst and PC -->
-    <text x="105" y="39" class="register-label" text-anchor="middle">PC</text>
-    <rect x="65" y="50" width="80" height="35" fill="none" stroke="#999999" />
-    <text x="105" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerPC.register.value.value.toUnsignedNumber() | hex:"4" }}</text>
-    <text x="185" y="39" class="register-label" text-anchor="middle">INST</text>
-    <rect x="145" y="50" width="80" height="35" fill="none" stroke="#999999" />
-    <text x="185" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerI.register.value.value.toUnsignedNumber() | hex:"2" }}</text>
+                        <!-- Inst and PC -->
+                        <text x="105" y="39" class="register-label" text-anchor="middle">PC</text>
+                        <rect x="65" y="50" width="80" height="35" fill="none" stroke="#999999" />
+                        <text x="105" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerPC.register.value.value.toUnsignedNumber() | hex:"4" }}</text>
+                        <text x="185" y="39" class="register-label" text-anchor="middle">INST</text>
+                        <rect x="145" y="50" width="80" height="35" fill="none" stroke="#999999" />
+                        <text x="185" y="78" class="register-value-big" text-anchor="middle">{{ computer.xBackplane.registerI.register.value.value.toUnsignedNumber() | hex:"2" }}</text>
 
-    <!-- Memory Paging -->
-    <text x="77" y="143" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Page</text>
-    <g *ngIf="offset >= 256" (click)="prevPage()" class="clickable" transform="translate(0 -4)">
-      <path d="M 126.25 132.09 L 136.25 140 L 126.25 147.92 Z" fill="#e6e6e6" stroke="#999999" stroke-miterlimit="10" transform="rotate(-180,131.25,140)" />
-    </g>
-    <text x="165" y="144" class="register-value" text-anchor="middle">{{ offset | hex:"4"}}</text>
-    <g *ngIf="offset < 65280" (click)="nextPage()" class="clickable" transform="translate(0 -4)">
-      <path d="M 193 132.09 L 203 140 L 193 147.92 Z" fill="#e6e6e6" stroke="#999999" stroke-miterlimit="10" />
-    </g>
+                        <!-- Memory Paging -->
+                        <text x="77" y="143" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Page</text>
+                        @if (offset >= 256) {
+                          <g (click)="prevPage()" class="clickable" transform="translate(0 -4)">
+                            <path d="M 126.25 132.09 L 136.25 140 L 126.25 147.92 Z" fill="#e6e6e6" stroke="#999999" stroke-miterlimit="10" transform="rotate(-180,131.25,140)" />
+                          </g>
+                        }
+                        <text x="165" y="144" class="register-value" text-anchor="middle">{{ offset | hex:"4"}}</text>
+                        @if (offset < 65280) {
+                          <g (click)="nextPage()" class="clickable" transform="translate(0 -4)">
+                            <path d="M 193 132.09 L 203 140 L 193 147.92 Z" fill="#e6e6e6" stroke="#999999" stroke-miterlimit="10" />
+                          </g>
+                        }
 
-    <!-- Memory Values -->
-    <text x="77" y="173" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Disp</text>
-    <text x="147" y="174" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Hex</text>
-    <text x="147" y="194" fill="#e6e6e6" font-family="Helvetica" font-size="16px">UInt</text>
-    <g (click)="memoryDec = false" class="clickable">
-      <ellipse cx="131.25" cy="168" rx="8" ry="8" [attr.fill]="memoryDec?'#333333':'#e6e6e6'" stroke="#999999" />
-    </g>
-    <g (click)="memoryDec = true" class="clickable">
-      <ellipse cx="131.25" cy="188" rx="8" ry="8" [attr.fill]="memoryDec?'#e6e6e6':'#333333'" stroke="#999999" />
-    </g>
+                        <!-- Memory Values -->
+                        <text x="77" y="173" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Disp</text>
+                        <text x="147" y="174" fill="#e6e6e6" font-family="Helvetica" font-size="16px">Hex</text>
+                        <text x="147" y="194" fill="#e6e6e6" font-family="Helvetica" font-size="16px">UInt</text>
+                        <g (click)="memoryDec = false" class="clickable">
+                          <ellipse cx="131.25" cy="168" rx="8" ry="8" [attr.fill]="memoryDec?'#333333':'#e6e6e6'" stroke="#999999" />
+                        </g>
+                        <g (click)="memoryDec = true" class="clickable">
+                          <ellipse cx="131.25" cy="188" rx="8" ry="8" [attr.fill]="memoryDec?'#e6e6e6':'#333333'" stroke="#999999" />
+                        </g>
 
-  </svg:g>
+                        </svg:g>

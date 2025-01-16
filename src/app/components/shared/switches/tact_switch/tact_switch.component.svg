@@ -1,14 +1,18 @@
 <!-- Origin is at top left of switch -->
 <svg:g class="clickable" (click)="flipBit()">
-    <rect x="0" y="0" width="22" height="22" fill="#eee" />
-    <rect x="2" y="2" width="18" height="18" [ngClass]="'btn'+color"
-        [class.on]="part.value.bit(bitTarget) || (valueIn && valueIn.bit(bitTarget))" />
-    <rect x="2" y="2" width="18" height="18" class="btnOutline" />
-    <text *ngIf="description[1]" transform="translate(2 4)" fill="black">
-        <tspan class="d-text7" x="9" y="6" text-anchor="middle">{{ description[0] }}</tspan>
-        <tspan class="d-text7" x="9" y="13" text-anchor="middle">{{ description[1] }}</tspan>
+  <rect x="0" y="0" width="22" height="22" fill="#eee" />
+  <rect x="2" y="2" width="18" height="18" [ngClass]="'btn'+color"
+    [class.on]="part.value.bit(bitTarget) || (valueIn && valueIn.bit(bitTarget))" />
+  <rect x="2" y="2" width="18" height="18" class="btnOutline" />
+  @if (description[1]) {
+    <text transform="translate(2 4)" fill="black">
+      <tspan class="d-text7" x="9" y="6" text-anchor="middle">{{ description[0] }}</tspan>
+      <tspan class="d-text7" x="9" y="13" text-anchor="middle">{{ description[1] }}</tspan>
     </text>
-    <text *ngIf="!description[1]" transform="translate(2 4)" fill="black">
-        <tspan class="d-text7" x="9" y="9.5" text-anchor="middle">{{ description[0] }}</tspan>
+  }
+  @if (!description[1]) {
+    <text transform="translate(2 4)" fill="black">
+      <tspan class="d-text7" x="9" y="9.5" text-anchor="middle">{{ description[0] }}</tspan>
     </text>
-</svg:g>
+  }
+  </svg:g>

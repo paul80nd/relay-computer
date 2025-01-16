@@ -1,4 +1,6 @@
 <!-- Origin is at centre of bit 15 led -->
-<svg:g *ngFor="let i of [15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]">
+@for (i of [15,14,13,12,11,10,9,8,7,6,5,4,3,2,1,0]; track i) {
+  <svg:g>
     <svg:circle [attr.cx]="155-(10.35*i)" cy="0" r="4" class="ledRed" [class.on]="value.bit(i)"></svg:circle>
-</svg:g>
+      </svg:g>
+    }

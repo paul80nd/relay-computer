@@ -2,9 +2,11 @@
   <!-- Origin at bay top left -->
   <title>Sequencer Card A</title>
 
-  <g *ngFor="let i of [13,14,15,16,17,18,19,20,21,22,23]">
-    <circle [attr.cx]="18.75+(10.4*(i-13))" cy="18" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
-  </g>
+  @for (i of [13,14,15,16,17,18,19,20,21,22,23]; track i) {
+    <g>
+      <circle [attr.cx]="18.75+(10.4*(i-13))" cy="18" r="4" class="ledRed" [class.on]="card.fsm.bit(i)" />
+    </g>
+  }
 
   <circle cx="29" cy="8.5" r="4" class="ledYellow" [class.on]="card.abort.bit(at14Line)" />
 
@@ -126,5 +128,5 @@
         </g>
       </g>
     </svg>
-  </svg:g>
-</svg:g>
+    </svg:g>
+    </svg:g>
