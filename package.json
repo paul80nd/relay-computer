@@ -20,8 +20,8 @@
     "@angular/platform-browser-dynamic": "19.1.4",
     "@angular/router": "19.1.4",
     "@cds/core": "6.15.1",
-    "@clr/angular": "17.5.0",
-    "@clr/ui": "17.5.0",
+    "@clr/angular": "17.6.0",
+    "@clr/ui": "17.6.0",
     "@paul80nd/relay-computer-model": "1.2.3",
     "rxjs": "7.8.1",
     "zone.js": "0.15.0"
