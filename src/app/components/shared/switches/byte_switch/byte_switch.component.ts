@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { CardPart } from '@paul80nd/relay-computer-model';
+import { CardOutput } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
@@ -9,7 +9,7 @@ import { CardPart } from '@paul80nd/relay-computer-model';
 
 export class ByteSwitchComponent {
 
-  readonly part = input.required<CardPart>();
+  readonly part = input.required<CardOutput>();
 
   flipBit(position: number) {
     this.part().value = this.part().value.flipBit(position);

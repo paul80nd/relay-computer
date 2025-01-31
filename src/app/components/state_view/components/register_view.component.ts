@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { CardPart } from '@paul80nd/relay-computer-model';
+import { ICardOutput } from '@paul80nd/relay-computer-model';
 import { DecPipe } from '../dec.pipe';
 import { HexPipe } from '../hex.pipe';
 
@@ -14,7 +14,7 @@ import { HexPipe } from '../hex.pipe';
 
 export class RegisterViewComponent {
 
-  readonly registerPart = input.required<CardPart>();
+  readonly registerPart = input.required<ICardOutput>();
   readonly registerName = input.required<string>();
 
 }

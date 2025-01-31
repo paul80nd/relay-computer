@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { BitValue, CardPart } from '@paul80nd/relay-computer-model';
+import { BitValue, CardOutput } from '@paul80nd/relay-computer-model';
 import { NgClass } from '@angular/common';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
@@ -11,7 +11,7 @@ import { NgClass } from '@angular/common';
 
 export class TactileSwitchComponent {
 
-  readonly part = input.required<CardPart>();
+  readonly part = input.required<CardOutput>();
   readonly valueIn = input.required<BitValue>();
   readonly description = input.required<[
     string,

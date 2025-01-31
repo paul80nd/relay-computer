@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { BitValue, CardPart, RegABCDLines } from '@paul80nd/relay-computer-model';
+import { BitValue, CardOutput, RegABCDLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
@@ -20,7 +20,7 @@ export class DisplayAA1AComponent {
   selCLine: number = RegABCDLines.RSC;
   selDLine: number = RegABCDLines.RSD;
 
-  readonly part = input.required<CardPart>();
+  readonly part = input.required<CardOutput>();
   readonly valueIn = input.required<BitValue>();
 
 }

@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 
-import { BitValue , CardPart, AluOperationLines } from '@paul80nd/relay-computer-model';
+import { BitValue , CardOutput, AluOperationLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
@@ -19,7 +19,7 @@ export class DisplayAA2CComponent {
   xorLine: number = AluOperationLines.XOR;
   notLine: number = AluOperationLines.NOT;
 
-  readonly part = input.required<CardPart>();
+  readonly part = input.required<CardOutput>();
   readonly valueIn = input.required<BitValue>();
 
 }
