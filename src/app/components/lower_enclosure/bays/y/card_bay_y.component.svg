@@ -8,11 +8,11 @@
       <svg:rect x="11" y="82" width="214" height="30" class="ledHolder" rx="5" ry="5" />
       <svg:rect x="11" y="122" width="214" height="30" class="ledHolder" rx="5" ry="5" />
       <svg:rect x="11" y="162" width="214" height="30" class="ledHolder" rx="5" ry="5" />
-      <svg:g rc-card-register-j [card]="backplane().registerJ" transform="translate(0,0)"></svg:g>
-      <svg:g rc-card-register-m [card]="backplane().registerM" transform="translate(0,40)"></svg:g>
-      <svg:g rc-card-register-xy [card]="backplane().registerXY" transform="translate(0,80)"></svg:g>
-      <svg:g rc-card-memory-a [card]="backplane().memory" transform="translate(0,120)"></svg:g>
-      <svg:g rc-card-memory-b [card]="backplane().memory" transform="translate(0,160)"></svg:g>
+      <svg:g rc-card-register-j [card]="backplane().registerJ" transform="translate(0,0)" class="card"></svg:g>
+      <svg:g rc-card-register-m [card]="backplane().registerM" transform="translate(0,40)" class="card"></svg:g>
+      <svg:g rc-card-register-xy [card]="backplane().registerXY" transform="translate(0,80)" class="card"></svg:g>
+      <svg:g rc-card-memory-a [card]="backplane().memory" transform="translate(0,120)" class="card"></svg:g>
+      <svg:g rc-card-memory-b [card]="backplane().memory" transform="translate(0,160)" class="card"></svg:g>
     </svg:g>
   </svg:g>
 </svg:g>

@@ -170,6 +170,13 @@ svg text::selection {
     fill: hsl(0, 69%, 67%);
 }
 
+.card-label {
+  fill: #777;
+}
+.card:hover .card-label {
+  fill: #eee;
+}
+
 .d-text3, .d-text4, .d-text5,
 .d-text6, .d-text7, .d-text8, .d-text9,
 .d-text10, .d-text13, .d-text14 {
