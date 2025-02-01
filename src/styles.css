@@ -86,7 +86,7 @@ svg text::selection {
 }
 
 .bayBackground {
-  fill: hsl(198, 0%, 15%);
+  fill: hsl(198, 0%, 10%);
   stroke: hsl(198, 100%, 32%);
   stroke-linecap: round;
   stroke-linejoin: round;
