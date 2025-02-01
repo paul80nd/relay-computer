@@ -16,6 +16,7 @@ export class DisplayBComponent {
 
   setLine = OperationLines.ISET;
   mv8Line = OperationLines.IMV8;
+  m16Line = OperationLines.IM16;
   gtoLine = OperationLines.IGTO;
   mscLine = OperationLines.IMSC;
 
