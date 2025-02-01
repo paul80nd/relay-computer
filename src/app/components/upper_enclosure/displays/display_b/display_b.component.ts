@@ -21,6 +21,7 @@ export class DisplayBComponent {
   mscLine = OperationLines.IMSC;
   strLine = OperationLines.ISTR;
   lodLine = OperationLines.ILOD;
+  incLine = OperationLines.IINC;
 
   clkLine = ClockLines.CLK;
 
