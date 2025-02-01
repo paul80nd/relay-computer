@@ -167,6 +167,39 @@
       </tr>
     </tbody>
   </table>
+  <!-- STORE -->
+  <table class="table table-compact">
+    <tbody>
+      <tr>
+        <td colspan="7" class="instrset-class"><code>STORE</code></td>
+        <td class="instrset-cycles"><code>12</code></td>
+      </tr>
+      <tr class="instrset-opcode">
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td><code>s</code></td>
+        <td><code>s</code></td>
+      </tr>
+      <tr>
+        <td colspan="8">
+          <b>Store Register</b><br />
+          Stores the value in register A, B, C or D into the memory address pointed to by register M
+        </td>
+      </tr>
+      <tr>
+        <td colspan="8" class="left">
+          <code>
+                        ss = destination register<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00-A 01-B 10-C 11-D<br />
+                    </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <!-- HALT -->
   <table class="table table-compact">
     <tbody>

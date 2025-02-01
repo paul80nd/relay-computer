@@ -19,6 +19,7 @@ export class DisplayBComponent {
   m16Line = OperationLines.IM16;
   gtoLine = OperationLines.IGTO;
   mscLine = OperationLines.IMSC;
+  strLine = OperationLines.ISTR;
 
   clkLine = ClockLines.CLK;
 

@@ -24,11 +24,11 @@
       <text transform="translate(361.77557 19.2)" fill="black">
         <tspan class="d-text6" x="8.1649607" y="6">MISC</tspan>
       </text>
-      <rect x="360" y="27.999977" width="35" height="8" class="indYellow" />
+      <rect x="360" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(strLine)" />
       <rect x="360" y="27.999977" width="35" height="8" class="indOutline" />
-      <!-- <text transform="translate(361.77557 28.2)" fill="black">
-    <tspan class="d-text6" x="5.3832224" y="6">STORE</tspan>
-  </text> -->
+      <text transform="translate(361.77557 28.2)" fill="black">
+        <tspan class="d-text6" x="5.3832224" y="6">STORE</tspan>
+      </text>
       <rect x="360" y="36.999977" width="35" height="8" class="indYellow" />
       <rect x="360" y="36.999977" width="35" height="8" class="indOutline" />
       <!-- <text transform="translate(361.77557 37.2)" fill="black">
