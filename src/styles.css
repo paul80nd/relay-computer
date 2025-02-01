@@ -131,14 +131,14 @@ svg text::selection {
 }
 
 .indOutline {
-  stroke: #eee;
+  stroke: #ddd;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1;
 }
 
 .indYellow, .indGreen, .indRed {
-    fill: hsl(198, 0%, 50%);
+    fill: hsl(198, 0%, 35%);
 }
 
 .ledRed, .ledYellow, .ledGreen {
@@ -151,20 +151,23 @@ svg text::selection {
 .ledRed {
     fill: #bbb;
 }
-.btnYellow { fill: hsl(38, 100%, 28%); }
-.ledYellow { fill: hsl(31, 100%, 19%); }
+.btnYellow { fill: hsl(54, 100%, 20%); }
+.ledYellow { fill: hsl(54, 100%, 12%); }
 .btnYellow.on, .indYellow.on, .ledYellow.on {
-    fill: hsl(48, 94%, 57%);
+    fill: hsl(54, 100%, 62%)
 }
-.btnGreen { fill: hsl(93, 100%, 21%); }
-.ledGreen { fill: hsl(93, 100%, 13%); }
+.btnGreen { fill: hsl(122, 39%, 25%); }
+.ledGreen { fill: hsl(122, 39%, 15%); }
 .btnGreen.on, .indGreen.on, .ledGreen.on {
-    fill: hsl(93, 77%, 44%);
+    fill: hsl(122, 39%, 49%);
 }
-.btnRed { fill: hsl(9, 100%, 20%); }
-.ledRed { fill: hsl(9, 100%, 20%); }
-.btnRed.on, .indRed.on, .ledRed.on {
-    fill:  hsl(9, 92%, 50%);
+.btnRed { fill: hsl(4, 90%, 25%); }
+.ledRed { fill: hsl(4, 90%, 20%); }
+.ledRed.on {
+    fill:  hsl(4, 90%, 58%);
+}
+.btnRed.on, .indRed.on {
+    fill: hsl(0, 69%, 67%);
 }
 
 .d-text3, .d-text4, .d-text5,
