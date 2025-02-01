@@ -13,12 +13,11 @@
       </g>
       }
 
-
-      <rect x="360" y="9.999977" width="35" height="8" class="indYellow" />
+      <rect x="360" y="9.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(lodLine)" />
       <rect x="360" y="9.999977" width="35" height="8" class="indOutline" />
-      <!-- <text transform="translate(361.77557 10.2)" fill="black">
-      <tspan class="d-text6" x="7.495527" y="6">LOAD</tspan>
-    </text> -->
+      <text transform="translate(361.77557 10.2)" fill="black">
+        <tspan class="d-text6" x="7.495527" y="6">LOAD</tspan>
+      </text>
       <rect x="360" y="18.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(mscLine)" />
       <rect x="360" y="18.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(361.77557 19.2)" fill="black">

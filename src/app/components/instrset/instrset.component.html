@@ -104,6 +104,39 @@
       </tr>
     </tbody>
   </table>
+  <!-- LOAD -->
+  <table class="table table-compact">
+    <tbody>
+      <tr>
+        <td colspan="7" class="instrset-class"><code>LOAD</code></td>
+        <td class="instrset-cycles"><code>12</code></td>
+      </tr>
+      <tr class="instrset-opcode">
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>1</code></td>
+        <td class="classbit"><code>0</code></td>
+        <td><code>r</code></td>
+        <td><code>r</code></td>
+      </tr>
+      <tr>
+        <td colspan="8" class="left">
+          <b>Load Register:</b>
+          Loads register A, B, C or D with the value in memory at the address pointed to by register M
+        </td>
+      </tr>
+      <tr>
+        <td colspan="8" class="left">
+          <code>
+            rr = destination register<br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00-A 01-B 10-C 11-D<br />
+          </code>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <!-- MOV-8 -->
   <table class="table table-compact">
     <tbody>
@@ -242,7 +275,7 @@
       <tr>
         <td colspan="8" class="left">
           <code>
-            rr = destination register<br />
+            rr = source register<br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;00-A 01-B 10-C 11-D<br />
           </code>
         </td>

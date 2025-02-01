@@ -20,6 +20,7 @@ export class DisplayBComponent {
   gtoLine = OperationLines.IGTO;
   mscLine = OperationLines.IMSC;
   strLine = OperationLines.ISTR;
+  lodLine = OperationLines.ILOD;
 
   clkLine = ClockLines.CLK;
 
