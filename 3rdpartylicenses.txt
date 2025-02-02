@@ -327,11 +327,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 --------------------------------------------------------------------------------
-Package: @paul80nd/relay-computer-model
-License: "MIT"
-
-
---------------------------------------------------------------------------------
 Package: @cds/core
 License: "MIT"
 
