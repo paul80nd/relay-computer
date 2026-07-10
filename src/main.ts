@@ -1,4 +1,4 @@
-import { enableProdMode, provideZonelessChangeDetection } from '@angular/core';
+import { enableProdMode, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
 import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -26,6 +26,9 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     provideZonelessChangeDetection(),
+    // Without zone.js, uncaught errors from event handlers / async callbacks no
+    // longer implicitly reach Angular's ErrorHandler — this restores that.
+    provideBrowserGlobalErrorListeners(),
     // Async variant: lazy-loads the animations engine. Clarity 18 still depends
     // on @angular/animations internally (modal, vertical-nav, tree-view), so the
     // provider is required; app code itself uses no animation triggers.

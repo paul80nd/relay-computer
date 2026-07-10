@@ -1,4 +1,4 @@
-import { Component, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, signal, ChangeDetectionStrategy } from '@angular/core';
 
 import { IControlSwitchesCard } from '@paul80nd/relay-computer-model';
 import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_switch.component';
@@ -14,54 +14,57 @@ export class ControlSwitchesComponent {
 
   readonly card = input.required<IControlSwitchesCard>();
 
-  deposit: boolean = false;
-  depositNext: boolean = false;
-  examine: boolean = false;
-  examineNext: boolean = false;
-  loadAddr: boolean = false;
+  // Transient switch-position state. Signals so the delayed reset below marks
+  // the view for change detection on its own, rather than relying on the global
+  // render loop to notice the mutation.
+  readonly deposit = signal(false);
+  readonly depositNext = signal(false);
+  readonly examine = signal(false);
+  readonly examineNext = signal(false);
+  readonly loadAddr = signal(false);
 
   changeDeposit(up: boolean): void {
-    if (!this.deposit && !this.depositNext) {
+    if (!this.deposit() && !this.depositNext()) {
       if (up) {
-        this.deposit = false;
-        this.depositNext = true;
+        this.deposit.set(false);
+        this.depositNext.set(true);
         this.card().depositNext();
       } else {
-        this.deposit = true;
-        this.depositNext = false;
+        this.deposit.set(true);
+        this.depositNext.set(false);
         this.card().deposit();
       }
       setTimeout(() => {
-        this.deposit = false;
-        this.depositNext = false;
+        this.deposit.set(false);
+        this.depositNext.set(false);
       }, 500);
     }
   }
 
   changeExamine(up: boolean): void {
-    if (!this.examine && !this.examineNext) {
+    if (!this.examine() && !this.examineNext()) {
       if (up) {
-        this.examine = false;
-        this.examineNext = true;
+        this.examine.set(false);
+        this.examineNext.set(true);
         this.card().examineNext();
       } else {
-        this.examine = true;
-        this.examineNext = false;
+        this.examine.set(true);
+        this.examineNext.set(false);
         this.card().examine();
       }
       setTimeout(() => {
-        this.examine = false;
-        this.examineNext = false;
+        this.examine.set(false);
+        this.examineNext.set(false);
       }, 500);
     }
   }
 
   changeLoadAddr(): void {
-    if (!this.loadAddr) {
-      this.loadAddr = true;
+    if (!this.loadAddr()) {
+      this.loadAddr.set(true);
       this.card().loadAddr();
       setTimeout(() => {
-        this.loadAddr = false;
+        this.loadAddr.set(false);
       }, 500);
     }
   }

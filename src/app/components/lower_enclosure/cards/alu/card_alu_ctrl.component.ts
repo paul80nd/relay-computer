@@ -9,8 +9,7 @@ import {
 @Component({
   selector: '[rc-card-alu-ctrl]',
   templateUrl: './card_alu_ctrl.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardAluControlComponent {

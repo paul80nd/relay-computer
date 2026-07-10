@@ -6,8 +6,7 @@ import { IClockCard } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-card-clock]',
   templateUrl: './card_clock.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardClockComponent {

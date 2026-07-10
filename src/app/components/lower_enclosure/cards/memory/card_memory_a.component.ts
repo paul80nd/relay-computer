@@ -6,8 +6,7 @@ import { MemoryLines, IMemoryCard } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-card-memory-a]',
   templateUrl: 'card_memory_a.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardMemoryAComponent {

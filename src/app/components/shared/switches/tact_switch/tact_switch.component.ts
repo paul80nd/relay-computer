@@ -1,13 +1,11 @@
 import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { BitValue, CardOutput } from '@paul80nd/relay-computer-model';
-import { NgClass } from '@angular/common';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-tact-switch]',
   templateUrl: 'tact_switch.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [NgClass]
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class TactileSwitchComponent {

@@ -6,8 +6,7 @@ import { BitValue } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-dbl-byte-llb]',
   templateUrl: 'dbl_byte_llb.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class DoubleByteLedLightBarComponent {
