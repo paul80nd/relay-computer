@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IYBackplane } from '@paul80nd/relay-computer-model';
 import { CardRegisterJComponent } from '../../cards/registers/card_register_j.component';
@@ -11,6 +11,7 @@ import { CardMemoryBComponent } from '../../cards/memory/card_memory_b.component
 @Component({
   selector: '[rc-card-bay-y]',
   templateUrl: 'card_bay_y.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CardRegisterJComponent, CardRegisterMComponent, CardRegisterXYComponent, CardMemoryAComponent, CardMemoryBComponent]
 })
 

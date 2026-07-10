@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ComputerFactory, IComputer, IComputerFactory } from '@paul80nd/relay-computer-model';
 import { ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ClrTabsModule } from '@clr/angular';
@@ -10,6 +10,7 @@ import { InstructionSetComponent } from './components/instrset/instrset.componen
 @Component({
     selector: 'rc-root',
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ComputerComponent, ClrTabsModule, DocumentationComponent, ArchitectureDiagramComponent, InstructionSetComponent]
 })
 export class AppComponent implements OnInit {

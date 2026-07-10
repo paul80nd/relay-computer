@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { BitValue , CardOutput, AluOperationLines } from '@paul80nd/relay-computer-model';
 import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tact_switch.component';
@@ -7,6 +7,7 @@ import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tac
 @Component({
     selector: '[rc-display-a-a2c]',
     templateUrl: 'display_a_a2c.component.svg',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [TactileSwitchComponent]
 })
 export class DisplayAA2CComponent {

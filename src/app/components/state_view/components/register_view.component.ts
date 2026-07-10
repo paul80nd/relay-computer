@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { ICardOutput } from '@paul80nd/relay-computer-model';
 import { DecPipe } from '../dec.pipe';
@@ -9,6 +9,7 @@ import { HexPipe } from '../hex.pipe';
     selector: '[rc-register-view]',
     templateUrl: './register_view.component.svg',
     styleUrls: ['./register_view.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [DecPipe, HexPipe]
 })
 

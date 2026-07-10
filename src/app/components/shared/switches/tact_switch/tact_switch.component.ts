@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { BitValue, CardOutput } from '@paul80nd/relay-computer-model';
 import { NgClass } from '@angular/common';
 
@@ -6,6 +6,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: '[rc-tact-switch]',
   templateUrl: 'tact_switch.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NgClass]
 })
 

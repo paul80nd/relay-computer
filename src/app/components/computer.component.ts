@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { IComputer } from '@paul80nd/relay-computer-model'
 import { DisplayAComponent } from './upper_enclosure/displays/display_a/display_a.component';
 import { DisplayBComponent } from './upper_enclosure/displays/display_b/display_b.component';
@@ -12,6 +12,7 @@ import { StateViewComponent } from './state_view/state_view.component';
 @Component({
   selector: 'rc-computer',
   templateUrl: './computer.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DisplayAComponent, DisplayBComponent, ControlSwitchesComponent, CardBayWComponent, CardBayXComponent, CardBayYComponent, CardBayZComponent, StateViewComponent]
 })
 

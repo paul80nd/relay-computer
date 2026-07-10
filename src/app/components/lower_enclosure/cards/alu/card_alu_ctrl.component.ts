@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   AluFunctionClLines, AluOperationLines,
@@ -9,6 +9,7 @@ import {
 @Component({
   selector: '[rc-card-alu-ctrl]',
   templateUrl: './card_alu_ctrl.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 
