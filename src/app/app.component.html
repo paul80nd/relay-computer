@@ -45,7 +45,11 @@
               <cds-icon shape="help-info"></cds-icon> Info
             </button>
             <clr-tab-content *clrIfActive="true">
-              <rc-documentation></rc-documentation>
+              @defer (on immediate) {
+                <rc-documentation></rc-documentation>
+              } @placeholder {
+                <span class="defer-placeholder">Loading…</span>
+              }
             </clr-tab-content>
           </clr-tab>
           <clr-tab>
@@ -54,7 +58,11 @@
             </button>
             <clr-tab-content *clrIfActive>
               <div class="scaling-svg-container" style="padding-bottom:97.90794979%">
-                <rc-architecture-diagram></rc-architecture-diagram>
+                @defer (on immediate) {
+                  <rc-architecture-diagram></rc-architecture-diagram>
+                } @placeholder {
+                  <span class="defer-placeholder">Loading…</span>
+                }
               </div>
             </clr-tab-content>
           </clr-tab>
@@ -63,7 +71,11 @@
               <cds-icon shape="list"></cds-icon> Opcodes
             </button>
             <clr-tab-content *clrIfActive>
-              <rc-instruction-set></rc-instruction-set>
+              @defer (on immediate) {
+                <rc-instruction-set></rc-instruction-set>
+              } @placeholder {
+                <span class="defer-placeholder">Loading…</span>
+              }
             </clr-tab-content>
           </clr-tab>
         </clr-tabs>
