@@ -38,7 +38,7 @@
     "@angular/compiler-cli": "^21.2.18",
     "@typescript-eslint/eslint-plugin": "^8.33.1",
     "@typescript-eslint/parser": "^8.33.1",
-    "angular-cli-ghpages": "3.0.2",
+    "angular-cli-ghpages": "3.1.0",
     "eslint": "^9.28.0",
     "typescript": "5.9.3"
   }
