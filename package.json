@@ -33,8 +33,7 @@
     "@clr/angular": "18.2.1",
     "@clr/ui": "18.2.1",
     "@paul80nd/relay-computer-model": "1.4.1",
-    "rxjs": "7.8.2",
-    "zone.js": "0.15.0"
+    "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@angular-eslint/builder": "22.0.0",
