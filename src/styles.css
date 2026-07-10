@@ -14,6 +14,13 @@ body {
     overflow: hidden;
 }
 
+.defer-placeholder {
+  display: block;
+  padding: 0.6rem;
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+
 header {
   --clr-header-height: 2rem;
 
