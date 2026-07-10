@@ -45,10 +45,10 @@
     "@angular/build": "22.0.6",
     "@angular/cli": "22.0.6",
     "@angular/compiler-cli": "^22.0.6",
-    "@typescript-eslint/eslint-plugin": "^8.33.1",
-    "@typescript-eslint/parser": "^8.33.1",
+    "@typescript-eslint/eslint-plugin": "^8.63.0",
+    "@typescript-eslint/parser": "^8.63.0",
     "angular-cli-ghpages": "3.1.0",
-    "eslint": "^9.28.0",
+    "eslint": "^10.6.0",
     "typescript": "6.0.3"
   }
 }
