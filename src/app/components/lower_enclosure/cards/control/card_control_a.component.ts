@@ -6,8 +6,7 @@ import { AbortLines, I2BLines, MemoryLines, IControlCard, AluFunctionClLines } f
 @Component({
   selector: '[rc-card-control-a]',
   templateUrl: './card_control_a.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardControlAComponent {

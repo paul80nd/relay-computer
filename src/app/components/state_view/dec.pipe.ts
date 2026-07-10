@@ -1,8 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'dec',
-    standalone: true
+    name: 'dec'
 })
 export class DecPipe implements PipeTransform {
   transform(value: number, length: string, neg: boolean): string {

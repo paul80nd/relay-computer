@@ -6,8 +6,7 @@ import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines, IControlCa
 @Component({
   selector: '[rc-card-control-b]',
   templateUrl: './card_control_b.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardControlBComponent {

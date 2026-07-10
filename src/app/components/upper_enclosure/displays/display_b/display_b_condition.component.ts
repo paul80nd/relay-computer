@@ -7,8 +7,7 @@ import { ConditionLines } from '@paul80nd/relay-computer-model';
 @Component({
     selector: '[rc-display-b-condition]',
     templateUrl: 'display_b_condition.component.svg',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: true
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class DisplayBConditionComponent {
 

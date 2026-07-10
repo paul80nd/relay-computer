@@ -1,8 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'hex',
-    standalone: true
+    name: 'hex'
 })
 export class HexPipe implements PipeTransform {
   transform(value: number, length: string): string {

@@ -6,8 +6,7 @@ import { OperationLines, IDecoderCard } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-card-decoder]',
   templateUrl: './card_decoder.component.svg',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class CardDecoderComponent {

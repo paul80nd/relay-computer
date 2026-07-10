@@ -4,8 +4,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
     selector: 'rc-instruction-set',
     templateUrl: './instrset.component.html',
     styleUrls: ['./instrset.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: true
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 
 export class InstructionSetComponent {
