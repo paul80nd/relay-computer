@@ -1,6 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ClockLines, OperationLines, IDisplayBCard } from '@paul80nd/relay-computer-model';
-import { ClockCtrlLines } from '@paul80nd/relay-computer-model/lib/src/bus/bus-part-lines';
+import { ClockLines, ClockCtrlLines, OperationLines, IDisplayBCard } from '@paul80nd/relay-computer-model';
 import { DisplayBConditionComponent } from './display_b_condition.component';
 import { DisplayBAluComponent } from './display_b_alu.component';
 import { ByteLedLightBarComponent } from '../../../shared/leds/byte_llb/byte_llb.component';

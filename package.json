@@ -22,7 +22,7 @@
     "@cds/core": "6.17.0",
     "@clr/angular": "17.12.2",
     "@clr/ui": "17.12.2",
-    "@paul80nd/relay-computer-model": "1.4.0",
+    "@paul80nd/relay-computer-model": "1.4.1",
     "rxjs": "7.8.2",
     "zone.js": "0.15.0"
   },
