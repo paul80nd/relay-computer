@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IClockCard } from '@paul80nd/relay-computer-model';
 
@@ -6,6 +6,7 @@ import { IClockCard } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-card-clock]',
   templateUrl: './card_clock.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 

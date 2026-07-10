@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ConditionLines, IComputer } from '@paul80nd/relay-computer-model';
 import { RegisterViewComponent } from './components/register_view.component';
 import { DecPipe } from './dec.pipe';
@@ -9,6 +9,7 @@ import { HexPipe } from './hex.pipe';
   selector: '[rc-state-view]',
   templateUrl: './state_view.component.svg',
   styleUrls: ['./state_view.component.css'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [RegisterViewComponent, DecPipe, HexPipe]
 })
 

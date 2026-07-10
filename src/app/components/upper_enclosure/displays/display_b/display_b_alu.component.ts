@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import {
   AluFunctionClLines,
@@ -11,6 +11,7 @@ import { AluOperationLedLightBarComponent } from '../../../shared/leds/alu_op_ll
 @Component({
     selector: '[rc-display-b-alu]',
     templateUrl: 'display_b_alu.component.svg',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [AluOperationLedLightBarComponent]
 })
 export class DisplayBAluComponent {

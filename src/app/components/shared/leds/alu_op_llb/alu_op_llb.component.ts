@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { BitValue } from '@paul80nd/relay-computer-model';
 import { NgClass } from '@angular/common';
@@ -7,6 +7,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: '[rc-alu-op-llb]',
   templateUrl: 'alu_op_llb.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [NgClass]
 })
 

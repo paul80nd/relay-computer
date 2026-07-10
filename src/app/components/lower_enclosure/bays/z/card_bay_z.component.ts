@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IZBackplane } from '@paul80nd/relay-computer-model';
 import { CardRegisterADComponent } from '../../cards/registers/card_register_ad.component';
@@ -11,6 +11,7 @@ import { CardAluLogicComponent } from '../../cards/alu/card_alu_logic.component'
 @Component({
   selector: '[rc-card-bay-z]',
   templateUrl: 'card_bay_z.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CardRegisterADComponent, CardRegisterBCComponent, CardAluControlComponent, CardAluArithmeticComponent, CardAluLogicComponent]
 })
 

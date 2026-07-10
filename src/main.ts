@@ -14,7 +14,7 @@ import {
   libraryIcon,
   listIcon,
   rulerPencilIcon
-} from '@cds/core/icon';
+} from '@clr/angular/icon';
 
 ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, importIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon);
 
