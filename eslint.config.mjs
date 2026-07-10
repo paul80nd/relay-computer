@@ -41,6 +41,9 @@ export default [
       '@angular-eslint/use-pipe-transform-interface': 'error',
       '@angular-eslint/component-class-suffix': 'error',
       '@angular-eslint/directive-class-suffix': 'error',
+      '@angular-eslint/prefer-inject': 'error',
+      '@angular-eslint/prefer-standalone': 'error',
+      '@typescript-eslint/no-explicit-any': 'error',
       '@angular-eslint/component-selector': [
         'error',
         { prefix: 'rc', style: 'kebab-case', type: 'element' },
@@ -63,6 +66,22 @@ export default [
       '@angular-eslint/template/banana-in-box': 'error',
       '@angular-eslint/template/eqeqeq': 'error',
       '@angular-eslint/template/no-negated-async': 'error',
+      '@angular-eslint/template/prefer-control-flow': 'error',
+      '@angular-eslint/template/alt-text': 'error',
+      '@angular-eslint/template/click-events-have-key-events': 'error',
+      '@angular-eslint/template/elements-content': 'error',
+      '@angular-eslint/template/interactive-supports-focus': 'error',
+      '@angular-eslint/template/mouse-events-have-key-events': 'error',
+      '@angular-eslint/template/no-autofocus': 'error',
+      '@angular-eslint/template/no-distracting-elements': 'error',
+      '@angular-eslint/template/role-has-required-aria': 'error',
+      '@angular-eslint/template/table-scope': 'error',
+      '@angular-eslint/template/valid-aria': 'error',
+      // Disabled: incompatible with Clarity's form idiom. Clarity's
+      // <clr-*-container> wrappers associate a sibling <label> with their
+      // control at runtime, so no static for=/nesting exists for the rule to
+      // assert against — it would flag false positives across Clarity forms.
+      '@angular-eslint/template/label-has-associated-control': 'off',
     },
   },
 ];
