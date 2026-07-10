@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IRegisterICard } from '@paul80nd/relay-computer-model';
 import { RegisterLedsComponent } from '../../../shared/leds/register_leds/register_leds.component';
@@ -7,6 +7,7 @@ import { RegisterLedsComponent } from '../../../shared/leds/register_leds/regist
 @Component({
   selector: '[rc-card-register-i]',
   templateUrl: 'card_register_i.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [RegisterLedsComponent]
 })
 

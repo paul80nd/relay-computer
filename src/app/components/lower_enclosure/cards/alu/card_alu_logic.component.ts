@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IAluLogicCard } from '@paul80nd/relay-computer-model';
 import { ByteStackedLedsComponent } from '../../../shared/leds/byte_stacked_leds/byte_stacked_leds.component';
@@ -7,6 +7,7 @@ import { ByteStackedLedsComponent } from '../../../shared/leds/byte_stacked_leds
 @Component({
   selector: '[rc-card-alu-logic]',
   templateUrl: './card_alu_logic.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ByteStackedLedsComponent]
 })
 

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { BitValue } from '@paul80nd/relay-computer-model';
 import { ConditionLines } from '@paul80nd/relay-computer-model';
@@ -7,6 +7,7 @@ import { ConditionLines } from '@paul80nd/relay-computer-model';
 @Component({
     selector: '[rc-display-b-condition]',
     templateUrl: 'display_b_condition.component.svg',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: true
 })
 export class DisplayBConditionComponent {

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IControlSwitchesCard } from '@paul80nd/relay-computer-model';
 import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_switch.component';
@@ -7,6 +7,7 @@ import { ByteSwitchComponent } from '../../shared/switches/byte_switch/byte_swit
 @Component({
   selector: '[rc-control-switches]',
   templateUrl: './control_switches.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ByteSwitchComponent]
 })
 export class ControlSwitchesComponent {

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines, IControlCard } from '@paul80nd/relay-computer-model';
 
@@ -6,6 +6,7 @@ import { AluFunctionClLines, RegABCDLines, RegJMXYLines, RegAuxLines, IControlCa
 @Component({
   selector: '[rc-card-control-b]',
   templateUrl: './card_control_b.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 

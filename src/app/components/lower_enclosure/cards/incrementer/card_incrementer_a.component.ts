@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IIncrementerCard } from '@paul80nd/relay-computer-model';
 import { DoubleByteLedsComponent } from '../../../shared/leds/byte_leds/dbl_byte_leds.component';
@@ -7,6 +7,7 @@ import { DoubleByteLedsComponent } from '../../../shared/leds/byte_leds/dbl_byte
 @Component({
   selector: '[rc-card-incrementer-a]',
   templateUrl: 'card_incrementer_a.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [DoubleByteLedsComponent]
 })
 

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IXBackplane } from '@paul80nd/relay-computer-model';
 import { CardRegisterIComponent } from '../../cards/registers/card_register_i.component';
@@ -11,6 +11,7 @@ import { CardClockComponent } from '../../cards/clock/card_clock.component';
 @Component({
   selector: '[rc-card-bay-x]',
   templateUrl: 'card_bay_x.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CardRegisterIComponent, CardRegisterPCComponent, CardIncrementerAComponent, CardIncrementerBComponent, CardClockComponent]
 })
 
