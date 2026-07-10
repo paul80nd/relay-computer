@@ -10,35 +10,45 @@
     "lint": "ng lint"
   },
   "private": true,
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "comments": {
+    "overrides": "Force fixed versions of nested build-time transitives flagged by npm audit: esbuild (GHSA-g7r4-m6w7-qqqr, fixed 0.28.1 — nested under vite) and @babel/core (GHSA-4x5r-pxfx-6jf8, fixed 7.29.6 — nested under @angular/build). Both are dev/build-time only."
+  },
+  "overrides": {
+    "esbuild": "^0.28.1",
+    "@babel/core": "^7.29.6"
+  },
   "dependencies": {
-    "@angular/animations": "19.2.18",
-    "@angular/common": "19.2.18",
-    "@angular/compiler": "19.2.18",
-    "@angular/core": "19.2.18",
-    "@angular/forms": "19.2.18",
-    "@angular/platform-browser": "19.2.18",
-    "@angular/platform-browser-dynamic": "19.2.18",
-    "@angular/router": "19.2.18",
-    "@cds/core": "6.17.0",
-    "@clr/angular": "17.12.2",
-    "@clr/ui": "17.12.2",
-    "@paul80nd/relay-computer-model": "1.4.0",
+    "@angular/animations": "22.0.6",
+    "@angular/cdk": "22.0.4",
+    "@angular/common": "22.0.6",
+    "@angular/compiler": "22.0.6",
+    "@angular/core": "22.0.6",
+    "@angular/forms": "22.0.6",
+    "@angular/platform-browser": "22.0.6",
+    "@angular/platform-browser-dynamic": "22.0.6",
+    "@angular/router": "22.0.6",
+    "@clr/angular": "18.2.1",
+    "@clr/ui": "18.2.1",
+    "@paul80nd/relay-computer-model": "1.4.1",
     "rxjs": "7.8.2",
     "zone.js": "0.15.0"
   },
   "devDependencies": {
-    "@angular-eslint/builder": "19.8.1",
-    "@angular-eslint/eslint-plugin": "19.8.1",
-    "@angular-eslint/eslint-plugin-template": "19.8.1",
-    "@angular-eslint/schematics": "19.8.1",
-    "@angular-eslint/template-parser": "19.8.1",
-    "@angular/build": "19.2.19",
-    "@angular/cli": "21.1.3",
-    "@angular/compiler-cli": "^19.2.18",
-    "@typescript-eslint/eslint-plugin": "8.54.0",
-    "@typescript-eslint/parser": "8.54.0",
-    "angular-cli-ghpages": "3.0.2",
-    "eslint": "9.39.2",
-    "typescript": "5.8.3"
+    "@angular-eslint/builder": "22.0.0",
+    "@angular-eslint/eslint-plugin": "22.0.0",
+    "@angular-eslint/eslint-plugin-template": "22.0.0",
+    "@angular-eslint/schematics": "22.0.0",
+    "@angular-eslint/template-parser": "22.0.0",
+    "@angular/build": "22.0.6",
+    "@angular/cli": "22.0.6",
+    "@angular/compiler-cli": "^22.0.6",
+    "@typescript-eslint/eslint-plugin": "^8.33.1",
+    "@typescript-eslint/parser": "^8.33.1",
+    "angular-cli-ghpages": "3.1.0",
+    "eslint": "^9.28.0",
+    "typescript": "6.0.3"
   }
 }

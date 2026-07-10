@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { BitValue } from '@paul80nd/relay-computer-model';
 
@@ -6,6 +6,7 @@ import { BitValue } from '@paul80nd/relay-computer-model';
 @Component({
     selector: '[rc-dbl-byte-leds]',
     templateUrl: 'dbl_byte_leds.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: true
 })
 

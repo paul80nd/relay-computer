@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { MemoryLines, IMemoryCard } from '@paul80nd/relay-computer-model';
 
@@ -6,6 +6,7 @@ import { MemoryLines, IMemoryCard } from '@paul80nd/relay-computer-model';
 @Component({
   selector: '[rc-card-memory-a]',
   templateUrl: 'card_memory_a.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 

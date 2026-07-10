@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IWBackplane } from '@paul80nd/relay-computer-model';
 import { CardSequencerAComponent } from '../../cards/sequencer/card_sequencer_a.component';
@@ -11,6 +11,7 @@ import { CardDecoderComponent } from '../../cards/decoder/card_decoder.component
 @Component({
   selector: '[rc-card-bay-w]',
   templateUrl: './card_bay_w.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [CardSequencerAComponent, CardSequencerBComponent, CardControlAComponent, CardControlBComponent, CardDecoderComponent]
 })
 

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { ByteLedsComponent } from './../byte_leds/byte_leds.component';
 import { IRegisterCardPart } from '@paul80nd/relay-computer-model'
 import { ByteLedsComponent as ByteLedsComponent_1 } from '../byte_leds/byte_leds.component';
@@ -8,6 +8,7 @@ import { ByteLedsComponent as ByteLedsComponent_1 } from '../byte_leds/byte_leds
   providers: [ByteLedsComponent],
   selector: '[rc-register-leds]',
   templateUrl: 'register_leds.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ByteLedsComponent_1]
 })
 

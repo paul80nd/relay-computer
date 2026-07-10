@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IAluArithmeticCard } from '@paul80nd/relay-computer-model';
 import { ByteLedsComponent } from '../../../shared/leds/byte_leds/byte_leds.component';
@@ -7,6 +7,7 @@ import { ByteLedsComponent } from '../../../shared/leds/byte_leds/byte_leds.comp
 @Component({
   selector: '[rc-card-alu-arith]',
   templateUrl: './card_alu_arith.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ByteLedsComponent]
 })
 

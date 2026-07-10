@@ -1,9 +1,10 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 import { CardOutput } from '@paul80nd/relay-computer-model';
 
 /* eslint-disable @angular-eslint/component-selector -- used in svg group */
 @Component({
   selector: '[rc-byte-switch]',
+  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: 'byte_switch.component.svg'
 })
 

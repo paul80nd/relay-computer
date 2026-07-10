@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, provideZoneChangeDetection } from '@angular/core';
 import { environment } from './environments/environment';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
@@ -14,7 +14,7 @@ import {
   libraryIcon,
   listIcon,
   rulerPencilIcon
-} from '@cds/core/icon';
+} from '@clr/angular/icon';
 
 ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, importIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon);
 
@@ -23,8 +23,9 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-    providers: [
+  providers: [
+    provideZoneChangeDetection(),
     provideAnimations()
-]
+  ]
 })
   .catch(err => console.error(err));

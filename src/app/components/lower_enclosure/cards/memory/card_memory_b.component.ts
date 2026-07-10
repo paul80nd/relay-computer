@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy } from '@angular/core';
 
 import { IMemoryCard } from '@paul80nd/relay-computer-model';
 import { ByteLedsComponent } from '../../../shared/leds/byte_leds/byte_leds.component';
@@ -8,6 +8,7 @@ import { DoubleByteLedsComponent } from '../../../shared/leds/byte_leds/dbl_byte
 @Component({
   selector: '[rc-card-memory-b]',
   templateUrl: 'card_memory_b.component.svg',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [ByteLedsComponent, DoubleByteLedsComponent]
 })
 
