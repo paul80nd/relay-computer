@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 import { ComputerFactory, IComputer, IComputerFactory } from '@paul80nd/relay-computer-model';
+import { parseAssembledProgram } from './program-loader';
 import { ClrIconModule, ClrStopEscapePropagationDirective, ClrPopoverHostDirective, ClrDropdownModule, ClrConditionalModule, ClrTabsModule } from '@clr/angular';
 import { ComputerComponent } from './components/computer.component';
 import { DocumentationComponent } from './components/docs/docs.component';
@@ -34,19 +35,12 @@ export class AppComponent implements OnInit {
   loadFromClipboard() {
     navigator.clipboard.readText().then(
       text => {
-        if (/^[0-9a-f]*$/g.test(text)) {
-          const parts = text.match(/.{1,2}/g)
-          if (parts) {
-            const values = parts.map(p => parseInt(p, 16));
-            if (values.length > 2) {
-              const offset = values[0] + (values[1] << 8);
-              const prog = values.slice(2);
-              this.computer.yBackplane.memory.loadProgram(offset, prog);
-              return;
-            }
-          }
+        const program = parseAssembledProgram(text);
+        if (program) {
+          this.computer.yBackplane.memory.loadProgram(program.offset, program.prog);
+        } else {
+          alert(`Did not recognise clipboard contents as an assembled program.`);
         }
-        alert(`Did not recognise clipboard contents as an assembled program.`);
       }
     ).catch(error => {
       alert(`Cannot read clipboard text: ${error}`);
