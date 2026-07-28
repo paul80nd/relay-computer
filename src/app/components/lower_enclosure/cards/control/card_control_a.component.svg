@@ -9,7 +9,7 @@
 
   <circle cx="97" cy="13" r="4" class="ledYellow" [class.on]="card().memory.bit(MemoryLines.B2M)" />
   <circle cx="107.5" cy="13" r="4" class="ledYellow" [class.on]="card().memory.bit(MemoryLines.MER)" />
-  <circle cx="119" cy="13" r="4" class="ledYellow" [class.on]="card().memory.bit(MemoryLines.MEW)" />
+  <circle cx="118" cy="13" r="4" class="ledYellow" [class.on]="card().memory.bit(MemoryLines.MEW)" />
   <circle cx="128" cy="13" r="4" class="ledYellow" [class.on]="card().i2b.bit(I2BLines.I2B)" />
 
 
