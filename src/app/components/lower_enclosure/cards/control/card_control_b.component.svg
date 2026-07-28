@@ -32,9 +32,15 @@
   <circle cx="185.5" cy="18" r="4" class="ledGreen" [class.on]="card().auxReg.bit(RegAuxLines.SIC)" />
   <circle cx="195.75" cy="18" r="4" class="ledGreen" [class.on]="card().auxReg.bit(RegAuxLines.SPC)" />
   <circle cx="144" cy="18" r="4" class="ledGreen" [class.on]="card().regJMXY.bit(RegJMXYLines.SXY)" />
-  <!-- SDS / SAS live on card().sds (DataSwitchGateLines), not regJMXY — enable in a follow-up
-    <circle cx="212" cy="18" r="4" class="ledGreen" />
-    <circle cx="223" cy="18" r="4" class="ledGreen" />
+  <!-- SDS / SAS: blocked on the model. These live on the control card's `sds` output
+       (DataSwitchGateLines), but IControlCard does not expose `sds` (only the concrete
+       ControlCard class does), so binding card().sds fails strictTemplates. To enable:
+       (1) add `sds: BitValue` to IControlCard in @paul80nd/relay-computer-model;
+       (2) import + expose DataSwitchGateLines here; then uncomment the label-aligned
+       circles below. NB: only SAS is ever driven by this card (SDS comes from the
+       control-switches front-panel card), so the SDS lamp will stay dark.
+    <circle cx="206" cy="18" r="4" class="ledGreen" [class.on]="card().sds.bit(DataSwitchGateLines.SDS)" />
+    <circle cx="216.5" cy="18" r="4" class="ledGreen" [class.on]="card().sds.bit(DataSwitchGateLines.SAS)" />
     -->
 
   <svg:g transform="translate(-4,10)">
