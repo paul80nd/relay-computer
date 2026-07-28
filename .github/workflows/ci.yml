@@ -1,0 +1,50 @@
+# Clean install, lint, production build and unit tests on every push to main and
+# on pull requests (notably Dependabot's dependency-bump PRs, so a bad bump is
+# caught before it merges).
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+# Cancel a superseded in-flight run on the same ref (e.g. a Dependabot rebase or
+# a follow-up push) rather than letting both runs finish.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+# Least-privilege token: read the repo, and read GitHub Packages — where the
+# @paul80nd/relay-computer-model dependency is published.
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [24.x] # keep in step with .nvmrc
+
+    steps:
+      - uses: actions/checkout@v7
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v7
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+          # Route the @paul80nd scope to GitHub Packages and wire NODE_AUTH_TOKEN
+          # into the generated .npmrc so `npm ci` can resolve relay-computer-model.
+          # Public deps still come from the default npm registry.
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@paul80nd'
+      - run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test -- --watch=false

@@ -1,0 +1,60 @@
+# Keep dependencies current with weekly grouped Dependabot PRs. The CI workflow
+# (lint + build + test) gates every PR, so a bad bump is caught before merge.
+# Low-risk patch/minor bumps are grouped into one PR; majors get their own so
+# they can be reviewed properly.
+version: 2
+updates:
+  # --- npm packages ---
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+      timezone: "Etc/UTC"
+    cooldown:
+      # Wait 7 days after an upstream release before bumping — guards against
+      # immediately-yanked versions; cheap given the weekly cadence.
+      default-days: 7
+    open-pull-requests-limit: 5
+    ignore:
+      # relay-computer-model is published to GitHub Packages, not the public npm
+      # registry, so Dependabot can't resolve it here without a configured
+      # registry + token. It's the same author's package, bumped by hand on each
+      # release. To have Dependabot track it too: add a top-level `registries:`
+      # block (type: npm-registry, url: https://npm.pkg.github.com, token from a
+      # DEPENDABOT_GHPR_TOKEN secret with read:packages), reference it from this
+      # update via `registries: [...]`, and remove this ignore entry.
+      - dependency-name: "@paul80nd/relay-computer-model"
+    groups:
+      npm-patch-minor:
+        update-types: ["patch", "minor"]
+      npm-major:
+        update-types: ["major"]
+    commit-message:
+      prefix: "deps"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "npm"
+
+  # --- GitHub Actions used in the workflows ---
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "03:00"
+      timezone: "Etc/UTC"
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
