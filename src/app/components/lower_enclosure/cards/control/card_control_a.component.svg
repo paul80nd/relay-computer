@@ -4,10 +4,8 @@
 
   <circle cx="19.5" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT08)" />
   <circle cx="29.75" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT10)" />
-  <!--
-  <circle cx="40" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at12Line)" />
-  <circle cx="50.5" cy="13" r="4" class="ledYellow" [class.on]="card.abort.bit(at14Line)" />
-   -->
+  <circle cx="40" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT12)" />
+  <circle cx="50.5" cy="13" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT14)" />
 
   <!--
     <circle cx="97" cy="13" r="4" class="ledYellow" />
