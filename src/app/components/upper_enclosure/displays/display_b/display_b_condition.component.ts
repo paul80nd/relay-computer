@@ -11,9 +11,7 @@ import { ConditionLines } from '@paul80nd/relay-computer-model';
 })
 export class DisplayBConditionComponent {
 
-  cyLine = ConditionLines.CY;
-  snLine = ConditionLines.SN;
-  ezLine = ConditionLines.EZ;
+  protected readonly ConditionLines = ConditionLines;
 
   readonly value = input.required<BitValue>();
 

@@ -16,18 +16,8 @@ import { AluOperationLedLightBarComponent } from '../../../shared/leds/alu_op_ll
 })
 export class DisplayBAluComponent {
 
-  addLine: number = AluOperationLines.ADD;
-  incLine: number = AluOperationLines.INC;
-  shlLine: number = AluOperationLines.SHL;
-  andLine: number = AluOperationLines.AND;
-  orrLine: number = AluOperationLines.ORR;
-  xorLine: number = AluOperationLines.XOR;
-  notLine: number = AluOperationLines.NOT;
-
-  clLine: number = AluFunctionClLines.CL;
-  f2Line: number = AluFunctionClLines.F2;
-  f1Line: number = AluFunctionClLines.F1;
-  f0Line: number = AluFunctionClLines.F0;
+  protected readonly AluOperationLines = AluOperationLines;
+  protected readonly AluFunctionClLines = AluFunctionClLines;
 
   readonly alu = input.required<BitValue>();
   readonly aluFuncCl = input.required<BitValue>();

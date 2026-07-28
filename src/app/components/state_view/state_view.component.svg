@@ -35,15 +35,15 @@
     <path d="M 225 185 L 225 115" fill="none" stroke="#999999" stroke-miterlimit="10" stroke-dasharray="3 3" />
 
     <!-- ALU Flags -->
-    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(snLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(ConditionLines.SN)">
       <rect x="265" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="288" y="174" class="alu-label" text-anchor="middle">S</text>
     </g>
-    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(cyLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(ConditionLines.CY)">
       <rect x="323" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="346" y="174" class="alu-label" text-anchor="middle">C</text>
     </g>
-    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(ezLine)">
+    <g [class.alu-active]="computer().zBackplane.aluControl.condition.value.bit(ConditionLines.EZ)">
       <rect x="380" y="145" width="45" height="39" fill="none" stroke="#999999" />
       <text x="403" y="174" class="alu-label" text-anchor="middle">Z</text>
     </g>

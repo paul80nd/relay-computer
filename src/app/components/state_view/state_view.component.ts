@@ -15,9 +15,7 @@ import { HexPipe } from './hex.pipe';
 
 export class StateViewComponent {
 
-  cyLine = ConditionLines.CY;
-  snLine = ConditionLines.SN;
-  ezLine = ConditionLines.EZ;
+  protected readonly ConditionLines = ConditionLines;
 
   offset = 0;
   memoryDec = false;

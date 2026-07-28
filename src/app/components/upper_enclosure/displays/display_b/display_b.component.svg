@@ -13,54 +13,54 @@
       </g>
       }
 
-      <rect x="360" y="9.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(lodLine)" />
+      <rect x="360" y="9.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.ILOD)" />
       <rect x="360" y="9.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(361.77557 10.2)" fill="black">
         <tspan class="d-text6" x="7.495527" y="6">LOAD</tspan>
       </text>
-      <rect x="360" y="18.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(mscLine)" />
+      <rect x="360" y="18.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.IMSC)" />
       <rect x="360" y="18.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(361.77557 19.2)" fill="black">
         <tspan class="d-text6" x="8.1649607" y="6">MISC</tspan>
       </text>
-      <rect x="360" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(strLine)" />
+      <rect x="360" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.ISTR)" />
       <rect x="360" y="27.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(361.77557 28.2)" fill="black">
         <tspan class="d-text6" x="5.3832224" y="6">STORE</tspan>
       </text>
-      <rect x="360" y="36.999977" width="35" height="8" class="indYellow"  [class.on]="card().operation.bit(incLine)"/>
+      <rect x="360" y="36.999977" width="35" height="8" class="indYellow"  [class.on]="card().operation.bit(OperationLines.IINC)"/>
       <rect x="360" y="36.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(361.77557 37.2)" fill="black">
         <tspan class="d-text6" x="6.4965037" y="6">INCXY</tspan>
       </text>
-      <rect x="396" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(gtoLine)" />
+      <rect x="396" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.IGTO)" />
       <rect x="396" y="27.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(397.77557 28.2)" fill="black">
         <tspan class="d-text6" x="6.8846873" y="6">GOTO</tspan>
       </text>
-      <rect x="396" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(mv8Line)" />
+      <rect x="396" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.IMV8)" />
       <rect x="396" y="36.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(397.77557 37.2)" fill="black">
         <tspan class="d-text6" x="7.1630076" y="6">MOV8</tspan>
       </text>
-      <rect x="432" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(setLine)" />
+      <rect x="432" y="27.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.ISET)" />
       <rect x="432" y="27.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(433.77557 28.2)" fill="black">
         <tspan class="d-text6" x="6.0497263" y="6">SETAB</tspan>
       </text>
-      <rect x="432" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(m16Line)" />
+      <rect x="432" y="36.999977" width="35" height="8" class="indYellow" [class.on]="card().operation.bit(OperationLines.IM16)" />
       <rect x="432" y="36.999977" width="35" height="8" class="indOutline" />
       <text transform="translate(433.77557 37.2)" fill="black">
         <tspan class="d-text6" x="5.4945505" y="6">MOV16</tspan>
       </text>
 
-      <rect x="268" y="115.99998" width="35" height="17" class="indRed" [class.on]="card().clockCtrl.bit(hltLine)" />
+      <rect x="268" y="115.99998" width="35" height="17" class="indRed" [class.on]="card().clockCtrl.bit(ClockCtrlLines.HLT)" />
       <rect x="268" y="115.99998" width="35" height="17" class="indOutline" />
       <text transform="translate(268.88062 119.406825)" fill="black">
         <tspan class="d-text8" x="6.630414" y="8">HALT</tspan>
       </text>
 
-      <rect x="250" y="115.99998" width="17" height="17" class="indYellow" [class.on]="card().clock.bit(clkLine)" />
+      <rect x="250" y="115.99998" width="17" height="17" class="indYellow" [class.on]="card().clock.bit(ClockLines.CLK)" />
       <rect x="250" y="115.99998" width="17" height="17" class="indOutline" />
       <text transform="translate(250.86242 120.79813)" fill="black">
         <tspan class="d-text7" x=".80010144" y="6">CLK</tspan>

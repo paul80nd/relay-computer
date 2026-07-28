@@ -11,16 +11,10 @@ import { AbortLines, I2BLines, MemoryLines, IControlCard, AluFunctionClLines } f
 
 export class CardControlAComponent {
 
-  at08Line = AbortLines.AT08;
-  at10Line = AbortLines.AT10;
-
-  f2Line = AluFunctionClLines.F2;
-  f1Line = AluFunctionClLines.F1;
-  f0Line = AluFunctionClLines.F0;
-
-  i2bLine = I2BLines.I2B;
-
-  merLine = MemoryLines.MER;
+  protected readonly AbortLines = AbortLines;
+  protected readonly AluFunctionClLines = AluFunctionClLines;
+  protected readonly I2BLines = I2BLines;
+  protected readonly MemoryLines = MemoryLines;
 
   readonly card = input.required<IControlCard>();
 

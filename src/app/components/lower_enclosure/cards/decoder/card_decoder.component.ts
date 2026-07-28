@@ -11,11 +11,7 @@ import { OperationLines, IDecoderCard } from '@paul80nd/relay-computer-model';
 
 export class CardDecoderComponent {
 
-  aluLine = OperationLines.IALU;
-  setLine = OperationLines.ISET;
-  mv8Line = OperationLines.IMV8;
-  gtoLine = OperationLines.IGTO;
-  mscLine = OperationLines.IMSC;
+  protected readonly OperationLines = OperationLines;
 
   readonly card = input.required<IDecoderCard>();
 
