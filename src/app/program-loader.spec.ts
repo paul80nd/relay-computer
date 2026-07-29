@@ -24,8 +24,10 @@ describe('parseAssembledProgram', () => {
     expect(parseAssembledProgram('00zz11')).toBeNull();
   });
 
-  it('rejects upper-case hex (assembler emits lower-case)', () => {
-    expect(parseAssembledProgram('00AABB')).toBeNull();
+  it('accepts upper-case and mixed-case hex (assembler emits lower-case)', () => {
+    // 00 AA BB -> offset 0xAA00, program [0xBB].
+    expect(parseAssembledProgram('00AABB')).toEqual({ offset: 0xaa00, prog: [0xbb] });
+    expect(parseAssembledProgram('00aAbB')).toEqual({ offset: 0xaa00, prog: [0xbb] });
   });
 
   it('rejects an empty string', () => {

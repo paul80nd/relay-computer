@@ -14,10 +14,12 @@ import {
   importIcon,
   libraryIcon,
   listIcon,
-  rulerPencilIcon
+  rulerPencilIcon,
+  timesIcon
 } from '@clr/angular/icon';
 
-ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, importIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon);
+// timesIcon backs the close button on Clarity's alert banner.
+ClarityIcons.addIcons(angleIcon, clockIcon, flaskIcon, importIcon, helpInfoIcon, libraryIcon, listIcon, rulerPencilIcon, timesIcon);
 
 if (environment.production) {
   enableProdMode();

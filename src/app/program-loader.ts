@@ -18,10 +18,11 @@ export interface AssembledProgram {
  * Returns null when the text isn't a recognisable program — non-hex characters,
  * or fewer than three bytes (i.e. no program after the offset).
  *
- * Note: only lower-case hex is accepted, matching the assembler's output.
+ * Hex is accepted in either case; the assembler emits lower-case, but hand-typed
+ * or edited input may use upper-case.
  */
 export function parseAssembledProgram(text: string): AssembledProgram | null {
-  if (!/^[0-9a-f]*$/.test(text)) {
+  if (!/^[0-9a-fA-F]*$/.test(text)) {
     return null;
   }
   const parts = text.match(/.{1,2}/g);
