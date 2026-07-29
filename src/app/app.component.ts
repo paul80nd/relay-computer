@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, DestroyRef, inject } from '@angular/core';
 
 import { ComputerFactory, IComputer, IComputerFactory } from '@paul80nd/relay-computer-model';
 import { parseAssembledProgram } from './program-loader';
@@ -18,14 +18,19 @@ export class AppComponent implements OnInit {
 
   computer!: IComputer;
 
+  private readonly destroyRef = inject(DestroyRef);
+
   ngOnInit() {
-    // Initially check if dark mode is enabled on system
-    const darkModeOn =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    // If dark mode is enabled then directly switch to the dark-theme
-    if (darkModeOn) {
-      document.body.setAttribute("cds-theme", "dark");
+    // Follow the OS colour scheme, and keep following it while the app is open
+    // (toggling OS dark mode should flip the theme live, not only at load).
+    if (window.matchMedia) {
+      const mq = window.matchMedia("(prefers-color-scheme: dark)");
+      const applyTheme = (dark: boolean) =>
+        document.body.setAttribute("cds-theme", dark ? "dark" : "light");
+      applyTheme(mq.matches);
+      const onChange = (e: MediaQueryListEvent) => applyTheme(e.matches);
+      mq.addEventListener("change", onChange);
+      this.destroyRef.onDestroy(() => mq.removeEventListener("change", onChange));
     }
 
     const factory: IComputerFactory = new ComputerFactory();
