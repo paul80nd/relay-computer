@@ -1,0 +1,35 @@
+import {a as vv,J as Ja,e as eE,X as Xa}from'./main-ZZULOIVZ.js';var m=(()=>{class i{static{this.\u0275fac=function(o){return new(o||i)};}static{this.\u0275cmp=vv({type:i,selectors:[["rc-documentation"]],decls:42,vars:0,consts:[["cds-text","body","cds-layout","p-t:md"],["target","_blank","href","https://relaycomputer.co.uk"],["target","_blank","href","https://editor.relaycomputer.co.uk"],["cds-text","subsection","cds-layout","p-t:lg"],["cds-text","code"],["cds-text","body","cds-layout","p-t:none"],["cds-text","code p3"]],template:function(o,s){o&1&&(Ja(0,"div")(1,"p",0),eE(2,"This is a simulation of my relay computer using Angular + SVG and is best viewed on a larger screen. More information on my relay computer can be found at my "),Ja(3,"a",1),eE(4,"blog"),Xa(),eE(5,". "),Xa(),Ja(6,"p",0),eE(7,"If you would like to dive straight in and have a go on this simulator there is a tutorial section following the operating instructions below. "),Xa(),Ja(8,"p",0),eE(9,"Alternatively you can "),Ja(10,"a",2),eE(11,"write a program in assembly"),Xa(),eE(12," and then import the opcodes to the 'memory' of this simulation."),Xa(),Ja(13,"h5",3),eE(14,"Operating Instructions"),Xa(),Ja(15,"p",0),eE(16,"Most parts of the computer can be operated manually by using the switches in Display A (at the top left). Click a switch once to turn it on and again to turn it off. When that line is active the switch lights up."),Xa(),Ja(17,"p",0),eE(18,"The primary switches are below Display A. Click a switch to turn it on (black circle is up) and again to turn it off (black circle is down). The 'Deposit' and 'Exam' switches can be pushed up or down by clicking on the upper or lower half. The remaining switches can be turned on by clicking anywhere within the switch. The 'Dep Next' and switches to the right are all momentary and will reset to off after a short pause."),Xa(),Ja(19,"h5",3),eE(20,"Tutorial"),Xa(),Ja(21,"p",0),eE(22,"Assuming the simulator is in its default state (refresh this page to re-default it if not) you can follow this tutorial to perform a calculation of the fibonacci sequence up to 233 (as that is the largest fibonacci number that can fit in an 8-bit register). This will allow you to try out the five instruction classes currently supported by the computer. "),Xa(),Ja(23,"p",0),eE(24,"Here are the steps that make up the program using the five instruction classes ALU, MOVE8, GOTO, HALT and SETAB: "),Xa(),Ja(25,"pre")(26,"code",4),eE(27,` 0000 SETAB A = 1  ; Initalise A = B = 1
+ 0001 MOV8  B = A
+
+ 0002 MOV8  C = B  ; C = B then B = A
+ 0003 MOV8  B = A
+ 0004 ALU   ADD    ; A = B + C
+
+ 0005 GOTO  000B C ; Jump to halt line if
+                   ; add caused an overflow
+                   ; otherwise ...
+
+ 0008 GOTO  0002   ; Jump back to line 2
+                   ; and repeat for next
+                   ; number in series
+
+ 000B HALT         ; Halt execution`),Xa()(),Ja(28,"p",5),eE(29," Using the list of instructions each line of this program can be converted in to the binary opcode equivalent as follows: "),Xa(),Ja(30,"pre")(31,"code",6),eE(32,` 0000 01000001 ; SETAB A = 1
+ 0001 00001000 ; MOV8  B = A
+
+ 0002 00010001 ; MOV8  C = B
+ 0003 00001000 ; MOV8  B = A
+ 0004 10000001 ; ALU   ADD
+
+ 0005 11101000 ; GOTO  000B C
+ 0006 00000000
+ 0007 00001011
+
+ 0008 11100110 ; GOTO  0002
+ 0009 00000000
+ 000A 00000010
+
+ 000B 10101110 ; HALT`),Xa()(),Ja(33,"p",5),eE(34," To load this program in to memory, line-by-line, set the black primary switches to match the opcode and then flick the 'DEP NEXT' switch which will load the instrucion into memory and then advance the program counter. Just keep setting the primary switches and flicking 'DEP NEXT' until all opcodes have been entered. Once the program is loaded you should see the following values in the memory view: "),Xa(),Ja(35,"pre")(36,"code",4),eE(37,` 000  41 08 11 08 81 E8 00 0B
+      E6 00 02 AE 00 00 00 00
+ 001  00 00 00 00 00 00 00 00
+      00 00 00 00 00 00 00 00
+ ...`),Xa()(),Ja(38,"p",0),eE(39," This is the hexadecimal representation of each 8-bit opcode loaded in to memory. To execute the program first set all the black switches back to 0 and flick the 'LOAD ADDR' switch to reset the program counter back to the first position in memory. To prime the sequencer flick the 'RSET' switch which sets the 'S00' light in the sequencer. You can now flick the RUN/STOP switch to RUN and the program will begin executing. "),Xa(),Ja(40,"p",0),eE(41," Immediately following each ALU ADD you'll find the next sequence number in register A. The sequence starts with 1 loaded in to register B and C so the sequence in register A goes 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233 at which point the program then jumps to the halt instruction (when the next value (377) causes an overflow) and the clock is halted. Execution can be continued by flicking the 'RSRT' (Restart) switch although the computer will just run the remaining 00s in memory which represent copying register A to register A (clearing the value). "),Xa()());},encapsulation:2,changeDetection:1});}}return i})();export{m as DocumentationComponent};
