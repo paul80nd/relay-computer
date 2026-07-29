@@ -25,7 +25,17 @@ import { ApplicationRef } from '@angular/core';
  * a synchronous check regardless, which is exactly what the non-reactive model
  * needs each frame.
  */
+/**
+ * A frame that throws is caught and logged so one bad check doesn't kill
+ * rendering. But a *persistent* per-frame throw would spam the console at ~60fps
+ * and burn cycles, so after this many consecutive failures we stop the loop and
+ * log once. Any successful frame resets the streak, so transient errors don't
+ * accumulate toward a stop.
+ */
+export const MAX_CONSECUTIVE_ERRORS = 10;
+
 export function startRenderLoop(appRef: ApplicationRef): void {
+  let consecutiveErrors = 0;
   const tick = () => {
     // Force synchronous change detection over the root view (and its CheckAlways
     // children) every frame. detectChanges() bypasses the dirty gating that
@@ -35,8 +45,13 @@ export function startRenderLoop(appRef: ApplicationRef): void {
       for (const c of appRef.components) {
         c.changeDetectorRef.detectChanges();
       }
+      consecutiveErrors = 0;
     } catch (err) {
       console.error(err);
+      if (++consecutiveErrors >= MAX_CONSECUTIVE_ERRORS) {
+        console.error(`Render loop stopped after ${MAX_CONSECUTIVE_ERRORS} consecutive errors.`);
+        return; // stop scheduling frames
+      }
     }
     requestAnimationFrame(tick);
   };
