@@ -12,13 +12,7 @@ import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tac
 })
 export class DisplayAA2CComponent {
 
-  addLine: number = AluOperationLines.ADD;
-  incLine: number = AluOperationLines.INC;
-  shlLine: number = AluOperationLines.SHL;
-  andLine: number = AluOperationLines.AND;
-  orrLine: number = AluOperationLines.ORR;
-  xorLine: number = AluOperationLines.XOR;
-  notLine: number = AluOperationLines.NOT;
+  protected readonly AluOperationLines = AluOperationLines;
 
   readonly part = input.required<CardOutput>();
   readonly valueIn = input.required<BitValue>();

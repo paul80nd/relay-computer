@@ -2,27 +2,21 @@
   <!-- Origin at bay top left -->
   <title>Decoder</title>
 
-  <circle cx="34.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(gtoLine)"/>
+  <circle cx="34.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IGTO)"/>
 
-  <circle cx="56" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(setLine)"/>
+  <circle cx="56" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.ISET)"/>
 
-  <circle cx="76.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(mv8Line)"/>
+  <circle cx="76.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IMV8)"/>
 
-  <!--
-    <circle cx="97" cy="13" r="4" class="ledYellow"/>
-    -->
+  <circle cx="97" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IINC)"/>
 
-  <circle cx="118" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(aluLine)"/>
+  <circle cx="118" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IALU)"/>
 
-  <!--
-    <circle cx="141" cy="13" r="4" class="ledYellow"/>
+  <circle cx="138.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.ISTR)"/>
 
-    <circle cx="163" cy="13" r="4" class="ledYellow"/>
--->
-  <circle cx="180" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(mscLine)"/>
-  <!--
-  <circle cx="207" cy="13" r="4" class="ledYellow"/>
-    -->
+  <circle cx="159.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.ILOD)"/>
+  <circle cx="180" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IMSC)"/>
+  <circle cx="200.5" cy="13" r="4" class="ledYellow" [class.on]="card().operation.bit(OperationLines.IM16)"/>
 
   <svg:g transform="translate(-4,10)">
     <?xml version="1.0" encoding="utf-8" standalone="no"?>

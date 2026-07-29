@@ -11,9 +11,7 @@ import { MemoryLines, IMemoryCard } from '@paul80nd/relay-computer-model';
 
 export class CardMemoryAComponent {
 
-  b2mLine = MemoryLines.B2M;
-  merLine = MemoryLines.MER;
-  mewLine = MemoryLines.MEW;
+  protected readonly MemoryLines = MemoryLines;
 
   readonly card = input.required<IMemoryCard>();
 

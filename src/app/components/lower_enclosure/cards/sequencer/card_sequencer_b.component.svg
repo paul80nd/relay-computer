@@ -13,9 +13,9 @@
     </g>
   }
 
-  <circle cx="102" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(at08Line)" />
-  <circle cx="122.7" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(at10Line)" />
-  <circle cx="143.5" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(at12Line)" />
+  <circle cx="102" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT08)" />
+  <circle cx="122.7" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT10)" />
+  <circle cx="143.5" cy="8.5" r="4" class="ledYellow" [class.on]="card().abort.bit(AbortLines.AT12)" />
 
   <circle cx="165" cy="18" r="4" class="ledGreen" [class.on]="card().pulse.bit(0)" />
   <circle cx="165" cy="8.5" r="4" class="ledGreen" [class.on]="card().pulse.bit(1)" />

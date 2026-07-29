@@ -14,22 +14,9 @@ import {
 
 export class CardAluControlComponent {
 
-  cyLine = ConditionLines.CY;
-  snLine = ConditionLines.SN;
-  ezLine = ConditionLines.EZ;
-
-  addLine: number = AluOperationLines.ADD;
-  incLine: number = AluOperationLines.INC;
-  shlLine: number = AluOperationLines.SHL;
-  andLine: number = AluOperationLines.AND;
-  orrLine: number = AluOperationLines.ORR;
-  xorLine: number = AluOperationLines.XOR;
-  notLine: number = AluOperationLines.NOT;
-  clrLine: number = AluOperationLines.CLR;
-
-  f2Line = AluFunctionClLines.F2;
-  f1Line = AluFunctionClLines.F1;
-  f0Line = AluFunctionClLines.F0;
+  protected readonly ConditionLines = ConditionLines;
+  protected readonly AluOperationLines = AluOperationLines;
+  protected readonly AluFunctionClLines = AluFunctionClLines;
 
   readonly card = input.required<IAluControlCard>();
 }

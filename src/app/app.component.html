@@ -83,3 +83,14 @@
     </div>
   </div>
 </div>
+@if (notification(); as n) {
+  <!-- Docked to the bottom (fixed, out of flow) so showing it never reflows the
+       panel above — an invalid paste shouldn't make the whole UI jump. -->
+  <div class="alert-dock">
+    <clr-alert [clrAlertType]="n.type" [clrAlertAppLevel]="true" (clrAlertClosedChange)="dismiss()">
+      <clr-alert-item>
+        <span class="alert-text">{{ n.text }}</span>
+      </clr-alert-item>
+    </clr-alert>
+  </div>
+}

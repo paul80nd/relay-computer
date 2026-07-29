@@ -12,14 +12,7 @@ import { TactileSwitchComponent } from '../../../shared/switches/tact_switch/tac
 })
 export class DisplayAA2AComponent {
 
-  ldM1Line: number = RegJMXYLines.LM1;
-  ldM2Line: number = RegJMXYLines.LM2;
-  ldJ1Line: number = RegJMXYLines.LJ1;
-  ldJ2Line: number = RegJMXYLines.LJ2;
-  selM1Line: number = RegJMXYLines.SM1;
-  selM2Line: number = RegJMXYLines.SM2;
-  selMLine: number = RegJMXYLines.SEM;
-  selJLine: number = RegJMXYLines.SEJ;
+  protected readonly RegJMXYLines = RegJMXYLines;
 
   readonly part = input.required<CardOutput>();
   readonly valueIn = input.required<BitValue>();

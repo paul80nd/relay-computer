@@ -10,7 +10,7 @@ import { AbortLines, ISequencerCard } from '@paul80nd/relay-computer-model';
 
 export class CardSequencerAComponent {
 
-  at14Line = AbortLines.AT14;
+  protected readonly AbortLines = AbortLines;
 
   readonly card = input.required<ISequencerCard>();
 }
