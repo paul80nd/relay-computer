@@ -26,6 +26,13 @@ updates:
       # DEPENDABOT_GHPR_TOKEN secret with read:packages), reference it from this
       # update via `registries: [...]`, and remove this ignore entry.
       - dependency-name: "@paul80nd/relay-computer-model"
+      # Angular's build/compiler-cli pin an exact TypeScript minor
+      # (@angular/build → typescript ">=6.0 <6.1"), so a TS major (e.g. 7.x)
+      # can't install until a future Angular adds support (#84 failed npm ci on
+      # exactly this). Ignore TS majors; patch/minor within the supported 6.x
+      # line still come through. Revisit when Angular's peer range widens.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       # Angular packages are versioned in lockstep and declare exact peer
       # dependencies on each other (e.g. @angular/animations pins
