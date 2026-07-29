@@ -17,6 +17,12 @@ export class StateViewComponent {
 
   protected readonly ConditionLines = ConditionLines;
 
+  // One page is 256 bytes (16x16). Memory is 64KB, so the last page starts at
+  // 0xFF00. The template already hides the paging arrows at these bounds; the
+  // clamp keeps offset valid regardless of how nextPage/prevPage are called.
+  private static readonly PAGE = 0x100;
+  private static readonly MAX_OFFSET = 0x10000 - StateViewComponent.PAGE;
+
   offset = 0;
   memoryDec = false;
 
@@ -27,9 +33,9 @@ export class StateViewComponent {
   }
 
   nextPage() {
-    this.offset += 0x100;
+    this.offset = Math.min(this.offset + StateViewComponent.PAGE, StateViewComponent.MAX_OFFSET);
   }
   prevPage() {
-    this.offset -= 0x100;
+    this.offset = Math.max(this.offset - StateViewComponent.PAGE, 0);
   }
 }
