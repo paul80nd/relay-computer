@@ -30,7 +30,7 @@
     "@angular/forms": "22.0.7",
     "@angular/platform-browser": "22.0.7",
     "@angular/platform-browser-dynamic": "22.0.7",
-    "@angular/router": "22.0.7",
+    "@angular/router": "22.2.0",
     "@clr/angular": "18.2.1",
     "@clr/ui": "18.2.1",
     "@paul80nd/relay-computer-model": "1.4.1",
